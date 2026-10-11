@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SAREPTA · Relances clients</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f2f5f4;--card:#fff;--ink:#14282b;--mut:#60767a;--line:#dbe5e4;--pri:#0e5f63;--pri2:#0a4448;--amb:#d98a1c;--red:#c63d3d;--grn:#2a9461;--yel:#e0a21a;--d:"Sora",system-ui,sans-serif;--b:"Public Sans",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--b)}
+h1,h2,h3{font-family:var(--d);margin:0}
+.demo{background:#0b1c1e;color:#d9e6e4;font-size:13px;text-align:center;padding:9px 14px}
+.top{background:var(--pri2);color:#fff}.top .in{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font:700 20px var(--d);letter-spacing:.04em}.brand small{display:block;font:400 12px var(--b);letter-spacing:0;color:#a9cfd0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button{background:transparent;border:0;color:#bfdcdc;font:600 14px var(--b);padding:9px 14px;border-radius:8px;cursor:pointer}
+.tabs button[aria-selected=true]{background:#fff;color:var(--pri2)}.tabs button:focus-visible{outline:2px solid #fff}
+main{max-width:1180px;margin:0 auto;padding:22px 20px 60px}
+.page{display:none}.page.on{display:block}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}.kpi span{font-size:13px;color:var(--mut)}.kpi b{display:block;font:700 28px var(--d);margin-top:4px}.kpi.r b{color:var(--red)}.kpi.g b{color:var(--grn)}
+@media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px;min-width:0}
+.card h2{font-size:18px;margin-bottom:12px}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}@media(max-width:860px){.two{grid-template-columns:1fr}}
+.bars{display:grid;gap:10px}.bar{display:grid;grid-template-columns:90px 1fr 80px;gap:10px;align-items:center;font-size:14px}
+.bar i{display:block;height:12px;border-radius:6px;background:var(--pri)}.bar.a i{background:var(--amb)}.bar.r i{background:var(--red)}.bar b{text-align:right}
+.tool{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.tool select,.tool input{border:1px solid var(--line);border-radius:8px;padding:9px 12px;font:15px var(--b);background:#fff;min-width:0}
+table{width:100%;border-collapse:collapse}th{text-align:left;font:600 12px var(--b);letter-spacing:.05em;text-transform:uppercase;color:var(--mut);padding:10px 8px;border-bottom:1px solid var(--line)}
+td{padding:12px 8px;border-bottom:1px solid var(--line);vertical-align:middle}tr.click{cursor:pointer}tr.click:hover{background:#f6faf9}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font:600 12px var(--b)}
+.p-ok{background:#dff3e8;color:#17653f}.p-w{background:#fbefd0;color:#8a5d00}.p-r{background:#f8dcdc;color:#8e2222}.p-g{background:#e6ecec;color:#4b6063}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}.d-g{background:var(--grn)}.d-y{background:var(--yel)}.d-r{background:var(--red)}
+.cards{display:none}
+@media(max-width:760px){.tbl{display:none}.cards{display:grid;gap:10px}.cd{border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:4px;background:#fff}.cd .t{display:flex;justify-content:space-between;gap:8px;font-weight:600}.cd .s{color:var(--mut);font-size:14px;display:flex;justify-content:space-between;gap:8px}}
+.back{background:none;border:0;color:var(--pri);font:600 14px var(--b);cursor:pointer;padding:0;margin-bottom:12px}
+.fiche{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:760px){.fiche{grid-template-columns:1fr}}
+.kv{display:grid;gap:8px}.kv div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:6px}.kv span{color:var(--mut)}
+.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line);display:grid;gap:14px}.tl li{position:relative}.tl li::before{content:"";position:absolute;left:-25px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--pri)}.tl small{color:var(--mut);display:block}
+.btn{border:0;cursor:pointer;background:var(--pri);color:#fff;font:600 15px var(--b);padding:11px 18px;border-radius:8px}.btn:hover{background:var(--pri2)}.btn.alt{background:#fff;color:var(--pri);border:1px solid var(--pri)}
+.client{display:grid;grid-template-columns:1.1fr 1.3fr;gap:18px}@media(max-width:860px){.client{grid-template-columns:1fr}}
+.cl{display:grid;gap:8px}.cl button{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;cursor:pointer;font:inherit}.cl button[aria-pressed=true]{border-color:var(--pri);background:#eef6f6}
+.slider{display:grid;gap:8px;margin:12px 0}.slider input{width:100%;accent-color:var(--pri)}.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.prev{background:#f7faf9;border:1px solid var(--line);border-radius:10px;padding:14px;white-space:pre-wrap;font-size:14px}
+.rules{display:grid;gap:10px}.rule{display:flex;justify-content:space-between;align-items:center;gap:14px;border:1px solid var(--line);border-radius:10px;padding:14px;background:#fff}.rule small{display:block;color:var(--mut)}
+.sw{position:relative;width:46px;height:26px;flex:none}.sw input{opacity:0;position:absolute;inset:0;margin:0;cursor:pointer;z-index:1}.sw i{position:absolute;inset:0;background:#c3d0cf;border-radius:999px;transition:.15s}.sw i::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.15s}.sw input:checked+i{background:var(--pri)}.sw input:checked+i::after{left:23px}.sw input:focus-visible+i{outline:2px solid var(--amb)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#0b1c1e;color:#fff;padding:12px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:.2s;max-width:90vw;font-size:14px}.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="demo"><b>Maquette proposée par Keteris à SAREPTA.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<div class="top"><div class="in"><div class="brand">SAREPTA<small>Suivi des relances clients · Antibes, Valbonne</small></div>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-p="dash">Tableau de bord</button><button role="tab" aria-selected="false" data-p="fact">Factures</button><button role="tab" aria-selected="false" data-p="cli">Clients en recouvrement</button><button role="tab" aria-selected="false" data-p="reg">Règles</button></div></div></div>
+<main>
+<section class="page on" id="dash">
+<div class="kpis"><div class="kpi r"><span>En retard</span><b id="k1"></b></div><div class="kpi"><span>Factures ouvertes</span><b id="k2"></b></div><div class="kpi g"><span>Encaissé sur 30 jours grâce aux relances</span><b>18 420 €</b></div><div class="kpi"><span>Relances envoyées ce mois</span><b>64</b></div></div>
+<div class="two"><div class="card"><h2>Retards par ancienneté</h2><div class="bars" id="bars"></div></div>
+<div class="card"><h2>Aujourd'hui</h2><div class="kv"><div><span>Relances prévues</span><b>7</b></div><div><span>Promesses de paiement</span><b>3</b></div><div><span>Dossiers à appeler</span><b>2</b></div><div><span>Temps gagné cette semaine</span><b>4 h 30</b></div></div></div></div>
+</section>
+
+<section class="page" id="fact">
+<div class="card"><div class="tool"><select id="f-st" aria-label="Statut"><option value="">Tous les statuts</option><option>En retard</option><option>À échoir</option><option>Promesse</option><option>Payée</option></select><input id="f-q" placeholder="Rechercher un client ou une facture" aria-label="Recherche"></div>
+<div class="tbl"><table><thead><tr><th>Facture</th><th>Client</th><th>Échéance</th><th class="num">Montant</th><th>Retard</th><th>Statut</th><th>Prochaine relance</th></tr></thead><tbody id="tb"></tbody></table></div><div class="cards" id="cd"></div></div>
+</section>
+
+<section class="page" id="det"><button class="back" id="bk">← Retour aux factures</button><div class="fiche"><div class="card"><h2 id="d-t"></h2><div class="kv" id="d-kv"></div><div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="d-now">Relancer maintenant</button><button class="btn alt" id="d-pay">Marquer payée</button></div></div><div class="card"><h2>Historique</h2><ul class="tl" id="d-tl"></ul></div></div></section>
+
+<section class="page" id="cli"><div class="client"><div class="card"><h2>Clients en recouvrement</h2><div class="cl" id="cl"></div></div>
+<div class="card"><h2 id="c-t"></h2><div class="kv" id="c-kv"></div>
+<div class="slider"><label for="tone"><b>Ton des e-mails :</b> <span id="tl-l"></span></label><input id="tone" type="range" min="1" max="5" step="1" value="2"><div class="scale"><span>1 Cordial</span><span>3 Ferme</span><span>5 Mise en demeure</span></div></div>
+<h3 style="font-size:15px;margin-bottom:8px">Aperçu du prochain e-mail</h3><div class="prev" id="pv"></div><div style="margin-top:12px"><button class="btn" id="c-save">Enregistrer ce ton pour ce client</button></div></div></div></section>
+
+<section class="page" id="reg"><div class="card"><h2>Règles de relance automatiques</h2><div class="rules" id="rl"></div></div></section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=i=>document.getElementById(i),fmt=n=>n.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+" €";
+const C=[{id:"c1",n:"Boulangerie Les Pins",v:"Juan-les-Pins",s:"g",t:1,x:"Règle ses factures sous 5 jours en moyenne"},{id:"c2",n:"Garage Costa Auto",v:"Antibes",s:"y",t:3,x:"Deux retards de plus de 30 jours cette année"},{id:"c3",n:"Menuiserie Aubry",v:"Valbonne",s:"r",t:4,x:"Trois factures en retard, un chèque rejeté"},{id:"c4",n:"Institut Maé",v:"Biot",s:"g",t:2,x:"Règle toujours, parfois avec quelques jours de retard"},{id:"c5",n:"Plomberie Ferrandi",v:"Vallauris",s:"y",t:3,x:"Délai de paiement qui s'allonge depuis six mois"}];
+const T=["","Cordial","Courtois","Ferme","Très ferme","Mise en demeure"];
+const F=[["F-2410","c3","2026-08-28",2640,"En retard"],["F-2418","c2","2026-09-12",1180,"En retard"],["F-2422","c5","2026-09-20",960.5,"En retard"],["F-2431","c3","2026-09-30",1520,"En retard"],["F-2436","c1","2026-10-05",340,"Promesse"],["F-2440","c4","2026-10-09",420,"En retard"],["F-2447","c2","2026-10-20",2250,"À échoir"],["F-2451","c5","2026-10-28",780,"À échoir"],["F-2455","c1","2026-11-02",610,"À échoir"],["F-2398","c4","2026-08-14",890,"Payée"]];
+const NOW=new Date(2026,9,12),days=d=>Math.max(0,Math.round((NOW-new Date(d))/864e5));
+const cl=id=>C.find(c=>c.id===id),pc=s=>({"En retard":"p-r","À échoir":"p-g","Promesse":"p-w","Payée":"p-ok"}[s]);
+const sol=s=>`<span class="dot d-${s}"></span>${{g:"Solide",y:"À surveiller",r:"Risqué"}[s]}`;
+const nxt=(f)=>f[4]==="En retard"?(days(f[2])>30?"Appel + relance ferme":"Demain 9h"):f[4]==="Payée"?"—":"J+1 après échéance";
+const open=F.filter(f=>f[4]!=="Payée"),late=F.filter(f=>f[4]==="En retard");
+$("k1").textContent=fmt(late.reduce((a,f)=>a+f[3],0));$("k2").textContent=open.length;
+const b=[["0 à 15 j",late.filter(f=>days(f[2])<=15)],["16 à 30 j",late.filter(f=>days(f[2])>15&&days(f[2])<=30)],["Plus de 30 j",late.filter(f=>days(f[2])>30)]];
+const mx=Math.max(...b.map(x=>x[1].reduce((a,f)=>a+f[3],0)),1);
+$("bars").innerHTML=b.map((x,i)=>{const s=x[1].reduce((a,f)=>a+f[3],0);return `<div class="bar ${i==1?"a":i==2?"r":""}"><span>${x[0]}</span><i style="width:${Math.max(4,s/mx*100)}%"></i><b>${fmt(s)}</b></div>`}).join("");
+function list(){const st=$("f-st").value,q=$("f-q").value.toLowerCase();const r=F.filter(f=>(!st||f[4]===st)&&(!q||(f[0]+cl(f[1]).n).toLowerCase().includes(q)));
+$("tb").innerHTML=r.map(f=>`<tr class="click" data-f="${f[0]}"><td><b>${f[0]}</b></td><td>${cl(f[1]).n}</td><td>${new Date(f[2]).toLocaleDateString("fr-FR")}</td><td class="num">${fmt(f[3])}</td><td>${f[4]==="En retard"?days(f[2])+" j":"—"}</td><td><span class="pill ${pc(f[4])}">${f[4]}</span></td><td>${nxt(f)}</td></tr>`).join("")||'<tr><td colspan="7">Aucune facture.</td></tr>';
+$("cd").innerHTML=r.map(f=>`<div class="cd click" data-f="${f[0]}"><div class="t"><span>${cl(f[1]).n}</span><span>${fmt(f[3])}</span></div><div class="s"><span>${f[0]} · ${f[4]==="En retard"?days(f[2])+" j de retard":new Date(f[2]).toLocaleDateString("fr-FR")}</span><span class="pill ${pc(f[4])}">${f[4]}</span></div><div class="s"><span>Prochaine : ${nxt(f)}</span></div></div>`).join("");
+document.querySelectorAll("[data-f]").forEach(e=>e.onclick=()=>det(e.dataset.f))}
+$("f-st").onchange=list;$("f-q").oninput=list;list();
+let cur=null;
+function det(id){cur=F.find(f=>f[0]===id);const c=cl(cur[1]);$("d-t").textContent=cur[0]+" · "+c.n;
+$("d-kv").innerHTML=`<div><span>Montant</span><b>${fmt(cur[3])}</b></div><div><span>Échéance</span><b>${new Date(cur[2]).toLocaleDateString("fr-FR")}</b></div><div><span>Statut</span><b>${cur[4]}</b></div><div><span>Solvabilité</span><b>${sol(c.s)}</b></div><div><span>Ton des e-mails</span><b>${c.t} · ${T[c.t]}</b></div>`;
+const d=days(cur[2]);$("d-tl").innerHTML=`<li><b>Facture émise</b><small>${new Date(new Date(cur[2])-30*864e5).toLocaleDateString("fr-FR")}</small></li>`+(d>0?`<li><b>Relance 1 envoyée (ton ${Math.max(1,c.t-1)})</b><small>J+3 après échéance · ouverte</small></li>`:"")+(d>10?`<li><b>Relance 2 envoyée (ton ${c.t})</b><small>J+10 · ouverte, sans réponse</small></li>`:"")+(d>30?`<li><b>Appel recommandé</b><small>J+30 · à passer par le cabinet</small></li>`:"")+(cur[4]==="Promesse"?`<li><b>Promesse de paiement reçue</b><small>Le client s'engage à régler vendredi</small></li>`:"");
+show("det")}
+$("bk").onclick=()=>show("fact");$("d-now").onclick=()=>toast("Relance envoyée à "+cl(cur[1]).n+" (démonstration)");$("d-pay").onclick=()=>{cur[4]="Payée";list();toast("Facture marquée payée");show("fact")};
+let sel=C[0];function clients(){$("cl").innerHTML=C.map(c=>`<button data-c="${c.id}" aria-pressed="${c===sel}"><span><b>${c.n}</b><br><small>${c.v}</small></span><span>${sol(c.s)}</span></button>`).join("");document.querySelectorAll("[data-c]").forEach(e=>e.onclick=()=>{sel=cl(e.dataset.c);clients();cdet()})}
+function msg(c,t){const o=F.filter(f=>f[1]===c.id&&f[4]==="En retard");const f=o[0]||F.find(f=>f[1]===c.id&&f[4]!=="Payée")||F[0];const a=fmt(f[3]);
+return [,`Bonjour,\n\nPetit rappel : la facture ${f[0]} de ${a} est arrivée à échéance. Si le règlement est déjà parti, ne tenez pas compte de ce message.\n\nBien cordialement,\nLe cabinet SAREPTA`,`Bonjour,\n\nSauf erreur de notre part, la facture ${f[0]} de ${a} reste à régler. Pourriez-vous nous indiquer la date de paiement prévue ?\n\nCordialement,\nLe cabinet SAREPTA`,`Bonjour,\n\nLa facture ${f[0]} de ${a} est en retard. Merci de procéder au règlement sous 8 jours ou de nous contacter pour convenir d'un échéancier.\n\nCordialement,\nLe cabinet SAREPTA`,`Madame, Monsieur,\n\nMalgré nos précédents rappels, la facture ${f[0]} de ${a} demeure impayée. Sans règlement sous 5 jours, des pénalités de retard seront appliquées.\n\nLe cabinet SAREPTA`,`Madame, Monsieur,\n\nLa facture ${f[0]} de ${a} étant impayée malgré nos relances, nous vous mettons en demeure de la régler sous 8 jours, faute de quoi le dossier sera transmis pour recouvrement.\n\nLe cabinet SAREPTA`][t]}
+function cdet(){$("c-t").textContent=sel.n+" · "+sel.v;$("c-kv").innerHTML=`<div><span>Solvabilité</span><b>${sol(sel.s)}</b></div><div><span>Constat</span><b>${sel.x}</b></div><div><span>Ton conseillé</span><b>${sel.s==="g"?"1 à 2":sel.s==="y"?"3":"4 à 5"}</b></div>`;$("tone").value=sel.t;tone()}
+function tone(){const t=+$("tone").value;$("tl-l").textContent=t+" · "+T[t];$("pv").textContent=msg(sel,t)}
+$("tone").oninput=tone;$("c-save").onclick=()=>{sel.t=+$("tone").value;toast("Ton "+sel.t+" enregistré pour "+sel.n)};
+const R=[["Relance automatique à J+1 après échéance","Premier rappel cordial, envoyé le matin",true],["Relance 2 à J+10","Ton ajusté à la solvabilité du client",true],["Alerte au cabinet à J+30","Création d'une tâche d'appel pour le collaborateur",true],["Mise en demeure à J+45","Courrier validé par l'expert-comptable avant envoi",false],["Pause pendant une promesse de paiement","Aucune relance tant que la date promise n'est pas dépassée",true],["Copie de chaque relance au dirigeant du cabinet","Pour garder la main sur les dossiers sensibles",false]];
+$("rl").innerHTML=R.map((r,i)=>`<div class="rule"><div><b>${r[0]}</b><small>${r[1]}</small></div><label class="sw"><input type="checkbox" ${r[2]?"checked":""} data-r="${i}" aria-label="${r[0]}"><i></i></label></div>`).join("");
+document.querySelectorAll("[data-r]").forEach(e=>e.onchange=()=>toast("Règle "+(e.checked?"activée":"désactivée")));
+function show(p){document.querySelectorAll(".page").forEach(s=>s.classList.toggle("on",s.id===p));document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.p===p||(p==="det"&&b.dataset.p==="fact")))}
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>show(b.dataset.p));
+let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2400)}
+clients();cdet();
+</script>
+</body>
+</html>
