@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Règlements acheteurs · Maison Vergeau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout : application métier d'une maison de ventes, barre latérale bordeaux, espace de travail clair */
+:root{
+  --bg:#f5f3ef; --panel:#fff; --ink:#221d1f; --muted:#6b6468; --line:#e6e1da;
+  --brand:#4a1d29;      /* bordeaux salle des ventes */
+  --brand-2:#5c2734;
+  --gold:#b08a3e;       /* marteau doré */
+  --gold-soft:#f5eedf;
+  --ok:#1f8a5b; --warn:#c98a12; --late:#c2412d; --info:#3a6ea5;
+  --serif:"Lora",Georgia,serif;
+  --body:"Inter",ui-sans-serif,system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--body);overflow-x:hidden}
+button,input,select{font:inherit}
+.demo-bar{background:#16100f;color:#e2d9dc;text-align:center;font-size:13px;padding:8px 16px}
+.demo-bar b{color:#fff}
+.app{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:calc(100vh - 36px)}
+aside{background:var(--brand);color:#ecdde1;padding:22px 16px;display:flex;flex-direction:column;gap:22px}
+.brand{font:700 20px var(--serif);color:#fff;line-height:1.2}
+.brand small{display:block;font:500 12px var(--body);color:#d6b9c0;margin-top:5px}
+.brand i{display:block;width:34px;height:2px;background:var(--gold);margin-top:10px}
+.menu{display:grid;gap:4px}
+.menu button{background:none;border:0;color:#ecdde1;text-align:left;padding:10px 12px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.menu button[aria-selected="true"]{background:rgba(255,255,255,.14);color:#fff;font-weight:600}
+.menu button:hover{background:rgba(255,255,255,.08)}
+.badge{background:var(--gold);color:#fff;font:700 11px var(--body);border-radius:999px;padding:1px 7px;flex:none}
+.side-foot{margin-top:auto;font-size:12px;color:#d6b9c0}
+main{padding:24px clamp(16px,3vw,32px);min-width:0;display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-content:start}
+main>section,.card{min-width:0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+h1{font:700 27px var(--serif);margin:0}
+.sub{color:var(--muted);margin:2px 0 0}
+.btn{border:0;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:600;background:var(--brand);color:#fff}
+.btn.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn.gold{background:var(--gold)}
+.btn:focus-visible,.menu button:focus-visible,select:focus-visible,input:focus-visible,.tone:focus-visible,.switch:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi span{color:var(--muted);font-size:13px}
+.kpi b{display:block;font:700 26px var(--serif);font-variant-numeric:tabular-nums;margin-top:4px}
+.kpi em{font-style:normal;font-size:12px;font-weight:600}
+.up{color:var(--ok)} .down{color:var(--late)}
+.grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h2{font:700 17px var(--serif);margin:0 0 14px}
+.sales{display:grid;gap:14px}
+.sale{display:grid;gap:8px}
+.sale-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.sale-top b{font-weight:600}
+.sale-top span{color:var(--muted);font-size:13px}
+.stack{display:flex;height:14px;border-radius:7px;overflow:hidden;background:#eee9e2}
+.stack i{display:block;height:100%}
+.sale-leg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.sale-leg em{font-style:normal;font-weight:600;color:var(--ink)}
+.feed{display:grid;gap:12px;font-size:13px}
+.feed div{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.dot{width:8px;height:8px;border-radius:50%;margin-top:6px}
+.feed small{color:var(--muted);display:block}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.filters input,.filters select{border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:var(--panel);min-width:0}
+.filters input{flex:1 1 220px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px}
+.chip[aria-pressed="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font:600 11px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th[data-sort]{cursor:pointer}
+th[data-sort]:hover{color:var(--ink)}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr{cursor:pointer}
+#rows tr:hover{background:#faf8f5}
+#rows tr.sel{background:var(--gold-soft)}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.nowrap{white-space:nowrap}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.p-ok{background:#e1f3ea;color:var(--ok)} .p-warn{background:#fbefd5;color:#93640a} .p-late{background:#fbe3de;color:var(--late)} .p-info{background:#e2ebf5;color:var(--info)}
+.who b{display:block}
+.who small{color:var(--muted);display:block;font-size:12px}
+.detail{display:grid;gap:14px;align-content:start}
+.timeline{display:grid;border-left:2px solid var(--line);margin-left:6px}
+.step{position:relative;padding:0 0 16px 18px}
+.step::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--c,#cfd5d0);border:2px solid var(--panel)}
+.step b{display:block}
+.step small{color:var(--muted)}
+.mail{background:#f8f6f2;border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px;white-space:pre-line}
+.rules{display:grid;gap:12px}
+.rule{display:grid;grid-template-columns:70px 1fr auto;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.rule .when{font:700 20px var(--serif);color:var(--brand)}
+.rule p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.switch{position:relative;width:44px;height:24px;border-radius:999px;border:0;background:#cfd5d0;cursor:pointer}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.switch[aria-checked="true"]{background:var(--ok)}
+.switch[aria-checked="true"]::after{left:23px}
+.hint{font-size:12px;color:var(--muted);margin:0}
+.solv{display:inline-flex;align-items:center;gap:7px;border-radius:8px;padding:6px 10px;font-weight:700;font-size:13px;white-space:nowrap}
+.solv i{width:12px;height:12px;border-radius:50%;flex:none}
+.s-green{background:#dcf2e6;color:#14663f}.s-green i{background:#1f8a5b}
+.s-yellow{background:#fbefcf;color:#7a5408}.s-yellow i{background:#e0a21a}
+.s-red{background:#fbdcd6;color:#9c2c1b}.s-red i{background:#c2412d}
+.tone{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 10px;cursor:pointer;white-space:nowrap}
+.tone b{font:700 17px var(--serif);font-variant-numeric:tabular-nums}
+.meter{display:flex;gap:3px}
+.meter span{width:9px;height:14px;border-radius:3px;background:#e6e1da}
+.rec-tbl td.who{max-width:330px}
+.rec-tbl td.who .ct{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
+.tone-panel td{background:#faf8f5;padding:18px}
+.tp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px}
+.tp input[type=range]{width:100%;accent-color:var(--brand);height:28px}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.tp .mail{background:#fff}
+.rec-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:12px}
+.rec-legend span{display:inline-flex;align-items:center;gap:6px}
+.rec-legend i{width:10px;height:10px;border-radius:50%}
+.vend td{cursor:default}
+[hidden]{display:none!important}
+.listgrid{grid-template-columns:minmax(0,1fr)}
+@media(min-width:1440px){.listgrid{grid-template-columns:minmax(0,2fr) minmax(300px,1fr)}.detail{position:sticky;top:16px}}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
+@media(max-width:760px){
+ .tp{grid-template-columns:1fr}
+ .app{grid-template-columns:1fr}
+ aside{flex-direction:column;align-items:stretch;padding:14px 16px;gap:12px}
+ .menu{display:flex;gap:4px;flex-wrap:wrap}
+ .menu button{padding:8px 10px;font-size:13px}
+ .side-foot{display:none}
+ .brand i{display:none}
+ .tbl{overflow:visible}
+ .tbl thead{display:none}
+ #rows tr,#recRows tr:not(.tone-panel),#vendRows tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;padding:14px 4px;border-bottom:1px solid var(--line)}
+ #rows td,#recRows tr:not(.tone-panel) td,#vendRows td{display:block;border:0;padding:0;text-align:left;white-space:normal}
+ #rows td:first-child,#recRows td:first-child,#vendRows td:first-child{grid-column:1/-1;max-width:none}
+ #rows td::before,#recRows tr:not(.tone-panel) td::before,#vendRows td::before{display:block;font:600 10px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+ #rows td:first-child::before,#recRows td:first-child::before,#vendRows td:first-child::before{display:none}
+ #rows td:nth-child(2)::before{content:"Bordereau"}#rows td:nth-child(3)::before{content:"Échéance"}#rows td:nth-child(4)::before{content:"Retard"}#rows td:nth-child(5)::before{content:"Montant"}#rows td:nth-child(6)::before{content:"Statut"}#rows td:nth-child(7)::before{content:"Prochaine action"}
+ #recRows td:nth-child(2)::before{content:"Dû"}#recRows td:nth-child(3)::before{content:"Retard max"}#recRows td:nth-child(4)::before{content:"Ventes suivies"}#recRows td:nth-child(5)::before{content:"Solvabilité"}#recRows td:nth-child(6)::before{content:"Ton des e-mails"}
+ #vendRows td:nth-child(2)::before{content:"Vente"}#vendRows td:nth-child(3)::before{content:"Net vendeur"}#vendRows td:nth-child(4)::before{content:"Encaissé"}#vendRows td:nth-child(5)::before{content:"Reversement"}
+ #recRows .tone-panel,#recRows .tone-panel td{display:block}
+ .rec-legend{flex-direction:column;gap:6px}
+ h1{font-size:24px}
+ .top{flex-direction:column;align-items:flex-start;gap:12px}
+ .filters{flex-direction:column}
+ .filters input,.filters select{width:100%}
+ .rule{grid-template-columns:56px 1fr auto;gap:10px}
+}
+@media(max-width:420px){.kpis{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à Maison Vergeau.</b> Ce n'est pas votre outil officiel : les noms d'acheteurs, ventes, montants et données affichés sont fictifs.</div>
+<div class="app">
+  <aside>
+    <div class="brand">Maison Vergeau<small>Règlements acheteurs · Nice</small><i></i></div>
+    <nav class="menu" role="tablist" aria-label="Sections">
+      <button role="tab" aria-selected="true" data-view="dash">Tableau de bord</button>
+      <button role="tab" aria-selected="false" data-view="list">Bordereaux à encaisser <span class="badge" id="lateCount">0</span></button>
+      <button role="tab" aria-selected="false" data-view="rec">Acheteurs en recouvrement <span class="badge" id="recCount">0</span></button>
+      <button role="tab" aria-selected="false" data-view="vend">Reversements vendeurs</button>
+      <button role="tab" aria-selected="false" data-view="rules">Règles de relance</button>
+    </nav>
+    <div class="side-foot">Synchronisé avec le logiciel de ventes il y a 3 min</div>
+  </aside>
+
+  <main>
+    <section data-panel="dash">
+      <div class="top"><div><h1>Bonjour Paul-Antoine</h1><p class="sub">Point au 11 octobre 2026 sur les règlements de vos deux dernières ventes.</p></div><button class="btn" data-go="list">Voir les bordereaux impayés</button></div>
+      <div class="kpis" style="margin-top:20px">
+        <div class="kpi"><span>Reste à encaisser</span><b id="k-total">0 €</b><em class="down" id="k-n"></em></div>
+        <div class="kpi"><span>Dont en retard</span><b id="k-late">0 €</b><em class="down" id="k-latepct"></em></div>
+        <div class="kpi"><span>Encaissé sans relance manuelle</span><b>41 380 €</b><em class="up">27 bordereaux, lien de paiement</em></div>
+        <div class="kpi"><span>Reversements vendeurs bloqués</span><b id="k-vend">0 €</b><em class="down">en attente des acheteurs</em></div>
+      </div>
+      <div class="grid2" style="margin-top:14px">
+        <div class="card"><h2>Encaissement par vente</h2><div class="sales" id="sales"></div></div>
+        <div class="card"><h2>Dernières actions automatiques</h2>
+          <div class="feed">
+            <div><span class="dot" style="background:var(--ok)"></span><span><b>Galerie Ambrosi a réglé 6 250 €</b><small>par lien de paiement, après le rappel J+3 · aujourd'hui 9:04</small></span></div>
+            <div><span class="dot" style="background:var(--info)"></span><span><b>Bordereau envoyé à 14 acheteurs</b><small>vente du 10 octobre, lien de paiement inclus · hier 19:30</small></span></div>
+            <div><span class="dot" style="background:var(--warn)"></span><span><b>Frais de gardiennage à appliquer : M. Daniel Ortiz</b><small>lot 112 non retiré depuis 15 jours · à valider</small></span></div>
+            <div><span class="dot" style="background:var(--late)"></span><span><b>Mise en demeure prête : S. Kovalenko</b><small>J+15, 3 750 € · attend votre validation</small></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="list" hidden>
+      <div class="top"><div><h1>Bordereaux à encaisser</h1><p class="sub">Cliquez sur un bordereau pour voir l'historique des relances et le prochain message.</p></div><button class="btn ghost" id="exportBtn">Exporter pour le cabinet comptable</button></div>
+      <div class="grid2 listgrid" style="margin-top:20px">
+        <div class="card">
+          <div class="filters">
+            <input id="q" type="search" placeholder="Rechercher un acheteur, un bordereau ou un lot" aria-label="Rechercher">
+            <select id="sale" aria-label="Vente"><option value="">Toutes les ventes</option><option value="26 sept.">Vente du 26 sept.</option><option value="10 oct.">Vente du 10 oct.</option></select>
+          </div>
+          <div class="chips" id="chips" style="margin-bottom:12px"></div>
+          <div class="tbl"><table><thead><tr><th data-sort="who">Acheteur</th><th data-sort="ref">Bordereau</th><th data-sort="due">Échéance</th><th data-sort="late" class="num">Retard</th><th data-sort="amt" class="num">Montant</th><th>Statut</th><th>Prochaine action</th></tr></thead><tbody id="rows"></tbody></table></div>
+          <p class="hint" id="count" style="margin-top:10px"></p>
+        </div>
+        <div class="card detail" id="detail"></div>
+      </div>
+    </section>
+
+    <section data-panel="rec" hidden>
+      <div class="top"><div><h1>Acheteurs en recouvrement</h1><p class="sub">Fiabilité de chaque acheteur et ton des relances qui lui sont envoyées. Cliquez sur le ton pour le régler.</p></div></div>
+      <div class="card" style="margin-top:20px">
+        <div class="rec-legend">
+          <span><i style="background:#1f8a5b"></i>Fiable : paie en retard mais paie</span>
+          <span><i style="background:#e0a21a"></i>À surveiller : premier achat ou retards répétés</span>
+          <span><i style="background:#c2412d"></i>Risque : ne répond plus, lot non retiré</span>
+        </div>
+        <div class="tbl"><table class="rec-tbl"><thead><tr><th>Acheteur</th><th class="num">Dû</th><th class="num">Retard max</th><th class="num">Ventes</th><th>Solvabilité</th><th>Ton des e-mails</th></tr></thead><tbody id="recRows"></tbody></table></div>
+        <p class="hint" style="margin-top:10px">La fiabilité combine l'historique de l'acheteur chez vous, le mode d'enchère (salle, téléphone, live) et les vérifications d'identité déjà faites. Données fictives.</p>
+      </div>
+    </section>
+
+    <section data-panel="vend" hidden>
+      <div class="top"><div><h1>Reversements vendeurs</h1><p class="sub">Un vendeur est payé dès que tous ses lots sont encaissés. Les retards acheteurs se voient ici.</p></div></div>
+      <div class="card" style="margin-top:20px">
+        <div class="tbl"><table><thead><tr><th>Vendeur</th><th>Vente</th><th class="num">Net vendeur</th><th class="num">Encaissé</th><th>Reversement</th></tr></thead><tbody id="vendRows" class="vend"></tbody></table></div>
+      </div>
+    </section>
+
+    <section data-panel="rules" hidden>
+      <div class="top"><div><h1>Règles de relance</h1><p class="sub">Vous décidez une fois, le système l'applique à chaque bordereau.</p></div></div>
+      <div class="rules" id="rules" style="margin-top:20px"></div>
+      <p class="hint">Les relances partent depuis l'adresse de la maison, s'arrêtent dès qu'un paiement est rapproché, et rien de juridique ne part sans votre validation.</p>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  var TODAY=new Date("2026-10-11");
+  // [acheteur, détail, bordereau, vente, lots, échéance, montant, statut]
+  var INV=[
+    ["S. Kovalenko","Enchère téléphone · Monaco","B-2609-031","26 sept.","Lots 44, 45","2026-09-26",3750,"md"],
+    ["M. Daniel Ortiz","Salle · Nice","B-2609-018","26 sept.","Lot 112","2026-09-26",1180,"j15"],
+    ["Galerie Ambrosi","Professionnel · Menton","B-2609-007","26 sept.","Lots 12 à 15","2026-09-26",6250,"paid"],
+    ["Mme Claire Fabre","Live · Antibes","B-2609-042","26 sept.","Lot 87","2026-09-26",890,"promise"],
+    ["Brocante du Port","Professionnel · Villefranche","B-2609-025","26 sept.","Lots 60, 61, 63","2026-09-26",2140,"j15"],
+    ["J. Whitfield","Live · Londres","B-2609-050","26 sept.","Lot 131","2026-09-26",4800,"j7"],
+    ["M. Henri Lassalle","Salle · Nice","B-2610-004","10 oct.","Lot 9","2026-10-10",640,"j1"],
+    ["Mme Inès Benali","Live · Cannes","B-2610-011","10 oct.","Lots 22, 23","2026-10-10",1525,"j1"],
+    ["Antiquités Rocca","Professionnel · Grasse","B-2610-017","10 oct.","Lot 40","2026-10-10",3125,"j1"],
+    ["T. Nakamura","Ordre d'achat · Paris","B-2610-026","10 oct.","Lot 58","2026-10-10",2375,"paid"]
+  ];
+  var ST={
+    j1:["Bordereau envoyé","p-info","Rappel J+3 le 13 oct."],
+    j7:["Relance 2","p-warn","Relance ferme le 13 oct."],
+    j15:["Relance ferme","p-late","Mise en demeure le 13 oct."],
+    md:["Mise en demeure","p-late","À valider par vous"],
+    promise:["Promesse","p-info","Vérifier le 14 oct."],
+    paid:["Réglé","p-ok","Aucune"]
+  };
+  var data=INV.map(function(r){var due=new Date(r[5]);return{who:r[0],act:r[1],ref:r[2],sale:r[3],lots:r[4],due:due,dueTxt:due.toLocaleDateString("fr-FR",{day:"2-digit",month:"short"}),late:Math.max(0,Math.round((TODAY-due)/864e5)),amt:r[6],st:r[7]}});
+  function eur(n){return n.toLocaleString("fr-FR")+" €"}
+  var open=data.filter(function(d){return d.st!=="paid"});
+  var late=open.filter(function(d){return d.late>3});
+  var tot=open.reduce(function(a,d){return a+d.amt},0),lat=late.reduce(function(a,d){return a+d.amt},0);
+  document.getElementById("k-total").textContent=eur(tot);
+  document.getElementById("k-n").textContent=open.length+" bordereaux ouverts";
+  document.getElementById("k-late").textContent=eur(lat);
+  document.getElementById("k-latepct").textContent=Math.round(lat/tot*100)+" % du reste à encaisser";
+  document.getElementById("lateCount").textContent=late.length;
+
+  var SALES=[["Vente du 26 septembre","Tableaux et dessins de la Riviera",58400,"26 sept."],["Vente du 10 octobre","Mobilier et objets d'art",31750,"10 oct."]];
+  document.getElementById("sales").innerHTML=SALES.map(function(s){
+    var rows=data.filter(function(d){return d.sale===s[3]});
+    var unpaid=rows.filter(function(d){return d.st!=="paid"}),lateA=unpaid.filter(function(d){return d.late>3}).reduce(function(a,d){return a+d.amt},0);
+    var waitA=unpaid.reduce(function(a,d){return a+d.amt},0)-lateA,paidA=s[2]-lateA-waitA;
+    return '<div class="sale"><div class="sale-top"><b>'+s[0]+'</b><span>'+s[1]+' · '+eur(s[2])+' frais compris</span></div><div class="stack"><i style="width:'+(paidA/s[2]*100)+'%;background:var(--ok)"></i><i style="width:'+(waitA/s[2]*100)+'%;background:var(--info)"></i><i style="width:'+(lateA/s[2]*100)+'%;background:var(--late)"></i></div><div class="sale-leg"><span>Encaissé <em>'+eur(paidA)+'</em></span><span>Dans les délais <em>'+eur(waitA)+'</em></span><span>En retard <em>'+eur(lateA)+'</em></span></div></div>';
+  }).join("");
+
+  function show(v){
+    document.querySelectorAll("[data-panel]").forEach(function(p){p.hidden=p.dataset.panel!==v});
+    document.querySelectorAll(".menu button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.view===v))});
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll("[data-view]").forEach(function(b){b.addEventListener("click",function(){show(b.dataset.view)})});
+  document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){f.status="late";renderChips();renderRows();show(b.dataset.go)})});
+
+  var f={q:"",sale:"",status:"all",sort:"late",dir:-1,sel:"B-2609-031"};
+  var CH=[["all","Tous"],["late","En retard"],["md","Mise en demeure"],["promise","Promesses"],["paid","Réglés"]];
+  var chips=document.getElementById("chips");
+  function renderChips(){chips.innerHTML="";CH.forEach(function(c){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=c[1];b.setAttribute("aria-pressed",String(f.status===c[0]));b.onclick=function(){f.status=c[0];renderChips();renderRows()};chips.appendChild(b)})}
+  function match(d){
+    if(f.q&&(d.who+" "+d.ref+" "+d.lots).toLowerCase().indexOf(f.q)<0)return false;
+    if(f.sale&&d.sale!==f.sale)return false;
+    if(f.status==="late")return d.late>3&&d.st!=="paid";
+    if(f.status!=="all")return d.st===f.status;
+    return true;
+  }
+  function renderRows(){
+    var rows=data.filter(match).sort(function(a,b){var x=a[f.sort],y=b[f.sort];return (x>y?1:x<y?-1:0)*f.dir});
+    document.getElementById("rows").innerHTML=rows.map(function(d){var s=ST[d.st];return '<tr data-ref="'+d.ref+'" class="'+(f.sel===d.ref?"sel":"")+'"><td class="who"><b>'+d.who+'</b><small>'+d.act+'</small></td><td class="nowrap">'+d.ref+'<small style="display:block;color:var(--muted);font-size:12px">'+d.lots+' · '+d.sale+'</small></td><td class="nowrap">'+d.dueTxt+'</td><td class="num">'+(d.late&&d.st!=="paid"?d.late+" j":"–")+'</td><td class="num"><b>'+eur(d.amt)+'</b></td><td><span class="pill '+s[1]+'">'+s[0]+'</span></td><td>'+s[2]+'</td></tr>'}).join("")||'<tr><td colspan="7">Aucun bordereau ne correspond à ces filtres.</td></tr>';
+    document.getElementById("count").textContent=rows.length+" bordereau"+(rows.length>1?"x":"")+" · "+eur(rows.reduce(function(a,d){return a+d.amt},0));
+    document.querySelectorAll("#rows tr[data-ref]").forEach(function(tr){tr.onclick=function(){f.sel=tr.dataset.ref;renderRows();renderDetail()}});
+  }
+  document.getElementById("q").addEventListener("input",function(e){f.q=e.target.value.toLowerCase();renderRows()});
+  document.getElementById("sale").addEventListener("change",function(e){f.sale=e.target.value;renderRows()});
+  document.querySelectorAll("th[data-sort]").forEach(function(th){th.onclick=function(){var k=th.dataset.sort;f.dir=f.sort===k?-f.dir:-1;f.sort=k;renderRows()}});
+  document.getElementById("exportBtn").addEventListener("click",function(){this.textContent="Export prêt (démo)"});
+
+  function renderDetail(){
+    var d=data.filter(function(x){return x.ref===f.sel})[0],el=document.getElementById("detail");
+    if(!d){el.innerHTML='<h2>Historique</h2><p class="hint">Sélectionnez un bordereau.</p>';return}
+    var steps=[["Adjudication","vente du "+d.sale+", "+d.lots,"var(--gold)"],["Bordereau envoyé","e-mail avec lien de paiement, le soir de la vente","var(--info)"]];
+    if(d.late>=3||d.st==="paid")steps.push(["Rappel J+3 envoyé","e-mail courtois, ouvert","var(--warn)"]);
+    if(d.late>=7)steps.push(["Relance J+7 envoyée","e-mail et SMS, rappel des frais de gardiennage","var(--warn)"]);
+    if(d.late>=10)steps.push(["Relance ferme J+10 envoyée","e-mail ferme, copie au commissaire-priseur","var(--late)"]);
+    if(d.st==="md")steps.push(["Mise en demeure préparée","attend votre validation","var(--late)"]);
+    if(d.st==="paid")steps.push(["Paiement reçu","rapproché, reversement vendeur débloqué","var(--ok)"]);
+    if(d.st==="promise")steps.push(["Promesse de paiement","« virement lundi », répondu au rappel","var(--info)"]);
+    var next=d.st==="paid"?"":'<b>Prochain message</b><div class="mail">Objet : Votre bordereau '+d.ref+', Maison Vergeau\n\nBonjour,\n\nSauf erreur de notre part, le bordereau '+d.ref+' ('+d.lots+', vente du '+d.sale+') d\'un montant de '+eur(d.amt)+' reste à régler. Vous pouvez le payer en ligne en un clic : [lien de paiement]\n\nVos lots vous attendent au 18 rue Emmanuel Philibert dès réception du règlement.\n\nBien cordialement,\nMaison Vergeau</div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="sendNow">Envoyer maintenant</button><button class="btn ghost" id="pause">Suspendre les relances</button></div>';
+    el.innerHTML='<div><h2 style="margin:0">'+d.who+'</h2><p class="sub">'+d.ref+' · '+eur(d.amt)+' · '+(d.late?d.late+" jours depuis la vente":"vente d\'hier")+'</p></div><div class="timeline">'+steps.map(function(s){return '<div class="step" style="--c:'+s[2]+'"><b>'+s[0]+'</b><small>'+s[1]+'</small></div>'}).join("")+'</div>'+next;
+    var sn=document.getElementById("sendNow"),pa=document.getElementById("pause");
+    if(sn)sn.onclick=function(){sn.textContent="Envoyé (démo)";sn.disabled=true};
+    if(pa)pa.onclick=function(){pa.textContent="Relances suspendues (démo)";pa.disabled=true};
+  }
+
+  var RULES=[
+    ["J0","Bordereau le soir de la vente","E-mail avec le détail des lots, les frais et un lien de paiement par carte ou virement.",true],
+    ["J+3","Rappel courtois","« Sauf erreur de notre part », avec le lien de paiement.",true],
+    ["J+7","Deuxième relance","E-mail et SMS, rappel des frais de gardiennage à venir.",true],
+    ["J+10","Relance ferme","E-mail ferme, copie au commissaire-priseur.",true],
+    ["J+15","Mise en demeure","Préparée automatiquement, envoyée seulement après votre validation.",false],
+    ["Auto","Arrêt sur paiement","Dès qu'un paiement est rapproché, les relances s'arrêtent et le vendeur est prévenu.",true]
+  ];
+  var R=document.getElementById("rules");
+  R.innerHTML=RULES.map(function(r){return '<div class="rule"><span class="when">'+r[0]+'</span><div><b>'+r[1]+'</b><p>'+r[2]+'</p></div><button class="switch" role="switch" aria-checked="'+r[3]+'" aria-label="'+r[1]+'"></button></div>'}).join("");
+  R.querySelectorAll(".switch").forEach(function(s){s.onclick=function(){s.setAttribute("aria-checked",String(s.getAttribute("aria-checked")!=="true"))}});
+
+  // [acheteur, contact, tél, dû, retard max, ventes suivies, solvabilité, note, ton]
+  var REC=[
+    ["S. Kovalenko","Enchérisseur au téléphone","+377 •• •• 41",3750,15,1,"red","Premier achat, ne répond plus depuis l'adjudication",5],
+    ["J. Whitfield","Acheteur live","+44 •• •• 07",4800,15,2,"yellow","A payé la vente précédente avec 12 jours de retard",3],
+    ["M. Daniel Ortiz","Particulier","06 •• •• •• 58",1180,15,3,"yellow","Lot 112 non retiré, frais de gardiennage à appliquer",3],
+    ["Brocante du Port","Marchand · Villefranche","04 93 •• •• 20",2140,15,6,"green","Client régulier, paie toujours en fin de mois",2],
+    ["Mme Claire Fabre","Acheteuse live","06 •• •• •• 14",890,15,2,"green","A promis un virement lundi",1]
+  ];
+  var SOLV={green:["s-green","Fiable"],yellow:["s-yellow","À surveiller"],red:["s-red","Risque"]};
+  var TONES=[null,
+    ["Léger","Petit rappel : votre bordereau de {amt} est disponible au paiement en ligne. Si le règlement est déjà parti, ne tenez pas compte de ce message. Vos lots vous attendent !"],
+    ["Courtois","Sauf erreur de notre part, votre bordereau de {amt} reste à régler. Vous pouvez le payer en un clic via le lien ci-dessous. Merci par avance."],
+    ["Direct","Nous n'avons pas reçu le règlement de votre bordereau de {amt}, adjugé il y a {late} jours. Merci de régulariser sous 5 jours ; des frais de gardiennage s'appliqueront ensuite."],
+    ["Ferme","Malgré nos relances, votre bordereau de {amt} reste impayé depuis {late} jours. Sans règlement sous 72 heures, nous appliquerons les frais de gardiennage prévus aux conditions de vente."],
+    ["Rigide","Mise en demeure : nous vous demandons de régler la somme de {amt} sous 8 jours. À défaut, nous engagerons les recours prévus par nos conditions générales de vente, frais à votre charge."]
+  ];
+  var TCOL=["","#3a6ea5","#1f8a5b","#c98a12","#d9662f","#c2412d"];
+  var openTone=0;
+  document.getElementById("recCount").textContent=REC.length;
+  function meter(n){var s="";for(var i=1;i<=5;i++)s+='<span style="background:'+(i<=n?TCOL[n]:"#e6e1da")+'"></span>';return s}
+  function msg(r){return TONES[r[8]][1].replace("{amt}",eur(r[3])).replace("{late}",r[4])}
+  function toneBtn(r){return '<b style="color:'+TCOL[r[8]]+'">'+r[8]+'/5</b><span class="meter">'+meter(r[8])+'</span><span>'+TONES[r[8]][0]+'</span>'}
+  function renderRec(){
+    var html="";
+    REC.forEach(function(r,i){
+      var s=SOLV[r[6]];
+      html+='<tr><td class="who"><b>'+r[0]+'</b><small>'+r[7]+'</small><span class="ct">'+r[1]+' · '+r[2]+'</span></td><td class="num"><b>'+eur(r[3])+'</b></td><td class="num">'+r[4]+' j</td><td class="num">'+r[5]+'</td>'+
+        '<td><span class="solv '+s[0]+'"><i></i><span>'+s[1]+'</span></span></td>'+
+        '<td><button type="button" class="tone" data-i="'+i+'" aria-expanded="'+(openTone===i)+'">'+toneBtn(r)+'</button></td></tr>';
+      if(openTone===i){
+        html+='<tr class="tone-panel"><td colspan="6"><div class="tp"><div><label for="tr'+i+'"><b>Ton des relances pour '+r[0]+'</b></label><input id="tr'+i+'" type="range" min="1" max="5" step="1" value="'+r[8]+'" data-i="'+i+'"><div class="scale"><span>1 · Léger</span><span>3 · Direct</span><span>5 · Rigide</span></div><p class="hint" style="margin-top:10px">Conseil : '+(r[6]==="green"?"acheteur fiable, un ton léger garde un bon client.":r[6]==="yellow"?"à surveiller, un ton direct évite que le lot reste en dépôt.":"acheteur à risque, passez vite à un ton ferme pour pouvoir remettre le lot en vente.")+'</p></div><div><b>Aperçu du prochain e-mail</b><div class="mail" id="pv'+i+'">'+msg(r)+'</div></div></div></td></tr>';
+      }
+    });
+    document.getElementById("recRows").innerHTML=html;
+    document.querySelectorAll("#recRows .tone").forEach(function(b){b.onclick=function(){var i=+b.dataset.i;openTone=openTone===i?null:i;renderRec()}});
+    document.querySelectorAll("#recRows input[type=range]").forEach(function(rg){rg.oninput=function(){var i=+rg.dataset.i;REC[i][8]=+rg.value;rg.closest("tr").previousElementSibling.querySelector(".tone").innerHTML=toneBtn(REC[i]);document.getElementById("pv"+i).textContent=msg(REC[i])}});
+  }
+  renderRec();
+
+  var VEND=[
+    ["Succession L.","26 sept.",14200,14200,"ok","Versé le 6 oct."],
+    ["M. et Mme Giordano","26 sept.",9850,6050,"wait","Bloqué : bordereau B-2609-031"],
+    ["Collection privée, Cimiez","26 sept.",21300,17150,"wait","Bloqué : 2 bordereaux en retard"],
+    ["Mme Anne Roux","10 oct.",5400,1900,"soon","Prévu dès encaissement complet"]
+  ];
+  document.getElementById("vendRows").innerHTML=VEND.map(function(v){var p=v[4]==="ok"?"p-ok":v[4]==="wait"?"p-late":"p-info";return '<tr><td class="who"><b>'+v[0]+'</b></td><td class="nowrap">Vente du '+v[1]+'</td><td class="num">'+eur(v[2])+'</td><td class="num">'+eur(v[3])+'</td><td><span class="pill '+p+'">'+v[5]+'</span></td></tr>'}).join("");
+  document.getElementById("k-vend").textContent=eur(VEND.filter(function(v){return v[4]==="wait"}).reduce(function(a,v){return a+v[2]-v[3]},0));
+
+  renderChips();renderRows();renderDetail();
+})();
+</script>
+</body>
+</html>
