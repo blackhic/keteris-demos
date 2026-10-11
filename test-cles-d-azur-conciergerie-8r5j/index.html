@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Planning Clés d'Azur Conciergerie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#f3f6f6;--panel:#fff;--ink:#1b2420;--muted:#66716c;--line:#e3e6e1;--brand:#0f4c5c;--brand-soft:#dcecef;--side-on:#d3e8ec;--side-mut:#9bc3cc;
+--ok:#1f8a5b;--warn:#c98a12;--late:#c2412d;--info:#3a6ea5;
+--display:"Manrope",ui-sans-serif,system-ui,sans-serif;--body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--body)}
+button,input,select{font:inherit}
+.demo-bar{background:var(--ink);color:#d7dfdb;text-align:center;font-size:13px;padding:8px 16px}.demo-bar b{color:#fff}
+.app{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 36px)}
+aside{background:var(--brand);color:var(--side-on);padding:22px 16px;display:flex;flex-direction:column;gap:22px}
+.brand{font:800 18px var(--display);color:#fff;line-height:1.2}.brand small{display:block;font:500 12px var(--body);color:var(--side-mut);margin-top:4px}
+.menu{display:grid;gap:4px}
+.menu button{background:none;border:0;color:var(--side-on);text-align:left;padding:10px 12px;border-radius:10px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.menu button[aria-selected="true"]{background:rgba(255,255,255,.14);color:#fff;font-weight:600}.menu button:hover{background:rgba(255,255,255,.08)}
+.badge{align-self:center;background:#fff;color:var(--brand);font:600 11px var(--mono);border-radius:999px;padding:1px 7px}
+.side-foot{margin-top:auto;font-size:12px;color:var(--side-mut)}
+main{padding:24px clamp(16px,3vw,32px);min-width:0;display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-content:start}
+main>section,.card{min-width:0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+h1{font:800 26px var(--display);margin:0}.sub{color:var(--muted);margin:2px 0 0}
+.btn{border:0;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:600;background:var(--brand);color:#fff}
+.btn.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,.menu button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpi span{color:var(--muted);font-size:13px}.kpi b{display:block;font:800 26px var(--display);font-variant-numeric:tabular-nums;margin-top:4px}
+.kpi em{font-style:normal;font-size:12px;font-weight:600}.up{color:var(--ok)}.down{color:var(--late)}
+.grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0}
+.card h2{font:700 16px var(--display);margin:0 0 14px}
+.aging{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:90px 1fr 90px;gap:10px;align-items:center;font-size:13px}
+.track{height:12px;background:#eef0ec;border-radius:6px;overflow:hidden}.fill{height:100%;border-radius:6px}
+.bar b{text-align:right;font:500 13px var(--mono)}
+.feed{display:grid;gap:12px;font-size:13px}.feed div{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.dot{width:8px;height:8px;border-radius:50%;margin-top:6px}.feed small{color:var(--muted);display:block}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.filters input,.filters select{border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--panel);min-width:0}.filters input{flex:1 1 220px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:760px}
+th{text-align:left;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap}
+td{white-space:nowrap;padding:12px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr{cursor:pointer}tbody tr:hover{background:#f8faf7}tbody tr.sel{background:var(--brand-soft)}
+.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:13px}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.p-ok{background:#e1f3ea;color:var(--ok)}.p-warn{background:#fbefd5;color:#93640a}.p-late{background:#fbe3de;color:var(--late)}.p-info{background:#e2ebf5;color:var(--info)}
+.client b{display:block}.client small{color:var(--muted)}
+.detail{display:grid;gap:14px;align-content:start;position:sticky;top:16px}
+.timeline{display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.step{position:relative;padding:0 0 16px 18px}
+.step::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--c,#cfd5d0);border:2px solid var(--panel)}
+.step b{display:block}.step small{color:var(--muted)}
+.mail{background:#f6f7f4;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;white-space:pre-line}
+.rules{display:grid;gap:12px}
+.rule{display:grid;grid-template-columns:70px 1fr auto;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.rule .when{font:800 20px var(--display);color:var(--brand)}.rule p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.switch{position:relative;width:44px;height:24px;border-radius:999px;border:0;background:#cfd5d0;cursor:pointer}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.switch[aria-checked="true"]{background:var(--ok)}.switch[aria-checked="true"]::after{left:23px}
+.hint{font-size:12px;color:var(--muted);margin:0}
+.solv{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:8px 12px;font-weight:700;font-size:13px;min-width:150px}
+.solv i{width:12px;height:12px;border-radius:50%;flex:none}
+.s-green{background:#dcf2e6;color:#14663f}.s-green i{background:#1f8a5b}
+.s-yellow{background:#fbefcf;color:#7a5408}.s-yellow i{background:#e0a21a}
+.s-red{background:#fbdcd6;color:#9c2c1b}.s-red i{background:#c2412d}
+.tone{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:8px 12px;cursor:pointer;min-width:160px}
+.tone b{font:800 18px var(--display);font-variant-numeric:tabular-nums}
+.meter{display:flex;gap:3px}.meter span{width:9px;height:14px;border-radius:3px;background:#e3e6e1}
+.tone-panel td{background:#f8faf7;white-space:normal;padding:18px}
+.tp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px}
+.tp input[type=range]{width:100%;accent-color:var(--brand);height:28px}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.tp .mail{background:#fff}
+.rec-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:12px}
+.rec-legend span{display:inline-flex;align-items:center;gap:6px}.rec-legend i{width:10px;height:10px;border-radius:50%}
+.plan{display:grid;gap:4px;min-width:680px}
+.plan .hd,.plan .rw{display:grid;grid-template-columns:130px repeat(14,1fr);gap:4px;align-items:stretch}
+.plan .hd span{font:500 11px var(--mono);color:var(--muted);text-align:center;padding:4px 0}
+.plan .hd span.today{color:var(--brand);font-weight:700}
+.plan .lg{font-weight:600;padding:8px 6px 8px 0;display:flex;flex-direction:column;justify-content:center;line-height:1.25}.plan .lg small{color:var(--muted);font-weight:400;font-size:12px}
+.cell{border:0;background:#f0f2ee;border-radius:6px;min-height:40px;font:600 11px var(--body);cursor:default;color:#fff;padding:0}
+.cell.st{background:var(--brand);cursor:pointer}.cell.st{background:#c2412d}.cell.st.ab{background:#3a6ea5}.cell.st.bk{background:#6a4fa3}.cell.st.di{background:#1f8a5b}
+.cell.first{border-top-left-radius:12px;border-bottom-left-radius:12px}.cell.last{border-top-right-radius:12px;border-bottom-right-radius:12px}
+.cell.cl{background:#fbefd5;color:#93640a;cursor:pointer}.cell.cl.todo{background:#fbe3de;color:#9c2c1b}
+.cell.sel{outline:3px solid var(--ink);outline-offset:1px}
+.keys{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:12px}.keys i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ctl select{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fff}
+.dl-ok{color:var(--ok);font-weight:700}.dl-warn{color:#93640a;font-weight:700}.dl-late{color:var(--late);font-weight:700}
+.msgbox{background:#f6f7f4;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;white-space:pre-line}
+[hidden]{display:none!important}
+.listgrid{grid-template-columns:minmax(0,2fr) minmax(280px,1fr)}
+@media(max-width:1180px){.listgrid{grid-template-columns:1fr}.detail{position:static}}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
+@media(max-width:760px){.tp{grid-template-columns:1fr}.app{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap;align-items:center;padding:14px 16px}.menu{display:flex;gap:4px;flex-wrap:wrap}.side-foot{display:none}.rule{grid-template-columns:50px 1fr auto}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris</b> à à Clés d'Azur Conciergerie. Ce n'est pas votre outil officiel : les chiffres, noms de clients et données affichés sont fictifs, à remplacer par les vôtres.</div>
+<div class="app"><aside><div class="brand">Clés d'Azur<br>Conciergerie<small>Antibes · 24 logements</small></div><nav class="menu" role="tablist" aria-label="Sections"><button role="tab" aria-selected="true" data-view="dash">Aujourd'hui</button><button role="tab" aria-selected="false" data-view="plan">Planning arrivées et ménage <span class="badge" id="toAssign">0</span></button><button role="tab" aria-selected="false" data-view="msg">Messages voyageurs <span class="badge" id="msgCount">0</span></button><button role="tab" aria-selected="false" data-view="rules">Règles d'envoi</button></nav><div class="side-foot">Synchronisé avec Airbnb et Booking il y a 3 min</div></aside>
+<main>
+<section data-panel="dash">
+<div class="top"><div><h1>Bonjour Camille</h1><p class="sub">Dimanche 11 octobre 2026 · 24 logements gérés à Antibes et alentours.</p></div><button class="btn" data-go="plan">Ouvrir le planning</button></div>
+<div class="kpis" style="margin-top:20px">
+<div class="kpi"><span>Arrivées aujourd'hui</span><b id="k-arr">0</b><em class="up">codes envoyés à 8 h</em></div>
+<div class="kpi"><span>Départs aujourd'hui</span><b id="k-dep">0</b><em class="up">ménages affectés</em></div>
+<div class="kpi"><span>Ménages sans agent (14 j)</span><b id="k-todo">0</b><em class="down">à affecter avant J−2</em></div>
+<div class="kpi"><span>Messages envoyés ce mois-ci</span><b>312</b><em class="up">≈ 26 h gagnées, à 5 min par message</em></div></div>
+<div class="grid2" style="margin-top:14px">
+<div class="card"><h2>Aujourd'hui</h2><div class="feed" id="today"></div></div>
+<div class="card"><h2>Dernières actions automatiques</h2><div class="feed">
+<div><span class="dot" style="background:var(--ok)"></span><span><b>Code d'accès envoyé à Famille Dubois</b><small>Villa Les Pins · aujourd'hui 8:00</small></span></div>
+<div><span class="dot" style="background:var(--info)"></span><span><b>Infos d'arrivée envoyées à Tom Schmidt</b><small>T2 Juan-les-Pins · en anglais · hier 9:00</small></span></div>
+<div><span class="dot" style="background:var(--warn)"></span><span><b>Alerte : ménage sans agent le 20 oct.</b><small>Appartement Port Vauban · J−9</small></span></div>
+<div><span class="dot" style="background:var(--ok)"></span><span><b>SMS de ménage envoyé à Fatima</b><small>3 logements demain · hier 18:00</small></span></div></div></div></div>
+</section>
+<section data-panel="plan" hidden>
+<div class="top"><div><h1>Planning des arrivées et du ménage</h1><p class="sub">Secteur Antibes : 8 logements affichés sur 24. Cliquez sur un séjour ou un ménage pour le détail.</p></div></div>
+<div class="grid2 listgrid" style="margin-top:20px"><div class="card">
+<div class="keys"><span><i style="background:#c2412d"></i>Airbnb</span><span><i style="background:#3a6ea5"></i>Booking</span><span><i style="background:#1f8a5b"></i>Direct</span><span><i style="background:#fbefd5;border:1px solid #c98a12"></i>Ménage affecté (initiale de l'agent)</span><span><i style="background:#fbe3de;border:1px solid #c2412d"></i>Ménage à affecter</span></div>
+<div class="tbl"><div class="plan" id="plan"></div></div></div>
+<div class="card detail" id="detail"></div></div></section>
+<section data-panel="msg" hidden>
+<div class="top"><div><h1>Messages voyageurs</h1><p class="sub">Chaque réservation déclenche ses messages, dans la langue du voyageur. Cliquez sur une ligne pour voir le texte.</p></div></div>
+<div class="grid2 listgrid" style="margin-top:20px"><div class="card"><div class="chips" id="chips" style="margin-bottom:12px"></div><div class="tbl"><table><thead><tr><th>Voyageur</th><th>Logement</th><th>Message</th><th>Prévu le</th><th>Langue</th><th>Statut</th></tr></thead><tbody id="rows"></tbody></table></div><p class="hint" id="count" style="margin-top:10px"></p></div>
+<div class="card detail" id="mdetail"></div></div></section>
+<section data-panel="rules" hidden>
+<div class="top"><div><h1>Règles d'envoi</h1><p class="sub">Vous décidez une fois, le système applique à chaque réservation.</p></div></div>
+<div class="rules" id="rules" style="margin-top:20px"></div>
+<p class="hint">Les messages partent depuis votre nom, via Airbnb, Booking ou e-mail selon la plateforme, et s'arrêtent si le voyageur annule.</p></section></main></div>
+<script>
+(function(){
+var L=["Villa Les Pins","Studio Vieil Antibes","T2 Juan-les-Pins","Appartement Port Vauban","Villa Fiorentina","T3 La Garoupe","Studio rue de la République","Loft Cap d'Antibes"];
+var LS=["Cap d'Antibes · 5 pers.","Vieil Antibes · 2 pers.","Juan-les-Pins · 4 pers.","Port Vauban · 4 pers.","Biot · 8 pers.","La Garoupe · 4 pers.","Antibes centre · 2 pers.","Cap d'Antibes · 2 pers."];
+var S=[[0,0,4,"Famille Dubois","Airbnb",5,"Fatima"],[0,5,9,"M. et Mme Rossi","Booking",2,null],[0,10,14,"Hannah Becker","Airbnb",4,null],
+[1,0,2,"Lucas Martin","Direct",2,"Karim"],[1,3,6,"Emma Johnson","Airbnb",2,"Karim"],[1,7,12,"Giulia Conti","Booking",2,null],
+[2,0,5,"Famille Lefèvre","Booking",4,"Fatima"],[2,6,8,"Tom Schmidt","Airbnb",3,"Karim"],[2,9,13,"Sofia Garcia","Airbnb",2,null],
+[3,-2,0,"Famille Garnier","Booking",4,"Karim"],[3,1,4,"Paul Bernard","Direct",2,"Karim"],[3,5,11,"Famille Okafor","Airbnb",4,null],
+[4,0,3,"Anna Kowalski","Booking",6,"Fatima"],[4,4,10,"Groupe Rivière","Direct",8,null],
+[5,-2,0,"Chloé Bertrand","Airbnb",3,"Fatima"],[5,2,6,"Marc Leroy","Booking",3,"Fatima"],[5,7,10,"Chloé Petit","Airbnb",2,null],
+[6,0,1,"Julie Faure","Airbnb",2,"Karim"],[6,2,5,"Daniel Smith","Airbnb",2,"Karim"],[6,6,9,"Laura Bianchi","Booking",2,"Fatima"],
+[7,0,4,"Peter Hall","Airbnb",2,"Karim"],[7,5,8,"Marta Silva","Booking",2,null],[7,9,13,"Nils Larsen","Airbnb",2,"Fatima"]
+].map(function(s,i){return{id:i,l:s[0],s:s[1],e:s[2],g:s[3],p:s[4],n:s[5],a:s[6]}});
+var LANG={"Hannah Becker":"EN","Emma Johnson":"EN","Tom Schmidt":"EN","Giulia Conti":"IT","Sofia Garcia":"ES","Peter Hall":"EN","Marta Silva":"PT","Nils Larsen":"EN","Anna Kowalski":"EN","Laura Bianchi":"IT"};
+function dt(i){return new Date(2026,9,11+i)}
+function fd(i){return dt(i).toLocaleDateString("fr-FR",{day:"numeric",month:"short"})}
+function wd(i){return dt(i).toLocaleDateString("fr-FR",{weekday:"short"}).replace(".","")}
+function show(v){document.querySelectorAll("[data-panel]").forEach(function(p){p.hidden=p.dataset.panel!==v});document.querySelectorAll(".menu button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.view===v))});window.scrollTo(0,0)}
+document.querySelectorAll("[data-view]").forEach(function(b){b.addEventListener("click",function(){show(b.dataset.view)})});
+document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){show(b.dataset.go)})});
+function todo(){return S.filter(function(s){return s.e>=0&&s.e<14&&!s.a}).length}
+function kpis(){
+ document.getElementById("k-arr").textContent=S.filter(function(s){return s.s===0}).length;
+ document.getElementById("k-dep").textContent=S.filter(function(s){return s.e===0}).length;
+ document.getElementById("k-todo").textContent=todo();document.getElementById("toAssign").textContent=todo();
+ var h="";S.filter(function(s){return s.s===0||s.e===0}).forEach(function(s){h+='<div><span class="dot" style="background:'+(s.s===0?"var(--info)":"var(--warn)")+'"></span><span><b>'+(s.s===0?"Arrivée · ":"Départ · ")+s.g+'</b><small>'+L[s.l]+' · '+(s.s===0?s.n+" voyageurs, arrivée vers 16 h":"ménage : "+(s.a||"à affecter"))+'</small></span></div>'});
+ document.getElementById("today").innerHTML=h}
+var sel=null;
+function plan(){
+ var h='<div class="hd"><span></span>';for(var i=0;i<14;i++)h+='<span class="'+(i===0?"today":"")+'">'+wd(i)+'<br>'+dt(i).getDate()+'</span>';h+='</div>';
+ L.forEach(function(n,li){
+  h+='<div class="rw"><div class="lg">'+n+'<small>'+LS[li]+'</small></div>';
+  for(var d=0;d<14;d++){
+   var st=S.filter(function(s){return s.l===li&&d>=s.s&&d<s.e})[0],dep=S.filter(function(s){return s.l===li&&s.e===d})[0];
+   if(st){var cls=st.p==="Airbnb"?" ai":st.p==="Booking"?" ab":" di";h+='<button class="cell st'+cls+(d===Math.max(st.s,0)?" first":"")+(d===st.e-1?" last":"")+(sel===st.id?" sel":"")+'" data-id="'+st.id+'" aria-label="'+st.g+', '+L[li]+', '+st.p+'">'+(d===Math.max(st.s,0)?'<span style="position:absolute;left:6px;top:50%;transform:translateY(-50%);white-space:nowrap">'+st.g.split(" ").slice(-1)[0]+'</span>':"")+'</button>'}
+   else if(dep)h+='<button class="cell cl'+(dep.a?"":" todo")+(sel===dep.id?" sel":"")+'" data-id="'+dep.id+'" aria-label="Ménage '+L[li]+'">'+(dep.a?dep.a.slice(0,1)+".":"?")+'</button>';
+   else h+='<span class="cell"></span>'}
+  h+='</div>'});
+ var el=document.getElementById("plan");el.innerHTML=h;
+ el.querySelectorAll("button.cell").forEach(function(b){b.onclick=function(){sel=+b.dataset.id;plan();detail()}});
+ el.querySelectorAll(".cell.st.first").forEach(function(b){b.style.position="relative";b.style.zIndex=2});
+}
+function msgFor(s){var f=s.g.split(" ").slice(-1)[0];return "Bonjour "+f+",\n\nBienvenue à "+L[s.l]+" ! Voici votre code de boîte à clés : 4827. L'arrivée est possible dès 16 h, les consignes de la maison sont dans le guide ci-joint.\n\nBon séjour,\nClés d'Azur Conciergerie"}
+function detail(){
+ var s=S.filter(function(x){return x.id===sel})[0],el=document.getElementById("detail");
+ if(!s){el.innerHTML='<h2>Détail</h2><p class="hint">Sélectionnez un séjour ou un ménage dans le planning pour voir les messages prévus et affecter un agent.</p>';return}
+ var nights=s.e-s.s;
+ el.innerHTML='<div><h2 style="margin:0">'+s.g+'</h2><p class="sub">'+L[s.l]+' · '+s.p+' · '+s.n+' voyageurs · '+nights+' nuits</p></div>'+
+ '<div class="timeline"><div class="step" style="--c:var(--info)"><b>Arrivée le '+fd(s.s)+'</b><small>code boîte à clés envoyé à 8 h</small></div><div class="step" style="--c:var(--warn)"><b>Départ le '+fd(s.e)+'</b><small>avant 11 h</small></div><div class="step" style="--c:'+(s.a?"var(--ok)":"var(--late)")+'"><b>Ménage : '+(s.a||"à affecter")+'</b><small>'+(s.a?"SMS de rappel la veille à 18 h":"alerte envoyée si rien n'est affecté à J−2")+'</small></div></div>'+
+ '<div class="ctl"><label for="ag"><b>Agent de ménage</b></label><select id="ag"><option value="">À affecter</option><option>Fatima</option><option>Karim</option><option>Sandra</option></select></div>'+
+ '<b>Prochain message</b><div class="msgbox">'+msgFor(s)+'</div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="send">Envoyer maintenant</button></div>';
+ var ag=document.getElementById("ag");ag.value=s.a||"";ag.onchange=function(){s.a=ag.value||null;kpis();plan();detail()};
+ var b=document.getElementById("send");b.onclick=function(){b.textContent="Envoyé (démo)";b.disabled=true};
+}
+// Messages
+var M=[];
+S.filter(function(s){return s.s>=0&&s.s<=8}).forEach(function(s){
+ M.push([s,"Infos d'arrivée (J−3)",s.s-3,s.s-3<=0?"sent":"sched"]);M.push([s,"Code boîte à clés (jour J, 8 h)",s.s,s.s===0?"sent":"sched"]);
+ if(s.n>=8)M.push([s,"Règlement intérieur groupe",s.s-3,"valid"]);
+});
+M.sort(function(a,b){return a[2]-b[2]});
+var MS={sent:["Envoyé","p-ok"],sched:["Programmé","p-info"],valid:["À valider","p-warn"]};
+var mf={status:"all",sel:null},MC=[["all","Tous"],["sent","Envoyés"],["sched","Programmés"],["valid","À valider"]];
+function chips(){var c=document.getElementById("chips");c.innerHTML="";MC.forEach(function(x){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=x[1];b.setAttribute("aria-pressed",String(mf.status===x[0]));b.onclick=function(){mf.status=x[0];chips();rows()};c.appendChild(b)})}
+function rows(){
+ var r=M.filter(function(m){return mf.status==="all"||m[3]===mf.status});
+ document.getElementById("rows").innerHTML=r.map(function(m,i){var s=m[0],st=MS[m[3]];return '<tr data-k="'+M.indexOf(m)+'" class="'+(mf.sel===M.indexOf(m)?"sel":"")+'"><td class="client"><b>'+s.g+'</b><small>'+s.p+' · '+s.n+' voyageurs</small></td><td>'+L[s.l]+'</td><td>'+m[1]+'</td><td>'+(m[2]<=0?"Déjà envoyé":fd(m[2]))+'</td><td>'+(LANG[s.g]||"FR")+'</td><td><span class="pill '+st[1]+'">'+st[0]+'</span></td></tr>'}).join("");
+ document.getElementById("count").textContent=r.length+" message"+(r.length>1?"s":"");
+ document.querySelectorAll("#rows tr[data-k]").forEach(function(tr){tr.onclick=function(){mf.sel=+tr.dataset.k;rows();mdetail()}});
+}
+function mdetail(){
+ var m=M[mf.sel],el=document.getElementById("mdetail");
+ if(!m){el.innerHTML='<h2>Aperçu du message</h2><p class="hint">Sélectionnez une ligne pour voir le texte envoyé au voyageur.</p>';return}
+ var s=m[0],lang=LANG[s.g]||"FR",txt=lang==="FR"?msgFor(s):"Hello "+s.g.split(" ")[0]+",\n\nWelcome to "+L[s.l]+"! Your key box code is 4827. Check-in is possible from 4 pm; house rules are in the attached guide.\n\nEnjoy your stay,\nClés d'Azur Conciergerie";
+ el.innerHTML='<div><h2 style="margin:0">'+m[1]+'</h2><p class="sub">'+s.g+' · '+L[s.l]+' · langue détectée : '+lang+'</p></div><div class="msgbox">'+txt+'</div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="ms">'+(m[3]==="valid"?"Valider et envoyer":"Envoyer maintenant")+'</button><button class="btn ghost" id="mp">Suspendre</button></div>';
+ var a=document.getElementById("ms"),b=document.getElementById("mp");a.onclick=function(){a.textContent="Envoyé (démo)";a.disabled=true};b.onclick=function(){b.textContent="Suspendu (démo)";b.disabled=true};
+}
+var RULES=[["Auto","Confirmation immédiate","Message de bienvenue envoyé dès qu'une réservation arrive d'Airbnb, de Booking ou en direct.",true],["J−3","Infos d'arrivée","Adresse, parking, horaires et règlement intérieur, dans la langue du voyageur.",true],["J 8 h","Code boîte à clés","Code unique envoyé le matin de l'arrivée, après contrôle du ménage terminé.",true],["J−1","Rappel à l'agent de ménage","SMS la veille à 18 h avec l'adresse, l'heure de sortie et les consignes.",true],["J−2","Alerte ménage non affecté","Vous êtes prévenue si aucun agent n'est affecté 48 h avant un départ.",true],["J+1","Demande d'avis","Message de remerciement et lien d'avis, envoyé après le contrôle de sortie.",false]];
+var R=document.getElementById("rules");
+R.innerHTML=RULES.map(function(r,i){return '<div class="rule"><span class="when">'+r[0]+'</span><div><b>'+r[1]+'</b><p>'+r[2]+'</p></div><button class="switch" role="switch" aria-checked="'+r[3]+'" aria-label="'+r[1]+'"></button></div>'}).join("");
+R.querySelectorAll(".switch").forEach(function(s){s.onclick=function(){s.setAttribute("aria-checked",String(s.getAttribute("aria-checked")!=="true"))}});
+document.getElementById("msgCount").textContent=M.filter(function(m){return m[3]!=="sent"}).length;
+kpis();plan();detail();chips();rows();mdetail();
+})();
+</script>
+</body></html>
