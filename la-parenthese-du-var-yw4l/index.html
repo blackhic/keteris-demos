@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>La Parenthèse du Var · Chambres d'hôtes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout : bastide provençale, pierre et olivier, réservation directe et calcul des commissions */
+:root{
+  --olive:#3f4a2f;      /* olivier sombre */
+  --olive-2:#4d5a39;
+  --stone:#f4eee3;      /* pierre claire */
+  --ink:#2c2a22;
+  --clay:#b8643f;       /* tomette */
+  --clay-d:#9c5233;
+  --lav:#8a7fb0;        /* lavande */
+  --muted:#6c675a;
+  --line:#e2d8c6;
+  --serif:"Lora",Georgia,serif;
+  --body:"Inter",ui-sans-serif,system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--stone);color:var(--ink);font:16px/1.6 var(--body);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);line-height:1.12;margin:0;text-wrap:balance;font-weight:600}
+h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.01em}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 16px var(--body);padding:14px 24px;border-radius:6px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.btn-main{background:var(--clay);color:#fff}
+.btn-main:hover{background:var(--clay-d);transform:translateY(-1px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.5)}
+.demo-bar{background:#1f2418;color:#e2e6d6;font:500 13px/1.45 var(--body);text-align:center;padding:9px 16px}
+.demo-bar b{color:#fff}
+nav{position:sticky;top:0;z-index:10;background:rgba(63,74,47,.95);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:13px}
+.logo{font:italic 600 21px var(--serif);color:#fff;text-decoration:none;white-space:nowrap}
+.logo small{font:500 11px var(--body);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#cfd6bb;margin-left:8px}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+nav ul a{color:#e2e6d6;text-decoration:none;font-weight:500;font-size:15px}
+nav ul a:hover{color:#fff}
+nav .btn{padding:10px 18px;font-size:15px}
+@media(max-width:900px){nav ul{display:none}}
+@media(max-width:420px){.logo small{display:none}.logo{font-size:18px}nav .btn{padding:9px 14px;font-size:14px}}
+.hero{position:relative;color:#fff;background:var(--olive) url("https://images.unsplash.com/photo-1658180952728-8e84083ecb73?auto=format&fit=crop&w=2000&q=80") center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(35,40,25,.9) 0%,rgba(35,40,25,.55) 55%,rgba(35,40,25,.15) 100%)}
+.hero .wrap{position:relative;padding-block:100px 120px;display:grid;gap:24px}
+.hero h1{font-size:clamp(38px,6vw,70px);max-width:14ch}
+.hero h1 em{color:#f1c3a6;font-weight:500}
+.hero p{font-size:19px;max-width:50ch;color:#eef0e4;margin:0}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{background:#fff;border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:24px 18px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0}
+.fact b{display:block;font:600 26px var(--serif);color:var(--olive)}
+.fact span{font-size:14px;color:var(--muted)}
+@media(max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr)}.fact:nth-child(3){border-left:0}.fact{border-top:1px solid var(--line)}}
+section{padding-block:84px}
+section,header{scroll-margin-top:70px}
+.head{display:grid;gap:12px;margin-bottom:38px;max-width:660px}
+.head p{color:var(--muted);margin:0;font-size:17px}
+.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.room{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.room img{aspect-ratio:4/3;object-fit:cover;width:100%;background:#d8cfbd}
+.room .in{padding:20px;display:grid;gap:8px;flex:1}
+.room h3{font-size:22px}
+.room p{margin:0;color:var(--muted);font-size:15px}
+.room .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+.price{font:600 24px var(--serif)}
+.price small{font:500 13px var(--body);color:var(--muted)}
+.tag{font:600 11px var(--body);color:var(--olive);letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:1000px){.rooms{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.rooms{grid-template-columns:1fr}}
+.book{background:var(--olive);color:#fff}
+.book .head p{color:#d3d9c2}
+.book-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;align-items:start}
+.panel{background:var(--olive-2);border-radius:10px;padding:24px;border:1px solid rgba(255,255,255,.1);min-width:0}
+.panel h3{font-size:20px;margin-bottom:14px}
+.roomsel{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
+.rs{background:transparent;border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:8px;padding:10px 12px;text-align:left;cursor:pointer;font:inherit}
+.rs b{display:block;font:600 16px var(--serif)}
+.rs span{font-size:13px;color:#d3d9c2}
+.rs[aria-pressed="true"]{border-color:#f1c3a6;background:rgba(241,195,166,.14)}
+.cal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.cal-head h3{margin:0}
+.legend{display:flex;gap:14px;font-size:12px;color:#d3d9c2}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{margin-bottom:6px;font:600 11px var(--body);color:#b9c1a5;text-align:center;letter-spacing:.08em}
+.day{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;border-radius:6px;padding:9px 2px;text-align:center;cursor:pointer;font:600 16px var(--serif)}
+.day.stay{background:rgba(241,195,166,.3);border-color:#f1c3a6}
+.day.arr{background:#fff;color:var(--olive);border-color:#fff}
+.day:disabled{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+.day.past{text-decoration:none}
+.day.blank{visibility:hidden}
+.nights{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15)}
+.summary{display:grid;gap:12px}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:#e2e6d6}
+.row b{color:#fff;font-weight:600;text-align:right}
+.qty{display:flex;align-items:center;gap:12px}
+.qty button{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:20px;cursor:pointer}
+.qty output{font:600 20px var(--serif);min-width:24px;text-align:center}
+.field{display:grid;gap:6px}
+.field label{font-size:13px;color:#d3d9c2}
+.field input{width:100%;background:#3a4429;border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:6px;padding:11px 12px;font:15px var(--body)}
+.field input:focus{outline:2px solid #f1c3a6;outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.err{color:#ffc9b5;font-size:13px;margin:0}
+.total{border-top:1px solid rgba(255,255,255,.15);padding-top:12px;display:grid;gap:6px}
+.total .row:first-child b{font:600 26px var(--serif)}
+.panel .btn{width:100%;margin-top:4px}
+.note{font-size:13px;color:#c3cab0;margin:0}
+.done{display:grid;gap:10px;text-align:center;padding:12px 0}
+.done b{font:600 22px var(--serif)}
+@media(max-width:860px){.book-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.two{grid-template-columns:1fr}.days,.dow{gap:4px}.day{font-size:14px;padding:8px 0}.panel{padding:18px}.roomsel{grid-template-columns:1fr}}
+.calc{background:#fff}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.card{background:var(--stone);border:1px solid var(--line);border-radius:10px;padding:24px;min-width:0}
+.slider{display:grid;gap:6px;margin-bottom:18px}
+.slider label{display:flex;justify-content:space-between;font-size:15px}
+.slider label b{font:600 18px var(--serif)}
+.slider input{width:100%;accent-color:var(--clay)}
+.big{font:600 clamp(40px,6vw,58px)/1 var(--serif);color:var(--clay)}
+.compare{display:grid;gap:10px;margin-top:18px}
+.cmp{display:grid;grid-template-columns:120px 1fr 90px;gap:10px;align-items:center;font-size:14px}
+.cmp .bar{height:12px;border-radius:6px;background:#e9e1d1;overflow:hidden}
+.cmp .bar i{display:block;height:100%;border-radius:6px}
+.cmp b{text-align:right;font-variant-numeric:tabular-nums}
+.src{font-size:13px;color:var(--muted);margin:14px 0 0}
+@media(max-width:820px){.calc-grid{grid-template-columns:1fr}.cmp{grid-template-columns:100px 1fr 80px}}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story p{color:var(--muted)}
+.story img{border-radius:10px;aspect-ratio:4/3;object-fit:cover;width:100%;background:#d8cfbd}
+.services{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.services span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:14px}
+@media(max-width:820px){.story .wrap{grid-template-columns:1fr;gap:28px}}
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
+.strip img{width:100%;height:260px;object-fit:cover;border-radius:8px;background:#d8cfbd}
+@media(max-width:760px){.strip{grid-template-columns:1fr}.strip img{height:200px}}
+.reviews{background:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{margin:0;padding:24px;border-radius:10px;background:var(--stone);display:grid;gap:12px}
+.rev p{margin:0;font:italic 500 17px/1.5 var(--serif)}
+.rev footer{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.rev-grid{grid-template-columns:1fr}}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font:600 19px var(--serif);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--clay)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin:10px 0 0;max-width:65ch}
+.contact{background:#2f3723;color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.contact p{color:#d3d9c2}
+.c-list{display:grid;gap:14px;font-size:17px;word-break:break-word}
+.c-list span{display:block;font:600 11px var(--body);letter-spacing:.12em;color:#b9c1a5;text-transform:uppercase}
+@media(max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+footer.site-foot{background:#1f2418;color:#b9c1a5;font-size:14px;padding-block:26px}
+footer.site-foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar"><b>Maquette proposée par Keteris à La Parenthèse du Var.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">La Parenthèse du Var<small>Chambres d'hôtes</small></a>
+    <ul>
+      <li><a href="#chambres">Chambres</a></li>
+      <li><a href="#reserver">Réserver</a></li>
+      <li><a href="#direct">Réserver en direct</a></li>
+      <li><a href="#bastide">La bastide</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-main" href="#reserver">Réserver</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#f1c3a6">Chambres d'hôtes · Saint-Antonin-du-Var · à 7 km de Lorgues</span>
+    <h1>Une bastide du XIX<sup style="font-size:.45em">e</sup>, une piscine, <em>et le temps de rien faire.</em></h1>
+    <p>Adeline et Stéphan vous accueillent toute l'année dans leur bastide en pierre, entre jardin de plantes provençales et oliveraie. Voyez les disponibilités et réservez votre chambre en ligne, acompte par carte.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="#reserver">Voir les disponibilités</a>
+      <a class="btn btn-ghost" href="#chambres">Découvrir les chambres</a>
+    </div>
+  </div>
+</header>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>90 à 210 €</b><span>la nuit pour deux</span></div>
+    <div class="fact"><b>4</b><span>chambres et gîte</span></div>
+    <div class="fact"><b>11</b><span>voyageurs au maximum</span></div>
+    <div class="fact"><b>365 j</b><span>ouvert toute l'année</span></div>
+  </div>
+</div>
+
+<section id="chambres">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Les chambres</span>
+      <h2>Voûtes provençales, tomettes et murs à la chaux</h2>
+      <p>Chaque chambre a sa salle de bains, sa machine à café et sa bouilloire. Dans les dépendances, chacune a aussi son entrée et sa terrasse.</p>
+    </div>
+    <div class="rooms">
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1621215052063-6ed29c948b31?auto=format&fit=crop&w=800&q=80" alt="Chambre chaleureuse baignée de lumière" loading="lazy">
+        <div class="in"><span class="tag">2 personnes · 20 m²</span><h3>Mode Adeline</h3><p>Lit double, terrasse privée et mobilier de jardin, dans les dépendances.</p>
+        <div class="meta"><span class="price">95 € <small>/ nuit</small></span><span class="tag">Terrasse</span></div>
+        <a class="btn btn-main" href="#reserver" data-room="0">Choisir cette chambre</a></div>
+      </article>
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1713184372857-7099b09d940a?auto=format&fit=crop&w=800&q=80" alt="Lit avec tête de lit en bois" loading="lazy">
+        <div class="in"><span class="tag">2 personnes</span><h3>L'Authentique</h3><p>Douche à l'italienne, ventilateur de plafond, lit de 160 cm.</p>
+        <div class="meta"><span class="price">115 € <small>/ nuit</small></span><span class="tag">Terrasse</span></div>
+        <a class="btn btn-main" href="#reserver" data-room="1">Choisir cette chambre</a></div>
+      </article>
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1661351267283-5ccf58695e6d?auto=format&fit=crop&w=800&q=80" alt="Pièce lumineuse avec table et fenêtres" loading="lazy">
+        <div class="in"><span class="tag">3 personnes · gîte</span><h3>L'Atelier</h3><p>À l'étage, avec une terrasse qui donne sur la piscine.</p>
+        <div class="meta"><span class="price">150 € <small>/ nuit</small></span><span class="tag">Vue piscine</span></div>
+        <a class="btn btn-main" href="#reserver" data-room="2">Choisir ce gîte</a></div>
+      </article>
+      <article class="room">
+        <img src="https://images.unsplash.com/photo-1759139445627-5ce9d5fac8f9?auto=format&fit=crop&w=800&q=80" alt="Chambre rustique avec deux lits" loading="lazy">
+        <div class="in"><span class="tag">4 à 5 personnes</span><h3>La familiale</h3><p>Dans la bastide, entrée privée et vue sur l'oliveraie.</p>
+        <div class="meta"><span class="price">210 € <small>/ nuit</small></span><span class="tag">Famille</span></div>
+        <a class="btn btn-main" href="#reserver" data-room="3">Choisir cette chambre</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="reserver">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" style="color:#f1c3a6">Réservation directe</span>
+      <h2>Choisissez votre chambre et vos dates</h2>
+      <p>Disponibilités à jour, acompte de 30 % par carte pour confirmer, solde à l'arrivée. Sans commission de plateforme : le meilleur prix est ici.</p>
+    </div>
+    <div class="book-grid">
+      <div class="panel">
+        <div class="roomsel" id="roomsel" role="group" aria-label="Chambre"></div>
+        <div class="cal-head"><h3>Octobre 2026</h3><div class="legend"><span><i style="background:#fff"></i>Arrivée</span><span><i style="background:rgba(241,195,166,.5)"></i>Séjour</span></div></div>
+        <div class="dow"><span>LUN</span><span>MAR</span><span>MER</span><span>JEU</span><span>VEN</span><span>SAM</span><span>DIM</span></div>
+        <div class="days" id="days" role="group" aria-label="Date d'arrivée"></div>
+        <div class="nights"><span>Nombre de nuits</span><div class="qty"><button type="button" id="nminus" aria-label="Une nuit de moins">−</button><output id="nq">2</output><button type="button" id="nplus" aria-label="Une nuit de plus">+</button></div></div>
+        <p class="note" id="avail" style="margin-top:10px"></p>
+      </div>
+      <div class="panel" id="summary" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="calc" id="direct">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Réserver en direct</span>
+      <h2>Ce que les plateformes prélèvent sur vos nuits</h2>
+      <p>Réglez les curseurs avec vos propres chiffres : le calcul montre ce que chaque réservation directe vous laisse en plus.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="card">
+        <div class="slider"><label for="c-n">Nuits vendues par an <b id="v-n"></b></label><input id="c-n" type="range" min="40" max="300" step="10" value="140"></div>
+        <div class="slider"><label for="c-p">Prix moyen de la nuit <b id="v-p"></b></label><input id="c-p" type="range" min="90" max="210" step="5" value="130"></div>
+        <div class="slider"><label for="c-s">Part réservée via Booking ou Airbnb <b id="v-s"></b></label><input id="c-s" type="range" min="0" max="100" step="5" value="50"></div>
+        <p class="src">Taux utilisés : Booking.com, commission de 15 % en général pour un hébergement en France ; Airbnb, 15,5 % pour l'hôte avec les frais simplifiés. Vos taux réels peuvent différer.</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow">Commissions versées chaque année</span>
+        <div class="big" id="c-tot" style="margin-top:10px"></div>
+        <p style="color:var(--muted);margin:8px 0 0" id="c-txt"></p>
+        <div class="compare" id="c-cmp"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="bastide">
+  <div class="wrap">
+    <img src="https://images.unsplash.com/photo-1672940711883-754b2fdefa1c?auto=format&fit=crop&w=1000&q=80" alt="Arbre au milieu d'un mur de pierre" loading="lazy">
+    <div>
+      <span class="eyebrow">La bastide</span>
+      <h2 style="margin-top:12px">Sur les hauteurs de Saint-Antonin-du-Var</h2>
+      <p>Une bastide en pierre du XIX<sup>e</sup> siècle, un jardin de plantes provençales et une piscine partagée avec les hôtes. Certains soirs, table d'hôtes ; sur demande, paniers pique-nique et séances de réflexologie plantaire avec Adeline.</p>
+      <div class="services"><span>Piscine</span><span>Petit-déjeuner</span><span>Table d'hôtes</span><span>Paniers pique-nique</span><span>Accueil Vélo</span><span>Parking</span><span>Wi-Fi</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="strip">
+      <img src="https://images.unsplash.com/photo-1509600110300-21b9d5fedeb7?auto=format&fit=crop&w=1200&q=80" alt="Maison en pierre et piscine" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1698036867785-a8aeb0f59c48?auto=format&fit=crop&w=700&q=80" alt="Arbre dans un champ sous le ciel bleu" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1661351240151-fa45627490ef?auto=format&fit=crop&w=700&q=80" alt="Chambre avec lit et fenêtre" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="avis">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Ils ont séjourné ici</span><h2>Une vraie parenthèse</h2></div>
+    <div class="rev-grid">
+      <article class="rev"><p>« Le calme absolu, la piscine rien que pour nous en septembre et un petit-déjeuner qu'on n'oubliera pas. »</p><footer>Hélène et Marc · L'Authentique · septembre</footer></article>
+      <article class="rev"><p>« Parfait pour une étape à vélo vers les Gorges du Verdon. Garage à vélos et accueil aux petits soins. »</p><footer>Thomas · Mode Adeline · mai</footer></article>
+      <article class="rev"><p>« Gîte idéal avec notre fille. On a juste regretté de devoir faire un virement pour l'acompte. »</p><footer>Famille Roche · L'Atelier · juillet</footer></article>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#fff;padding-top:0">
+  <div class="wrap" style="max-width:820px">
+    <div class="head" style="padding-top:20px"><span class="eyebrow">Questions fréquentes</span><h2>Avant de venir</h2></div>
+    <details><summary>Les animaux sont-ils acceptés ?</summary><p>Non, les animaux ne sont pas acceptés à la Parenthèse du Var.</p></details>
+    <details><summary>Comment fonctionne l'acompte ?</summary><p>Sur cette maquette : 30 % par carte à la réservation, le solde et la taxe de séjour (1,15 € par adulte et par nuit) à l'arrivée. Chèques-vacances acceptés pour le solde.</p></details>
+    <details><summary>Le logement est-il accessible en fauteuil ?</summary><p>Non, la bastide et les dépendances ne sont pas adaptées aux personnes à mobilité réduite.</p></details>
+    <details><summary>Peut-on venir à vélo ?</summary><p>Oui, la maison est labellisée Accueil Vélo : abri pour les vélos et VTT sur place.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:#f1c3a6">Contact</span>
+      <h2 style="margin-top:12px">Une question sur votre séjour ?</h2>
+      <p>Réservez en ligne à toute heure, ou écrivez-nous : nous répondons dans la journée.</p>
+    </div>
+    <div class="c-list">
+      <div><span>Téléphone</span>07 85 39 26 48</div>
+      <div><span>E-mail</span>laparentheseduvar@gmail.com</div>
+      <div><span>Adresse</span>491 chemin des Hauts Saints, 83510 Saint-Antonin-du-Var</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap"><span>© La Parenthèse du Var · Adeline et Stéphan</span><span>Maquette réalisée par Keteris · contact@keteris.com · 06 10 36 68 74</span></div>
+</footer>
+
+<script>
+(function(){
+  var ROOMS=[["Mode Adeline","2 pers.",95,2],["L'Authentique","2 pers.",115,2],["L'Atelier","gîte 3 pers.",150,3],["La familiale","4 à 5 pers.",210,5]];
+  var TODAY=12, FIRST_DOW=3, DAYS_IN=31, TAXE=1.15;
+  var DOW=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
+  function dow(d){return (FIRST_DOW+d-1)%7}
+  // nuits déjà prises (fictif)
+  var TAKEN=[[17,18,24,25],[16,17,23,24,30],[12,13,14,17,18,19,24,25],[23,24,25,30,31]];
+  var st={room:1,arr:20,n:2,guests:2,booked:false,err:""};
+  var RS=document.getElementById("roomsel"),D=document.getElementById("days"),R=document.getElementById("summary");
+  function eur(n){return n.toLocaleString("fr-FR",{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})+" €"}
+  function free(r,d){return d>=TODAY&&d<=DAYS_IN&&TAKEN[r].indexOf(d)<0}
+  function fits(r,a,n){for(var i=0;i<n;i++){if(!free(r,a+i))return false}return true}
+  function firstFit(r,from,n){for(var d=Math.max(from,TODAY);d<=DAYS_IN;d++){if(fits(r,d,n))return d}return null}
+  function renderRooms(){
+    RS.innerHTML="";
+    ROOMS.forEach(function(r,i){
+      var b=document.createElement("button");b.type="button";b.className="rs";
+      b.setAttribute("aria-pressed",String(st.room===i));
+      b.innerHTML="<b>"+r[0]+"</b><span>"+r[1]+" · "+r[2]+" € / nuit</span>";
+      b.onclick=function(){st.room=i;st.guests=Math.min(st.guests,r[3]);if(!fits(i,st.arr,st.n)){st.arr=firstFit(i,st.arr,st.n)||firstFit(i,TODAY,st.n)}st.booked=false;render()};
+      RS.appendChild(b);
+    });
+  }
+  function renderDays(){
+    D.innerHTML="";
+    for(var b=0;b<FIRST_DOW;b++){var x=document.createElement("span");x.className="day blank";D.appendChild(x)}
+    for(var d=1;d<=DAYS_IN;d++){(function(d){
+      var el=document.createElement("button");el.type="button";el.textContent=d;
+      var ok=free(st.room,d);
+      el.className="day"+(d<TODAY?" past":"")+(st.arr&&d===st.arr?" arr":(st.arr&&d>st.arr&&d<st.arr+st.n?" stay":""));
+      el.setAttribute("aria-pressed",String(st.arr===d));
+      el.setAttribute("aria-label",DOW[dow(d)]+" "+d+" octobre"+(ok?", libre":", complet"));
+      if(!ok)el.disabled=true;
+      el.onclick=function(){st.arr=d;var n=st.n;while(n>1&&!fits(st.room,d,n))n--;st.n=n;st.booked=false;render()};
+      D.appendChild(el);
+    })(d)}
+    document.getElementById("nq").textContent=st.n;
+    document.getElementById("avail").textContent=st.arr?"":"Plus de disponibilité ce mois-ci pour cette durée : essayez une autre chambre.";
+  }
+  document.getElementById("nminus").onclick=function(){if(st.n>1){st.n--;st.booked=false;render()}};
+  document.getElementById("nplus").onclick=function(){if(st.n<7&&st.arr&&fits(st.room,st.arr,st.n+1)){st.n++;st.booked=false;render()}else{document.getElementById("avail").textContent="La nuit suivante est déjà réservée pour cette chambre."}};
+  function val(id){var e=document.getElementById(id);return e?e.value.trim():""}
+  function keep(){st.f_name=val("f-name");st.f_mail=val("f-mail");st.f_tel=val("f-tel")}
+  function renderSummary(){
+    var r=ROOMS[st.room];
+    if(!st.arr){R.innerHTML='<h3>Votre séjour</h3><p class="note">Choisissez une date d\'arrivée libre dans le calendrier.</p>';return}
+    var dep=st.arr+st.n, depTxt=dep>DAYS_IN?(dep-DAYS_IN)+" nov.":dep+" oct.";
+    var depDow=DOW[(FIRST_DOW+dep-1)%7];
+    var stay=r[2]*st.n, tax=Math.round(TAXE*st.guests*st.n*100)/100, total=stay+tax, acc=Math.round(stay*.3);
+    var label=DOW[dow(st.arr)]+". "+st.arr+" oct. → "+depDow+". "+depTxt;
+    if(st.booked){
+      R.innerHTML='<div class="done"><span class="eyebrow" style="color:#f1c3a6">Démonstration</span><b>Merci '+(st.name||"")+', votre séjour est confirmé</b><p class="note">'+r[0]+', '+label+', '+st.n+' nuit'+(st.n>1?'s':'')+'. Sur le vrai site, le voyageur paierait ici '+eur(acc)+' d\'acompte par carte et recevrait sa confirmation par e-mail. Les dates se bloqueraient aussi sur vos autres calendriers.</p><button class="btn btn-main" type="button" id="again">Faire une autre réservation</button></div>';
+      document.getElementById("again").onclick=function(){st.booked=false;render()};return;
+    }
+    R.innerHTML='<h3>Votre séjour</h3><div class="summary">'+
+      '<div class="row"><span>Chambre</span><b>'+r[0]+'</b></div>'+
+      '<div class="row"><span>Dates</span><b>'+label+'</b></div>'+
+      '<div class="row" style="align-items:center"><span>Voyageurs</span><div class="qty"><button type="button" id="gminus" aria-label="Un voyageur de moins">−</button><output>'+st.guests+'</output><button type="button" id="gplus" aria-label="Un voyageur de plus">+</button></div></div>'+
+      '<form id="bf" class="summary" novalidate>'+
+      '<div class="field"><label for="f-name">Nom et prénom</label><input id="f-name" autocomplete="name" placeholder="Claire Dumas"></div>'+
+      '<div class="two"><div class="field"><label for="f-mail">E-mail</label><input id="f-mail" type="email" autocomplete="email" placeholder="claire@exemple.fr"></div>'+
+      '<div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" type="tel" autocomplete="tel" placeholder="06 12 34 56 78"></div></div>'+
+      '<div class="total"><div class="row"><span>Total</span><b>'+eur(total)+'</b></div>'+
+      '<div class="row"><span>'+st.n+' nuit'+(st.n>1?'s':'')+' × '+r[2]+' €</span><b>'+eur(stay)+'</b></div>'+
+      '<div class="row"><span>Taxe de séjour</span><b>'+eur(tax)+'</b></div>'+
+      '<div class="row"><span>Acompte aujourd\'hui (30 %)</span><b>'+eur(acc)+'</b></div></div>'+
+      (st.err?'<p class="err">'+st.err+'</p>':'')+
+      '<button class="btn btn-main" type="submit">Payer l\'acompte et réserver</button>'+
+      '<p class="note">Paiement sécurisé par carte. Solde à l\'arrivée, chèques-vacances acceptés.</p></form></div>';
+    ["name","mail","tel"].forEach(function(k){var v=st["f_"+k];if(v)document.getElementById("f-"+k).value=v});
+    document.getElementById("gminus").onclick=function(){keep();if(st.guests>1){st.guests--;renderSummary()}};
+    document.getElementById("gplus").onclick=function(){keep();if(st.guests<r[3]){st.guests++;renderSummary()}};
+    document.getElementById("bf").addEventListener("submit",function(e){
+      e.preventDefault();keep();
+      if(!st.f_name||!/^\S+@\S+\.\S+$/.test(st.f_mail||"")){st.err="Indiquez votre nom et un e-mail valide.";renderSummary();return}
+      st.err="";st.name=st.f_name.split(" ")[0];st.booked=true;renderSummary();
+    });
+  }
+  function render(){renderRooms();renderDays();renderSummary()}
+
+  // Calculateur de commissions
+  var cn=document.getElementById("c-n"),cp=document.getElementById("c-p"),cs=document.getElementById("c-s");
+  function calc(){
+    var n=+cn.value,p=+cp.value,s=+cs.value/100,ca=n*p,plat=ca*s,com=Math.round(plat*0.15);
+    document.getElementById("v-n").textContent=n;
+    document.getElementById("v-p").textContent=p+" €";
+    document.getElementById("v-s").textContent=Math.round(s*100)+" %";
+    document.getElementById("c-tot").textContent=com.toLocaleString("fr-FR")+" €";
+    document.getElementById("c-txt").textContent="sur "+ca.toLocaleString("fr-FR")+" € de nuitées par an. Chaque nuit à "+p+" € réservée en direct au lieu d'une plateforme vous laisse "+Math.round(p*0.15)+" € de plus.";
+    var mx=p;
+    document.getElementById("c-cmp").innerHTML=[["En direct",p,"#5f7a3c"],["Booking.com",p*0.85,"#b8643f"],["Airbnb",p*0.845,"#8a7fb0"]].map(function(x){return '<div class="cmp"><span>'+x[0]+'</span><span class="bar"><i style="width:'+(x[1]/mx*100)+'%;background:'+x[2]+'"></i></span><b>'+Math.round(x[1])+' €</b></div>'}).join("")+'<p class="src" style="margin-top:4px">Ce qu\'il vous reste sur une nuit à '+p+' €.</p>';
+  }
+  [cn,cp,cs].forEach(function(i){i.addEventListener("input",calc)});
+  calc();
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click",function(e){
+      var id=a.getAttribute("href").slice(1),el=document.getElementById(id);
+      if(!el)return;
+      e.preventDefault();
+      if(a.dataset.room){st.room=+a.dataset.room;st.guests=Math.min(st.guests,ROOMS[st.room][3]);if(!st.arr||!fits(st.room,st.arr,st.n)){st.arr=firstFit(st.room,st.arr||TODAY,st.n)||firstFit(st.room,TODAY,1);if(st.arr)while(st.n>1&&!fits(st.room,st.arr,st.n))st.n--}st.booked=false;render()}
+      var y=el.getBoundingClientRect().top+window.pageYOffset-64;
+      window.scrollTo({top:y,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
