@@ -1,0 +1,79 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Maquette pour Smartycar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f6f6;--ink:#0f2b2e;--ac:#0c8f8a;--ac2:#096f6b;--card:#fff;--mut:#667}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;margin:0;line-height:1.1}
+.ban{background:#111;color:#fff;font-size:13px;padding:8px 16px;text-align:center}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+nav{background:var(--ink);color:#fff}nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:'Barlow Condensed';font-size:20px}nav a{color:#fff;text-decoration:none;font-size:14px;margin-left:16px}
+.btn{display:inline-block;background:var(--ac);color:#fff;border:0;padding:13px 22px;border-radius:6px;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;font-family:Inter}
+.btn:hover{background:var(--ac2)}
+.hero{background:linear-gradient(rgba(10,14,20,.68),rgba(10,14,20,.78)),url(https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=70) center/cover;color:#fff;padding:80px 0}
+.hero h1{font-size:clamp(32px,6vw,56px);max-width:700px}.hero p{max-width:560px;font-size:18px;opacity:.92;margin:16px 0 24px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-34px;position:relative}
+.stats div{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 20px #0002;text-align:center}
+.stats b{display:block;font-family:'Barlow Condensed';font-size:28px;color:var(--ac)}.stats span{font-size:13px;color:var(--mut)}
+section{padding:56px 0}h2{font-size:clamp(26px,4vw,36px);margin-bottom:8px}.sub{color:var(--mut);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border-radius:10px;padding:20px;box-shadow:0 2px 10px #0001}
+.card h3{font-size:20px;margin-bottom:6px}.price{color:var(--ac);font-weight:700;font-size:20px;margin:8px 0}
+.card button{margin-top:6px}
+.book{background:var(--card);border-radius:12px;box-shadow:0 8px 30px #0002;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.book h3{font-size:18px;margin:0 0 10px}.types{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{border:1.5px solid #ccd;background:#fff;border-radius:20px;padding:7px 14px;font-size:14px;cursor:pointer;font-family:Inter}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal .h{font-size:12px;color:var(--mut)}.cal button{border:0;background:#f1f3f6;padding:9px 0;border-radius:6px;font-size:14px;cursor:pointer;font-family:Inter}
+.cal button.on{background:var(--ac);color:#fff}.cal button:disabled{opacity:.35;cursor:default}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:600}.mh button{border:0;background:#eef;border-radius:6px;width:32px;height:32px;cursor:pointer}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.slots button{border:1.5px solid #ccd;background:#fff;padding:8px 0;border-radius:6px;cursor:pointer;font-family:Inter;font-size:14px}.slots button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+input,select{width:100%;padding:11px;border:1.5px solid #ccd;border-radius:6px;font-size:15px;margin-bottom:8px;font-family:Inter}
+.sum{background:#f1f3f6;border-radius:8px;padding:12px;font-size:14px;margin:8px 0}
+.ok{display:none;background:#e6f6ea;border:1.5px solid #3a9b55;border-radius:8px;padding:14px;margin-top:10px}
+.rem{background:var(--ink);color:#fff}.rem .card{background:#ffffff14;box-shadow:none}.rem .sub{color:#cbd}
+.sms{background:#fff;color:#111;border-radius:12px;padding:12px;font-size:14px;margin-top:10px}
+.rev .card p{margin:0 0 8px}.rev small{color:var(--mut)}
+details{background:var(--card);border-radius:8px;padding:14px 18px;margin-bottom:8px;box-shadow:0 1px 6px #0001}summary{cursor:pointer;font-weight:600}
+footer{background:var(--ink);color:#cbd;padding:36px 0;font-size:14px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.gal img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+@media(max-width:760px){.stats,.grid,.book,.gal{grid-template-columns:1fr 1fr}.book,.grid{grid-template-columns:1fr}.gal{grid-template-columns:1fr}.stats b{font-size:22px}nav a.l{display:none}.hero{padding:50px 0}.slots{grid-template-columns:repeat(3,1fr)}}
+</style></head><body>
+<div class="ban">Maquette proposée par Keteris à Smartycar. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap"><b>Smartycar</b><div><a class="l" href="#prestations">Prestations</a><a class="l" href="#rappels">Rappels</a><a class="l" href="#avis">Avis</a><a href="#rdv" class="btn" style="padding:8px 14px;margin-left:16px">Prendre rendez-vous</a></div></div></nav>
+<header class="hero"><div class="wrap"><h1>Smartycar à La Garde : prenez rendez-vous à l'atelier en ligne</h1><p>Mécanique, électricité auto, carrosserie-peinture et dépannage. Choisissez un créneau, envoyez les photos de votre carrosserie, et soyez rappelé pour votre entretien.</p><a class="btn" href="#rdv">Prendre rendez-vous</a></div></header>
+<div class="wrap"><div class="stats"><div><b>3 min</b><span>pour réserver en ligne</span></div><div><b>24 h/24</b><span>demande de devis ouverte</span></div><div><b>-40 %</b><span>d'appels manqués (exemple)</span></div><div><b>La Garde</b><span>atelier et conseil sur place</span></div></div></div>
+<section id="prestations"><div class="wrap"><h2>Nos prestations</h2><p class="sub">Choisissez une prestation, le rendez-vous se règle en dessous.</p><div class="grid" id="srv"></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="gal"><img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=70" alt="Outillage de l'atelier" loading="lazy"><img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=800&q=70" alt="Mécanicien sous le capot" loading="lazy"><img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=70" alt="Détail moteur" loading="lazy"></div></div></section>
+<section id="rdv" style="background:#e9ecf2"><div class="wrap"><h2>Prendre rendez-vous à l'atelier</h2><p class="sub">Type d'intervention, jour, créneau. Confirmation immédiate et rappel la veille.</p>
+<div class="book"><div><h3>1. Intervention</h3><div class="types" id="types"></div><h3>2. Jour</h3><div class="mh"><button id="pv">‹</button><span id="mon"></span><button id="nx">›</button></div><div class="cal" id="cal"></div></div>
+<div><h3>3. Créneau</h3><div class="slots" id="slots"></div><h3>4. Vos informations</h3><input id="nm" placeholder="Nom et prénom"><input id="im" placeholder="Immatriculation (ex. AB-123-CD)"><input id="tel" placeholder="Téléphone portable"><div class="sum" id="sum">Choisissez une intervention, un jour et un créneau.</div><button class="btn" id="go" style="width:100%">Confirmer le rendez-vous</button><div class="ok" id="ok"></div></div></div></div></section>
+<section><div class="wrap"><h2>Devis avec photos</h2><p class="sub">Un client envoie les photos de la carrosserie abîmée depuis son téléphone, vous répondez avec un devis chiffré sans qu'il ait à se déplacer.</p>
+<div class="book"><div><input placeholder="Nom et prénom"><input placeholder="Téléphone"><select id="dv"><option>Carrosserie, rayure ou choc</option><option>Mécanique, bruit ou voyant</option><option>Pneumatiques</option><option>Autre demande</option></select><input type="file" accept="image/*" multiple></div><div><div class="sum">Réponse annoncée : sous 4 h ouvrées. Les demandes arrivent triées dans votre tableau, avec relance automatique des devis restés sans réponse.</div><button class="btn" onclick="this.nextElementSibling.style.display='block'">Envoyer ma demande</button><div class="ok">Demande reçue. Un devis vous est envoyé sous 4 h ouvrées. (Démonstration)</div></div></div></div></section>
+<section id="rappels" class="rem"><div class="wrap"><h2>Rappels d'entretien automatiques</h2><p class="sub">Le client revient sans que vous ayez à y penser : chaque échéance déclenche un message au bon moment.</p>
+<div class="grid"><div class="card"><h3>Révision annuelle</h3><p>Rappel 30 jours avant la date anniversaire.</p></div><div class="card"><h3>Contrôle technique</h3><p>Rappel 2 mois avant l'échéance, avec lien de prise de rendez-vous.</p></div><div class="card"><h3>Pneus hiver et été</h3><p>Rappel avant chaque changement de saison.</p></div></div>
+<div class="sms">SMS envoyé automatiquement : « Bonjour M. Martin, la révision de votre Clio arrive à échéance le 14 novembre. Réservez votre créneau en 1 minute : lien. Smartycar »</div></div></section>
+<section id="avis" class="rev"><div class="wrap"><h2>Ce que disent nos clients</h2><p class="sub">Avis fictifs, à remplacer par les vôtres.</p><div class="grid"><div class="card"><p>★★★★★</p><p>« Rendez-vous pris en ligne le soir, voiture prête le lendemain à midi. »</p><small>Julien M., exemple</small></div><div class="card"><p>★★★★★</p><p>« Devis reçu avec mes photos sans me déplacer, très clair. »</p><small>Sandrine P., exemple</small></div><div class="card"><p>★★★★☆</p><p>« Le SMS de rappel m'a évité d'oublier le contrôle technique. »</p><small>Karim B., exemple</small></div></div></div></section>
+<section style="padding-top:0"><div class="wrap"><h2>Questions fréquentes</h2><p class="sub"> </p><details><summary>Puis-je annuler ou déplacer mon rendez-vous ?</summary><p>Oui, depuis le SMS de confirmation, jusqu'à la veille.</p></details><details><summary>Proposez-vous un véhicule de courtoisie ?</summary><p>Information fictive : à préciser avec votre atelier.</p></details><details><summary>Comment est calculé le devis ?</summary><p>Après examen des photos ou du véhicule, avec le détail pièces et main-d'oeuvre.</p></details></div></section>
+<footer><div class="wrap"><div><b style="color:#fff">Smartycar</b><br>809 avenue de Draguignan, La Garde</div><div>Tél. 04 83 69 06 52<br>Lundi au vendredi, 8 h à 18 h (exemple)</div></div></footer>
+<script>
+const SRV=[["Entretien et révision", "Vidange, filtres, niveaux, contrôle général.", "dès 79 €"], ["Électricité auto", "Batterie, alternateur, démarreur, éclairage.", "dès 45 €"], ["Carrosserie et peinture", "Devis sur photos, réparation et peinture.", "devis gratuit"], ["Dépannage 24h/7j", "Intervention rapide, appel direct.", "sur devis"]];
+document.getElementById('srv').innerHTML=SRV.map((s,i)=>`<div class="card"><h3>${s[0]}</h3><p>${s[1]}</p><div class="price">${s[2]}</div><button class="btn" onclick="pick(${i})">Réserver</button></div>`).join('');
+let sel=0,day=null,slot=null,vm=new Date(2026,9,1);
+const ty=document.getElementById('types');ty.innerHTML=SRV.map((s,i)=>`<button class="chip" data-i="${i}">${s[0]}</button>`).join('');
+function pick(i){sel=i;upd();document.getElementById('rdv').scrollIntoView({behavior:'smooth'})}
+ty.onclick=e=>{if(e.target.dataset.i!==undefined){sel=+e.target.dataset.i;upd()}};
+const MN=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+function cal(){const c=document.getElementById('cal');document.getElementById('mon').textContent=MN[vm.getMonth()]+' '+vm.getFullYear();let h=['L','M','M','J','V','S','D'].map(d=>`<div class="h">${d}</div>`).join('');const f=(new Date(vm.getFullYear(),vm.getMonth(),1).getDay()+6)%7,n=new Date(vm.getFullYear(),vm.getMonth()+1,0).getDate();for(let i=0;i<f;i++)h+='<div></div>';const t=new Date(2026,9,13);for(let d=1;d<=n;d++){const dt=new Date(vm.getFullYear(),vm.getMonth(),d),w=dt.getDay(),off=w==0||w==6||dt<t;h+=`<button ${off?'disabled':''} data-d="${d}" class="${day&&day.getTime()==dt.getTime()?'on':''}">${d}</button>`}c.innerHTML=h}
+document.getElementById('cal').onclick=e=>{if(e.target.dataset.d){day=new Date(vm.getFullYear(),vm.getMonth(),+e.target.dataset.d);slot=null;cal();upd()}};
+document.getElementById('pv').onclick=()=>{vm=new Date(vm.getFullYear(),vm.getMonth()-1,1);cal()};document.getElementById('nx').onclick=()=>{vm=new Date(vm.getFullYear(),vm.getMonth()+1,1);cal()};
+const SL=['8h00','9h00','10h30','11h30','13h30','14h30','15h30','16h30'];
+document.getElementById('slots').onclick=e=>{if(e.target.dataset.s){slot=e.target.dataset.s;upd()}};
+function upd(){document.querySelectorAll('#types .chip').forEach((b,i)=>b.classList.toggle('on',i==sel));
+document.getElementById('slots').innerHTML=day?SL.map((s,i)=>`<button data-s="${s}" class="${slot==s?'on':''}" ${(day.getDate()*3+i)%5==0?'disabled style="opacity:.35"':''}>${s}</button>`).join(''):'<span style="color:#667;font-size:14px;grid-column:1/-1">Choisissez d\'abord un jour.</span>';
+const s=SRV[sel];document.getElementById('sum').innerHTML=`<b>${s[0]}</b> · ${s[2]}<br>${day?day.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'jour à choisir'}${slot?' à '+slot:''}`}
+document.getElementById('go').onclick=()=>{const o=document.getElementById('ok');if(!day||!slot||!document.getElementById('nm').value){o.style.display='block';o.textContent='Complétez le jour, le créneau et votre nom.';return}o.style.display='block';o.innerHTML='Rendez-vous confirmé. Un SMS de confirmation et un rappel la veille vous sont envoyés. (Démonstration)'};
+cal();upd();
+</script></body></html>
