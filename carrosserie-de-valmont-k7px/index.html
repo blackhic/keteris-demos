@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Carrosserie de Valmont · Le Mont-sur-Lausanne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--ink:#14171c;--steel:#1f242c;--panel:#272d37;--orange:#ff5c35;--orange-d:#d94a28;--paper:#f4f2ee;--muted:#6a727d;--line:#dcd8d0;--ok:#2fb67c;--few:#f0a83a;
+--display:"Barlow Condensed",ui-sans-serif,system-ui,sans-serif;--body:"Inter",ui-sans-serif,system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body)}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1;margin:0;text-transform:uppercase;letter-spacing:.01em}
+h2{font-size:clamp(34px,5vw,54px);font-weight:800}
+.eyebrow{font:600 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 16px var(--body);padding:14px 26px;border-radius:6px;text-decoration:none;transition:background .15s,transform .15s}
+.btn:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.btn-o{background:var(--orange);color:#fff}.btn-o:hover{background:var(--orange-d);transform:translateY(-1px)}
+.btn-g{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.demo-bar{background:#000;color:#d7dbe0;font:500 13px/1.4 var(--body);text-align:center;padding:9px 16px}.demo-bar b{color:#fff}
+nav{position:sticky;top:0;z-index:10;background:rgba(20,23,28,.94);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{font:800 24px var(--display);color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.03em}.logo span{color:var(--orange)}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}nav ul a{color:#cfd4da;text-decoration:none;font-weight:500;font-size:15px}nav ul a:hover{color:#fff}
+nav .btn{padding:10px 18px;font-size:15px}
+@media(max-width:820px){nav ul{display:none}}
+.hero{position:relative;color:#fff;background:var(--ink) url("https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=2000&q=75") center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,23,28,.94) 0%,rgba(20,23,28,.65) 55%,rgba(20,23,28,.3) 100%)}
+.hero .wrap{position:relative;padding-block:90px 110px;display:grid;gap:26px}
+.hero h1{font-size:clamp(46px,8vw,92px);font-weight:800;max-width:13ch}.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{font-size:19px;max-width:48ch;color:#dde1e6;margin:0}.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{background:#fff;border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:24px 18px;border-left:1px solid var(--line)}.fact:first-child{border-left:0}
+.fact b{display:block;font:800 34px var(--display);color:var(--orange)}.fact span{font-size:14px;color:var(--muted)}
+@media(max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr)}.fact:nth-child(3){border-left:0}.fact{border-top:1px solid var(--line)}}
+section{padding-block:84px}
+.head{display:grid;gap:12px;margin-bottom:38px;max-width:660px}.head p{color:var(--muted);margin:0;font-size:17px}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.offer{background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.offer img{aspect-ratio:4/3;object-fit:cover;width:100%}.offer .in{padding:22px;display:grid;gap:10px;flex:1}
+.offer h3{font-size:28px;font-weight:700}.offer p{margin:0;color:var(--muted);font-size:15px}
+.offer .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+.price{font:800 30px var(--display)}.price small{font:500 13px var(--body);color:var(--muted)}
+.tag{font:600 12px var(--body);color:var(--orange);letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:860px){.offers{grid-template-columns:1fr}}
+.how{background:var(--steel);color:#fff}.how .head p{color:#aab1ba}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:22px;background:var(--panel)}
+.step b{font:800 44px var(--display);color:var(--orange);display:block}.step p{margin:6px 0 0;color:#c4cad2;font-size:15px}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.book{background:var(--ink);color:#fff}.book .head p{color:#aab1ba}
+.tabs{display:inline-flex;background:var(--panel);border-radius:8px;padding:4px;margin-bottom:24px;gap:4px;max-width:100%}
+.tab{background:transparent;border:0;color:#cfd4da;font:600 15px var(--body);padding:11px 20px;border-radius:6px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--orange);color:#fff}
+.book-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:start}
+@media(max-width:900px){.book-grid{grid-template-columns:1fr}}
+.panel{background:var(--steel);border-radius:12px;padding:26px;border:1px solid rgba(255,255,255,.08);min-width:0}
+.panel h3{font-size:24px;margin-bottom:16px}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}.cal-head h3{margin:0;text-transform:capitalize}
+.legend{display:flex;gap:12px;font-size:12px;color:#aab1ba;flex-wrap:wrap}.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{margin-bottom:6px;font:600 11px var(--body);color:#8c949f;text-align:center;letter-spacing:.08em;text-transform:uppercase}.days{margin-bottom:20px}
+.day{position:relative;background:transparent;border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:8px;padding:8px 2px 13px;text-align:center;cursor:pointer;font:700 18px var(--display)}
+.day::after{content:"";position:absolute;left:50%;bottom:5px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--dot,transparent)}
+.day.open{--dot:var(--ok)}.day.few{--dot:var(--few)}.day[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
+.day:disabled{opacity:.28;cursor:not-allowed}.day.blank{visibility:hidden}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px}
+.slot{background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:8px;padding:10px 4px;cursor:pointer;font:600 15px var(--body)}
+.slot[aria-pressed="true"]{background:var(--orange);border-color:var(--orange)}.slot:disabled{opacity:.28;text-decoration:line-through;cursor:not-allowed}
+.sub{font-size:13px;color:#aab1ba;margin:14px 0 8px}
+.field{display:grid;gap:6px;margin-bottom:14px}.field label{font-size:13px;color:#aab1ba}
+.field input,.field select,.field textarea{width:100%;background:#171b21;border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:8px;padding:12px;font:16px var(--body)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--orange);outline-offset:1px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;font:500 14px var(--body)}
+.chip[aria-pressed="true"]{background:var(--orange);border-color:var(--orange)}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.photo{aspect-ratio:1;border:1px dashed rgba(255,255,255,.3);border-radius:8px;display:grid;place-items:center;font-size:13px;color:#aab1ba;cursor:pointer;background:transparent;overflow:hidden;padding:0;position:relative}
+.photo.on{border:1px solid var(--ok)}.photo img{width:100%;height:100%;object-fit:cover}
+.photo.on::after{content:"✓";position:absolute;top:6px;right:6px;background:var(--ok);color:#fff;width:20px;height:20px;border-radius:50%;font-size:12px;display:grid;place-items:center}
+.recap{background:var(--panel);border-radius:12px;padding:22px;position:sticky;top:76px}
+.recap dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}.recap dt{color:#aab1ba}.recap dd{margin:0;text-align:right;font-weight:600}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(255,255,255,.14);margin-top:16px;padding-top:14px}
+.total b{font:800 34px var(--display);color:var(--orange)}
+.note{font-size:13px;color:#aab1ba;margin:12px 0 0}
+.confirm{display:none;background:#12362a;border:1px solid var(--ok);border-radius:12px;padding:20px;margin-top:16px}.confirm.show{display:block}.confirm b{color:#7ee0b4}
+.pane[hidden]{display:none}
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}.strip img{width:100%;height:100%;min-height:200px;object-fit:cover;border-radius:10px}
+@media(max-width:700px){.strip{grid-template-columns:1fr}}
+.reviews{background:#fff}.rev-top{display:flex;align-items:center;gap:18px;margin-bottom:28px}
+.score{font:800 64px var(--display);line-height:1}.stars{color:var(--orange);letter-spacing:2px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+blockquote{margin:0;background:var(--paper);border-radius:10px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{font-size:13px;color:var(--muted)}
+@media(max-width:860px){.rev-grid{grid-template-columns:1fr}}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--muted);margin:10px 0 0}
+.contact{background:var(--steel);color:#fff}.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact p{color:#c4cad2;margin:4px 0}.contact a{color:#fff}
+@media(max-width:700px){.contact .grid{grid-template-columns:1fr}}
+footer.f{background:#000;color:#8c949f;font-size:13px;text-align:center;padding:20px}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à Carrosserie de Valmont.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap"><a class="logo" href="#top">Carrosserie de <span>Valmont</span></a>
+<ul><li><a href="#services">Services</a></li><li><a href="#comment">Comment ça marche</a></li><li><a href="#avis">Avis</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn btn-o" href="#reserver">Devis en ligne</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<span class="eyebrow">Le Mont-sur-Lausanne · Chemin de Maillefer 34</span>
+<h1>Votre voiture <em>comme neuve</em></h1>
+<p>Carrosserie, retouches de peinture, débosselage sans peinture. Envoyez les photos du sinistre : vous recevez une estimation et un créneau d'atelier, sans passer par le téléphone.</p>
+<div class="cta"><a class="btn btn-o" href="#reserver">Demander un devis</a><a class="btn btn-g" href="#reserver" data-tab="rdv">Prendre rendez-vous</a></div>
+</div></header>
+
+<div class="facts"><div class="wrap">
+<div class="fact"><b>Depuis 2014</b><span>au Mont-sur-Lausanne</span></div>
+<div class="fact"><b>24 h</b><span>pour recevoir votre devis (exemple)</span></div>
+<div class="fact"><b>3 min</b><span>pour envoyer vos photos</span></div>
+<div class="fact"><b>Assurance</b><span>démarches prises en charge</span></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<div class="head"><span class="eyebrow">Nos services</span><h2>Ce que nous réparons</h2><p>Les prix ci-dessous sont des exemples d'affichage : chaque devis reste confirmé par l'atelier après vos photos.</p></div>
+<div class="offers">
+<article class="offer"><img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=900&q=75" alt="Mécanicien au travail sous le capot" loading="lazy"><div class="in"><span class="tag">Après sinistre</span><h3>Réparation de carrosserie</h3><p>Remise en forme, remplacement d'éléments, peinture et finitions. Prise en charge des démarches avec votre assurance.</p><div class="meta"><span class="price"><small>dès </small>CHF 350</span><a class="btn btn-o" href="#reserver" data-svc="Réparation de carrosserie">Devis</a></div></div></article>
+<article class="offer"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=75" alt="Voiture dans un atelier" loading="lazy"><div class="in"><span class="tag">Esthétique</span><h3>Retouche peinture</h3><p>Rayures, éclats, rénovation d'un élément. Teinte reproduite à l'identique.</p><div class="meta"><span class="price"><small>dès </small>CHF 180</span><a class="btn btn-o" href="#reserver" data-svc="Retouche peinture">Devis</a></div></div></article>
+<article class="offer"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=75" alt="Voiture noire de profil" loading="lazy"><div class="in"><span class="tag">Sans peinture</span><h3>Débosselage sans peinture</h3><p>Petites bosses de grêle ou de parking : on conserve la peinture d'origine, souvent en une demi-journée.</p><div class="meta"><span class="price"><small>dès </small>CHF 120</span><a class="btn btn-o" href="#reserver" data-svc="Débosselage sans peinture">Devis</a></div></div></article>
+</div></div></section>
+
+<section class="how" id="comment"><div class="wrap">
+<div class="head"><span class="eyebrow">Comment ça marche</span><h2>Du sinistre au rendez-vous, sans appel</h2></div>
+<div class="steps">
+<div class="step"><b>1</b><h3>Vos photos</h3><p>Vous envoyez 3 photos du dégât depuis votre téléphone.</p></div>
+<div class="step"><b>2</b><h3>Estimation</h3><p>Une fourchette de prix s'affiche tout de suite, confirmée par l'atelier.</p></div>
+<div class="step"><b>3</b><h3>Rendez-vous</h3><p>Vous choisissez un créneau d'atelier, un rappel part la veille.</p></div>
+<div class="step"><b>4</b><h3>Suivi</h3><p>Un message vous prévient quand la voiture est prête.</p></div>
+</div></div></section>
+
+<section class="book" id="reserver"><div class="wrap">
+<div class="head"><span class="eyebrow">Devis et rendez-vous</span><h2>Réservez en ligne, 24 h sur 24</h2><p>Essayez : choisissez un service, ajoutez des photos, prenez un créneau. Tout est simulé.</p></div>
+<div class="tabs" role="tablist"><button class="tab" role="tab" id="t-devis" aria-selected="true">Devis avec photos</button><button class="tab" role="tab" id="t-rdv" aria-selected="false">Rendez-vous atelier</button></div>
+
+<div class="book-grid">
+<div>
+<div class="pane panel" id="p-devis">
+<h3>Votre sinistre</h3>
+<div class="field"><label>Type de travaux</label><div class="chips" id="svc">
+<button class="chip" aria-pressed="true" data-n="Réparation de carrosserie" data-p="350">Carrosserie</button>
+<button class="chip" aria-pressed="false" data-n="Retouche peinture" data-p="180">Retouche peinture</button>
+<button class="chip" aria-pressed="false" data-n="Débosselage sans peinture" data-p="120">Débosselage</button></div></div>
+<div class="field"><label>Ampleur des dégâts</label><select id="size"><option value="1">Léger (un élément)</option><option value="1.8">Moyen (deux éléments)</option><option value="3">Important (plusieurs éléments)</option></select></div>
+<div class="field"><label>Photos du dégât (touchez pour ajouter, exemple)</label><div class="photos" id="photos">
+<button class="photo" type="button" data-img="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=300&q=60">+ Photo</button>
+<button class="photo" type="button" data-img="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=300&q=60">+ Photo</button>
+<button class="photo" type="button" data-img="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=300&q=60">+ Photo</button></div></div>
+<div class="field"><label>Votre assurance</label><select id="ins"><option>Assurance casco, je déclare le sinistre</option><option>Je paie moi-même</option></select></div>
+</div>
+
+<div class="pane panel" id="p-rdv" hidden>
+<div class="cal-head"><h3 id="month">Mois</h3><div class="legend"><span><i style="background:var(--ok)"></i>Disponible</span><span><i style="background:var(--few)"></i>Dernières places</span></div></div>
+<div class="dow"><span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span></div>
+<div class="days" id="days"></div>
+<div class="sub" id="slotsub">Choisissez un jour</div>
+<div class="slots" id="slots"></div>
+</div>
+
+<div class="panel" style="margin-top:20px">
+<h3>Vos coordonnées</h3>
+<div class="field"><label for="nm">Nom</label><input id="nm" value="Marc Dubuis" autocomplete="off"></div>
+<div class="field"><label for="ph">Téléphone</label><input id="ph" value="+41 79 000 00 00" autocomplete="off"></div>
+<div class="field"><label for="veh">Véhicule</label><input id="veh" value="VW Golf 2019, VD 000 000"></div>
+<button class="btn btn-o" id="go" type="button" style="width:100%">Envoyer ma demande</button>
+<div class="confirm" id="ok" role="status"></div>
+</div>
+</div>
+
+<aside class="recap"><h3 style="font-size:24px;margin-bottom:14px">Votre demande</h3>
+<dl><dt>Service</dt><dd id="r-svc">Réparation de carrosserie</dd><dt>Ampleur</dt><dd id="r-size">Léger</dd><dt>Photos</dt><dd id="r-ph">0 / 3</dd><dt>Rendez-vous</dt><dd id="r-rdv">À choisir</dd></dl>
+<div class="total"><span>Estimation</span><b id="r-tot">CHF 350</b></div>
+<p class="note">Fourchette indicative, calculée à partir de vos photos et confirmée par l'atelier avant tout travail. Un rappel SMS part la veille du rendez-vous.</p></aside>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="head"><span class="eyebrow">L'atelier</span><h2>Un travail soigné</h2></div>
+<div class="strip">
+<img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=75" alt="Atelier de carrosserie" loading="lazy">
+<img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=700&q=75" alt="Outillage d'atelier" loading="lazy">
+<img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=75" alt="Mécanique de précision" loading="lazy"></div>
+</div></section>
+
+<section class="reviews" id="avis"><div class="wrap">
+<div class="rev-top"><span class="score">4,8</span><div><div class="stars" aria-label="4,8 sur 5">★★★★★</div><span style="color:var(--muted)">Exemple d'avis Google, à remplacer par les vôtres</span></div></div>
+<div class="rev-grid">
+<blockquote><p>Réparation après un accrochage sur le parking, voiture rendue impeccable et assurance gérée pour moi.</p><footer>Sandrine P. · carrosserie</footer></blockquote>
+<blockquote><p>Le débosselage sans peinture a pris une matinée. On ne voit plus rien.</p><footer>Julien R. · débosselage</footer></blockquote>
+<blockquote><p>Très bon travail. J'aurais aimé pouvoir envoyer mes photos par le site plutôt que d'appeler.</p><footer>Karim B. · retouche peinture</footer></blockquote>
+</div></div></section>
+
+<section><div class="wrap" style="max-width:820px">
+<div class="head"><span class="eyebrow">Questions fréquentes</span><h2>Avant de venir</h2></div>
+<details><summary>Le devis en ligne est-il définitif ?</summary><p>C'est une fourchette calculée à partir de vos photos. L'atelier la confirme avant de commencer, sans frais.</p></details>
+<details><summary>Gérez-vous les démarches avec mon assurance ?</summary><p>Oui, nous accompagnons la déclaration et l'expertise.</p></details>
+<details><summary>Combien de temps reste ma voiture à l'atelier ?</summary><p>Un débosselage sans peinture se fait souvent en une demi-journée. Une réparation après sinistre dépend de l'ampleur ; la date de remise est annoncée au rendez-vous.</p></details>
+<details><summary>Puis-je déposer ma voiture le matin ?</summary><p>Oui, choisissez un créneau de dépôt dans l'agenda ci-dessus.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap grid">
+<div><span class="eyebrow">Contact</span><h2 style="margin:12px 0 16px">Carrosserie de Valmont</h2><p>Garage de Valmont Sàrl<br>Chemin de Maillefer 34<br>1052 Le Mont-sur-Lausanne</p><p><a href="tel:+41216482566">+41 21 648 25 66</a></p></div>
+<div><h3 style="font-size:26px;margin-bottom:12px">Horaires (exemple)</h3><p>Lundi au vendredi : 8 h 00 à 12 h 00 et 13 h 30 à 17 h 30</p><p>Samedi et dimanche : fermé</p><a class="btn btn-o" href="#reserver" style="margin-top:14px">Demander un devis</a></div>
+</div></section>
+<footer class="f">Maquette Keteris · Carrosserie de Valmont · Données fictives</footer>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
+var state={svc:"Réparation de carrosserie",p:350,m:1,ph:0,day:null,slot:null};
+var sizes={"1":"Léger","1.8":"Moyen","3":"Important"};
+function tab(n){var d=n==="devis";$("#p-devis").hidden=!d;$("#p-rdv").hidden=d;$("#t-devis").setAttribute("aria-selected",d);$("#t-rdv").setAttribute("aria-selected",!d)}
+$("#t-devis").onclick=function(){tab("devis")};$("#t-rdv").onclick=function(){tab("rdv")};
+$$("[data-tab=rdv]").forEach(function(a){a.addEventListener("click",function(){tab("rdv")})});
+$$("[data-svc]").forEach(function(a){a.addEventListener("click",function(){tab("devis");pick(a.dataset.svc)})});
+function pick(n){$$("#svc .chip").forEach(function(c){var on=c.dataset.n===n;c.setAttribute("aria-pressed",on);if(on){state.svc=n;state.p=+c.dataset.p}});render()}
+$$("#svc .chip").forEach(function(c){c.onclick=function(){pick(c.dataset.n)}});
+$("#size").onchange=function(){state.m=+this.value;render()};
+$$(".photo").forEach(function(b){b.onclick=function(){var on=b.classList.toggle("on");b.innerHTML=on?'<img src="'+b.dataset.img+'" alt="Photo du dégât">':"+ Photo";state.ph=$$(".photo.on").length;render()}});
+function chf(n){return "CHF "+Math.round(n/10)*10}
+function render(){var base=state.p*state.m;var lo=base*(state.ph?0.9:0.8),hi=base*(state.ph?1.15:1.4);
+$("#r-svc").textContent=state.svc;$("#r-size").textContent=sizes[state.m];$("#r-ph").textContent=state.ph+" / 3";
+$("#r-tot").textContent=chf(lo)+" – "+Math.round(hi/10)*10;
+$("#r-rdv").textContent=state.slot?state.day.toLocaleDateString("fr-CH",{weekday:"short",day:"numeric",month:"short"})+" · "+state.slot:"À choisir"}
+var now=new Date(),y=now.getFullYear(),mo=now.getMonth();
+$("#month").textContent=new Date(y,mo,1).toLocaleDateString("fr-CH",{month:"long",year:"numeric"});
+var first=(new Date(y,mo,1).getDay()+6)%7,nd=new Date(y,mo+1,0).getDate(),box=$("#days");
+for(var i=0;i<first;i++){var b=document.createElement("span");b.className="day blank";box.appendChild(b)}
+for(var d=1;d<=nd;d++){(function(d){var dt=new Date(y,mo,d),wk=dt.getDay(),b=document.createElement("button");b.type="button";b.textContent=d;
+var past=d<=now.getDate(),closed=wk===0||wk===6;b.className="day"+(past||closed?"":(d%5===0?" few":" open"));b.disabled=past||closed;b.setAttribute("aria-pressed","false");
+b.onclick=function(){$$(".day").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");state.day=dt;state.slot=null;slots(d)};box.appendChild(b)})(d)}
+function slots(d){var all=["08:00","09:00","10:00","11:00","13:30","14:30","15:30","16:30"],s=$("#slots");s.innerHTML="";
+$("#slotsub").textContent="Créneaux de dépôt du "+state.day.toLocaleDateString("fr-CH",{weekday:"long",day:"numeric",month:"long"});
+all.forEach(function(t,i){var b=document.createElement("button");b.type="button";b.className="slot";b.textContent=t;b.disabled=(d+i)%4===0;b.setAttribute("aria-pressed","false");
+b.onclick=function(){$$(".slot").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");state.slot=t;render()};s.appendChild(b)})}
+$("#go").onclick=function(){var o=$("#ok");var when=state.slot?" Rendez-vous le "+state.day.toLocaleDateString("fr-CH",{weekday:"long",day:"numeric",month:"long"})+" à "+state.slot+".":" Vous recevrez une proposition de créneau par SMS.";
+o.innerHTML="<b>Demande envoyée.</b> Merci "+$("#nm").value.split(" ")[0]+", nous avons bien reçu votre demande ("+state.svc.toLowerCase()+", "+state.ph+" photo"+(state.ph>1?"s":"")+")."+when+" Un rappel SMS vous sera envoyé la veille.";o.classList.add("show")};
+render();
+})();
+</script>
+</body>
+</html>
