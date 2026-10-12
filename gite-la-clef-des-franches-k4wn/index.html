@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gîtes La Clef des Franches · Saignelégier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--pine:#1f3a2e;--moss:#4d6b4a;--cream:#f6f1e7;--ink:#1c2420;--clay:#b5532f;--muted:#66705f;--line:#dcd5c3;--display:"Fraunces",Georgia,serif;--body:"Figtree",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 var(--body)}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 16px var(--body);padding:14px 26px;border-radius:8px;text-decoration:none;background:var(--clay);color:#fff}
+.btn:hover{background:#9a4222}.btn:disabled{opacity:.45;cursor:not-allowed}
+.demo-bar{background:var(--ink);color:#e6e2d4;font:500 13px/1.4 var(--body);text-align:center;padding:9px 16px}
+nav{position:sticky;top:0;z-index:10;background:rgba(31,58,46,.95)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{font:800 19px var(--display);color:#fff;text-decoration:none}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}nav ul a{color:#d9e3d4;text-decoration:none;font-size:15px}
+nav .btn{padding:9px 16px;font-size:15px}
+@media(max-width:780px){nav ul{display:none}}
+.hero{position:relative;color:#fff;background:#1f3a2e url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=75") center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,38,30,.92),rgba(20,38,30,.5) 60%,rgba(20,38,30,.2))}
+.hero .wrap{position:relative;padding-block:90px 100px;display:grid;gap:24px}
+.hero h1{font-size:clamp(38px,6.5vw,74px);font-weight:800;max-width:13ch}
+.hero p{max-width:46ch;font-size:19px;margin:0;color:#e8efe4}
+.hero .eyebrow{color:#f0a98a}
+.stats{background:var(--pine);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:26px;text-align:center}
+.stats b{display:block;font:800 30px var(--display)}.stats span{font-size:14px;color:#c9d6c4}
+@media(max-width:700px){.stats .wrap{grid-template-columns:1fr 1fr}}
+section{padding-block:72px}
+.head{display:grid;gap:10px;margin-bottom:34px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{height:230px;width:100%;object-fit:cover}
+.card div{padding:22px;display:grid;gap:10px;flex:1;align-content:start}
+.card h3{font-size:26px}.card ul{margin:0;padding-left:18px;color:var(--muted)}
+.price{font:800 24px var(--display);color:var(--pine)}.price small{font:500 14px var(--body);color:var(--muted)}
+.book{background:#fff;border-block:1px solid var(--line)}
+.bk{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+@media(max-width:860px){.bk{grid-template-columns:1fr}}
+.box{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:22px}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tabs button{font:600 15px var(--body);padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--pine);color:#fff;border-color:var(--pine)}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cal-h button{border:1px solid var(--line);background:#fff;border-radius:8px;width:38px;height:38px;cursor:pointer;font-size:18px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal i{font:600 12px var(--body);color:var(--muted);font-style:normal;padding:4px}
+.cal button{aspect-ratio:1;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;font:500 15px var(--body)}
+.cal button:disabled{background:#e9e4d6;color:#a7a28f;text-decoration:line-through;cursor:not-allowed}
+.cal button.sel{background:var(--moss);color:#fff;border-color:var(--moss)}
+.cal button.mid{background:#dde6d6}
+.hint{font-size:14px;color:var(--muted);margin:10px 0 0}
+label{display:grid;gap:4px;font-weight:600;font-size:14px;margin-bottom:12px}
+input,select{font:16px var(--body);padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;width:100%}
+.sum{border-top:1px dashed var(--line);margin-top:8px;padding-top:12px;display:grid;gap:4px;font-size:15px}
+.sum div{display:flex;justify-content:space-between}.sum .tot{font-weight:700;font-size:17px}
+.ok{display:none;background:#e5efdd;border:1px solid #b9cfa9;border-radius:10px;padding:16px;margin-top:14px}
+.save{background:var(--pine);color:#fff;border-radius:12px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+@media(max-width:700px){.save{grid-template-columns:1fr}}
+.save h3{font-size:24px}.save b{font:800 34px var(--display);color:#f0a98a}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal img{height:220px;width:100%;object-fit:cover;border-radius:10px}
+@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}.gal img{height:150px}}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:800px){.rev{grid-template-columns:1fr}}
+.rev blockquote{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.rev cite{display:block;margin-top:10px;font-style:normal;color:var(--muted);font-size:14px}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+.contact{background:var(--pine);color:#fff}.contact a{color:#f0a98a}
+footer{background:#14261e;color:#a9b8a3;text-align:center;padding:20px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="demo-bar">Maquette proposée par Keteris à Gîtes La Clef des Franches. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap"><a class="logo" href="#top">La Clef des Franches</a>
+<ul><li><a href="#logements">Logements</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#avis">Avis</a></li><li><a href="#faq">Questions</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn" href="#reserver">Réserver</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<span class="eyebrow">Saignelégier · Franches-Montagnes · Jura</span>
+<h1>Deux gîtes dans un manoir de 1905</h1>
+<p>Un studio pour deux et un appartement jusqu'à cinq personnes, rénovés en 2024, au calme au centre de Saignelégier. Réservez en direct, sans intermédiaire.</p>
+<div><a class="btn" href="#reserver">Réserver mon séjour</a></div></div></header>
+
+<div class="stats"><div class="wrap">
+<div><b>2</b><span>logements</span></div><div><b>5</b><span>personnes max.</span></div><div><b>2024</b><span>année de rénovation</span></div><div><b>0 %</b><span>commission en direct</span></div></div></div>
+
+<section id="logements"><div class="wrap">
+<div class="head"><span class="eyebrow">Nos logements</span><h2>Le studio et l'appartement</h2></div>
+<div class="cards">
+<article class="card"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=70" alt="Studio lumineux" loading="lazy"><div>
+<h3>Le Studio</h3><span class="price">CHF 95 <small>/ nuit, 2 personnes</small></span>
+<ul><li>23 m², rez-de-chaussée</li><li>Grande terrasse de plain-pied</li><li>Cuisine moderne, douche, WLAN</li></ul><a class="btn" href="#reserver" data-pick="studio">Réserver le studio</a></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=70" alt="Chambre de l'appartement" loading="lazy"><div>
+<h3>L'Appartement</h3><span class="price">CHF 150 <small>/ nuit, jusqu'à 5 personnes</small></span>
+<ul><li>55 m², deux pièces avec mezzanine</li><li>Lit escamotable, literie de qualité</li><li>Machine Nespresso, service à fondue et raclette</li></ul><a class="btn" href="#reserver" data-pick="appart">Réserver l'appartement</a></div></article>
+</div></div></section>
+
+<section class="book" id="reserver"><div class="wrap">
+<div class="head"><span class="eyebrow">Réservation directe</span><h2>Choisissez vos dates, confirmez en 2 minutes</h2></div>
+<div class="bk">
+<div class="box"><div class="tabs" role="group" aria-label="Logement"><button type="button" id="t-studio" aria-pressed="true">Studio · CHF 95</button><button type="button" id="t-appart" aria-pressed="false">Appartement · CHF 150</button></div>
+<div class="cal-h"><button type="button" id="prev" aria-label="Mois précédent">‹</button><strong id="mois"></strong><button type="button" id="next" aria-label="Mois suivant">›</button></div>
+<div class="cal" id="cal"></div>
+<p class="hint">Cliquez sur l'arrivée puis sur le départ. Les dates barrées sont déjà prises.</p></div>
+<form class="box" id="form" novalidate>
+<label>Voyageurs<select id="pers"></select></label>
+<label>Nom et prénom<input id="nom" required autocomplete="name"></label>
+<label>E-mail<input id="mail" type="email" required autocomplete="email"></label>
+<div class="sum"><div><span id="l-nuits">Nuits</span><span id="v-nuits">–</span></div><div><span>Taxe de séjour</span><span id="v-taxe">–</span></div><div class="tot"><span>Total séjour</span><span id="v-tot">–</span></div><div><span>Acompte 30 % (TWINT ou carte)</span><span id="v-acompte">–</span></div></div>
+<p style="margin:14px 0 0"><button class="btn" id="go" type="submit" disabled>Payer l'acompte et confirmer</button></p>
+<div class="ok" id="ok" role="status"></div></form></div>
+
+<div class="save"><div><h3>Ce que coûtent les plateformes</h3><p style="color:#c9d6c4;margin:8px 0 0">Avec une commission d'environ 15 %, un séjour de 4 nuits en appartement (CHF 600) laisse CHF 90 aux plateformes.</p></div>
+<div><b id="eco">CHF 90</b><p style="color:#c9d6c4;margin:6px 0 0">gardés par séjour en réservation directe. Exemple chiffré, à ajuster avec vos conditions réelles.</p></div></div>
+</div></section>
+
+<section id="galerie"><div class="wrap"><div class="head"><span class="eyebrow">Galerie</span><h2>Le cadre</h2></div>
+<div class="gal"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=70" alt="Paysage vert" loading="lazy"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=70" alt="Chambre" loading="lazy"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=70" alt="Salon" loading="lazy"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=70" alt="Montagnes" loading="lazy"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=70&sat=-30" alt="Coin lecture" loading="lazy"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=70&sat=-30" alt="Pâturages" loading="lazy"></div></div></section>
+
+<section id="avis" style="background:#fff"><div class="wrap"><div class="head"><span class="eyebrow">Avis (fictifs)</span><h2>Ce que diront vos voyageurs</h2></div>
+<div class="rev"><blockquote>★★★★★<br>« Calme absolu, appartement impeccable, la raclette dans la cuisine était parfaite. »<cite>Camille, Lausanne</cite></blockquote><blockquote>★★★★★<br>« Studio chaleureux, terrasse de plain-pied et accueil attentionné. »<cite>Marc, Bâle</cite></blockquote><blockquote>★★★★★<br>« Nous avons pu venir avec notre chien. Idéal pour explorer les Franches-Montagnes. »<cite>Sophie, Neuchâtel</cite></blockquote></div></div></section>
+
+<section id="faq"><div class="wrap"><div class="head"><span class="eyebrow">Questions</span><h2>Bon à savoir</h2></div>
+<details><summary>Les animaux sont-ils acceptés ?</summary><p>Oui, pour CHF 10 par animal et par séjour.</p></details>
+<details><summary>Comment se déroule le paiement ?</summary><p>Un acompte de 30 % en ligne par TWINT ou carte, le solde à l'arrivée.</p></details>
+<details><summary>Le Jura-Pass est-il inclus ?</summary><p>Oui, les voyageurs bénéficient du transport public gratuit et de réductions avec le Jura-Pass.</p></details>
+<details><summary>Puis-je annuler ?</summary><p>Annulation gratuite jusqu'à 14 jours avant l'arrivée (conditions à définir par vos soins).</p></details></div></section>
+
+<section class="contact" id="contact"><div class="wrap"><div class="head"><span class="eyebrow">Contact</span><h2>Rue du Pâquier 10, 2350 Saignelégier</h2></div>
+<p>Téléphone : +41 77 411 61 46<br>Une question avant de réserver ? Écrivez-nous, nous répondons sous 24 h.</p><a class="btn" href="#reserver">Réserver mon séjour</a></div></section>
+<footer>Maquette Keteris · données fictives · noindex</footer>
+
+<script>
+(function(){
+var P={studio:{p:95,max:2,n:'Studio'},appart:{p:150,max:5,n:'Appartement'}},cur='studio',a=null,b=null,d=new Date();d.setDate(1);d.setHours(0,0,0,0);
+var today=new Date();today.setHours(0,0,0,0);
+var M=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+function taken(dt,k){var s=dt.getFullYear()*372+dt.getMonth()*31+dt.getDate();return (s*7+(k=='studio'?3:5))%9==0}
+function chf(n){return 'CHF '+n}
+function $(i){return document.getElementById(i)}
+function render(){var c=$('cal');c.innerHTML='';$('mois').textContent=M[d.getMonth()]+' '+d.getFullYear();
+['L','M','M','J','V','S','D'].forEach(function(x){var e=document.createElement('i');e.textContent=x;c.appendChild(e)});
+var off=(d.getDay()+6)%7,n=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
+for(var i=0;i<off;i++)c.appendChild(document.createElement('span'));
+for(var k=1;k<=n;k++){(function(k){var dt=new Date(d.getFullYear(),d.getMonth(),k),bt=document.createElement('button');bt.type='button';bt.textContent=k;
+bt.disabled=dt<=today||taken(dt,cur);
+if(a&&+dt==+a||b&&+dt==+b)bt.className='sel';else if(a&&b&&dt>a&&dt<b)bt.className='mid';
+bt.onclick=function(){if(!a||b){a=dt;b=null}else if(dt>a){var ok=true;for(var x=new Date(a);x<dt;x.setDate(x.getDate()+1))if(taken(x,cur))ok=false;if(ok)b=dt;else{a=dt}}else a=dt;render();sum()};c.appendChild(bt)})(k)}}
+function sum(){var pe=P[cur],ok=a&&b;if(!ok){['v-nuits','v-taxe','v-tot','v-acompte'].forEach(function(i){$(i).textContent='–'});$('go').disabled=true;return}
+var n=Math.round((b-a)/864e5),pers=+$('pers').value,taxe=n*pers*3,tot=n*pe.p+taxe;
+$('v-nuits').textContent=n+' × '+chf(pe.p)+' = '+chf(n*pe.p);$('v-taxe').textContent=chf(taxe);$('v-tot').textContent=chf(tot);$('v-acompte').textContent=chf(Math.round(tot*.3));$('go').disabled=false;
+$('eco').textContent=chf(Math.round(n*pe.p*.15))}
+function pick(k){cur=k;a=b=null;$('t-studio').setAttribute('aria-pressed',k=='studio');$('t-appart').setAttribute('aria-pressed',k=='appart');
+var s=$('pers');s.innerHTML='';for(var i=1;i<=P[k].max;i++){var o=document.createElement('option');o.value=i;o.textContent=i+(i>1?' personnes':' personne');s.appendChild(o)}render();sum()}
+$('t-studio').onclick=function(){pick('studio')};$('t-appart').onclick=function(){pick('appart')};
+Array.prototype.forEach.call(document.querySelectorAll('[data-pick]'),function(e){e.addEventListener('click',function(){pick(e.getAttribute('data-pick'))})});
+$('prev').onclick=function(){d.setMonth(d.getMonth()-1);render()};$('next').onclick=function(){d.setMonth(d.getMonth()+1);render()};
+$('pers').onchange=sum;
+$('form').onsubmit=function(e){e.preventDefault();if(!$('nom').value.trim()||!/\S+@\S+/.test($('mail').value)){alert('Indiquez votre nom et un e-mail valide.');return}
+var o=$('ok');o.style.display='block';o.textContent='Séjour confirmé (simulation) : '+P[cur].n+', du '+a.toLocaleDateString('fr-CH')+' au '+b.toLocaleDateString('fr-CH')+'. Un e-mail de confirmation est envoyé à '+$('mail').value+'.'};
+pick('studio');
+})();
+</script>
+</body></html>
