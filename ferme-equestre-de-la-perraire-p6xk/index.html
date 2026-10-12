@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Ferme équestre de la Perraire · Cremin</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{--g:#2f4a2a;--o:#c8702a;--c:#faf5ea;--i:#222;--m:#6a705f;--l:#e0d8c4;--d:"Bitter",Georgia,serif;--b:"Nunito",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--c);color:var(--i);font:16px/1.6 var(--b)}
+img{max-width:100%;display:block}h1,h2,h3{font-family:var(--d);line-height:1.1;margin:0}h2{font-size:clamp(28px,4vw,40px)}
+.w{max-width:1040px;margin:0 auto;padding-inline:20px}
+.bar{background:var(--i);color:#eee;font-size:13px;text-align:center;padding:9px 16px}
+nav{position:sticky;top:0;z-index:5;background:var(--g)}nav .w{display:flex;justify-content:space-between;align-items:center;padding-block:11px}
+.lg{font:800 18px var(--d);color:#fff;text-decoration:none}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 16px var(--b);padding:13px 24px;border-radius:8px;background:var(--o);color:#fff;text-decoration:none}.btn:disabled{opacity:.45;cursor:not-allowed}
+nav .btn{padding:8px 16px;font-size:15px}
+.hero{position:relative;color:#fff;background:#2f4a2a url("https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1800&q=70") center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,34,18,.9),rgba(20,34,18,.45))}
+.hero .w{position:relative;padding-block:84px 92px;display:grid;gap:20px}.hero h1{font-size:clamp(36px,6vw,64px);max-width:14ch}.hero p{max-width:44ch;font-size:19px;margin:0}
+.st{background:var(--g);color:#fff}.st .w{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-block:22px;text-align:center}.st b{display:block;font:800 28px var(--d)}.st span{font-size:14px;color:#cdd8c6}
+@media(max-width:700px){.st .w{grid-template-columns:1fr 1fr}}
+section{padding-block:64px}.hd{margin-bottom:28px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:800px){.cards{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--l);border-radius:12px;overflow:hidden}.card img{height:190px;width:100%;object-fit:cover}.card div{padding:18px;display:grid;gap:8px}
+.p{font:800 24px var(--d);color:var(--g)}.p small{font:600 14px var(--b);color:var(--m)}
+.bk{background:#fff;border-block:1px solid var(--l)}.g2{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}@media(max-width:860px){.g2{grid-template-columns:1fr}}
+.box{background:var(--c);border:1px solid var(--l);border-radius:12px;padding:20px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tabs button{font:700 15px var(--b);padding:9px 15px;border-radius:99px;border:1px solid var(--l);background:#fff;cursor:pointer}.tabs button[aria-pressed=true]{background:var(--g);color:#fff;border-color:var(--g)}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.ch button{width:38px;height:38px;border:1px solid var(--l);background:#fff;border-radius:8px;cursor:pointer;font-size:18px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}.cal i{font:700 12px var(--b);color:var(--m);font-style:normal}
+.cal button{aspect-ratio:1;border:1px solid var(--l);background:#fff;border-radius:8px;cursor:pointer;font:600 15px var(--b)}.cal button:disabled{background:#eee8d8;color:#aaa;text-decoration:line-through;cursor:not-allowed}.cal button.s{background:var(--g);color:#fff;border-color:var(--g)}
+.sl{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.sl button{padding:9px 14px;border:1px solid var(--l);background:#fff;border-radius:8px;font:700 15px var(--b);cursor:pointer}.sl button.s{background:var(--o);color:#fff;border-color:var(--o)}.sl button:disabled{color:#aaa;text-decoration:line-through;cursor:not-allowed}
+label{display:grid;gap:4px;font-weight:700;font-size:14px;margin-bottom:12px}input,select{font:16px var(--b);padding:11px;border:1px solid var(--l);border-radius:8px;background:#fff;width:100%}
+.sum{border-top:1px dashed var(--l);margin-top:6px;padding-top:10px;display:grid;gap:3px}.sum div{display:flex;justify-content:space-between}.tot{font-weight:800}
+.ok{display:none;background:#e6efdc;border:1px solid #b9cfa9;border-radius:10px;padding:14px;margin-top:12px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.gal img{height:200px;width:100%;object-fit:cover;border-radius:10px}@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}.gal img{height:140px}}
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:800px){.rv{grid-template-columns:1fr}}.rv blockquote{margin:0;background:#fff;border:1px solid var(--l);border-radius:12px;padding:18px}.rv cite{display:block;margin-top:8px;font-style:normal;color:var(--m);font-size:14px}
+details{background:#fff;border:1px solid var(--l);border-radius:10px;padding:13px 17px;margin-bottom:9px}summary{font-weight:700;cursor:pointer}
+.ct{background:var(--g);color:#fff}.ct a{color:#f3b07a}footer{background:#1b2d18;color:#a9b8a3;text-align:center;padding:18px;font-size:13px}
+</style></head><body id="top">
+<div class="bar">Maquette proposée par Keteris à la Ferme équestre de la Perraire. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="w"><a class="lg" href="#top">La Perraire</a><a class="btn" href="#reserver">Réserver</a></div></nav>
+<header class="hero"><div class="w"><h1>Balades à cheval et à poney à Cremin</h1><p>Mini-balade dès 10 CHF, balades d'une ou deux heures, poney dès 2 ans. Réservez en ligne, sans attendre un rappel.</p><div><a class="btn" href="#reserver">Réserver une balade</a></div></div></header>
+<div class="st"><div class="w"><div><b>10 CHF</b><span>mini-balade 15 min</span></div><div><b>dès 2 ans</b><span>balades à poney</span></div><div><b>mar-dim</b><span>dès 13h30</span></div><div><b>TWINT</b><span>acompte en ligne</span></div></div></div>
+<section id="balades"><div class="w"><div class="hd"><h2>Nos balades</h2></div><div class="cards">
+<div class="card"><img src="https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&w=800&q=70" alt="Cheval" loading="lazy"><div><h3>Mini-balade</h3><span>15 minutes, idéale pour les petits.</span><div class="p">10 CHF</div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=70" alt="Cheval blanc" loading="lazy"><div><h3>Balade à cheval</h3><span>1 heure ou 2 heures, en groupe de 4 maximum.</span><div class="p">dès 45 CHF <small>exemple fictif</small></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1546700990-7b6416f2d90c?auto=format&fit=crop&w=800&q=70" alt="Poney" loading="lazy"><div><h3>Balade à poney</h3><span>Dès 2 ans, accompagnée, dès 14h.</span><div class="p">dès 20 CHF <small>exemple fictif</small></div></div></div></div></div></section>
+<section class="bk" id="reserver"><div class="w"><div class="hd"><h2>Réserver votre balade</h2><p>Choisissez le jour et l'heure : la place est confirmée tout de suite, plus besoin d'appeler.</p></div>
+<div class="g2"><div class="box"><div class="tabs" id="tabs"></div><div class="ch"><button id="pv" aria-label="Mois précédent">‹</button><b id="mo"></b><button id="nx" aria-label="Mois suivant">›</button></div><div class="cal" id="cal"></div><div class="sl" id="sl"></div></div>
+<div class="box"><label>Nombre de personnes<select id="n"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label><label>Nom<input id="nm" placeholder="Votre nom"></label><label>Téléphone<input id="tl" placeholder="079 000 00 00"></label>
+<div class="sum"><div><span id="sd">Balade</span><span id="sp">0 CHF</span></div><div class="tot"><span>Acompte TWINT (30 %)</span><span id="ac">0 CHF</span></div></div>
+<p style="margin:14px 0 0"><button class="btn" id="go" disabled>Payer l'acompte avec TWINT</button></p><div class="ok" id="ok"></div></div></div></div></section>
+<section><div class="w"><div class="hd"><h2>La ferme en images</h2></div><div class="gal"><img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy"><img src="https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy"><img src="https://images.unsplash.com/photo-1598711033236-3e0b403a14e8?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy"></div></div></section>
+<section style="padding-top:0"><div class="w"><div class="hd"><h2>Avis</h2></div><div class="rv"><blockquote>« Mon fils de 3 ans a adoré son tour de poney. »<cite>Sandrine, Lucens (fictif)</cite></blockquote><blockquote>« Accueil chaleureux, chevaux très calmes. »<cite>Marc, Moudon (fictif)</cite></blockquote><blockquote>« Réservé en 2 minutes depuis mon téléphone. »<cite>Léa, Payerne (fictif)</cite></blockquote></div></div></section>
+<section style="padding-top:0"><div class="w"><div class="hd"><h2>Questions</h2></div><details><summary>Faut-il savoir monter ?</summary><p>Non, les balades sont accompagnées et adaptées aux débutants.</p></details><details><summary>Que se passe-t-il s'il pleut ?</summary><p>Nous vous prévenons et reportons la balade sans frais.</p></details><details><summary>Comment payer ?</summary><p>Acompte par TWINT à la réservation, solde sur place.</p></details></div></section>
+<section class="ct" id="contact"><div class="w"><h2>Contact</h2><p>Chemin de la Perraire 4, 1526 Cremin · Ouvert sur rendez-vous du mardi au dimanche dès 13h30 · <a href="tel:+41797235077">079 723 50 77</a></p></div></section>
+<footer>Maquette Keteris · contenu fictif · non indexée</footer>
+<script>
+var T=[["Mini-balade 15 min",10],["Cheval 1 h",45],["Cheval 2 h",80],["Poney 30 min",20]],ti=1,M=new Date(2026,9,1),sel=null,hr=null;
+var H=["14h00","15h30","17h00"],$=function(i){return document.getElementById(i)};
+function tabs(){$("tabs").innerHTML="";T.forEach(function(t,i){var b=document.createElement("button");b.textContent=t[0];b.setAttribute("aria-pressed",i==ti);b.onclick=function(){ti=i;tabs();sum()};$("tabs").appendChild(b)})}
+function cal(){var c=$("cal");c.innerHTML="";["L","M","M","J","V","S","D"].forEach(function(d){c.insertAdjacentHTML("beforeend","<i>"+d+"</i>")});
+$("mo").textContent=M.toLocaleDateString("fr-CH",{month:"long",year:"numeric"});var f=(new Date(M.getFullYear(),M.getMonth(),1).getDay()+6)%7,n=new Date(M.getFullYear(),M.getMonth()+1,0).getDate();
+for(var i=0;i<f;i++)c.appendChild(document.createElement("span"));
+for(var d=1;d<=n;d++){var b=document.createElement("button"),dt=new Date(M.getFullYear(),M.getMonth(),d);b.textContent=d;b.disabled=dt<new Date(2026,9,13)||dt.getDay()==1||d%7==3;
+if(sel&&sel.getTime()==dt.getTime())b.className="s";(function(dt){b.onclick=function(){sel=dt;hr=null;cal();slots();sum()}})(dt);c.appendChild(b)}}
+function slots(){var s=$("sl");s.innerHTML="";if(!sel)return;H.forEach(function(h,i){var b=document.createElement("button");b.textContent=h;b.disabled=(sel.getDate()+i)%4==0;if(hr==h)b.className="s";b.onclick=function(){hr=h;slots();sum()};s.appendChild(b)})}
+function sum(){var n=+$("n").value,p=T[ti][1]*n;$("sd").textContent=T[ti][0]+" × "+n;$("sp").textContent=p+" CHF";$("ac").textContent=Math.round(p*.3)+" CHF";$("go").disabled=!(sel&&hr&&$("nm").value&&$("tl").value)}
+$("pv").onclick=function(){M=new Date(M.getFullYear(),M.getMonth()-1,1);cal()};$("nx").onclick=function(){M=new Date(M.getFullYear(),M.getMonth()+1,1);cal()};
+["n","nm","tl"].forEach(function(i){$(i).oninput=sum});
+$("go").onclick=function(){$("ok").style.display="block";$("ok").textContent="Merci "+$("nm").value+" ! Balade confirmée le "+sel.toLocaleDateString("fr-CH")+" à "+hr+". Un SMS de confirmation vous est envoyé (démonstration)."};
+tabs();cal();sum();
+</script></body></html>
