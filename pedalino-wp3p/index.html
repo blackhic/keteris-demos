@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pedalino · Vidy-Lausanne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout : site vitrine plein écran, sections alternées mer profonde / sable, réservation au centre */
+:root{
+  --abyss:#073b4c;      /* bleu profond */
+  --sea:#0e7c9b;        /* bleu Méditerranée */
+  --foam:#f4f8f7;       /* sable clair */
+  --ink:#10232e;        /* texte */
+  --porphyre:#e8590c;   /* orange */
+  --muted:#5b6f78;
+  --line:#d6e0e2;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--foam);color:var(--ink);font:16px/1.6 var(--body)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,4.2vw,46px);font-weight:800;letter-spacing:-.02em}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--porphyre)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 16px var(--body);padding:14px 24px;border-radius:999px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:focus-visible{outline:3px solid var(--porphyre);outline-offset:3px}
+.btn-red{background:var(--porphyre);color:#fff}
+.btn-red:hover{transform:translateY(-1px);background:#c24a08}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4)}
+
+/* Bandeau maquette */
+.demo-bar{background:var(--ink);color:#cfe2e8;font:500 13px/1.4 var(--body);text-align:center;padding:9px 16px}
+.demo-bar b{color:#fff}
+
+/* Navigation */
+nav{position:sticky;top:0;z-index:10;background:rgba(7,59,76,.92);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font:800 20px var(--display);color:#fff;text-decoration:none;letter-spacing:-.01em}
+.logo span{color:#ffa066}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{color:#cfe2e8;text-decoration:none;font-weight:500;font-size:15px}
+nav ul a:hover{color:#fff}
+nav .btn{padding:10px 18px;font-size:15px}
+@media(max-width:820px){nav ul{display:none}}
+
+/* Hero */
+.hero{position:relative;color:#fff;background:var(--abyss) url("https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=2000&q=80") center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,59,76,.92) 0%,rgba(7,59,76,.55) 55%,rgba(7,59,76,.15) 100%)}
+.hero .wrap{position:relative;padding-block:96px 120px;display:grid;gap:28px;max-width:1120px}
+.hero h1{font-size:clamp(42px,7vw,84px);font-weight:800;letter-spacing:-.03em;max-width:12ch}
+.hero h1 em{font-style:normal;color:#ffa066}
+.hero p{font-size:19px;max-width:46ch;color:#dbe9ee;margin:0}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.depth{position:absolute;right:20px;bottom:24px;font:500 12px var(--mono);color:#9fc3cf;letter-spacing:.1em;text-align:right}
+
+/* Faits rapides */
+.facts{background:#fff;border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.fact{padding:26px 18px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0}
+.fact b{display:block;font:700 28px var(--display);color:var(--sea);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;color:var(--muted)}
+@media(max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr)}.fact:nth-child(3){border-left:0}.fact{border-top:1px solid var(--line)}}
+
+section{padding-block:88px}
+.head{display:grid;gap:12px;margin-bottom:40px;max-width:640px}
+.head p{color:var(--muted);margin:0;font-size:17px}
+
+/* Sorties */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.offer{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.offer .ph{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#0e7c9b,#073b4c)}
+.offer .in{padding:22px;display:grid;gap:10px;flex:1}
+.offer h3{font-size:24px;font-weight:700}
+.offer p{margin:0;color:var(--muted);font-size:15px}
+.offer .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+.price{font:800 28px var(--display);color:var(--ink)}
+.price small{font:500 14px var(--body);color:var(--muted)}
+.tag{font:500 12px var(--mono);color:var(--sea);letter-spacing:.06em}
+@media(max-width:860px){.offers{grid-template-columns:1fr}}
+
+/* Réservation */
+.book{background:var(--abyss);color:#fff}
+.book .head p{color:#a9c7d2}
+.book-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:start}
+.panel{background:#0b4a5e;border-radius:20px;padding:26px;border:1px solid rgba(255,255,255,.08);min-width:0}
+.panel h3{font-size:18px;font-weight:700;margin-bottom:16px}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cal-head h3{margin:0}
+.legend{display:flex;gap:14px;font-size:12px;color:#a9c7d2}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{margin-bottom:6px;font:500 11px var(--mono);color:#7d9aa6;text-align:center;letter-spacing:.08em}
+.days{margin-bottom:22px}
+.day{position:relative;background:transparent;border:1px solid rgba(255,255,255,.14);color:#fff;border-radius:10px;padding:9px 2px 13px;text-align:center;cursor:pointer;font:700 16px var(--display)}
+.day::after{content:"";position:absolute;left:50%;bottom:5px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--dot,transparent)}
+.day.open{--dot:#4fd1a5}.day.few{--dot:#ffb547}
+.day[aria-pressed="true"]{background:#fff;color:var(--abyss);border-color:#fff}
+.day:disabled{opacity:.28;cursor:not-allowed}
+.day.blank{visibility:hidden}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.prices div{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;font-size:13px;color:#a9c7d2}
+.prices b{display:block;font:800 20px var(--display);color:#fff}
+.field{display:grid;gap:6px}
+.field label{font-size:13px;color:#a9c7d2}
+.field input,.field select{width:100%;background:#06303e;border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:10px;padding:11px 12px;font:15px var(--body)}
+.field input:focus,.field select:focus{outline:2px solid #ffa066;outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.check{display:flex;gap:10px;font-size:13px;color:#cfe2e8;align-items:flex-start}
+.err{color:#ffc9a8;font-size:13px;margin:0}
+section,header{scroll-margin-top:70px}
+@media(max-width:420px){.two{grid-template-columns:1fr}.prices{grid-template-columns:1fr}}
+.slots{display:grid;gap:10px}
+.slot{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:14px;padding:14px 16px;cursor:pointer;text-align:left;font:inherit}
+.slot[aria-pressed="true"]{border-color:#ffa066;background:rgba(255,160,102,.12)}
+.slot time{font:500 15px var(--mono)}
+.slot .s-name{font-weight:600}
+.slot .s-sub{display:block;font-size:13px;color:#a9c7d2}
+.slot .left{font:500 12px var(--mono);color:#ffc9a8;white-space:nowrap}
+.slot .left.full{color:#7d9aa6}
+.summary{display:grid;gap:14px}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:#cfe2e8}
+.row b{color:#fff;font-weight:600;text-align:right}
+.qty{display:flex;align-items:center;gap:12px}
+.qty button{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:20px;cursor:pointer}
+.qty output{font:700 20px var(--display);min-width:24px;text-align:center}
+.total{border-top:1px solid rgba(255,255,255,.15);padding-top:14px}
+.total .row b{font:800 26px var(--display)}
+.panel .btn{width:100%;justify-content:center;margin-top:6px}
+.note{font-size:13px;color:#8fb2bf;margin:0}
+.done{display:grid;gap:10px;text-align:center;padding:12px 0}
+.done b{font:800 24px var(--display)}
+@media(max-width:860px){.book-grid{grid-template-columns:1fr}}
+@media(max-width:420px){.days,.dow{gap:4px}.day{font-size:14px;padding:8px 0 12px}}
+
+/* Sites */
+.sites{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.site{display:grid;grid-template-columns:1fr auto;gap:8px 18px;padding:24px;background:#fff;border-radius:18px;border:1px solid var(--line)}
+.site h3{font-size:22px;font-weight:700}
+.site p{grid-column:1/-1;margin:0;color:var(--muted);font-size:15px}
+.gauge{grid-row:1/3;grid-column:2;display:grid;justify-items:end;align-content:start;font:500 12px var(--mono);color:var(--muted)}
+.gauge b{font:800 30px var(--display);color:var(--sea)}
+.lvl{font:500 12px var(--mono);color:var(--porphyre);letter-spacing:.06em}
+@media(max-width:760px){.sites{grid-template-columns:1fr}}
+
+/* Galerie */
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:40px}
+.strip img{width:100%;height:260px;object-fit:cover;border-radius:16px}
+@media(max-width:760px){.strip{grid-template-columns:1fr}.strip img{height:200px}}
+
+/* Avis */
+.reviews{background:#fff}
+.rev-top{display:flex;align-items:center;gap:18px;margin-bottom:34px;flex-wrap:wrap}
+.score{font:800 56px var(--display);color:var(--ink);line-height:1}
+.stars{color:#f2a33a;font-size:20px;letter-spacing:2px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+blockquote{margin:0;padding:24px;border-radius:18px;background:var(--foam);display:grid;gap:12px}
+blockquote p{margin:0}
+blockquote footer{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.rev-grid{grid-template-columns:1fr}}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font:700 19px var(--display);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--porphyre)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin:10px 0 0;max-width:65ch}
+
+/* Contact */
+.contact{background:var(--sea);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.contact p{color:#d6eaf0}
+.c-list{display:grid;gap:14px;font-size:17px}
+.c-list span{display:block;font:500 12px var(--mono);letter-spacing:.1em;color:#a9d3e0;text-transform:uppercase}
+@media(max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+footer.site-foot{background:var(--abyss);color:#8fb2bf;font-size:14px;padding-block:28px}
+footer.site-foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar"><b>Maquette proposée par Keteris</b> à Pedalino. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Pedalino <span>Vidy</span></a>
+    <ul>
+      <li><a href="#sorties">Activités</a></li>
+      <li><a href="#reserver">Réserver</a></li>
+      <li><a href="#sites">Sur place</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-red" href="#reserver">Réserver</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#ffa066">Activités nautiques · Vidy · Lausanne</span>
+    <h1>Le Léman, <em>à votre rythme</em>.</h1>
+    <p>Pédalos, bateaux sans permis, paddle et kayak au bord du lac, chiens bienvenus. Choisissez votre activité et votre créneau, réservez en deux minutes et payez un acompte en ligne.</p>
+    <div class="cta">
+      <a class="btn btn-red" href="#reserver">Voir les créneaux</a>
+      <a class="btn btn-ghost" href="#sorties">Découvrir les activités</a>
+    </div>
+  </div>
+  <div class="depth">LAC LÉMAN<br>VIDY · LAUSANNE</div>
+</header>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>4,7/5</b><span>avis Google (fictif)</span></div>
+    <div class="fact"><b>23</b><span>pédalos à disposition</span></div>
+    <div class="fact"><b>6</b><span>bateaux 6 CV sans permis</span></div>
+    <div class="fact"><b>7 j/7</b><span>en saison, réservation en ligne</span></div>
+  </div>
+</div>
+
+<section id="sorties">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Nos activités</span>
+      <h2>Trois façons de prendre le large</h2>
+      <p>Au bord du lac à Vidy, matériel et gilets fournis. Les tarifs ci-dessous sont ceux de votre grille actuelle, reliés au calendrier de réservation.</p>
+    </div>
+    <div class="offers">
+      <article class="offer">
+        <div class="ph"><svg viewBox="0 0 120 70" width="120" height="70" aria-hidden="true"><path d="M10 44h100l-10 16H24z" fill="#fff"/><path d="M30 44V28h40l10 16" fill="#ffa066"/><circle cx="92" cy="30" r="8" fill="#fff"/><path d="M4 66c10-6 20 6 30 0s20 6 30 0 20 6 30 0 20 6 26 0" stroke="#fff" stroke-width="3" fill="none"/></svg></div>
+        <div class="in">
+          <span class="tag">MAX. 4 PERSONNES</span>
+          <h3>Pédalo</h3>
+          <p>Un moment de détente en famille ou entre amis, à deux pas de la plage de Vidy.</p>
+          <div class="meta"><span class="price">CHF 25 <small>/ heure</small></span><span class="tag">CHF 15 · ½ H</span></div>
+          <a class="btn btn-red" href="#reserver" data-type="Pédalo" style="justify-content:center">Réserver un pédalo</a>
+        </div>
+      </article>
+      <article class="offer">
+        <div class="ph"><svg viewBox="0 0 120 70" width="120" height="70" aria-hidden="true"><path d="M8 42h104l-14 18H26z" fill="#fff"/><path d="M40 42V26h34l12 16" fill="#ffa066"/><rect x="48" y="14" width="3" height="12" fill="#fff"/><path d="M4 66c10-6 20 6 30 0s20 6 30 0 20 6 30 0 20 6 26 0" stroke="#fff" stroke-width="3" fill="none"/></svg></div>
+        <div class="in">
+          <span class="tag">SANS PERMIS · MAX. 4</span>
+          <h3>Bateau 6 CV</h3>
+          <p>Naviguez en toute liberté sur le lac Léman sans permis, six bateaux à disposition.</p>
+          <div class="meta"><span class="price">CHF 60 <small>/ heure</small></span><span class="tag">CHF 40 · ½ H</span></div>
+          <a class="btn btn-red" href="#reserver" data-type="Bateau" style="justify-content:center">Réserver un bateau</a>
+        </div>
+      </article>
+      <article class="offer">
+        <div class="ph"><svg viewBox="0 0 120 70" width="120" height="70" aria-hidden="true"><path d="M8 54c30-8 74-8 104 0-30 6-74 6-104 0z" fill="#fff"/><path d="M62 8l14 40" stroke="#ffa066" stroke-width="5" stroke-linecap="round"/><ellipse cx="58" cy="10" rx="8" ry="5" fill="#ffa066"/><path d="M4 66c10-6 20 6 30 0s20 6 30 0 20 6 30 0 20 6 26 0" stroke="#fff" stroke-width="3" fill="none"/></svg></div>
+        <div class="in">
+          <span class="tag">STAND UP PADDLE · KAYAK</span>
+          <h3>Paddle et kayak</h3>
+          <p>Paddle haut de gamme ou kayak gonflable pour deux, pour glisser au ras de l'eau.</p>
+          <div class="meta"><span class="price">CHF 25 <small>/ heure</small></span><span class="tag">1 H</span></div>
+          <a class="btn btn-red" href="#reserver" data-type="Paddle" style="justify-content:center">Réserver un paddle</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="reserver">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" style="color:#ffa066">Réservation en ligne</span>
+      <h2>Choisissez votre créneau, on s'occupe du reste</h2>
+      <p>Disponibilités en temps réel pour chaque embarcation, acompte de 30 % pour bloquer le créneau, rappel par SMS avec l'heure de rendez-vous à la plage.</p>
+    </div>
+    <div class="book-grid">
+      <div class="panel">
+        <div class="cal-head"><h3>Juin 2027</h3><div class="legend"><span><i style="background:#4fd1a5"></i>Disponible</span><span><i style="background:#ffb547"></i>Presque complet</span></div></div>
+        <div class="dow"><span>LUN</span><span>MAR</span><span>MER</span><span>JEU</span><span>VEN</span><span>SAM</span><span>DIM</span></div>
+        <div class="days" id="days" role="group" aria-label="Jour de la location"></div>
+        <div class="slots" id="slots" role="group" aria-label="Créneau"></div>
+        <div class="prices">
+          <div><b>CHF 25</b>Pédalo 1 h</div>
+          <div><b>CHF 60</b>Bateau 1 h</div>
+          <div><b>CHF 25</b>Paddle 1 h</div>
+        </div>
+      </div>
+      <div class="panel" id="summary" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="sites">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Sur place</span>
+      <h2>Pensé pour les groupes et les familles</h2>
+      <p>Les demandes de groupe et de sortie d'entreprise arrivent déjà en ligne, avec un devis prérempli.</p>
+    </div>
+    <div class="sites">
+      <div class="site"><span class="lvl">GROUPES</span><h3>Mega Stand up Paddle</h3><div class="gauge">MAX.<b>6</b>pers.</div><p>Une grande planche de fête pour amis, familles, clubs ou classes. CHF 99 pour 1 h.</p></div>
+      <div class="site"><span class="lvl">ENTREPRISES</span><h3>Sortie d'entreprise</h3><div class="gauge">DEVIS<b>en ligne</b></div><p>Le client choisit les activités, le nombre de personnes et la date, vous recevez la demande complète au lieu d'un appel.</p></div>
+      <div class="site"><span class="lvl">SENSATIONS</span><h3>Bouée banane</h3><div class="gauge">PAR PERS.<b>CHF 50</b>¼ h</div><p>Réservée aux adultes, à réserver avec le créneau bateau.</p></div>
+      <div class="site"><span class="lvl">EN FAMILLE</span><h3>Chiens bienvenus</h3><div class="gauge">À VIDY<b>0 m</b>du lac</div><p>Un accueil simple, au bord de l'eau, annoncé clairement avant la réservation.</p></div>
+    </div>
+    <div class="strip">
+      <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1200&q=80" alt="Voilier sous un ciel bleu" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=700&q=80" alt="Bateau à moteur filant sur une eau bleue" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=700&q=80" alt="Bateau blanc sur l'eau" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="avis">
+  <div class="wrap">
+    <div class="rev-top">
+      <span class="score">4,7</span>
+      <div><div class="stars" aria-label="4,7 étoiles sur 5">★★★★★</div><span style="color:var(--muted)">avis fictifs, à remplacer par vos vrais avis</span></div>
+    </div>
+    <div class="rev-grid">
+      <blockquote><p>Un pédalo avec les enfants un dimanche d'été, le créneau était réservé à l'avance. Pas d'attente sur la plage.</p><footer>Camille D. · pédalo · juillet</footer></blockquote>
+      <blockquote><p>Sortie d'entreprise pour douze personnes, devis reçu le jour même. Paddle puis bateau, tout était prêt à notre arrivée.</p><footer>Marc B. · groupe · juin</footer></blockquote>
+      <blockquote><p>Très bon accueil, mon chien a pu monter sur le paddle. Le seul bémol : j'ai dû appeler plusieurs fois pour connaître les disponibilités.</p><footer>Léa P. · paddle · août</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="head"><span class="eyebrow">Questions fréquentes</span><h2>Avant de venir</h2></div>
+    <details><summary>Que se passe-t-il en cas de mauvais temps ?</summary><p>Si l'activité est annulée à cause du vent ou de l'orage, l'acompte est remboursé ou reporté sur la date de votre choix, sans frais.</p></details>
+    <details><summary>Faut-il un permis pour le bateau ?</summary><p>Non, les bateaux 6 CV se conduisent sans permis. Un briefing de sécurité est donné avant le départ.</p></details>
+    <details><summary>Comment payer ?</summary><p>L'acompte se règle en ligne par carte ou TWINT, le solde se règle sur place.</p></details>
+    <details><summary>Puis-je venir avec mon chien ?</summary><p>Oui, les chiens sont les bienvenus.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:#ffdcc4">Contact</span>
+      <h2 style="margin-top:12px">Une question avant de partir ?</h2>
+      <p>Sur l'eau, difficile de décrocher le téléphone. Réservez en ligne ou laissez un message, la réponse arrive le jour même.</p>
+    </div>
+    <div class="c-list">
+      <div><span>Téléphone</span>079 733 34 34</div>
+      <div><span>E-mail</span>info@pedalino.ch</div>
+      <div><span>Adresse</span>Plage de Vidy, Lausanne</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap"><span>© Pedalino (maquette)</span><span>Maquette réalisée par Keteris · +33 6 10 36 68 74</span></div>
+</footer>
+
+<script>
+(function(){
+  // Juin 2027 : le 1er tombe un mardi.
+  var TODAY=0, FIRST_DOW=1, DAYS_IN=30;
+  var DOW=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
+  function dow(d){return (FIRST_DOW+d-1)%7}
+  function tripsFor(d){
+    if(d<TODAY) return [];
+    var seed=(d*7)%5, w=dow(d)>=5;
+    var t=[["10:00","Pédalo","1 h · max. 4 pers.",25,(seed+2)%8],["12:00","Paddle","1 h · par planche",25,(seed+4)%9],["14:00","Bateau","1 h · 6 CV sans permis",60,(seed+1)%4]];
+    if(w) t.push(["16:00","Pédalo","1 h · max. 4 pers.",25,seed%3]);
+    return t;
+  }
+  var state={day:19,slot:0,qty:1,booked:false,want:null,err:""};
+  var D=document.getElementById("days"),S=document.getElementById("slots"),R=document.getElementById("summary");
+  function eur(n){return "CHF "+n.toLocaleString("fr-CH")}
+  function places(d){return tripsFor(d).reduce(function(a,t){return a+t[4]},0)}
+  function pickSlot(d){
+    var t=tripsFor(d);
+    for(var i=0;i<t.length;i++){if(t[i][4]>0&&(!state.want||t[i][1]===state.want))return i}
+    for(i=0;i<t.length;i++){if(t[i][4]>0)return i}
+    return -1;
+  }
+  function renderDays(){
+    D.innerHTML="";
+    for(var b=0;b<FIRST_DOW;b++){var x=document.createElement("span");x.className="day blank";D.appendChild(x)}
+    for(var d=1;d<=DAYS_IN;d++){
+      (function(d){
+        var el=document.createElement("button"),p=places(d);
+        el.type="button";el.textContent=d;
+        el.className="day"+(p>6?" open":p>0?" few":"");
+        el.setAttribute("aria-pressed",String(state.day===d));
+        el.setAttribute("aria-label",DOW[dow(d)]+" "+d+" juin"+(p?", "+p+" places":", pas de sortie"));
+        if(!p) el.disabled=true;
+        el.addEventListener("click",function(){state.day=d;state.slot=pickSlot(d);state.booked=false;render()});
+        D.appendChild(el);
+      })(d);
+    }
+  }
+  function renderSlots(){
+    S.innerHTML="";
+    tripsFor(state.day).forEach(function(s,i){
+      var b=document.createElement("button");
+      b.type="button";b.className="slot";b.disabled=s[4]===0;
+      b.setAttribute("aria-pressed",String(state.slot===i));
+      b.innerHTML='<time>'+s[0]+'</time><span><span class="s-name">'+s[1]+'</span><span class="s-sub">'+s[2]+' · '+eur(s[3])+'</span></span><span class="left'+(s[4]===0?' full':'')+'">'+(s[4]===0?'COMPLET':s[4]+' DISPO.')+'</span>';
+      b.addEventListener("click",function(){state.slot=i;state.booked=false;if(state.qty>s[4])state.qty=s[4];render()});
+      S.appendChild(b);
+    });
+  }
+  function val(id){var e=document.getElementById(id);return e?e.value.trim():""}
+  function renderSummary(){
+    var t=tripsFor(state.day),s=state.slot>=0?t[state.slot]:null;
+    if(!s){R.innerHTML='<h3>Votre réservation</h3><p class="note">Choisissez un jour en vert ou orange dans le calendrier.</p>';return}
+    var total=s[3]*state.qty,deposit=Math.round(total*.3),label=DOW[dow(state.day)]+". "+state.day+" juin · "+s[0];
+    if(state.booked){
+      R.innerHTML='<div class="done"><span class="eyebrow" style="color:#ffa066">Démonstration</span><b>Merci '+(state.name||"")+', c\'est réservé</b><p class="note">'+s[1]+' le '+label+', '+state.qty+' embarcation'+(state.qty>1?'s':'')+'. Sur le vrai site, le client paierait ici '+eur(deposit)+' d\'acompte (carte ou TWINT), recevrait sa confirmation par e-mail et un SMS de rappel. Pedalino recevrait la réservation dans son planning.</p><button class="btn btn-red" type="button" id="again">Faire une autre réservation</button></div>';
+      document.getElementById("again").addEventListener("click",function(){state.booked=false;render()});
+      return;
+    }
+    R.innerHTML='<h3>Votre réservation</h3><div class="summary">'+
+      '<div class="row"><span>Activité</span><b>'+s[1]+'</b></div>'+
+      '<div class="row"><span>Date</span><b>'+label+'</b></div>'+
+      '<div class="row"><span>Détail</span><b>'+s[2]+'</b></div>'+
+      '<div class="row" style="align-items:center"><span>Embarcations</span><div class="qty"><button type="button" id="minus" aria-label="Retirer une embarcation">−</button><output id="q">'+state.qty+'</output><button type="button" id="plus" aria-label="Ajouter une embarcation">+</button></div></div>'+
+      '<form id="bf" class="summary" novalidate>'+
+      '<div class="field"><label for="f-name">Nom et prénom</label><input id="f-name" autocomplete="name" placeholder="Julie Martin"></div>'+
+      '<div class="two"><div class="field"><label for="f-mail">E-mail</label><input id="f-mail" type="email" autocomplete="email" placeholder="julie@exemple.fr"></div>'+
+      '<div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" type="tel" autocomplete="tel" placeholder="06 12 34 56 78"></div></div>'+
+      '<div class="field"><label for="f-lvl">Nombre de personnes</label><select id="f-lvl"><option>1 à 2 personnes</option><option>3 à 4 personnes</option><option>Groupe de 5 à 10</option><option>Sortie d\'entreprise (devis)</option></select></div>'+
+      '<label class="check"><input type="checkbox" id="f-ok"> J\'accepte les conditions de location et le briefing de sécurité.</label>'+
+      '<div class="total"><div class="row"><span>Total</span><b>'+eur(total)+'</b></div><div class="row"><span>Acompte aujourd\'hui (30 %)</span><b style="font:600 16px var(--body)">'+eur(deposit)+'</b></div><div class="row"><span>Reste à payer sur place</span><b style="font:600 16px var(--body)">'+eur(total-deposit)+'</b></div></div>'+
+      (state.err?'<p class="err">'+state.err+'</p>':'')+
+      '<button class="btn btn-red" type="submit">Payer l\'acompte et réserver</button>'+
+      '<p class="note">Paiement sécurisé par carte ou TWINT. Report gratuit en cas de météo défavorable.</p></form></div>';
+    ["name","mail","tel"].forEach(function(k){var v=state["f_"+k];if(v)document.getElementById("f-"+k).value=v});
+    document.getElementById("minus").addEventListener("click",function(){keep();if(state.qty>1){state.qty--;renderSummary()}});
+    document.getElementById("plus").addEventListener("click",function(){keep();if(state.qty<s[4]){state.qty++;renderSummary()}});
+    document.getElementById("bf").addEventListener("submit",function(e){
+      e.preventDefault();keep();
+      if(!state.f_name||!/^\S+@\S+\.\S+$/.test(state.f_mail||"")||!document.getElementById("f-ok").checked){
+        state.err="Indiquez votre nom, un e-mail valide et acceptez les conditions.";renderSummary();return;
+      }
+      state.err="";state.name=state.f_name.split(" ")[0];state.booked=true;renderSummary();
+    });
+  }
+  function keep(){state.f_name=val("f-name");state.f_mail=val("f-mail");state.f_tel=val("f-tel")}
+  function render(){renderDays();renderSlots();renderSummary()}
+
+  // Défilement fiable vers les sections (aussi dans un aperçu intégré)
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click",function(e){
+      var id=a.getAttribute("href").slice(1),el=document.getElementById(id);
+      if(!el)return;
+      e.preventDefault();
+      if(a.dataset.type){state.want=a.dataset.type;state.slot=pickSlot(state.day);state.booked=false;render()}
+      var y=el.getBoundingClientRect().top+window.pageYOffset-64;
+      window.scrollTo({top:y,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
