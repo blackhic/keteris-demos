@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>H&amp;L Conciergerie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--sea:#0e5a73;--sea-d:#093f52;--sand:#f6f1e7;--coral:#e0623d;--ink:#17262d;--muted:#5f7078;--line:#ddd6c6;--ok:#2e8b57;--warn:#d99a1f;--serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sand);color:var(--ink);font:15px/1.5 var(--sans);overflow-x:hidden}
+.demo-bar{background:var(--ink);color:#dfe8ea;font-size:13px;text-align:center;padding:9px 16px;line-height:1.4}.demo-bar b{color:#fff}
+header.top{background:var(--sea-d);color:#fff}
+header.top .in{max-width:1100px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font:400 26px var(--serif)}.brand span{color:#ffb39c}
+.sub{font-size:13px;color:#a9c9d4}
+.wrap{max-width:1100px;margin:0 auto;padding:22px 20px 60px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpi b{display:block;font:400 32px var(--serif);color:var(--sea)}.kpi span{font-size:13px;color:var(--muted)}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:500 15px var(--sans);cursor:pointer;color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--sea);color:#fff;border-color:var(--sea)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+h2{font:400 26px var(--serif);margin:0 0 4px}.lead{color:var(--muted);margin:0 0 16px}
+table{width:100%;border-collapse:collapse}
+th{font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:11px 10px;border-bottom:1px solid #eee7d6;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700}
+.p-ok{background:#dcf1e4;color:#1d6b40}.p-wait{background:#fbecc6;color:#8a5f08}.p-new{background:#fbd9cd;color:#a1391b}
+.btn{border:0;background:var(--coral);color:#fff;font:700 14px var(--sans);padding:9px 16px;border-radius:999px;cursor:pointer}
+.btn.alt{background:var(--sea)}.btn:disabled{background:#b9c3c6;cursor:default}
+.cards{display:none}
+@media(max-width:760px){
+ table.resp thead{display:none}
+ table.resp,table.resp tbody,table.resp tr,table.resp td{display:block;width:100%}
+ table.resp tr{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px}
+ table.resp td{border:0;padding:3px 0;display:flex;justify-content:space-between;gap:12px;text-align:right}
+ table.resp td::before{content:attr(data-l);font-weight:700;color:var(--muted);text-align:left}
+}
+.msg{display:grid;grid-template-columns:1fr auto;gap:10px 16px;padding:14px 0;border-bottom:1px solid #eee7d6;align-items:start}
+.msg:last-child{border-bottom:0}.msg h3{margin:0;font-size:16px}.msg p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.sw{position:relative;width:46px;height:26px;flex:none}
+.sw input{opacity:0;width:100%;height:100%;position:absolute;margin:0;cursor:pointer;z-index:1}
+.sw i{position:absolute;inset:0;background:#c5cdcf;border-radius:999px;transition:.15s}
+.sw i::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.15s}
+.sw input:checked+i{background:var(--ok)}.sw input:checked+i::after{left:23px}
+.prev{background:#f3efe3;border-radius:12px;padding:14px;margin-top:14px;font-size:14px;white-space:pre-line}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.tl{display:grid;gap:10px}
+.ev{display:grid;grid-template-columns:70px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fcfaf4}
+.ev time{font:700 14px var(--sans);color:var(--sea)}
+@media(max-width:420px){.ev{grid-template-columns:56px 1fr}.ev .pill{grid-column:2}}
+select,input[type=text]{font:15px var(--sans);padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff;max-width:100%}
+.note{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à H&amp;L Conciergerie.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<header class="top"><div class="in"><div class="brand">H&amp;L <span>Conciergerie</span></div><div class="sub">Sainte-Maxime · espace de gestion · mardi 13 octobre 2026</div></div></header>
+<main class="wrap">
+ <div class="kpis">
+  <div class="kpi"><b id="k1">3</b><span>demandes à traiter</span></div>
+  <div class="kpi"><b>4</b><span>arrivées cette semaine</span></div>
+  <div class="kpi"><b>11 h</b><span>gagnées chaque semaine par les messages automatiques (exemple)</span></div>
+  <div class="kpi"><b>0</b><span>oubli de linge ou de boîte à clés</span></div>
+ </div>
+ <div class="tabs" role="tablist">
+  <button class="tab" role="tab" aria-selected="true" data-t="dem">Demandes entrantes</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="plan">Planning</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="msg">Messages automatiques</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="reg">Règles</button>
+ </div>
+
+ <section class="card" id="dem">
+  <h2>Demandes entrantes</h2><p class="lead">Chaque demande du formulaire arrive ici, triée, avec la réponse prête à envoyer.</p>
+  <table class="resp"><thead><tr><th>Reçue</th><th>Propriétaire ou voyageur</th><th>Service demandé</th><th>Dates</th><th>Statut</th><th></th></tr></thead><tbody id="dtb"></tbody></table>
+ </section>
+
+ <section class="card" id="plan" hidden>
+  <h2>Planning de la semaine</h2><p class="lead">Arrivées, départs, ménages et remises de clés au même endroit.</p>
+  <div class="tl" id="tl"></div>
+ </section>
+
+ <section class="card" id="msg" hidden>
+  <h2>Messages automatiques</h2><p class="lead">Envoyés à la place de H&amp;L, avec les bonnes informations pour chaque logement.</p>
+  <div id="ml"></div>
+  <div class="prev" id="pv"></div>
+ </section>
+
+ <section class="card" id="reg" hidden>
+  <h2>Règles</h2><p class="lead">Ce que le système décide seul, et ce qu'il vous laisse.</p>
+  <div class="grid2">
+   <div><label class="note">Heure d'arrivée par défaut</label><br><select id="r1"><option>15 h</option><option selected>16 h</option><option>17 h</option></select></div>
+   <div><label class="note">Heure de départ</label><br><select><option>10 h</option><option selected>11 h</option></select></div>
+  </div>
+  <div id="rl" style="margin-top:10px"></div>
+ </section>
+</main>
+<script>
+(function(){
+ var D=[["Aujourd'hui 08:12","Mme Girard (propriétaire)","Ménage et linge","24 → 25 oct.","new"],["Aujourd'hui 07:40","M. Bernard (voyageur)","Consigne bagages","16 oct., 9 h","new"],["Hier 18:05","Famille Lopes","Location matériel bébé","19 → 26 oct.","new"],["Hier 11:20","M. Rossi (propriétaire)","Remise de clés","15 oct., 16 h","ok"],["Lun. 09:30","Mme Faure","Boîte à clés","12 oct.","ok"]];
+ var P={new:["À traiter","p-new"],ok:["Répondu","p-ok"],wait:["En attente","p-wait"]};
+ var tb=document.getElementById("dtb");
+ function drawD(){
+  tb.innerHTML=D.map(function(r,i){var p=P[r[4]];return '<tr><td data-l="Reçue">'+r[0]+'</td><td data-l="De">'+r[1]+'</td><td data-l="Service">'+r[2]+'</td><td data-l="Dates">'+r[3]+'</td><td data-l="Statut"><span class="pill '+p[1]+'">'+p[0]+'</span></td><td>'+(r[4]==="new"?'<button class="btn" data-i="'+i+'">Envoyer la réponse</button>':'')+'</td></tr>'}).join("");
+  document.getElementById("k1").textContent=D.filter(function(r){return r[4]==="new"}).length;
+  tb.querySelectorAll("button").forEach(function(b){b.onclick=function(){D[+b.dataset.i][4]="wait";drawD()}});
+ }
+ drawD();
+ var T=[["Mar. 13","11:00","Départ · Appartement Les Issambres · ménage prévu 11 h 30","p-ok","Confirmé"],["Mer. 14","16:00","Arrivée · Villa Sainte-Maxime · remise de clés","p-ok","Confirmé"],["Jeu. 15","16:00","Arrivée · M. Rossi · boîte à clés","p-wait","Clés à préparer"],["Ven. 16","09:00","Consigne bagages · M. Bernard","p-new","À confirmer"],["Sam. 17","11:00","Départ · Studio Port Grimaud · linge à récupérer","p-ok","Confirmé"]];
+ document.getElementById("tl").innerHTML=T.map(function(e){return '<div class="ev"><time>'+e[0]+'<br>'+e[1]+'</time><span>'+e[2]+'</span><span class="pill '+e[3]+'">'+e[4]+'</span></div>'}).join("");
+ var M=[["Avant l'arrivée (J-3)","Envoie les infos pratiques, l'heure d'arrivée et le code de la boîte à clés.","Bonjour Mme Faure, votre séjour approche. Arrivée à partir de 16 h, la boîte à clés se trouve à gauche de l'entrée, code 4821 (exemple). Besoin de linge ou de matériel bébé ? Répondez à ce message."],["Jour d'arrivée","Confirme que le logement est prêt et propose un contact en cas de souci.","Bonjour, votre logement est prêt. Bon séjour à Sainte-Maxime. En cas de besoin, appelez-nous au numéro indiqué sur votre fiche."],["Veille du départ","Rappelle l'heure de départ et la remise des clés.","Bonjour, demain le départ est à 11 h. Merci de déposer les clés dans la boîte et de laisser les poubelles fermées."],["Après le séjour","Demande un avis une fois le logement contrôlé.","Merci pour votre séjour. Si tout s'est bien passé, un avis nous aiderait beaucoup."]];
+ var ml=document.getElementById("ml"),pv=document.getElementById("pv");
+ ml.innerHTML=M.map(function(m,i){return '<div class="msg"><div><h3>'+m[0]+'</h3><p>'+m[1]+'</p></div><label class="sw"><input type="checkbox" checked data-i="'+i+'" aria-label="Activer '+m[0]+'"><i></i></label></div>'}).join("");
+ pv.textContent="Aperçu : "+M[0][2];
+ ml.querySelectorAll("input").forEach(function(c){c.onchange=function(){pv.textContent=(c.checked?"Aperçu : ":"Désactivé. Dernier aperçu : ")+M[+c.dataset.i][2]}});
+ ml.querySelectorAll(".msg").forEach(function(r,i){r.style.cursor="pointer";r.addEventListener("click",function(e){if(e.target.tagName!=="INPUT"){pv.textContent="Aperçu : "+M[i][2]}})});
+ var R=[["Linge et ménage","Planifier automatiquement après chaque départ",1],["Remise de clés","Proposer la boîte à clés quand personne n'est sur place",1],["Consigne bagages","Facturer la consigne uniquement si elle dépasse 4 h",0],["Matériel plage et bébé","Bloquer le matériel déjà réservé sur les mêmes dates",1]];
+ document.getElementById("rl").innerHTML=R.map(function(r){return '<div class="msg"><div><h3>'+r[0]+'</h3><p>'+r[1]+'</p></div><label class="sw"><input type="checkbox"'+(r[2]?' checked':'')+' aria-label="'+r[0]+'"><i></i></label></div>'}).join("");
+ var tabs=document.querySelectorAll(".tab");
+ tabs.forEach(function(t){t.onclick=function(){tabs.forEach(function(x){x.setAttribute("aria-selected",x===t)});["dem","plan","msg","reg"].forEach(function(id){document.getElementById(id).hidden=id!==t.dataset.t})}});
+})();
+</script>
+</body>
+</html>
