@@ -1,0 +1,81 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Maquette Probatiment</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--b:#0f3d4c;--a:#f08a24;--bg:#f3f6f7;--t:#1b2b31;--m:#5c6e75;--l:#d9e2e5;--g:#1f8a4c;--r:#c8382d;--y:#c58a00}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,sans-serif;color:var(--t);background:var(--bg);line-height:1.5}
+.ban{background:#fff3cd;color:#5c4400;font-size:13px;padding:8px 16px;text-align:center}
+h1,h2,h3{font-family:Manrope,sans-serif;color:var(--b);margin:0 0 .4em}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+nav{background:var(--b);color:#fff}nav .w{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px}nav b{font-family:Manrope;font-size:20px}
+.btn{background:var(--a);color:#fff;border:0;padding:11px 18px;border-radius:8px;font-weight:700;text-decoration:none;cursor:pointer;font-size:15px;display:inline-block;font-family:inherit}
+.btn.s{background:#fff;color:var(--b);border:1px solid var(--l)}
+.hero{background:linear-gradient(rgba(15,61,76,.8),rgba(15,61,76,.8)),url(https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1400) center/cover;color:#fff;padding:56px 0}
+.hero h1{color:#fff;font-size:clamp(28px,4.6vw,44px);max-width:680px}.hero p{max-width:580px;font-size:17px}
+section{padding:44px 0}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:#fff;border:1px solid var(--l);border-radius:12px;padding:18px}
+.kp b{font-family:Manrope;font-size:30px;color:var(--b);display:block}.kp span{color:var(--m);font-size:14px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.tabs button{border:1px solid var(--l);background:#fff;border-radius:20px;padding:8px 15px;cursor:pointer;font:inherit}.tabs button.on{background:var(--b);color:#fff;border-color:var(--b)}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--l);border-radius:12px;overflow:hidden}th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--l);font-size:14px;vertical-align:middle}th{background:#e8f0f2;color:var(--b)}
+.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12.5px;font-weight:600}.t1{background:#dff0e3;color:#17683a}.t2{background:#fff0cc;color:#8a5f00}.t3{background:#fbdcd8;color:#9b2218}.t4{background:#dcecf5;color:#1b5a7d}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--l);font-size:14px}.sw:last-child{border:0}
+.sw input{appearance:none;width:42px;height:24px;background:#c3ced3;border-radius:12px;position:relative;cursor:pointer;flex:none}.sw input:checked{background:var(--g)}
+.sw input:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.15s}.sw input:checked:after{left:21px}
+.msg{background:#f3f6f7;border-left:4px solid var(--a);padding:12px 14px;border-radius:6px;font-size:14px;white-space:pre-line}
+label{font-weight:600;font-size:14px;display:block;margin:10px 0 4px}input[type=text],input[type=tel],select,textarea{width:100%;padding:10px;border:1px solid var(--l);border-radius:8px;font:inherit;background:#fff}
+#ok{display:none;background:#dff0e3;border-radius:10px;padding:14px;margin-top:12px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+footer{background:var(--b);color:#bcd0d6;padding:26px 0;font-size:14px}
+@media(max-width:760px){.kp{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.hero{padding:38px 0}
+table,thead,tbody,tr,td{display:block}thead{display:none}tr{background:#fff;border:1px solid var(--l);border-radius:10px;margin-bottom:10px;padding:6px 0}td{border:0;padding:5px 14px}td:before{content:attr(data-l)": ";font-weight:600;color:var(--m)}}
+</style></head><body>
+<div class="ban">Maquette proposée par Keteris à Probatiment. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="w"><b>Probatiment · Var</b><a class="btn" href="#demandes">Voir mes demandes</a></div></nav>
+<div class="hero"><div class="w"><h1>Climatisation, plomberie, électricité : aucune demande ne reste sans réponse</h1><p>Six-Fours-les-Plages, Toulon, La Seyne, Sanary. Chaque demande arrive triée par métier, avec une réponse immédiate au client et une relance automatique des devis non signés.</p><p><a class="btn" href="#demandes">Voir le tableau des demandes</a> <a class="btn s" href="#nouvelle">Tester le formulaire client</a></p></div></div>
+
+<section id="demandes"><div class="w">
+<h2>Tableau de bord</h2>
+<div class="kp"><div class="card"><b id="k1">0</b><span>demandes cette semaine</span></div><div class="card"><b id="k2">0</b><span>devis envoyés en attente</span></div><div class="card"><b id="k3">0 €</b><span>à relancer (devis non signés)</span></div><div class="card"><b>12 min</b><span>délai moyen de première réponse</span></div></div>
+<div class="tabs" id="tabs"><button class="on" data-f="tous">Tous</button><button data-f="Climatisation">Climatisation</button><button data-f="Plomberie">Plomberie</button><button data-f="Électricité">Électricité</button></div>
+<table><thead><tr><th>Client</th><th>Commune</th><th>Métier</th><th>Demande</th><th>Montant</th><th>Statut</th><th>Action</th></tr></thead><tbody id="tb"></tbody></table>
+<p style="color:var(--m);font-size:14px">Clients et montants fictifs. Cliquez sur « Relancer » pour voir le message envoyé.</p>
+<div class="card" id="prev" style="display:none;margin-top:14px"><h3>Message de relance envoyé</h3><div class="msg" id="pm"></div></div>
+</div></section>
+
+<section id="regles" style="background:#fff"><div class="w two">
+<div><h2>Règles automatiques</h2><div class="card">
+<div class="sw"><span>Accusé de réception immédiat par SMS et e-mail avec le métier détecté</span><input type="checkbox" checked></div>
+<div class="sw"><span>Demande clim : proposer un créneau de visite technique sous 48 h</span><input type="checkbox" checked></div>
+<div class="sw"><span>Relance d'un devis non signé à J+3, puis J+7, puis J+14</span><input type="checkbox" checked></div>
+<div class="sw"><span>Demande urgente (fuite, panne) : alerte sur votre mobile</span><input type="checkbox" checked></div>
+<div class="sw"><span>Après chantier : demander l'avis Google au client</span><input type="checkbox"></div></div></div>
+<div><h2>Ce que le client reçoit</h2><div class="msg">Bonjour Mme Lambert, c'est Probatiment. Votre devis de climatisation (2 unités, 3 400 €) est toujours valable jusqu'au 30 du mois. Souhaitez-vous le valider, ou préférez-vous qu'on en parle 5 minutes par téléphone ?</div><p style="color:var(--m);font-size:14px">Le ton et les délais se règlent règle par règle.</p></div>
+</div></section>
+
+<section id="nouvelle"><div class="w two">
+<div><h2>Formulaire de demande côté client</h2><div class="card">
+<label>Nom</label><input type="text" id="n" placeholder="Jean Martin">
+<label>Téléphone</label><input type="tel" id="p" placeholder="06 00 00 00 00">
+<label>Type de besoin</label><select id="m"><option>Climatisation</option><option>Plomberie</option><option>Électricité</option></select>
+<label>Votre demande</label><textarea id="d" rows="3" placeholder="Ex. installation d'une clim dans le salon"></textarea>
+<p><button class="btn" id="go">Envoyer ma demande</button></p>
+<div id="ok"></div></div></div>
+<div><h2>Avis clients</h2><div class="card"><p>« Rapide et propre, devis reçu dans la journée. » <b>Sophie R.</b>, Sanary</p></div><div class="card" style="margin-top:12px"><p>« Clim posée en une journée, très bon conseil. » <b>Marc D.</b>, La Seyne</p></div><p style="color:var(--m);font-size:14px">Avis fictifs.</p></div>
+</div></section>
+<footer><div class="w">Probatiment · Six-Fours-les-Plages · 07 70 34 46 27 · Maquette Keteris</div></footer>
+<script>
+const D=[["Mme Lambert","Sanary","Climatisation","Clim 2 unités salon et chambre",3400,"Devis envoyé J+5","t3"],
+["M. Garcia","La Seyne","Plomberie","Remplacement chauffe-eau",1250,"Devis envoyé J+2","t2"],
+["Mme Riva","Toulon","Électricité","Mise aux normes tableau",1800,"Devis envoyé J+8","t3"],
+["M. Colin","Six-Fours","Climatisation","Clim réversible villa",5200,"Devis signé","t1"],
+["Mme Blanc","Six-Fours","Plomberie","Fuite sous évier (urgent)",180,"Intervention planifiée","t4"],
+["M. Aubert","Toulon","Électricité","Prises et éclairage cuisine",720,"Nouvelle demande","t4"]];
+const tb=document.getElementById('tb'),pm=document.getElementById('pm'),pv=document.getElementById('prev');
+function r(f){tb.innerHTML=D.filter(x=>f=='tous'||x[2]==f).map((x,i)=>`<tr><td data-l="Client">${x[0]}</td><td data-l="Commune">${x[1]}</td><td data-l="Métier">${x[2]}</td><td data-l="Demande">${x[3]}</td><td data-l="Montant">${x[4].toLocaleString('fr-FR')} €</td><td data-l="Statut"><span class="tag ${x[6]}">${x[5]}</span></td><td data-l="Action">${x[5].startsWith('Devis envoyé')?`<button class="btn s" data-i="${D.indexOf(x)}">Relancer</button>`:'—'}</td></tr>`).join('')}
+r('tous');
+document.getElementById('k1').textContent=D.length+14;
+const att=D.filter(x=>x[5].startsWith('Devis envoyé'));document.getElementById('k2').textContent=att.length;document.getElementById('k3').textContent=att.reduce((s,x)=>s+x[4],0).toLocaleString('fr-FR')+' €';
+document.getElementById('tabs').onclick=e=>{if(e.target.dataset.f){[...e.currentTarget.children].forEach(b=>b.classList.remove('on'));e.target.classList.add('on');r(e.target.dataset.f)}};
+tb.onclick=e=>{const i=e.target.dataset.i;if(i===undefined)return;const x=D[i];pm.textContent=`Bonjour ${x[0]}, c'est Probatiment. Votre devis « ${x[3]} » de ${x[4].toLocaleString('fr-FR')} € est toujours valable. Souhaitez-vous le valider, ou préférez-vous qu'on en parle 5 minutes par téléphone ?`;pv.style.display='block';pv.scrollIntoView({behavior:'smooth',block:'center'})};
+document.getElementById('go').onclick=()=>{const o=document.getElementById('ok'),n=document.getElementById('n').value||'vous',m=document.getElementById('m').value;o.style.display='block';o.textContent=`Merci ${n}. Votre demande ${m.toLowerCase()} est classée, un accusé de réception part tout de suite et nous vous rappelons sous 2 heures ouvrées.`};
+</script></body></html>
