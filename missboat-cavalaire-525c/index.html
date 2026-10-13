@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Missboat · Cavalaire-sur-Mer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{--navy:#07303f;--navy2:#0d4558;--sand:#f3f8f7;--gold:#ff7a59;--ink:#14222f;--mut:#5d6b78;--line:#e2dccd;--ok:#2f9e72;--d:"Fraunces",Georgia,serif;--b:"Figtree",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font:16px/1.6 var(--b)}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--d);margin:0;line-height:1.08}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+.eb{font:600 12px var(--b);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-flex;justify-content:center;align-items:center;border:0;cursor:pointer;font:700 16px var(--b);padding:14px 26px;border-radius:999px;text-decoration:none;background:var(--gold);color:var(--navy)}
+.btn:hover{filter:brightness(1.06)}.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.demo{background:#000;color:#e8e2d2;font-size:13px;text-align:center;padding:9px 14px}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,48,63,.94);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px}
+.logo{font:800 22px var(--d);color:#fff;text-decoration:none}.logo span{color:var(--gold)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}nav ul a{color:#c8d6e2;text-decoration:none;font-size:15px}
+nav .btn{padding:9px 18px;font-size:15px}
+@media(max-width:820px){nav ul{display:none}}
+.hero{position:relative;color:#fff;background:var(--navy) url("https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=80") center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,48,63,.92),rgba(7,48,63,.5) 60%,rgba(7,48,63,.1))}
+.hero .wrap{position:relative;padding-block:90px 110px;display:grid;gap:24px}
+.hero h1{font-size:clamp(40px,7vw,78px);font-weight:800;max-width:13ch}.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{font-size:19px;max-width:48ch;color:#d5e1ea;margin:0}
+.facts{background:#fff;border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:24px 16px;border-left:1px solid var(--line)}.fact:first-child{border-left:0}
+.fact b{display:block;font:800 28px var(--d);color:var(--navy2)}.fact span{font-size:14px;color:var(--mut)}
+@media(max-width:720px){.facts .wrap{grid-template-columns:1fr 1fr}.fact:nth-child(3){border-left:0}.fact{border-top:1px solid var(--line)}}
+section{padding-block:84px;scroll-margin-top:60px}
+.head{display:grid;gap:10px;margin-bottom:38px;max-width:640px}.head p{margin:0;color:var(--mut);font-size:17px}
+.fleet{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.boat{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.boat img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.boat .in{padding:20px;display:grid;gap:8px;flex:1}.boat h3{font-size:24px}.boat p{margin:0;color:var(--mut);font-size:15px}
+.boat .m{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
+.price{font:800 26px var(--d)}.price small{font:500 14px var(--b);color:var(--mut)}
+.tag{font:600 12px var(--b);color:var(--navy2);letter-spacing:.06em}
+@media(max-width:860px){.fleet{grid-template-columns:1fr}}
+.book{background:var(--navy);color:#fff}.book .head p{color:#a9bccb}
+.bg{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:start}
+.panel{background:var(--navy2);border-radius:20px;padding:24px;border:1px solid rgba(255,255,255,.08);min-width:0}
+.panel h3{font-size:19px;margin-bottom:14px}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.ch h3{margin:0}
+.ch button{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:16px}
+.lg{display:flex;gap:14px;font-size:12px;color:#a9bccb;margin-bottom:12px}.lg i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{margin-bottom:6px;font:600 11px var(--b);color:#7f97a8;text-align:center}.days{margin-bottom:20px}
+.day{position:relative;background:transparent;border:1px solid rgba(255,255,255,.15);color:#fff;border-radius:10px;padding:9px 2px 13px;cursor:pointer;font:700 16px var(--d)}
+.day::after{content:"";position:absolute;left:50%;bottom:5px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--dot,transparent)}
+.day.open{--dot:#4fd1a5}.day.few{--dot:#ffb547}.day[aria-pressed=true]{background:#fff;color:var(--navy)}.day:disabled{opacity:.28;cursor:not-allowed}.day.blank{visibility:hidden}
+.slots{display:grid;gap:10px}
+.slot{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:14px;padding:13px 16px;cursor:pointer;text-align:left;font:inherit}
+.slot[aria-pressed=true]{border-color:var(--gold);background:rgba(214,162,74,.14)}.slot time{font:600 15px var(--b)}
+.slot small{display:block;color:#a9bccb;font-size:13px}.slot .l{font-size:12px;color:#ffd08a;white-space:nowrap}
+.field{display:grid;gap:6px;margin-bottom:12px}.field label{font-size:13px;color:#a9bccb}
+.field input,.field select{width:100%;background:#06394a;border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:10px;padding:11px 12px;font:15px var(--b)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:420px){.two{grid-template-columns:1fr}}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:#cfdce6;margin-bottom:8px}.row b{color:#fff;text-align:right}
+.total{border-top:1px solid rgba(255,255,255,.18);padding-top:12px;margin-top:6px}.total b{font:800 24px var(--d)}
+.panel .btn{width:100%;margin-top:8px}.note{font-size:13px;color:#8fa8b9;margin:8px 0 0}
+.err{color:#ffb9a3;font-size:13px;margin:6px 0 0}.done{text-align:center;display:grid;gap:10px;padding:10px 0}.done b{font:800 24px var(--d)}
+@media(max-width:860px){.bg{grid-template-columns:1fr}}
+.ports{display:flex;flex-wrap:wrap;gap:10px}.ports span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;color:var(--navy2)}
+.strip{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:34px}.strip img{width:100%;height:240px;object-fit:cover;border-radius:16px}
+@media(max-width:760px){.strip{grid-template-columns:1fr}.strip img{height:190px}}
+.rev{background:#fff}.rt{display:flex;align-items:center;gap:16px;margin-bottom:30px;flex-wrap:wrap}.score{font:800 54px var(--d);line-height:1}.stars{color:#e7a338;font-size:20px;letter-spacing:2px}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}blockquote{margin:0;padding:22px;border-radius:16px;background:var(--sand);display:grid;gap:10px}blockquote p{margin:0}blockquote footer{font-size:14px;color:var(--mut)}
+@media(max-width:860px){.rg{grid-template-columns:1fr}}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font:700 19px var(--d);list-style:none;display:flex;justify-content:space-between;gap:14px}summary::after{content:"+";color:var(--gold)}details[open] summary::after{content:"–"}details p{color:var(--mut);margin:10px 0 0;max-width:65ch}
+.contact{background:var(--navy2);color:#fff}.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}.contact p{color:#c8d6e2}.cl{display:grid;gap:12px;font-size:17px}.cl span{display:block;font:600 12px var(--b);letter-spacing:.1em;color:#9fb6c8;text-transform:uppercase}
+@media(max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+footer.f{background:var(--navy);color:#8fa8b9;font-size:14px;padding-block:26px}footer.f .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="demo"><b>Maquette proposée par Keteris à Missboat.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap"><a class="logo" href="#top">Miss<span>boat</span></a>
+<ul><li><a href="#flotte">Flotte</a></li><li><a href="#reserver">Réserver</a></li><li><a href="#ports">Départs</a></li><li><a href="#avis">Avis</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn" href="#reserver">Réserver</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<span class="eb">Location de bateaux sans permis · dès 16 ans</span>
+<h1>Votre bateau, <em>réservé</em> en deux minutes.</h1>
+<p>Bateaux sans permis au départ du port de Cavalaire, à la demi-journée ou à la journée. Choisissez le bateau et le créneau, bloquez-les avec un acompte, la caution se règle par empreinte bancaire.</p>
+<div><a class="btn" href="#reserver">Voir les disponibilités</a></div></div></header>
+
+<div class="facts"><div class="wrap">
+<div class="fact"><b>Dès 16 ans</b><span>sans permis, adulte à bord</span></div>
+<div class="fact"><b>24 h/24</b><span>réservation en ligne</span></div>
+<div class="fact"><b>0 €</b><span>caution débitée sans litige</span></div>
+<div class="fact"><b>4,8/5</b><span>avis clients (fictif)</span></div></div></div>
+
+<section id="flotte"><div class="wrap">
+<div class="head"><span class="eb">La flotte</span><h2>Le bon bateau pour votre sortie</h2><p>Tarifs affichés (fictifs dans cette maquette), disponibilité par bateau en direct. Plus besoin d'appeler pour savoir s'il reste une place.</p></div>
+<div class="fleet">
+<article class="boat"><img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=900&q=80" alt="Bateau à moteur filant sur une mer bleu profond" loading="lazy"><div class="in"><span class="tag">5 PERSONNES · SANS PERMIS</span><h3>Bateau 5 places</h3><p>Maniable et stable, pour les criques de la baie de Cavalaire et la baignade.</p><div class="m"><span class="price">130 € <small>/ demi-journée</small></span><span class="tag">4 H</span></div></div></article>
+<article class="boat"><img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=900&q=80" alt="Bateau blanc sur la Méditerranée" loading="lazy"><div class="in"><span class="tag">6 PERSONNES · CONFORT</span><h3>Bateau 6 places</h3><p>Bain de soleil, grande plage arrière, pique-nique face aux îles d'Or.</p><div class="m"><span class="price">260 € <small>/ journée</small></span><span class="tag">8 H</span></div></div></article>
+<article class="boat"><img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=80" alt="Bateau en pleine mer sous un ciel dégagé" loading="lazy"><div class="in"><span class="tag">4 PERSONNES · 2 H</span><h3>Sortie découverte</h3><p>Deux heures pour une première sortie en mer, simple et accessible.</p><div class="m"><span class="price">75 € <small>/ 2 heures</small></span><span class="tag">2 H</span></div></div></article>
+</div></div></section>
+
+<section class="book" id="reserver"><div class="wrap">
+<div class="head"><span class="eb">Réservation</span><h2>Choisissez votre date, on bloque le bateau</h2><p>Disponibilités en direct, acompte de 30 % par carte, caution par empreinte bancaire (rien n'est débité), confirmation immédiate par e-mail et SMS.</p></div>
+<div class="bg">
+<div class="panel"><div class="ch"><h3 id="mois"></h3><span><button id="prev" aria-label="Mois précédent">‹</button> <button id="next" aria-label="Mois suivant">›</button></span></div>
+<div class="lg"><span><i style="background:#4fd1a5"></i>libre</span><span><i style="background:#ffb547"></i>dernier bateau</span></div>
+<div class="dow"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div><div class="days" id="days"></div>
+<h3>Formule</h3><div class="slots" id="slots"></div></div>
+<div class="panel" id="form"><h3>Votre sortie</h3>
+<div class="row"><span>Date</span><b id="sd">à choisir</b></div><div class="row"><span>Formule</span><b id="sf">à choisir</b></div>
+<div class="field"><label for="pax">Passagers</label><select id="pax"></select></div>
+<div class="two"><div class="field"><label for="nom">Nom</label><input id="nom" autocomplete="name"></div><div class="field"><label for="tel">Téléphone</label><input id="tel" type="tel" autocomplete="tel"></div></div>
+<div class="field"><label for="port">Départ</label><select id="port"><option>Port de Cavalaire</option></select></div>
+<div class="total"><div class="row"><span>Total</span><b id="tot">0 €</b></div><div class="row"><span>Acompte 30 % à régler</span><b id="acc">0 €</b></div></div>
+<p class="err" id="err" role="alert"></p><button class="btn" id="go">Réserver et payer l'acompte</button>
+<p class="note">Caution par empreinte bancaire, libérée au retour du bateau. Report gratuit en cas de météo défavorable.</p></div>
+</div></div></section>
+
+<section id="ports"><div class="wrap"><div class="head"><span class="eb">Départs</span><h2>Un seul point de départ, face à la mise à l'eau</h2><p>Port de Cavalaire, tout près des plages. Le bateau vous attend à l'heure choisie.</p></div>
+<div class="ports"><span>Cavalaire-sur-Mer</span><span>Îles d'Or</span><span>Baie de Pampelonne</span><span>Cap Lardier</span></div>
+<div class="strip"><img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80" alt="Bateau au mouillage" loading="lazy"><img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=700&q=80" alt="Bateau en navigation" loading="lazy"><img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=700&q=80" alt="Voilier" loading="lazy"></div></div></section>
+
+<section class="rev" id="avis"><div class="wrap"><div class="rt"><div class="score">4,8</div><div><div class="stars">★★★★★</div><div style="color:var(--mut)">96 avis (fictifs)</div></div></div>
+<div class="rg"><blockquote><p>« Réservé le matin depuis la plage, parti l'après-midi. Très simple. »</p><footer>Claire, Lyon (fictif)</footer></blockquote><blockquote><p>« Prix clair dès le départ, caution sans stress. »</p><footer>Marc, Genève (fictif)</footer></blockquote><blockquote><p>« Une journée en famille avec les ados, parfait. »</p><footer>Sophie, Paris (fictif)</footer></blockquote></div></div></section>
+
+<section><div class="wrap"><div class="head"><span class="eb">Questions</span><h2>Avant d'embarquer</h2></div>
+<details><summary>Faut-il un permis ?</summary><p>Non, ces bateaux se conduisent sans permis dès 16 ans, avec un adulte à bord pour les mineurs.</p></details>
+<details><summary>Que se passe-t-il si la météo est mauvaise ?</summary><p>Nous reportons votre sortie à une autre date ou nous remboursons l'acompte.</p></details>
+<details><summary>Comment fonctionne la caution ?</summary><p>Une empreinte bancaire est prise à la réservation : rien n'est débité, elle est libérée au retour du bateau.</p></details>
+<details><summary>Peut-on emmener des animaux ?</summary><p>Non, les animaux ne sont pas acceptés à bord.</p></details></div></section>
+
+<section class="contact" id="contact"><div class="wrap"><div><h2>Une question avant de réserver ?</h2><p>Appelez-nous ou passez au port, l'équipe vous répond.</p></div>
+<div class="cl"><div><span>Téléphone</span>06 38 53 82 40</div><div><span>Adresse</span>Port de Cavalaire, face à la mise à l'eau, 83240 Cavalaire-sur-Mer</div><div><span>Horaires</span>En saison, tous les jours</div></div></div></section>
+<footer class="f"><div class="wrap"><span>© 2026 Missboat · maquette Keteris</span><span>Cavalaire-sur-Mer, Var</span></div></footer>
+
+<script>
+const F=[{n:"Demi-journée, bateau 5 places",t:"9h – 13h",p:130,l:2},{n:"Journée, bateau 6 places",t:"9h – 18h",p:260,l:1},{n:"Sortie découverte 2 h",t:"14h – 16h",p:75,l:3}];
+let M=new Date(2026,9,1),selD=null,selF=null;const $=i=>document.getElementById(i);
+const fmt=n=>n.toLocaleString("fr-FR")+" €";
+const today=new Date(2026,9,12);
+function cal(){const y=M.getFullYear(),m=M.getMonth();$("mois").textContent=M.toLocaleDateString("fr-FR",{month:"long",year:"numeric"});
+let h="";const off=(new Date(y,m,1).getDay()+6)%7;for(let i=0;i<off;i++)h+='<button class="day blank" disabled></button>';
+for(let d=1;d<=new Date(y,m+1,0).getDate();d++){const dt=new Date(y,m,d),past=dt<today,full=(d*7+m)%9===0,few=(d*5)%6===0;
+h+=`<button class="day ${past||full?"":few?"few":"open"}" data-d="${y}-${m}-${d}" ${past||full?"disabled":""} aria-pressed="${selD===y+"-"+m+"-"+d}">${d}</button>`}
+$("days").innerHTML=h;document.querySelectorAll(".day[data-d]").forEach(b=>b.onclick=()=>{selD=b.dataset.d;const[Y,Mo,D]=selD.split("-");$("sd").textContent=new Date(+Y,+Mo,+D).toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});cal();upd()})}
+function sl(){$("slots").innerHTML=F.map((f,i)=>`<button class="slot" data-i="${i}" aria-pressed="${selF===i}"><time>${f.t}</time><span>${f.n}<small>${fmt(f.p)} · carburant en sus</small></span><span class="l">${f.l} dispo</span></button>`).join("");
+document.querySelectorAll(".slot").forEach(b=>b.onclick=()=>{selF=+b.dataset.i;$("sf").textContent=F[selF].n;sl();upd()})}
+function upd(){const t=selF===null?0:F[selF].p;$("tot").textContent=fmt(t);$("acc").textContent=fmt(Math.round(t*.3));$("err").textContent=""}
+$("pax").innerHTML=[...Array(6)].map((_,i)=>`<option>${i+1} passager${i?"s":""}</option>`).join("");
+$("prev").onclick=()=>{M=new Date(M.getFullYear(),M.getMonth()-1,1);cal()};$("next").onclick=()=>{M=new Date(M.getFullYear(),M.getMonth()+1,1);cal()};
+$("go").onclick=()=>{const e=$("err");if(!selD||selF===null){e.textContent="Choisissez une date et une formule.";return}
+if(!$("nom").value.trim()||!$("tel").value.trim()){e.textContent="Indiquez votre nom et votre téléphone.";return}
+$("form").innerHTML=`<div class="done"><b>Réservation confirmée</b><span>${$("sd").textContent} · ${F[selF].n}</span><span>Acompte de ${$("acc").textContent} réglé, empreinte de caution enregistrée. Confirmation envoyée par e-mail et SMS.</span><span class="note">Démonstration : aucun paiement réel.</span></div>`};
+cal();sl();
+</script>
+</body>
+</html>
