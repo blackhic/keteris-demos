@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gestion locative Côté Sud Immobilier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#f6f4f0;--panel:#fff;--ink:#1b2420;--muted:#66716c;--line:#e3e6e1;--brand:#1f4e5f;--brand-soft:#e1eef2;--side-on:#d9e8ed;--side-mut:#9fc0cb;
+--ok:#1f8a5b;--warn:#c98a12;--late:#c2412d;--info:#3a6ea5;
+--display:"Manrope",ui-sans-serif,system-ui,sans-serif;--body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--body)}
+button,input,select{font:inherit}
+.demo-bar{background:var(--ink);color:#d7dfdb;text-align:center;font-size:13px;padding:8px 16px}.demo-bar b{color:#fff}
+.app{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 36px)}
+aside{background:var(--brand);color:var(--side-on);padding:22px 16px;display:flex;flex-direction:column;gap:22px}
+.brand{font:800 18px var(--display);color:#fff;line-height:1.2}.brand small{display:block;font:500 12px var(--body);color:var(--side-mut);margin-top:4px}
+.menu{display:grid;gap:4px}
+.menu button{background:none;border:0;color:var(--side-on);text-align:left;padding:10px 12px;border-radius:10px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.menu button[aria-selected="true"]{background:rgba(255,255,255,.14);color:#fff;font-weight:600}.menu button:hover{background:rgba(255,255,255,.08)}
+.badge{align-self:center;background:#fff;color:var(--brand);font:600 11px var(--mono);border-radius:999px;padding:1px 7px}
+.side-foot{margin-top:auto;font-size:12px;color:var(--side-mut)}
+main{padding:24px clamp(16px,3vw,32px);min-width:0;display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-content:start}
+main>section,.card{min-width:0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+h1{font:800 26px var(--display);margin:0}.sub{color:var(--muted);margin:2px 0 0}
+.btn{border:0;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:600;background:var(--brand);color:#fff}
+.btn.ghost{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,.menu button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpi span{color:var(--muted);font-size:13px}.kpi b{display:block;font:800 26px var(--display);font-variant-numeric:tabular-nums;margin-top:4px}
+.kpi em{font-style:normal;font-size:12px;font-weight:600}.up{color:var(--ok)}.down{color:var(--late)}
+.grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0}
+.card h2{font:700 16px var(--display);margin:0 0 14px}
+.aging{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:90px 1fr 90px;gap:10px;align-items:center;font-size:13px}
+.track{height:12px;background:#eef0ec;border-radius:6px;overflow:hidden}.fill{height:100%;border-radius:6px}
+.bar b{text-align:right;font:500 13px var(--mono)}
+.feed{display:grid;gap:12px;font-size:13px}.feed div{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.dot{width:8px;height:8px;border-radius:50%;margin-top:6px}.feed small{color:var(--muted);display:block}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.filters input,.filters select{border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--panel);min-width:0}.filters input{flex:1 1 220px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:760px}
+th{text-align:left;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap}
+td{white-space:nowrap;padding:12px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr{cursor:pointer}tbody tr:hover{background:#f8faf7}tbody tr.sel{background:var(--brand-soft)}
+.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:13px}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.p-ok{background:#e1f3ea;color:var(--ok)}.p-warn{background:#fbefd5;color:#93640a}.p-late{background:#fbe3de;color:var(--late)}.p-info{background:#e2ebf5;color:var(--info)}
+.client b{display:block}.client small{color:var(--muted)}
+.detail{display:grid;gap:14px;align-content:start;position:sticky;top:16px}
+.timeline{display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.step{position:relative;padding:0 0 16px 18px}
+.step::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--c,#cfd5d0);border:2px solid var(--panel)}
+.step b{display:block}.step small{color:var(--muted)}
+.mail{background:#f6f7f4;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;white-space:pre-line}
+.rules{display:grid;gap:12px}
+.rule{display:grid;grid-template-columns:70px 1fr auto;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.rule .when{font:800 20px var(--display);color:var(--brand)}.rule p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.switch{position:relative;width:44px;height:24px;border-radius:999px;border:0;background:#cfd5d0;cursor:pointer}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.switch[aria-checked="true"]{background:var(--ok)}.switch[aria-checked="true"]::after{left:23px}
+.hint{font-size:12px;color:var(--muted);margin:0}
+.solv{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:8px 12px;font-weight:700;font-size:13px;min-width:150px}
+.solv i{width:12px;height:12px;border-radius:50%;flex:none}
+.s-green{background:#dcf2e6;color:#14663f}.s-green i{background:#1f8a5b}
+.s-yellow{background:#fbefcf;color:#7a5408}.s-yellow i{background:#e0a21a}
+.s-red{background:#fbdcd6;color:#9c2c1b}.s-red i{background:#c2412d}
+.tone{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:8px 12px;cursor:pointer;min-width:160px}
+.tone b{font:800 18px var(--display);font-variant-numeric:tabular-nums}
+.meter{display:flex;gap:3px}.meter span{width:9px;height:14px;border-radius:3px;background:#e3e6e1}
+.tone-panel td{background:#f8faf7;white-space:normal;padding:18px}
+.tp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px}
+.tp input[type=range]{width:100%;accent-color:var(--brand);height:28px}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.tp .mail{background:#fff}
+.rec-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:12px}
+.rec-legend span{display:inline-flex;align-items:center;gap:6px}.rec-legend i{width:10px;height:10px;border-radius:50%}
+.plan{display:grid;gap:4px;min-width:680px}
+.plan .hd,.plan .rw{display:grid;grid-template-columns:130px repeat(14,1fr);gap:4px;align-items:stretch}
+.plan .hd span{font:500 11px var(--mono);color:var(--muted);text-align:center;padding:4px 0}
+.plan .hd span.today{color:var(--brand);font-weight:700}
+.plan .lg{font-weight:600;padding:8px 6px 8px 0;display:flex;flex-direction:column;justify-content:center;line-height:1.25}.plan .lg small{color:var(--muted);font-weight:400;font-size:12px}
+.cell{border:0;background:#f0f2ee;border-radius:6px;min-height:40px;font:600 11px var(--body);cursor:default;color:#fff;padding:0}
+.cell.st{background:var(--brand);cursor:pointer}.cell.st{background:#c2412d}.cell.st.ab{background:#3a6ea5}.cell.st.bk{background:#6a4fa3}.cell.st.di{background:#1f8a5b}
+.cell.first{border-top-left-radius:12px;border-bottom-left-radius:12px}.cell.last{border-top-right-radius:12px;border-bottom-right-radius:12px}
+.cell.cl{background:#fbefd5;color:#93640a;cursor:pointer}.cell.cl.todo{background:#fbe3de;color:#9c2c1b}
+.cell.sel{outline:3px solid var(--ink);outline-offset:1px}
+.keys{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:12px}.keys i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ctl select{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fff}
+.dl-ok{color:var(--ok);font-weight:700}.dl-warn{color:#93640a;font-weight:700}.dl-late{color:var(--late);font-weight:700}
+.msgbox{background:#f6f7f4;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;white-space:pre-line}
+[hidden]{display:none!important}
+.listgrid{grid-template-columns:minmax(0,2fr) minmax(280px,1fr)}
+@media(max-width:1180px){.listgrid{grid-template-columns:1fr}.detail{position:static}}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
+@media(max-width:760px){.tp{grid-template-columns:1fr}.app{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap;align-items:center;padding:14px 16px}.menu{display:flex;gap:4px;flex-wrap:wrap}.side-foot{display:none}.rule{grid-template-columns:50px 1fr auto}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.listgrid{grid-template-columns:minmax(0,3.2fr) minmax(240px,1fr)}td,th{padding:10px 8px}.tbl table{min-width:0}.tbl td,.tbl th{white-space:normal}.tbl td.num,.tbl th.num{white-space:nowrap}
+.pcs{display:grid;gap:8px}.pc{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:#fff;font-size:13px}
+@media(max-width:760px){.tbl table{min-width:0}.tbl thead{display:none}.tbl table,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}.tbl tr{border:1px solid var(--line);border-radius:12px;padding:8px 10px;margin-bottom:10px}.tbl td{border:0;padding:4px 0;white-space:normal}.tbl td.num{text-align:left}.bar{grid-template-columns:90px 1fr 50px!important}}
+</style></head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris</b> à Côté Sud Immobilier. Ce n'est pas votre outil officiel : les chiffres, noms de locataires et données affichés sont fictifs, à remplacer par les vôtres.</div>
+<div class="app"><aside><div class="brand">Côté Sud<br>Immobilier<small>Lorgues · gestion locative</small></div><nav class="menu" role="tablist" aria-label="Sections"><button role="tab" aria-selected="true" data-view="dash">Tableau de bord</button><button role="tab" aria-selected="false" data-view="list">Loyers du mois <span class="badge" id="lateCount">0</span></button><button role="tab" aria-selected="false" data-view="docs">Pièces à collecter <span class="badge" id="docCount">0</span></button><button role="tab" aria-selected="false" data-view="rules">Règles automatiques</button></nav><div class="side-foot">Loyers rapprochés avec le relevé bancaire à 8 h ce matin</div></aside>
+<main>
+<section data-panel="dash">
+<div class="top"><div><h1>Bonjour Joëlle</h1><p class="sub">Point au 13 octobre 2026 sur les loyers d'octobre et les dossiers locataires.</p></div><button class="btn" data-go="list">Voir les loyers en retard</button></div>
+<div class="kpis" style="margin-top:20px">
+<div class="kpi"><span>Loyers attendus en octobre</span><b>18 450 €</b><em class="up">31 lots en gestion</em></div>
+<div class="kpi"><span>Déjà encaissés</span><b>15 050 €</b><em class="up">82 % du mois</em></div>
+<div class="kpi"><span>Loyers en retard</span><b id="k-late">0</b><em class="down">relances parties automatiquement</em></div>
+<div class="kpi"><span>Pièces manquantes</span><b id="k-doc">0</b><em class="down">dossiers à compléter</em></div></div>
+<div class="grid2" style="margin-top:14px">
+<div class="card"><h2>Retards de paiement, ancienneté</h2><div class="aging" id="aging"></div><p class="hint" style="margin-top:12px">Chaque retard déclenche un rappel au bon moment, sans que l'agence ait à y penser. Elle ne reprend la main qu'à partir de J+10.</p></div>
+<div class="card"><h2>Dernières actions automatiques</h2><div class="feed">
+<div><span class="dot" style="background:var(--ok)"></span><span><b>Quittance envoyée à Sandrine Aubert</b><small>T2 rue de la République · loyer reçu ce matin</small></span></div>
+<div><span class="dot" style="background:var(--info)"></span><span><b>Rappel J+3 envoyé à Mehdi Benali</b><small>Studio chemin des Vignes · 540 € · 8 h</small></span></div>
+<div><span class="dot" style="background:var(--warn)"></span><span><b>Alerte : loyer en retard de 12 jours</b><small>Maison Les Pins · propriétaire informé</small></span></div>
+<div><span class="dot" style="background:var(--ok)"></span><span><b>Avis d'échéance de novembre programmé</b><small>31 locataires · envoi le 25 octobre</small></span></div></div></div></div>
+</section>
+<section data-panel="list" hidden>
+<div class="top"><div><h1>Loyers du mois</h1><p class="sub">Un seul tableau pour tous les lots. Cliquez sur une ligne pour voir l'historique et le message prévu.</p></div><button class="btn ghost" id="exportBtn">Exporter</button></div>
+<div class="grid2 listgrid" style="margin-top:20px"><div class="card">
+<div class="filters"><input id="q" type="search" placeholder="Rechercher un locataire ou un bien" aria-label="Rechercher"></div>
+<div class="chips" id="chips" style="margin-bottom:12px"></div>
+<div class="tbl"><table><thead><tr><th data-sort="name">Locataire</th><th data-sort="bien">Bien</th><th data-sort="amount" class="num">Loyer</th><th data-sort="late" class="num">Retard</th><th>Statut</th><th>Prochaine action</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="hint" id="count" style="margin-top:10px"></p></div><div class="card detail" id="detail"></div></div></section>
+<section data-panel="docs" hidden>
+<div class="top"><div><h1>Pièces à collecter</h1><p class="sub">Locataires et propriétaires déposent leurs documents dans un espace unique, l'agence ne court plus après les pièces.</p></div></div>
+<div class="card" style="margin-top:20px"><div class="tbl"><table><thead><tr><th>Dossier</th><th>Pièces reçues</th><th>Pièces manquantes</th><th>Dernière relance</th><th>Statut</th></tr></thead><tbody id="docRows"></tbody></table></div></div>
+</section>
+<section data-panel="rules" hidden>
+<div class="top"><div><h1>Règles automatiques</h1><p class="sub">L'agence décide une fois, le système applique à chaque loyer et à chaque dossier.</p></div></div>
+<div class="rules" id="rules" style="margin-top:20px"></div>
+<p class="hint">Les messages partent depuis l'adresse de l'agence et s'arrêtent dès que le paiement est rapproché sur le relevé bancaire.</p></section></main></div>
+<script>
+(function(){
+var NOW=new Date("2026-10-13T10:00:00");
+var D=[
+["Sandrine Aubert","T2 · rue de la République",620,0,"pay","Quittance envoyée"],
+["Mehdi Benali","Studio · chemin des Vignes",540,3,"rel","Rappel J+3 envoyé"],
+["Famille Rossi","Maison · Les Pins",1150,12,"late","Mise en demeure à valider"],
+["Julien Marchand","T3 · cours Clemenceau",780,0,"pay","Quittance envoyée"],
+["Laura Giraud","T2 · route de Salernes",590,6,"rel","Rappel J+7 demain"],
+["Karim Slimani","T4 · quartier Saint-Ferréol",890,0,"pay","Quittance envoyée"],
+["Élodie Garnier","Studio · place de la Mairie",470,1,"rel","Rappel J+3 vendredi"],
+["M. et Mme Lefort","Villa · Les Esclans",1480,0,"pay","Quittance envoyée"],
+["Thomas Vidal","T3 · avenue Jean Jaurès",720,9,"late","Appel de l'agence à prévoir"],
+["Nadia Rey","T2 · rue Droite",610,0,"pay","Quittance envoyée"]
+].map(function(r,i){return{id:i,name:r[0],bien:r[1],amount:r[2],late:r[3],st:r[4],next:r[5]}});
+var ST={pay:["Payé","p-ok"],rel:["Rappel en cours","p-warn"],late:["En retard","p-late"]};
+var eur=function(n){return n.toLocaleString("fr-FR")+" €"};
+var nLate=D.filter(function(d){return d.late>0}).length;
+document.getElementById("k-late").textContent=nLate;document.getElementById("lateCount").textContent=nLate;
+var P=[["Dossier locataire T3 cours Clemenceau","Bail, assurance habitation","Avis d'imposition 2025",9,"À relancer","p-warn"],["Entrée Studio place de la Mairie","Pièce d'identité","Trois derniers bulletins de salaire",2,"Relance envoyée","p-info"],["Propriétaire Villa Les Esclans","Titre de propriété","Diagnostics DPE et électricité",5,"À relancer","p-warn"],["Dossier locataire T2 rue Droite","Quittances précédentes","Attestation d'assurance",14,"En retard","p-late"],["Propriétaire Maison Les Pins","RIB, taxe foncière","Dernier relevé de charges",1,"Relance envoyée","p-info"],["Candidat T4 Saint-Ferréol","Pièce d'identité, contrat de travail","Justificatif de domicile",0,"Complet","p-ok"]];
+var missing=P.filter(function(p){return p[5]!=="p-ok"}).length;
+document.getElementById("k-doc").textContent=missing;document.getElementById("docCount").textContent=missing;
+document.getElementById("docRows").innerHTML=P.map(function(p){return '<tr><td><b>'+p[0]+'</b></td><td>'+p[1]+'</td><td>'+p[2]+'</td><td>'+(p[3]?"il y a "+p[3]+" jour"+(p[3]>1?"s":""):"aucune")+'</td><td><span class="pill '+p[5]+'">'+p[4]+'</span></td></tr>'}).join("");
+var B=[["1 à 3 jours",2,"var(--info)"],["4 à 9 jours",2,"var(--warn)"],["10 jours et plus",1,"var(--late)"]];
+document.getElementById("aging").innerHTML=B.map(function(b){return '<div class="bar" style="grid-template-columns:110px 1fr 60px"><span>'+b[0]+'</span><div class="track"><div class="fill" style="width:'+(b[1]/2*100)+'%;background:'+b[2]+'"></div></div><b>'+b[1]+'</b></div>'}).join("");
+function show(v){document.querySelectorAll("[data-panel]").forEach(function(p){p.hidden=p.dataset.panel!==v});document.querySelectorAll(".menu button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.view===v))});window.scrollTo(0,0)}
+document.querySelectorAll("[data-view]").forEach(function(b){b.addEventListener("click",function(){show(b.dataset.view)})});
+var f={q:"",status:"all",sort:"late",dir:-1,sel:null};
+document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){f.status="late";chips();rows();show(b.dataset.go)})});
+var CH=[["all","Tous"],["late","En retard"],["rel","Rappel en cours"],["pay","Payés"]];
+function chips(){var c=document.getElementById("chips");c.innerHTML="";CH.forEach(function(x){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=x[1];b.setAttribute("aria-pressed",String(f.status===x[0]));b.onclick=function(){f.status=x[0];chips();rows()};c.appendChild(b)})}
+function match(d){if(f.q&&(d.name+" "+d.bien).toLowerCase().indexOf(f.q)<0)return false;if(f.status!=="all"&&d.st!==f.status)return false;return true}
+function rows(){
+ var r=D.filter(match).sort(function(a,b){var x=a[f.sort],y=b[f.sort];return (x>y?1:x<y?-1:0)*f.dir});
+ document.getElementById("rows").innerHTML=r.map(function(d){var s=ST[d.st];return '<tr data-id="'+d.id+'" class="'+(f.sel===d.id?"sel":"")+'"><td class="client"><b>'+d.name+'</b></td><td>'+d.bien+'</td><td class="num">'+eur(d.amount)+'</td><td class="num">'+(d.late?'<span class="'+(d.late>=10?"dl-late":d.late>=4?"dl-warn":"dl-ok")+'">'+d.late+' j</span>':"-")+'</td><td><span class="pill '+s[1]+'">'+s[0]+'</span></td><td>'+d.next+'</td></tr>'}).join("")||'<tr><td colspan="6">Aucun loyer ne correspond à ces filtres.</td></tr>';
+ document.getElementById("count").textContent=r.length+" loyer"+(r.length>1?"s":"");
+ document.querySelectorAll("#rows tr[data-id]").forEach(function(tr){tr.onclick=function(){f.sel=+tr.dataset.id;rows();detail()}});
+}
+document.getElementById("q").addEventListener("input",function(e){f.q=e.target.value.toLowerCase();rows()});
+document.querySelectorAll("th[data-sort]").forEach(function(th){th.onclick=function(){var k=th.dataset.sort;f.dir=f.sort===k?-f.dir:-1;f.sort=k;rows()}});
+document.getElementById("exportBtn").addEventListener("click",function(){this.textContent="Export prêt (démo)"});
+function detail(){
+ var d=D.filter(function(x){return x.id===f.sel})[0],el=document.getElementById("detail");
+ if(!d){el.innerHTML='<h2>Détail du loyer</h2><p class="hint">Sélectionnez une ligne pour voir l\'historique des messages et le prochain rappel.</p>';return}
+ var steps=[["Avis d\'échéance envoyé","25 septembre","var(--info)"]];
+ if(d.st==="pay")steps.push(["Loyer reçu et rapproché","sur le relevé bancaire","var(--ok)"],["Quittance envoyée","automatiquement","var(--ok)"]);
+ else{steps.push(["Échéance non payée","1er octobre","var(--late)"]);if(d.late>=3)steps.push(["Rappel J+3 envoyé","e-mail et SMS","var(--warn)"]);if(d.late>=7)steps.push(["Rappel J+7 envoyé","ton plus ferme","var(--warn)"]);if(d.late>=10)steps.push(["Propriétaire informé","alerte à l\'agence","var(--late)"])}
+ var first=/^M\./.test(d.name)||/^Famille/.test(d.name)?"Madame, Monsieur":d.name.split(" ")[0];
+ el.innerHTML='<div><h2 style="margin:0">'+d.name+'</h2><p class="sub">'+d.bien+' · '+eur(d.amount)+' par mois</p></div>'+
+ '<div class="timeline">'+steps.map(function(s){return '<div class="step" style="--c:'+s[2]+'"><b>'+s[0]+'</b><small>'+s[1]+'</small></div>'}).join("")+'</div>'+
+ (d.st==="pay"?'<div><b>Quittance</b><div class="msgbox">Quittance de loyer d\'octobre 2026, '+eur(d.amount)+', envoyée à '+d.name+'.</div></div>':
+ '<div><b>Prochain message prévu</b><div class="msgbox">Bonjour '+first+',\n\nSauf erreur de notre part, le loyer d\'octobre ('+eur(d.amount)+') pour « '+d.bien+' » n\'est pas encore arrivé. Si vous l\'avez déjà réglé, merci de ne pas tenir compte de ce message. Sinon, vous pouvez régler par virement ou nous appeler pour convenir d\'une solution.\n\nCôté Sud Immobilier, Lorgues</div></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="sendNow">Envoyer le rappel</button><button class="btn ghost" id="call">Marquer comme appelé</button></div>');
+ var a=document.getElementById("sendNow"),b=document.getElementById("call");
+ if(a){a.onclick=function(){a.textContent="Envoyé (démo)";a.disabled=true};b.onclick=function(){b.textContent="Appel noté (démo)";b.disabled=true}}
+}
+var RULES=[["J+1","Rappel aimable","E-mail courtois le lendemain de l'échéance si le loyer n'apparaît pas sur le relevé bancaire.",true],["J+3","Rappel e-mail et SMS","Deuxième message, avec les moyens de paiement.",true],["J+7","Rappel ferme","Ton plus direct, le propriétaire est informé.",true],["J+10","Alerte agence","La ligne passe en rouge, l'agence décide de l'appel ou de la mise en demeure.",true],["Paiement","Quittance automatique","Quittance envoyée dès que le loyer est rapproché sur le relevé.",true],["J-5","Relance des pièces","Rappel automatique au locataire ou au propriétaire pour chaque pièce manquante.",false]];
+var R=document.getElementById("rules");
+R.innerHTML=RULES.map(function(r){return '<div class="rule"><span class="when" style="font-size:16px">'+r[0]+'</span><div><b>'+r[1]+'</b><p>'+r[2]+'</p></div><button class="switch" role="switch" aria-checked="'+r[3]+'" aria-label="'+r[1]+'"></button></div>'}).join("");
+R.querySelectorAll(".switch").forEach(function(s){s.onclick=function(){s.setAttribute("aria-checked",String(s.getAttribute("aria-checked")!=="true"))}});
+chips();rows();detail();
+})();
+</script>
+</body></html>
