@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Agence des Îles d'Hyères</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#faf7f2;--ink:#17262e;--muted:#5d6b72;--line:#e6dfd3;--brand:#0f4c5c;--brand2:#0a3641;--sun:#e0a458;--panel:#fff;--ok:#1f8a5b;--serif:"Fraunces",Georgia,serif;--sans:"Figtree",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+img{max-width:100%;display:block}button,input,select,textarea{font:inherit}
+.demo-bar{background:#17262e;color:#e9eef0;text-align:center;font-size:13px;padding:9px 16px}.demo-bar b{color:#fff}
+header{position:sticky;top:0;z-index:5;background:rgba(250,247,242,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{max-width:1120px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font:700 20px var(--serif);color:var(--brand);line-height:1.1}.logo small{display:block;font:500 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;gap:22px;align-items:center}nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 22px;background:var(--brand);color:#fff;font-weight:600;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--brand2)}.btn.sun{background:var(--sun);color:#2a1c05}.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #7fb4c2;outline-offset:2px}
+.hero{position:relative;color:#fff;background:linear-gradient(90deg,rgba(10,54,65,.88),rgba(10,54,65,.35)),url(https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=70) center/cover}
+.hero .in{max-width:1120px;margin:auto;padding:84px 20px 70px}
+.hero h1{font:700 clamp(32px,5vw,54px)/1.1 var(--serif);margin:0 0 14px;max-width:640px}
+.hero p{max-width:540px;font-size:18px;margin:0 0 26px;color:#e6f0f2}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{max-width:1120px;margin:-34px auto 0;padding:0 20px;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;box-shadow:0 8px 24px rgba(15,76,92,.08)}
+.stat b{display:block;font:700 30px var(--serif);color:var(--brand)}.stat span{color:var(--muted);font-size:14px}
+section{max-width:1120px;margin:auto;padding:64px 20px 0}
+h2{font:700 clamp(26px,3.4vw,36px)/1.15 var(--serif);margin:0 0 8px}.lead{color:var(--muted);margin:0 0 28px;max-width:620px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}.svc i{font-style:normal;font-size:26px}.svc h3{font:700 19px var(--serif);margin:8px 0 6px}.svc p{margin:0 0 12px;color:var(--muted);font-size:15px}.svc a{color:var(--brand);font-weight:600;text-decoration:none}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:500}.chip[aria-pressed=true]{background:var(--brand);color:#fff;border-color:var(--brand)}
+.biens{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bien{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.bien img{height:190px;width:100%;object-fit:cover}.bien div{padding:16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}.bien h3{font:700 18px var(--serif);margin:0}.bien small{color:var(--muted)}
+.price{font:700 22px var(--serif);margin-top:auto;padding-top:8px}
+.estim{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}
+.steps{display:flex;gap:6px;margin-bottom:18px}.steps span{flex:1;height:5px;border-radius:9px;background:var(--line)}.steps span.on{background:var(--sun)}
+.step-t{font-weight:700;margin:0 0 12px}
+label{display:block;font-weight:600;font-size:14px;margin:12px 0 5px}
+input,select,textarea{width:100%;border:1px solid #d5ccbd;border-radius:10px;padding:11px 12px;background:#fff;color:var(--ink)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.opt{border:1px solid #d5ccbd;border-radius:12px;padding:12px;cursor:pointer;background:#fff;text-align:left;font-weight:600}.opt[aria-pressed=true]{border-color:var(--brand);background:#e5f0f3;color:var(--brand)}
+.nav2{display:flex;justify-content:space-between;margin-top:20px;gap:10px}
+.result{background:var(--brand);color:#fff;border-radius:14px;padding:18px;margin-top:6px}.result b{font:700 30px var(--serif);display:block}
+.side h3{font:700 20px var(--serif);margin:0 0 10px}.side ul{margin:0 0 18px;padding-left:18px;color:var(--muted)}.side li{margin:6px 0}
+.gestion{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.gestion img{border-radius:18px;height:340px;width:100%;object-fit:cover}
+.calc{margin-top:14px}.calc input[type=range]{padding:0;accent-color:var(--brand)}
+.avis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.av{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}.av p{margin:6px 0 10px}.av small{color:var(--muted)}.star{color:var(--sun);letter-spacing:2px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}summary{cursor:pointer;font-weight:600}details p{margin:10px 0 0;color:var(--muted)}
+footer{margin-top:70px;background:var(--brand2);color:#cfe0e5}.fin{max-width:1120px;margin:auto;padding:40px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}.fin b{color:#fff;display:block;margin-bottom:6px}.fin a{color:#fff}
+.toast{display:none;background:#e4f4ec;border:1px solid #9fd3b8;color:#14573a;border-radius:12px;padding:16px;margin-top:6px}
+@media(max-width:860px){nav a.l{display:none}.stats{grid-template-columns:1fr 1fr}.services,.biens,.avis,.estim,.gestion,.fin{grid-template-columns:1fr}.hero .in{padding:56px 20px 60px}.gestion img{height:240px}}
+@media(max-width:520px){.row,.opts{grid-template-columns:1fr}.nav .btn{padding:10px 16px;font-size:14px}}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à l'Agence des Îles d'Hyères.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<header><div class="nav"><div class="logo">Agence des Îles d'Hyères<small>Hyères · Bormes-les-Mimosas</small></div>
+<nav><a class="l" href="#biens">Nos biens</a><a class="l" href="#gestion">Gestion locative</a><a class="l" href="#avis">Avis</a><a class="btn" href="#estimation">Estimer mon bien</a></nav></div></header>
+
+<div class="hero"><div class="in">
+<h1>Confiez votre bien à une agence qui vous répond dans la journée</h1>
+<p>Vente, estimation et gestion locative à Hyères et sur la côte des Maures. Une demande en trois minutes, un retour de l'agence sous 24 h.</p>
+<div class="cta"><a class="btn sun" href="#estimation">Estimer mon bien en ligne</a><a class="btn ghost" href="#gestion">Confier ma gestion locative</a></div></div></div>
+
+<div class="stats"><div class="stat"><b>18 ans</b><span>d'expérience locale</span></div><div class="stat"><b>240</b><span>biens vendus</span></div><div class="stat"><b>96</b><span>lots en gestion</span></div><div class="stat"><b>24 h</b><span>pour votre estimation</span></div></div>
+
+<section id="services"><h2>Un seul interlocuteur, de l'estimation aux clés</h2><p class="lead">Chaque demande arrive directement dans le tableau de bord de l'agence, avec le bon dossier et le bon rappel.</p>
+<div class="services"><div class="svc"><i>🏡</i><h3>Vente</h3><p>Estimation, mandat, visites, offre et acte avec un suivi à chaque étape.</p><a href="#estimation">Estimer mon bien →</a></div>
+<div class="svc"><i>🔑</i><h3>Gestion locative</h3><p>Loyers, quittances, travaux et états des lieux gérés pour vous.</p><a href="#gestion">Simuler mon revenu →</a></div>
+<div class="svc"><i>🌴</i><h3>Locations saisonnières</h3><p>Calendrier partagé et réservation directe, sans passer par un site externe.</p><a href="#contact">Parler à l'agence →</a></div></div></section>
+
+<section id="biens"><h2>Biens à vendre</h2><p class="lead">Exemples fictifs pour montrer le rendu de la vitrine.</p>
+<div class="filters" role="group" aria-label="Filtrer"><button class="chip" aria-pressed="true" data-f="all">Tous</button><button class="chip" aria-pressed="false" data-f="Appartement">Appartements</button><button class="chip" aria-pressed="false" data-f="Villa">Villas</button></div>
+<div class="biens" id="grid">
+<article class="bien" data-t="Appartement"><img loading="lazy" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=70" alt="Salon lumineux avec vue"><div><span class="tag">Appartement</span><h3>T3 vue mer, Hyères centre</h3><small>68 m² · 2 chambres · terrasse</small><span class="price">465 000 €</span></div></article>
+<article class="bien" data-t="Villa"><img loading="lazy" src="https://images.unsplash.com/photo-1658180952728-8e84083ecb73?auto=format&fit=crop&w=700&q=70" alt="Terrasse avec petite piscine"><div><span class="tag">Villa</span><h3>Villa avec piscine, Les Salins</h3><small>120 m² · 4 chambres · 600 m² de terrain</small><span class="price">780 000 €</span></div></article>
+<article class="bien" data-t="Appartement"><img loading="lazy" src="https://images.unsplash.com/photo-1621215052063-6ed29c948b31?auto=format&fit=crop&w=700&q=70" alt="Chambre avec cheminée"><div><span class="tag">Appartement</span><h3>T2 de charme, vieille ville</h3><small>46 m² · 1 chambre · cheminée</small><span class="price">315 000 €</span></div></article></div></section>
+
+<section id="estimation"><div class="estim"><div class="side"><h2>Estimez votre bien en trois minutes</h2><p class="lead">Une demande claire, un dossier prêt pour l'agent, un rappel sous 24 h ouvrées.</p>
+<ul><li>Fourchette de prix indicative affichée tout de suite</li><li>Le dossier arrive complet dans le tableau de bord de l'agence</li><li>Rappel automatique au créneau choisi, sans relance de votre part</li></ul>
+<h3>Pour les propriétaires bailleurs</h3><p style="color:var(--muted);margin:0">Le même parcours ouvre une demande de mandat de gestion locative.</p></div>
+<div class="card" id="wiz"><div class="steps"><span class="on"></span><span></span><span></span></div>
+<div data-s="1"><p class="step-t">1. Votre projet</p><div class="opts"><button class="opt" data-k="p" aria-pressed="true">Vendre</button><button class="opt" data-k="p" aria-pressed="false">Confier en gestion locative</button></div>
+<label for="type">Type de bien</label><select id="type"><option value="4200">Appartement</option><option value="4800">Maison / villa</option></select>
+<div class="row"><div><label for="surf">Surface (m²)</label><input id="surf" type="number" min="10" max="500" value="70"></div><div><label for="ville">Commune</label><select id="ville"><option value="1">Hyères</option><option value="1.12">Bormes-les-Mimosas</option><option value="1.05">Le Lavandou</option><option value="0.95">La Londe</option></select></div></div>
+<div class="nav2"><span></span><button class="btn" data-go="2">Continuer</button></div></div>
+<div data-s="2" hidden><p class="step-t">2. Votre fourchette indicative</p><div class="result"><span>Estimation indicative</span><b id="est">–</b><small>À confirmer par une visite de l'agence</small></div>
+<div class="nav2"><button class="btn ghost" data-go="1">Retour</button><button class="btn" data-go="3">Être rappelé</button></div></div>
+<div data-s="3" hidden><p class="step-t">3. Vos coordonnées</p><label for="nom">Nom</label><input id="nom" placeholder="Prénom Nom"><div class="row"><div><label for="tel">Téléphone</label><input id="tel" placeholder="06 00 00 00 00"></div><div><label for="cr">Créneau de rappel</label><select id="cr"><option>Demain matin</option><option>Demain après-midi</option><option>Après-demain</option></select></div></div>
+<div class="nav2"><button class="btn ghost" data-go="2">Retour</button><button class="btn sun" id="send">Envoyer ma demande</button></div>
+<div class="toast" id="ok" role="status"><b>Demande envoyée.</b> Le dossier est créé et un agent vous rappelle au créneau choisi. (Démonstration : rien n'est transmis.)</div></div>
+</div></div></section>
+
+<section id="gestion"><div class="gestion"><img loading="lazy" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=70" alt="Chambre meublée prête à louer"><div>
+<h2>Gestion locative : vous voyez ce que votre bien rapporte</h2><p class="lead" style="margin-bottom:12px">Déplacez le curseur pour simuler votre revenu et déposer une demande de mandat.</p>
+<div class="card calc"><label for="loy">Loyer mensuel visé : <b id="loyv">900 €</b></label><input id="loy" type="range" min="400" max="3000" step="50" value="900">
+<p style="margin:14px 0 4px">Honoraires de gestion (exemple fictif 6 %) : <b id="hon">54 €</b> par mois</p><p style="margin:0 0 14px">Revenu net avant charges : <b id="net" style="color:var(--ok)">846 €</b> par mois</p>
+<a class="btn" href="#estimation" id="mandat">Demander un mandat de gestion</a></div></div></div></section>
+
+<section id="avis"><h2>Ils nous ont fait confiance</h2><p class="lead">Avis fictifs pour la démonstration.</p>
+<div class="avis"><div class="av"><span class="star">★★★★★</span><p>« Estimation en ligne le matin, visite le lendemain. Très réactifs. »</p><small>Claire, Hyères</small></div><div class="av"><span class="star">★★★★★</span><p>« Mes loyers arrivent chaque mois et je vois tout dans mon espace. »</p><small>Marc, propriétaire bailleur</small></div><div class="av"><span class="star">★★★★☆</span><p>« Dossier de vente suivi à chaque étape, sans avoir à relancer. »</p><small>Famille Roux, Bormes</small></div></div></section>
+
+<section id="faq"><h2>Questions fréquentes</h2><p class="lead">&nbsp;</p>
+<details><summary>L'estimation en ligne est-elle gratuite ?</summary><p>Oui, la fourchette est indicative et l'agence la confirme lors d'une visite.</p></details>
+<details><summary>Que se passe-t-il après ma demande ?</summary><p>Votre dossier est créé et un agent vous rappelle au créneau choisi.</p></details>
+<details><summary>Puis-je confier un bien en gestion locative sans le vendre ?</summary><p>Oui, choisissez « Confier en gestion locative » à la première étape.</p></details></section>
+
+<footer id="contact"><div class="fin"><div><b>Agence des Îles d'Hyères</b>17 avenue des Îles d'Or, 83400 Hyères<br>Agence de Bormes-les-Mimosas</div><div><b>Téléphone</b><a href="tel:+33494014949">04 94 01 49 49</a></div><div><b>Horaires</b>Du lundi au vendredi<br>9 h - 12 h · 14 h - 18 h</div></div></footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$$('.chip').forEach(c=>c.onclick=()=>{$$('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));$$('#grid .bien').forEach(b=>b.style.display=(c.dataset.f==='all'||b.dataset.t===c.dataset.f)?'':'none')});
+$$('.opt').forEach(o=>o.onclick=()=>{$$('.opt').forEach(x=>x.setAttribute('aria-pressed',x===o))});
+function go(n){$$('[data-s]').forEach(d=>d.hidden=d.dataset.s!=n);$$('.steps span').forEach((s,i)=>s.classList.toggle('on',i<n));
+ if(n==2){const v=Math.max(10,+$('#surf').value||70)*$('#type').value*$('#ville').value;const f=x=>Math.round(x/5000)*5000;$('#est').textContent=f(v*.93).toLocaleString('fr-FR')+' à '+f(v*1.07).toLocaleString('fr-FR')+' €'}}
+$$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+$('#send').onclick=()=>{$('#ok').style.display='block'};
+function calc(){const l=+$('#loy').value,h=Math.round(l*.06);$('#loyv').textContent=l.toLocaleString('fr-FR')+' €';$('#hon').textContent=h+' €';$('#net').textContent=(l-h).toLocaleString('fr-FR')+' €'}
+$('#loy').oninput=calc;
+$('#mandat').onclick=()=>{$$('.opt')[1].click()};
+</script>
+</body></html>
