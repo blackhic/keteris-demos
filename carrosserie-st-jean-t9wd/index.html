@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Carrosserie St Jean · Toulon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--navy:#0f2a43;--navy2:#173a5c;--sand:#f6f1e7;--card:#fffdf8;--gold:#d99a2b;--gold-d:#b57e1c;--ink:#1b2430;--muted:#66717e;--line:#e2dacb;--ok:#2d9a6b;--no:#c4553f;
+--serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font:16px/1.6 var(--sans)}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);margin:0;line-height:1.1;color:var(--navy)}
+h2{font-size:clamp(28px,4.4vw,42px)}
+.tag{display:inline-block;font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;font:700 16px var(--sans);padding:14px 26px;border-radius:999px;text-decoration:none;background:var(--gold);color:#1b1405;transition:background .15s,transform .15s}
+.btn:hover{background:#e6a93a;transform:translateY(-1px)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}.btn-line:hover{background:rgba(255,255,255,.1)}
+.demo-bar{background:#000;color:#d9dde2;font:500 13px/1.4 var(--sans);text-align:center;padding:9px 16px}.demo-bar b{color:#fff}
+nav{position:sticky;top:0;z-index:20;background:rgba(15,42,67,.96);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px}
+.logo{font:700 21px var(--serif);color:#fff;text-decoration:none}.logo small{display:block;font:600 10px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}nav ul a{color:#cdd8e3;text-decoration:none;font-weight:600;font-size:15px}nav ul a:hover{color:#fff}
+nav .btn{padding:10px 20px;font-size:15px;white-space:nowrap}
+.hero{position:relative;background:var(--navy) url("https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=2000&q=75") center/cover;color:#fff}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,42,67,.95) 30%,rgba(15,42,67,.55))}
+.hero .wrap{position:relative;padding-block:90px 80px;max-width:1100px}
+.hero h1{color:#fff;font-size:clamp(36px,6.4vw,66px);max-width:12em}
+.hero p{max-width:34em;font-size:18px;color:#d5dfe9;margin:20px 0 30px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.facts{background:var(--navy2);color:#fff}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-block:26px}
+.facts b{display:block;font:700 30px var(--serif);color:var(--gold)}.facts span{font-size:14px;color:#c6d3e0}
+section{padding-block:76px}
+.head{max-width:640px;margin-bottom:34px}.head p{color:var(--muted);margin:12px 0 0}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.svc h3{font-size:21px;margin-bottom:8px}.svc p{margin:0 0 14px;color:var(--muted);font-size:15px}.svc b{color:var(--navy)}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:21px;margin-bottom:14px}
+.book{background:#fff;border-block:1px solid var(--line)}
+.bk{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+.step{display:flex;align-items:center;gap:10px;font:700 15px var(--sans);color:var(--navy);margin:0 0 12px}
+.step i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font:600 14px var(--sans);cursor:pointer;color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.cal{margin-bottom:24px}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font:700 17px var(--serif);color:var(--navy)}
+.cal-h button{border:1px solid var(--line);background:#fff;border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.dow{font:700 11px var(--sans);text-align:center;color:var(--muted);text-transform:uppercase;padding-bottom:2px}
+.day{aspect-ratio:1;border:1px solid var(--line);border-radius:10px;background:#fff;font:600 14px var(--sans);cursor:pointer;position:relative;color:var(--ink)}
+.day[disabled]{background:transparent;border-color:transparent;color:#b4aea2;cursor:not-allowed}
+.day[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#1b1405}
+.day .dot{position:absolute;bottom:4px;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--ok)}
+.day .dot.few{background:var(--gold-d)}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:24px}
+.slot{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:10px 4px;font:700 14px var(--sans);cursor:pointer;color:var(--ink)}
+.slot[disabled]{text-decoration:line-through;color:#b4aea2;background:#f3efe6;cursor:not-allowed}
+.slot[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+label{display:block;font:600 13px var(--sans);color:var(--muted);margin-bottom:5px}
+input[type=text],input[type=tel],input[type=email],select{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;font:500 16px var(--sans);background:#fff;color:var(--ink)}
+.photos{display:flex;align-items:center;gap:12px;border:1.5px dashed #c9bda4;border-radius:12px;padding:14px;background:#fff;margin-bottom:14px;font-size:14px;color:var(--muted)}
+.photos .ph{display:flex;gap:6px}.photos .ph span{width:46px;height:46px;border-radius:8px;background:var(--line);display:grid;place-items:center;font-size:20px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-bottom:18px}.check input{margin-top:4px;width:18px;height:18px;accent-color:var(--navy)}
+.sum{position:sticky;top:84px}
+.sum h3{font-size:22px;margin-bottom:14px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}.row span:first-child{color:var(--muted)}
+.row.t{border:0;font:700 18px var(--sans);color:var(--navy);padding-top:14px}
+.note{font-size:13px;color:var(--muted);margin:12px 0 18px}
+.ok{display:none;text-align:center;padding:10px 4px}.ok.on{display:block}
+.ok .big{width:58px;height:58px;border-radius:50%;background:var(--ok);color:#fff;font-size:30px;display:grid;place-items:center;margin:0 auto 14px}
+.sms{background:var(--sand);border-radius:14px;padding:12px 14px;font-size:14px;text-align:left;margin-top:14px;border:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.two img{border-radius:18px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:14px}
+.steps li{display:flex;gap:14px}.steps b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--gold);color:#1b1405;display:grid;place-items:center;font-weight:800}
+.steps p{margin:0;color:var(--muted);font-size:15px}.steps strong{color:var(--navy);display:block}
+.rem{background:var(--navy);color:#fff}
+.rem h2{color:#fff}.rem .head p{color:#c6d3e0}
+.rems{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rm{background:var(--navy2);border-radius:16px;padding:22px;font-size:15px}
+.rm b{display:block;color:var(--gold);font:700 13px var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.rm p{margin:0;color:#dbe5ee}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.rv .st{color:var(--gold);letter-spacing:2px}.rv p{margin:8px 0 12px;font-size:15px}.rv small{color:var(--muted)}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font:700 16px var(--sans);color:var(--navy)}details p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.contact{background:#fff;border-top:1px solid var(--line)}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.ct p{margin:6px 0}.ct a{color:var(--navy);font-weight:700}
+.map{border-radius:18px;background:linear-gradient(135deg,#dfe8ef,#eef2f5);min-height:220px;display:grid;place-items:center;text-align:center;padding:20px;color:var(--navy);font-weight:600;border:1px solid var(--line)}
+footer{background:var(--navy);color:#9db0c3;font-size:14px;padding-block:24px;text-align:center}
+@media(max-width:900px){
+ nav ul{display:none}
+ .facts .wrap{grid-template-columns:1fr 1fr}
+ .services,.revs,.rems{grid-template-columns:1fr 1fr}
+ .bk,.two,.ct{grid-template-columns:1fr}.sum{position:static}
+}
+@media(max-width:600px){
+ section{padding-block:54px}.hero .wrap{padding-block:60px 54px}
+ .services,.revs,.rems,.f2{grid-template-columns:1fr}
+ .slots{grid-template-columns:repeat(3,1fr)}
+ .panel{padding:18px}
+ nav .btn{padding:9px 14px;font-size:14px}.logo{font-size:18px}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à Carrosserie St Jean.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap">
+ <a class="logo" href="#top">Carrosserie St Jean<small>Toulon · Var</small></a>
+ <ul><li><a href="#services">Nos services</a></li><li><a href="#rdv">Rendez-vous</a></li><li><a href="#rappels">Rappels</a></li><li><a href="#avis">Avis</a></li><li><a href="#contact">Contact</a></li></ul>
+ <a class="btn" href="#rdv">Rendez-vous</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+ <span class="tag" style="color:var(--gold)">Carrosserie · Peinture · Mécanique toutes marques</span>
+ <h1>Votre devis et votre rendez-vous, sans décrocher le téléphone</h1>
+ <p>Envoyez les photos des dégâts, choisissez un créneau à l'atelier de l'avenue Colonel Picot, et repartez avec un véhicule de courtoisie pendant les travaux.</p>
+ <div class="cta"><a class="btn" href="#rdv">Demander mon devis</a><a class="btn btn-line" href="tel:0494271957">04 94 27 19 57</a></div>
+</div></header>
+<div class="facts"><div class="wrap">
+ <div><b>2 min</b><span>pour demander un devis avec photos</span></div>
+ <div><b>24 h</b><span>pour recevoir votre estimation</span></div>
+ <div><b>Prêt</b><span>d'un véhicule de courtoisie</span></div>
+ <div><b>Auto et moto</b><span>carrosserie, peinture, mécanique</span></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+ <div class="head"><span class="tag">Ce que nous faisons</span><h2>Un seul atelier pour la tôle, la peinture et la mécanique</h2><p>Choisissez la prestation, le rendez-vous se règle en quelques clics.</p></div>
+ <div class="services">
+  <div class="svc"><div class="ico">🔧</div><h3>Carrosserie</h3><p>Réparation de chocs, rayures, ailes et pare-chocs, quelle que soit la marque.</p><b>Devis sur photos</b></div>
+  <div class="svc"><div class="ico">🎨</div><h3>Peinture auto et moto</h3><p>Mise en peinture en cabine, retouches et remise en état de la teinte d'origine.</p><b>Devis sur photos</b></div>
+  <div class="svc"><div class="ico">⚙️</div><h3>Mécanique</h3><p>Entretien, freins, distribution, diagnostic : on s'occupe de votre voiture.</p><b>Révision dès 89 €</b></div>
+  <div class="svc"><div class="ico">🚗</div><h3>Dépannage sur place</h3><p>Nous nous déplaçons sur Toulon et ses environs, avec véhicule de courtoisie.</p><b>Sur demande</b></div>
+ </div>
+</div></section>
+
+<section class="book" id="rdv"><div class="wrap">
+ <div class="head"><span class="tag">Rendez-vous atelier</span><h2>Réservez en ligne, c'est confirmé tout de suite</h2><p>Choisissez l'intervention, le jour et l'heure. Vous recevez une confirmation et un rappel par SMS.</p></div>
+ <div class="bk">
+  <div class="panel" id="form">
+   <p class="step"><i>1</i>Type d'intervention</p>
+   <div class="chips" id="types"></div>
+   <p class="step"><i>2</i>Jour de dépôt</p>
+   <div class="cal"><div class="cal-h"><button type="button" id="prev" aria-label="Mois précédent">‹</button><span id="mois"></span><button type="button" id="next" aria-label="Mois suivant">›</button></div>
+    <div class="grid" id="dows"></div><div class="grid" id="days" style="margin-top:5px"></div></div>
+   <p class="step"><i>3</i>Heure d'arrivée</p>
+   <div class="slots" id="slots"></div>
+   <p class="step"><i>4</i>Votre véhicule</p>
+   <div class="f2"><div><label for="imm">Immatriculation</label><input id="imm" type="text" placeholder="AB-123-CD" autocomplete="off"></div>
+    <div><label for="mod">Marque et modèle</label><input id="mod" type="text" placeholder="Renault Clio"></div></div>
+   <div class="photos"><div class="ph"><span>📷</span><span>📷</span><span>＋</span></div><div>Ajoutez 2 à 4 photos des dégâts : le devis chiffré vous est envoyé sous 24 h.</div></div>
+   <div class="check"><input type="checkbox" id="cour" checked><label for="cour" style="margin:0;color:var(--ink);font-weight:500">Je souhaite un véhicule de courtoisie pendant les travaux (selon disponibilité)</label></div>
+   <div class="f2"><div><label for="nom">Nom</label><input id="nom" type="text" placeholder="Votre nom"></div>
+    <div><label for="tel">Téléphone mobile</label><input id="tel" type="tel" placeholder="06 00 00 00 00"></div></div>
+  </div>
+  <aside class="panel sum" id="sum">
+   <div id="recap">
+    <h3>Votre rendez-vous</h3>
+    <div class="row"><span>Intervention</span><span id="r1">À choisir</span></div>
+    <div class="row"><span>Date</span><span id="r2">À choisir</span></div>
+    <div class="row"><span>Heure</span><span id="r3">À choisir</span></div>
+    <div class="row"><span>Véhicule de courtoisie</span><span id="r4">Oui</span></div>
+    <div class="row t"><span>Tarif indicatif</span><span id="r5">—</span></div>
+    <p class="note">Le tarif définitif est confirmé après étude de vos photos. Aucun paiement à la réservation.</p>
+    <button class="btn" id="go" style="width:100%" type="button">Confirmer le rendez-vous</button>
+    <p class="note" id="err" style="color:var(--no);display:none;margin-top:10px"></p>
+   </div>
+   <div class="ok" id="ok"><div class="big">✓</div><h3>Rendez-vous confirmé</h3><p id="okt" style="color:var(--muted)"></p>
+    <div class="sms"><b>SMS envoyé :</b> « Carrosserie St Jean : votre rendez-vous est confirmé. Nous vous rappellerons la veille. Pour déplacer, répondez DÉPLACER. »</div>
+    <button class="btn" id="again" style="margin-top:16px;background:var(--navy);color:#fff" type="button">Nouvelle demande</button></div>
+  </aside>
+ </div>
+</div></section>
+
+<section><div class="wrap two">
+ <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=900&q=75" alt="Mécanicien au travail sous un capot" loading="lazy">
+ <div><span class="tag">Comment ça se passe</span><h2>Du devis à la remise des clés</h2>
+  <ol class="steps">
+   <li><b>1</b><div><strong>Vous envoyez vos photos</strong><p>Depuis votre téléphone, en deux minutes, sans vous déplacer.</p></div></li>
+   <li><b>2</b><div><strong>Vous recevez le devis</strong><p>Chiffré et détaillé, avec la franchise offerte sur les travaux de carrosserie sous conditions.</p></div></li>
+   <li><b>3</b><div><strong>Vous déposez le véhicule</strong><p>Au créneau choisi. Un véhicule de courtoisie vous attend.</p></div></li>
+   <li><b>4</b><div><strong>Vous êtes prévenu</strong><p>Un SMS dès que votre voiture est prête à être récupérée.</p></div></li>
+  </ol></div>
+</div></section>
+
+<section class="rem" id="rappels"><div class="wrap">
+ <div class="head"><span class="tag">Rappels automatiques</span><h2>Vos clients reviennent sans que vous les appeliez</h2><p>Le système prévient chaque client au bon moment, par SMS ou e-mail.</p></div>
+ <div class="rems">
+  <div class="rm"><b>Révision</b><p>« Bonjour Marc, votre Clio approche des 15 000 km. Réservez votre révision en un clic. »</p></div>
+  <div class="rm"><b>Contrôle technique</b><p>« Votre contrôle technique expire dans 2 mois. Prenez rendez-vous pour la contre-visite si besoin. »</p></div>
+  <div class="rm"><b>Devis en attente</b><p>« Votre devis carrosserie est prêt depuis 5 jours. Souhaitez-vous fixer la date des travaux ? »</p></div>
+ </div>
+</div></section>
+
+<section id="avis"><div class="wrap">
+ <div class="head"><span class="tag">Avis clients</span><h2>Ce que disent nos clients</h2><p>Exemples fictifs, à remplacer par vos vrais avis.</p></div>
+ <div class="revs">
+  <div class="rv"><div class="st">★★★★★</div><p>« J'ai envoyé les photos le soir, le devis était dans ma boîte le lendemain. Voiture rendue comme neuve. »</p><small>Sophie M., Toulon</small></div>
+  <div class="rv"><div class="st">★★★★★</div><p>« Le véhicule de courtoisie m'a évité d'être coincé une semaine. Atelier sérieux et prévenant. »</p><small>Karim B., La Valette</small></div>
+  <div class="rv"><div class="st">★★★★☆</div><p>« Peinture de ma moto impeccable. Rendez-vous pris en ligne, plus simple que d'appeler. »</p><small>Julien R., Le Revest</small></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap" style="max-width:760px">
+ <div class="head"><h2>Questions fréquentes</h2></div>
+ <details><summary>Le devis est-il vraiment fait sur photos ?</summary><p>Oui pour les petits et moyens dégâts. Pour un doute, l'atelier vous propose un passage rapide, sans engagement.</p></details>
+ <details><summary>Puis-je avoir un véhicule de courtoisie ?</summary><p>L'atelier met un véhicule à disposition pendant la durée des travaux, sous conditions : cochez l'option à la réservation.</p></details>
+ <details><summary>Réparez-vous aussi les motos ?</summary><p>Oui, la mise en peinture des motos fait partie de nos prestations.</p></details>
+ <details><summary>Peut-on encore vous appeler ?</summary><p>Bien sûr, le 04 94 27 19 57 reste joignable. Le rendez-vous en ligne évite simplement d'attendre une ligne libre.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap ct">
+ <div><span class="tag">Nous trouver</span><h2>Carrosserie St Jean</h2>
+  <p style="margin-top:14px">258 avenue Colonel Picot<br>83100 Toulon</p>
+  <p>Téléphone : <a href="tel:0494271957">04 94 27 19 57</a></p>
+  <p style="color:var(--muted);font-size:14px">Horaires indicatifs de la maquette : lundi au vendredi, 8 h - 12 h et 14 h - 18 h.</p>
+  <p><a class="btn" href="#rdv" style="margin-top:10px;color:#1b1405">Prendre rendez-vous</a></p></div>
+ <div class="map">258 avenue Colonel Picot, Toulon<br>(plan à intégrer)</div>
+</div></section>
+<footer>Carrosserie St Jean · Toulon · Maquette Keteris, données fictives</footer>
+
+<script>
+(function(){
+var TYPES=[["Carrosserie","Devis sur photos"],["Peinture auto","Devis sur photos"],["Peinture moto","Devis sur photos"],["Révision","dès 89 €"],["Freins","dès 120 €"],["Diagnostic","49 €"]];
+var MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+var HEURES=["8h00","8h30","9h00","9h30","10h00","11h00","14h00","14h30","15h00","16h00","16h30","17h00"];
+var st={type:null,date:null,heure:null};
+var now=new Date();now.setHours(0,0,0,0);
+var view=new Date(now.getFullYear(),now.getMonth(),1);
+var $=function(i){return document.getElementById(i)};
+function chips(){var h="";TYPES.forEach(function(t,i){h+='<button type="button" class="chip" data-i="'+i+'" aria-pressed="'+(st.type===i)+'">'+t[0]+'</button>'});$("types").innerHTML=h;
+ [].forEach.call(document.querySelectorAll(".chip"),function(b){b.onclick=function(){st.type=+b.dataset.i;chips();recap()}})}
+function dispo(d){var s=(d.getDate()*7+d.getMonth()*3)%10;return s<2?0:(s<5?1:2)}
+function cal(){$("mois").textContent=MOIS[view.getMonth()]+" "+view.getFullYear();
+ $("dows").innerHTML=["L","M","M","J","V","S","D"].map(function(x){return '<div class="dow">'+x+'</div>'}).join("");
+ var first=(view.getDay()+6)%7,n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate(),h="";
+ for(var i=0;i<first;i++)h+="<div></div>";
+ for(var d=1;d<=n;d++){var dt=new Date(view.getFullYear(),view.getMonth(),d),w=dt.getDay(),off=dt<=now||w===0||w===6,lv=dispo(dt);
+  var sel=st.date&&st.date.getTime()===dt.getTime();
+  h+='<button type="button" class="day" data-d="'+d+'" '+(off||lv===0?"disabled":"")+' aria-pressed="'+!!sel+'">'+d+((off||lv===0)?"":'<span class="dot'+(lv===1?" few":"")+'"></span>')+'</button>'}
+ $("days").innerHTML=h;
+ [].forEach.call(document.querySelectorAll(".day"),function(b){b.onclick=function(){st.date=new Date(view.getFullYear(),view.getMonth(),+b.dataset.d);st.heure=null;cal();slots();recap()}})}
+function slots(){var h="";if(!st.date){$("slots").innerHTML='<p style="grid-column:1/-1;margin:0;color:var(--muted);font-size:14px">Choisissez d\'abord un jour.</p>';return}
+ HEURES.forEach(function(x,i){var taken=((st.date.getDate()+i*5)%4===0);h+='<button type="button" class="slot" data-h="'+x+'" '+(taken?"disabled":"")+' aria-pressed="'+(st.heure===x)+'">'+x+'</button>'});
+ $("slots").innerHTML=h;[].forEach.call(document.querySelectorAll(".slot"),function(b){b.onclick=function(){st.heure=b.dataset.h;slots();recap()}})}
+function fmt(d){return d.getDate()+" "+MOIS[d.getMonth()]+" "+d.getFullYear()}
+function recap(){$("r1").textContent=st.type===null?"À choisir":TYPES[st.type][0];$("r2").textContent=st.date?fmt(st.date):"À choisir";$("r3").textContent=st.heure||"À choisir";
+ $("r4").textContent=$("cour").checked?"Oui":"Non";$("r5").textContent=st.type===null?"—":TYPES[st.type][1]}
+$("cour").onchange=recap;
+$("prev").onclick=function(){var p=new Date(view.getFullYear(),view.getMonth()-1,1);if(p>=new Date(now.getFullYear(),now.getMonth(),1)){view=p;cal()}};
+$("next").onclick=function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);cal()};
+$("go").onclick=function(){var e=$("err"),m=[];
+ if(st.type===null)m.push("l'intervention");if(!st.date)m.push("le jour");if(!st.heure)m.push("l'heure");if(!$("nom").value.trim())m.push("votre nom");if(!$("tel").value.trim())m.push("votre téléphone");
+ if(m.length){e.style.display="block";e.textContent="Il manque : "+m.join(", ")+".";return}
+ e.style.display="none";$("recap").style.display="none";$("ok").classList.add("on");
+ $("okt").textContent=TYPES[st.type][0]+", le "+fmt(st.date)+" à "+st.heure+". "+($("cour").checked?"Un véhicule de courtoisie sera préparé pour vous.":"")};
+$("again").onclick=function(){st={type:null,date:null,heure:null};$("ok").classList.remove("on");$("recap").style.display="block";chips();cal();slots();recap()};
+chips();cal();slots();recap();
+})();
+</script>
+</body>
+</html>
