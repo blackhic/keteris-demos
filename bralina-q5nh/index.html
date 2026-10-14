@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bralina, broderie et textile personnalisé au Landeron</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#faf6f1;--ink:#231a17;--muted:#6f625c;--line:#e8dfd6;--brand:#8e2a3a;--brand-d:#6d1d2b;--soft:#f3e4e1;--ok:#2f7d57;--warn:#b7791f;--panel:#fff;
+--display:"Fraunces",Georgia,serif;--body:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);overflow-x:hidden}
+img{max-width:100%;display:block}
+.demo-bar{background:#231a17;color:#f1e7df;text-align:center;font-size:13px;padding:9px 16px;line-height:1.4}
+.demo-bar b{color:#fff}
+header.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px clamp(16px,4vw,48px);background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.logo{font:800 22px var(--display);color:var(--brand);letter-spacing:.01em}
+.logo small{display:block;font:500 11px var(--body);color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+nav{display:flex;gap:20px;font-size:14px;font-weight:500}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--brand)}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;background:var(--brand);color:#fff;font:700 15px var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--brand-d)}
+.btn.ghost{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid #d9a0a8;outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(28px,5vw,64px) 0}
+.eyebrow{font:700 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+h1{font:800 clamp(30px,4.6vw,50px)/1.1 var(--display);margin:10px 0 14px}
+h2{font:800 clamp(24px,3.2vw,34px)/1.15 var(--display);margin:0 0 10px}
+.lead{color:var(--muted);font-size:18px;margin:0 0 22px}
+.hero img{border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:0 20px 40px -24px rgba(35,26,23,.5)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:56px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat b{display:block;font:800 28px var(--display);color:var(--brand)}
+.stat span{color:var(--muted);font-size:14px}
+section{padding:clamp(28px,5vw,56px) 0}
+.sec-sub{color:var(--muted);max-width:640px;margin:0 0 26px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.card div{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font:800 19px var(--display);margin:0}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.price{margin-top:auto;font-weight:700;color:var(--brand)}
+.devis{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:clamp(18px,3vw,32px);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(18px,3vw,36px)}
+label{display:block;font-weight:700;font-size:14px;margin:0 0 6px}
+input,select,textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid #d9cec4;border-radius:10px;background:#fff;color:var(--ink)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.field{margin-bottom:14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:block;padding:9px 14px;border:1.5px solid #d9cec4;border-radius:999px;cursor:pointer;font-weight:500;font-size:14px;background:#fff}
+.chip input:checked+span{border-color:var(--brand);background:var(--soft);color:var(--brand-d);font-weight:700}
+.chip input:focus-visible+span{outline:3px solid #d9a0a8;outline-offset:2px}
+.recap{background:var(--soft);border-radius:16px;padding:20px;align-self:start}
+.recap h3{font:800 20px var(--display);margin:0 0 12px}
+.recap dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.recap dt{color:var(--muted)}
+.recap dd{margin:0;text-align:right;font-weight:700}
+.total{margin:16px 0;padding-top:14px;border-top:1px dashed #cda7a9;display:flex;justify-content:space-between;align-items:baseline}
+.total b{font:800 30px var(--display);color:var(--brand)}
+.note{font-size:13px;color:var(--muted)}
+.ok-msg{display:none;margin-top:14px;background:#e6f3ec;color:#1f5a3f;border-radius:10px;padding:12px 14px;font-weight:500}
+.ok-msg.on{display:block}
+.track{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(18px,3vw,32px);align-items:start}
+.orders{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.order{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);width:100%;background:none;border-left:0;border-right:0;border-top:0;text-align:left;font:inherit;cursor:pointer;color:inherit}
+.order:last-child{border-bottom:0}
+.order:hover,.order[aria-pressed="true"]{background:#fbf3f0}
+.order .ref{font-weight:700;color:var(--brand)}
+.order small{display:block;color:var(--muted)}
+.tag{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.t-prod{background:#fdf0d5;color:#8a5a0c}.t-prete{background:#dff1e7;color:#1f6a47}.t-liv{background:#e5ebf5;color:#34507c}.t-att{background:#f1e4e1;color:#7a2a35}
+.msg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.msg h3{font:800 18px var(--display);margin:0 0 4px}
+.steps{display:flex;gap:6px;margin:14px 0 16px}
+.step{flex:1;height:8px;border-radius:4px;background:#eadfd6}
+.step.on{background:var(--brand)}
+.sms{background:#f6efe9;border-radius:14px;padding:14px 16px;font-size:15px;white-space:pre-line}
+.sms em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-bottom:6px}
+.inbox{display:grid;gap:10px}
+.inq{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:15px}
+.inq small{color:var(--muted);display:block}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.gallery img{border-radius:14px;width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.gallery img:first-child{aspect-ratio:auto;min-height:260px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+blockquote{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+blockquote p{margin:0 0 10px}
+blockquote footer{font-size:13px;color:var(--muted)}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--muted)}
+.contact{background:var(--ink);color:#f1e7df;border-radius:22px;padding:clamp(22px,4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact h2{color:#fff}
+.contact a{color:#fff}
+footer.f{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
+@media (max-width:860px){
+ nav{display:none}
+ .hero,.devis,.track,.contact{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr 1fr}
+ .cards,.reviews{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr 1fr}
+ .gallery img:first-child{grid-column:1/-1;min-height:0;aspect-ratio:16/9}
+ .order{grid-template-columns:70px 1fr}
+ .order .tag{grid-column:2;justify-self:start}
+}
+@media (max-width:520px){.row{grid-template-columns:1fr}.cta .btn{flex:1;text-align:center}}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à Bralina.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<header class="nav">
+  <div class="logo">Bralina<small>Broderie · Le Landeron</small></div>
+  <nav><a href="#services">Savoir-faire</a><a href="#devis">Devis</a><a href="#suivi">Suivi de commande</a><a href="#avis">Avis</a><a href="#contact">Contact</a></nav>
+  <a class="btn" href="#devis">Demander un devis</a>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Broderie et textile sur mesure · Swiss Made</div>
+      <h1>Vos vêtements brodés, et vous savez toujours où en est votre commande.</h1>
+      <p class="lead">Broderie, impression et objets publicitaires pour clubs, entreprises et artisans. Devis chiffré en ligne, suivi de chaque commande, message automatique dès qu'elle est prête.</p>
+      <div class="cta"><a class="btn" href="#devis">Demander un devis</a><a class="btn ghost" href="#suivi">Voir le suivi de commande</a></div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1671535108620-d169ce916f09?auto=format&fit=crop&w=1000&q=80" alt="Broderie sur tissu sombre avec des ciseaux">
+  </div>
+  <div class="stats">
+    <div class="stat"><b>1 à 500</b><span>pièces par commande</span></div>
+    <div class="stat"><b>10 jours</b><span>délai moyen de réalisation</span></div>
+    <div class="stat"><b>24 h</b><span>réponse à chaque demande de devis</span></div>
+    <div class="stat"><b>0 appel</b><span>pour savoir si c'est prêt</span></div>
+  </div>
+
+  <section id="services" style="padding-top:8px">
+    <h2>Un savoir-faire artisanal, des outils modernes</h2>
+    <p class="sec-sub">Choisissez la technique, indiquez la quantité : le prix s'affiche tout de suite.</p>
+    <div class="cards">
+      <article class="card"><img src="https://images.unsplash.com/photo-1526290766257-c015850e4629?auto=format&fit=crop&w=800&q=80" alt="Machine à coudre blanche" loading="lazy"><div><h3>Broderie</h3><p>Logos et noms sur polos, vestes, casquettes et sacs. Fanions et écussons de clubs.</p><span class="price">dès 6,50 CHF la pièce</span></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1568288796918-03e7d93306bd?auto=format&fit=crop&w=800&q=80" alt="Mains qui cousent un tissu blanc" loading="lazy"><div><h3>Impression textile</h3><p>Numérique, DTF et sublimation, de 1 à 4 couleurs, sur coton et polyester.</p><span class="price">dès 8,00 CHF la pièce</span></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1518732836484-bd257665c9d1?auto=format&fit=crop&w=800&q=80" alt="Fils de couleurs assorties" loading="lazy"><div><h3>Objets publicitaires</h3><p>Sacs, bonnets, tabliers, accessoires aux couleurs de votre société ou de votre club.</p><span class="price">dès 4,00 CHF la pièce</span></div></article>
+    </div>
+  </section>
+
+  <section id="devis">
+    <h2>Votre devis en deux minutes</h2>
+    <p class="sec-sub">Estimation immédiate, confirmation par Bralina sous 24 h. Un échantillon peut être demandé avant la série.</p>
+    <form class="devis" id="f" onsubmit="return false">
+      <div>
+        <div class="field"><label>Technique</label>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="tech" value="6.5" data-n="Broderie" checked><span>Broderie</span></label>
+            <label class="chip"><input type="radio" name="tech" value="8" data-n="Impression"><span>Impression</span></label>
+            <label class="chip"><input type="radio" name="tech" value="4" data-n="Objet publicitaire"><span>Objet publicitaire</span></label>
+          </div></div>
+        <div class="row">
+          <div><label for="piece">Pièce</label><select id="piece"><option value="3.5">Polo (+3,50)</option><option value="2.5">T-shirt (+2,50)</option><option value="9">Veste (+9,00)</option><option value="1.5">Casquette (+1,50)</option><option value="0">Sac (+0,00)</option></select></div>
+          <div><label for="qty">Quantité</label><input id="qty" type="number" min="1" max="500" value="25"></div>
+        </div>
+        <div class="row">
+          <div><label for="nom">Société ou club</label><input id="nom" autocomplete="organization" placeholder="FC Les Mouettes"></div>
+          <div><label for="mail">E-mail</label><input id="mail" type="email" autocomplete="email" placeholder="vous@exemple.ch"></div>
+        </div>
+        <div class="field"><label for="msg">Votre logo ou votre idée</label><textarea id="msg" rows="3" placeholder="Logo sur la poitrine, nom au dos"></textarea></div>
+        <button type="button" class="btn" id="send">Envoyer ma demande</button>
+        <div class="ok-msg" id="ok" role="status">Demande reçue. Vous recevez un accusé de réception par e-mail, puis le devis sous 24 h.</div>
+      </div>
+      <aside class="recap" aria-live="polite">
+        <h3>Estimation</h3>
+        <dl><dt>Technique</dt><dd id="r1">Broderie</dd><dt>Pièce</dt><dd id="r2">Polo</dd><dt>Quantité</dt><dd id="r3">25</dd><dt>Prix unitaire</dt><dd id="r4">10,00 CHF</dd><dt>Remise de volume</dt><dd id="r5">0 %</dd></dl>
+        <div class="total"><span>Total estimé</span><b id="tot">250 CHF</b></div>
+        <p class="note">Prix indicatifs fictifs. Paiement par facture QR ou TWINT à la livraison.</p>
+      </aside>
+    </form>
+  </section>
+
+  <section id="suivi">
+    <h2>Le suivi des commandes, sans passer un appel</h2>
+    <p class="sec-sub">Chaque commande a un statut. Quand elle passe à « prête », le client reçoit un message automatique. Cliquez sur une commande pour voir ce qu'il reçoit.</p>
+    <div class="track">
+      <div class="orders" id="orders" role="list"></div>
+      <div class="msg">
+        <h3 id="mt">Commande</h3>
+        <div class="note" id="ms">Statut</div>
+        <div class="steps" id="steps"></div>
+        <div class="sms" id="sms"></div>
+        <p class="note" style="margin-top:12px">Le message part tout seul à chaque changement de statut. Plus besoin de répondre « c'est en cours » par téléphone ou par e-mail.</p>
+      </div>
+    </div>
+    <h3 style="font:800 20px var(--display);margin:34px 0 12px">Demandes de devis triées</h3>
+    <div class="inbox">
+      <div class="inq"><div><b>FC Les Mouettes</b> · 30 polos brodés<small>Reçue ce matin · logo fourni</small></div><span class="tag t-prod">À chiffrer</span></div>
+      <div class="inq"><div><b>Menuiserie Ruedin</b> · 12 vestes, nom au dos<small>Reçue hier · échantillon demandé</small></div><span class="tag t-att">Échantillon</span></div>
+      <div class="inq"><div><b>Boulangerie du Lac</b> · 40 tabliers<small>Reçue il y a 2 jours · devis envoyé</small></div><span class="tag t-liv">En attente client</span></div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <h2>Le travail bien fait se voit</h2>
+    <p class="sec-sub">Photos d'illustration, à remplacer par vos réalisations.</p>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1671535108620-d169ce916f09?auto=format&fit=crop&w=1000&q=80" alt="Broderie fine sur tissu noir" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1605743970487-c2c58adbdfba?auto=format&fit=crop&w=600&q=80" alt="Fils jaunes et verts sur une table en bois" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1518732836484-bd257665c9d1?auto=format&fit=crop&w=600&q=80" alt="Pelotes de fils de couleurs" loading="lazy">
+    </div>
+  </section>
+
+  <section id="avis">
+    <h2>Ce que disent les clients</h2>
+    <p class="sec-sub">Avis fictifs, pour montrer la mise en page.</p>
+    <div class="reviews">
+      <blockquote><p>Nos polos de club sont impeccables. Seul regret : j'ai dû appeler deux fois pour savoir quand passer les chercher.</p><footer>Marc D. · club de football · fictif</footer></blockquote>
+      <blockquote><p>Devis reçu le jour même, broderie nette. Le message « votre commande est prête » est très pratique.</p><footer>Sandrine P. · menuiserie · fictif</footer></blockquote>
+      <blockquote><p>Belle qualité, délai tenu. Je recommande pour les vêtements de travail de l'équipe.</p><footer>Laurent B. · paysagiste · fictif</footer></blockquote>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Questions fréquentes</h2>
+    <details><summary>Quel format de logo faut-il fournir ?</summary><p>Un fichier vectoriel (PDF, SVG ou AI) est idéal. À défaut, une image nette suffit : Bralina prépare le fichier de broderie.</p></details>
+    <details><summary>Y a-t-il une quantité minimale ?</summary><p>Non, dès une pièce. Les prix baissent avec la quantité.</p></details>
+    <details><summary>Comment suivre ma commande ?</summary><p>Vous recevez un message à chaque étape, et un dernier quand elle est prête à retirer ou expédiée.</p></details>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div><h2>Parlons de votre projet</h2><p>Chemin du Coteau 35, 2525 Le Landeron<br>Du lundi au vendredi</p></div>
+      <div><p><b>Téléphone</b><br><a href="tel:+41327512215">032 751 22 15</a></p><a class="btn" style="background:#fff;color:var(--brand-d)" href="#devis">Demander un devis</a></div>
+    </div>
+  </section>
+</main>
+<footer class="f">Maquette fictive proposée par Keteris à Bralina · noindex</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('f');
+  function fmt(n){return n.toFixed(2).replace('.',',')+' CHF'}
+  function calc(){
+    var t=f.querySelector('input[name=tech]:checked');
+    var p=document.getElementById('piece');
+    var q=Math.max(1,Math.min(500,parseInt(document.getElementById('qty').value,10)||1));
+    var u=parseFloat(t.value)+parseFloat(p.value);
+    var d=q>=100?0.15:q>=50?0.10:q>=20?0.05:0;
+    var tot=u*q*(1-d);
+    document.getElementById('r1').textContent=t.dataset.n;
+    document.getElementById('r2').textContent=p.options[p.selectedIndex].text.replace(/ \(.*\)/,'');
+    document.getElementById('r3').textContent=q;
+    document.getElementById('r4').textContent=fmt(u);
+    document.getElementById('r5').textContent=Math.round(d*100)+' %';
+    document.getElementById('tot').textContent=Math.round(tot)+' CHF';
+  }
+  f.addEventListener('input',calc);f.addEventListener('change',calc);calc();
+  document.getElementById('send').addEventListener('click',function(){document.getElementById('ok').classList.add('on')});
+
+  var O=[
+   {r:'#2417',c:'FC Les Mouettes',d:'30 polos brodés',s:2,t:'Prête à retirer',cl:'t-prete',m:'Bonjour, votre commande #2417 (30 polos brodés) est prête. Vous pouvez la retirer au Landeron du lundi au vendredi. Bralina'},
+   {r:'#2418',c:'Menuiserie Ruedin',d:'12 vestes, nom au dos',s:1,t:'En production',cl:'t-prod',m:'Bonjour, votre commande #2418 est en production. Livraison prévue dans 6 jours ouvrés. Bralina'},
+   {r:'#2419',c:'Boulangerie du Lac',d:'40 tabliers brodés',s:3,t:'Expédiée',cl:'t-liv',m:'Bonjour, votre commande #2419 a été expédiée aujourd\'hui. Numéro de suivi : 98.12.345678. Bralina'},
+   {r:'#2420',c:'Association Les Vignes',d:'200 casquettes',s:0,t:'BAT à valider',cl:'t-att',m:'Bonjour, le visuel de votre commande #2420 est prêt. Merci de le valider en répondant « OK » à ce message. Bralina'}
+  ];
+  var L=['Reçue','En production','Prête','Expédiée / retirée'];
+  var box=document.getElementById('orders');
+  function show(i){
+    var o=O[i];
+    [].forEach.call(box.children,function(b,k){b.setAttribute('aria-pressed',k===i)});
+    document.getElementById('mt').textContent='Commande '+o.r+' · '+o.c;
+    document.getElementById('ms').textContent='Statut : '+o.t;
+    var st='';for(var k=0;k<4;k++)st+='<div class="step'+(k<=o.s?' on':'')+'" title="'+L[k]+'"></div>';
+    document.getElementById('steps').innerHTML=st;
+    document.getElementById('sms').innerHTML='<em>Message automatique envoyé au client</em>'+o.m;
+  }
+  O.forEach(function(o,i){
+    var b=document.createElement('button');b.type='button';b.className='order';b.setAttribute('role','listitem');b.setAttribute('aria-pressed','false');
+    b.innerHTML='<span class="ref">'+o.r+'</span><span>'+o.c+'<small>'+o.d+'</small></span><span class="tag '+o.cl+'">'+o.t+'</span>';
+    b.addEventListener('click',function(){show(i)});box.appendChild(b);
+  });
+  show(0);
+})();
+</script>
+</body>
+</html>
