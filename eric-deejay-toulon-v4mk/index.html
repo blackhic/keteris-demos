@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Eric Deejay · Animateur à Toulon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#0e0a1c;--bg2:#171229;--card:#1d1736;--line:#2f2752;--ink:#f3effc;--mut:#a89fc4;--pink:#ff4f9a;--cyan:#38e0d0;--ok:#38e0d0;--no:#ff7a7a;--d:"Syne",system-ui,sans-serif;--b:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--b)}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--d);margin:0;line-height:1.08}
+h2{font-size:clamp(28px,4.6vw,44px)}
+.tag{display:inline-block;font:700 12px/1 var(--b);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;font:700 16px var(--b);padding:14px 26px;border-radius:12px;text-decoration:none;background:var(--pink);color:#fff;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.1)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.btn-o{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.demo-bar{background:#fff;color:#14101f;font:500 13px/1.4 var(--b);text-align:center;padding:9px 16px}
+nav{position:sticky;top:0;z-index:20;background:rgba(14,10,28,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px}
+.logo{font:800 22px var(--d);text-decoration:none}.logo span{color:var(--pink)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}nav ul a{color:var(--mut);text-decoration:none;font-weight:500;font-size:15px}nav ul a:hover{color:#fff}
+nav .btn{padding:10px 18px;font-size:15px;white-space:nowrap}
+.hero{position:relative;background:var(--bg) url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=2000&q=75") center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,10,28,.55),var(--bg))}
+.hero .wrap{position:relative;padding-block:100px 90px}
+.hero h1{font-size:clamp(38px,7vw,74px);max-width:11em}.hero h1 em{font-style:normal;color:var(--pink)}
+.hero p{max-width:34em;color:#d6cfeb;font-size:18px;margin:20px 0 28px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative;z-index:2}
+.strip div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.strip b{overflow-wrap:anywhere;font:800 24px var(--d);color:var(--cyan);display:block}.strip span{font-size:14px;color:var(--mut)}
+section{padding-block:80px}
+.head{max-width:620px;margin-bottom:34px}.head p{color:var(--mut);margin:12px 0 0}
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pk{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;position:relative}
+.pk.hot{border-color:var(--pink)}.pk.hot:before{content:"Le plus demandé";position:absolute;top:-12px;left:22px;background:var(--pink);font:700 12px var(--b);padding:4px 12px;border-radius:99px}
+.pk h3{font-size:22px}.pk .pr{font:800 34px var(--d);margin:10px 0 4px;color:var(--cyan)}.pk .pr small{font:500 14px var(--b);color:var(--mut)}
+.pk ul{padding-left:18px;margin:14px 0 0;color:var(--mut);font-size:15px}.pk li{margin-bottom:5px}
+.bk{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+.step{display:flex;align-items:center;gap:10px;font:700 15px var(--b);margin:0 0 12px}
+.step i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:1.5px solid var(--line);background:var(--bg2);border-radius:99px;padding:9px 16px;font:600 14px var(--b);cursor:pointer;color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--pink);border-color:var(--pink)}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font:700 17px var(--d);text-transform:capitalize}
+.cal-h button{border:1px solid var(--line);background:var(--bg2);color:var(--ink);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.dow{font:700 11px var(--b);text-align:center;color:var(--mut);text-transform:uppercase}
+.day{aspect-ratio:1;border:1px solid var(--line);border-radius:10px;background:var(--bg2);font:600 14px var(--b);cursor:pointer;color:var(--ink);position:relative}
+.day[disabled]{background:repeating-linear-gradient(45deg,transparent 0 5px,#241d40 5px 6px);color:#5d5480;cursor:not-allowed;border-color:transparent}
+.day[aria-pressed=true]{background:var(--cyan);border-color:var(--cyan);color:#06241f}
+.leg{display:flex;gap:16px;font-size:13px;color:var(--mut);margin:10px 0 24px}.leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+label{display:block;font:600 13px var(--b);color:var(--mut);margin-bottom:5px}
+input[type=text],input[type=tel],input[type=email],input[type=number],select{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;font:500 16px var(--b);background:var(--bg2);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--pink)}
+.opts{display:grid;gap:8px;margin-bottom:18px}
+.opt{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--bg2);border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;font-size:15px;cursor:pointer}
+.opt input{width:18px;height:18px;accent-color:var(--pink);margin-right:10px}.opt span:last-child{color:var(--cyan);font-weight:700;white-space:nowrap}
+.sum{position:sticky;top:84px}.sum h3{font-size:22px;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15px}.row span:first-child{color:var(--mut)}
+.row.t{border:0;font:800 22px var(--d);padding-top:14px}.row.t span:first-child{color:var(--ink)}
+.row.a{font-weight:700;color:var(--cyan)}
+.note{font-size:13px;color:var(--mut);margin:12px 0 16px}
+.ok{display:none;text-align:center}.ok.on{display:block}
+.ok .big{width:58px;height:58px;border-radius:50%;background:var(--ok);color:#06241f;font-size:30px;display:grid;place-items:center;margin:0 auto 14px}
+.sig{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:14px;text-align:left;color:var(--mut)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.two img{border-radius:18px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.ml{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.ml div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:15px}.ml b{display:block;margin-bottom:6px}
+.ml .l b{color:var(--cyan)}.ml .x b{color:var(--no)}.ml p{margin:0;color:var(--mut)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}.rv .s{color:var(--pink);letter-spacing:2px}.rv p{margin:8px 0 12px;font-size:15px}.rv small{color:var(--mut)}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font:700 16px var(--b)}details p{margin:10px 0 0;color:var(--mut);font-size:15px}
+.contact{background:var(--bg2);border-top:1px solid var(--line)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.contact p{margin:6px 0}.contact a{color:var(--cyan);font-weight:700}
+footer{padding-block:24px;text-align:center;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:900px){nav ul{display:none}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}.packs,.revs{grid-template-columns:1fr}.bk,.two,.contact .wrap{grid-template-columns:1fr}.sum{position:static}}
+@media(max-width:600px){.strip b{font-size:19px}.strip div{padding:12px 12px}section{padding-block:56px}.hero .wrap{padding-block:64px 70px}.f2,.ml{grid-template-columns:1fr}.panel{padding:18px}nav .btn{padding:9px 14px;font-size:14px}.logo{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à Eric Deejay.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap"><a class="logo" href="#top">Eric<span>Deejay</span></a>
+<ul><li><a href="#formules">Formules</a></li><li><a href="#dates">Dates libres</a></li><li><a href="#musique">Musique</a></li><li><a href="#avis">Avis</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn" href="#dates">Réserver</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<span class="tag">Mariages · Soirées · Événements d'entreprise</span>
+<h1>Votre date est-elle <em>encore libre ?</em></h1>
+<p>Consultez le calendrier, choisissez votre formule et recevez votre devis tout de suite. Toulon, Var et toute la région PACA.</p>
+<div class="cta"><a class="btn" href="#dates">Voir les dates libres</a><a class="btn btn-o" href="tel:0618886476">06 18 88 64 76</a></div>
+</div></header>
+<div class="wrap"><div class="strip">
+<div><b>Devis</b><span>instantané, sans attendre un rappel</span></div>
+<div><b>Déplacement</b><span>inclus dans le devis</span></div>
+<div><b>Son + lumière</b><span>matériel professionnel fourni</span></div>
+<div><b>Acompte</b><span>en ligne pour bloquer votre date</span></div></div></div>
+
+<section id="formules"><div class="wrap">
+<div class="head"><span class="tag">Formules</span><h2>Des prix clairs, avant même de décrocher le téléphone</h2><p>Trois formules types, ajustables selon votre soirée.</p></div>
+<div class="packs">
+<div class="pk"><h3>Soirée privée</h3><div class="pr">450 €<small> / soirée</small></div><ul><li>Anniversaire, baptême, réception</li><li>Jusqu'à 5 h d'animation</li><li>Sonorisation adaptée aux invités</li></ul></div>
+<div class="pk hot"><h3>Mariage</h3><div class="pr">890 €<small> / journée</small></div><ul><li>Ouverture de bal et dernière danse</li><li>Micro HF pour les discours</li><li>Éclairage de piste et de salle</li><li>Préparation musicale avec les mariés</li></ul></div>
+<div class="pk"><h3>Entreprise</h3><div class="pr">620 €<small> / événement</small></div><ul><li>Soirée d'entreprise, lancement</li><li>Animation micro discrète</li><li>Facture avec TVA</li></ul></div>
+</div></div></section>
+
+<section id="dates" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+<div class="head"><span class="tag">Réservation</span><h2>Choisissez votre date, le devis se calcule seul</h2><p>Les dates barrées sont déjà prises. Bloquez la vôtre avec un acompte.</p></div>
+<div class="bk"><div class="panel">
+<p class="step"><i>1</i>Type d'événement</p><div class="chips" id="types"></div>
+<p class="step"><i>2</i>Date de l'événement</p>
+<div class="cal-h"><button type="button" id="prev" aria-label="Mois précédent">‹</button><span id="mois"></span><button type="button" id="next" aria-label="Mois suivant">›</button></div>
+<div class="grid" id="dows"></div><div class="grid" id="days" style="margin-top:5px"></div>
+<div class="leg"><span><i style="background:var(--bg2);border:1px solid var(--line)"></i>Libre</span><span><i style="background:#241d40"></i>Déjà réservée</span></div>
+<p class="step"><i>3</i>Votre soirée</p>
+<div class="f2"><div><label for="inv">Nombre d'invités : <b id="invv">80</b></label><input id="inv" type="range" min="20" max="300" step="10" value="80"></div>
+<div><label for="lieu">Lieu</label><select id="lieu"><option value="0">Toulon et alentours</option><option value="40">Hyères, Bandol, Sanary</option><option value="70">Fréjus, Saint-Tropez</option><option value="110">Nice, Cannes, Marseille</option></select></div></div>
+<div class="opts" id="opts"></div>
+<div class="f2"><div><label for="nom">Nom</label><input id="nom" type="text" placeholder="Votre nom"></div><div><label for="tel">Téléphone</label><input id="tel" type="tel" placeholder="06 00 00 00 00"></div></div>
+</div>
+<aside class="panel sum"><div id="recap"><h3>Votre devis</h3>
+<div class="row"><span>Événement</span><span id="r1">À choisir</span></div>
+<div class="row"><span>Date</span><span id="r2">À choisir</span></div>
+<div class="row"><span>Formule</span><span id="r3">—</span></div>
+<div class="row"><span>Options</span><span id="r4">—</span></div>
+<div class="row"><span>Déplacement</span><span id="r5">inclus</span></div>
+<div class="row t"><span>Total</span><span id="tot">—</span></div>
+<div class="row a"><span>Acompte (30 %)</span><span id="acc">—</span></div>
+<p class="note">Le contrat est généré et signé en ligne. L'acompte bloque la date, le solde se règle le jour J.</p>
+<button class="btn" id="go" type="button" style="width:100%">Bloquer ma date</button>
+<p class="note" id="err" style="color:var(--no);display:none"></p></div>
+<div class="ok" id="ok"><div class="big">✓</div><h3>Date bloquée</h3><p id="okt" style="color:var(--mut)"></p>
+<div class="sig"><b>Contrat envoyé par e-mail</b> à signer en ligne. Un questionnaire musical vous attend pour préparer votre liste d'envies et vos interdits.</div>
+<button class="btn" id="again" type="button" style="margin-top:16px">Nouvelle simulation</button></div></aside></div>
+</div></section>
+
+<section id="musique"><div class="wrap two">
+<img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=75" alt="Foule dansant devant la scène" loading="lazy">
+<div><span class="tag">Préparation musicale</span><h2>Votre playlist, remplie en ligne à votre rythme</h2>
+<p style="color:var(--mut)">Après la réservation, vous recevez un questionnaire : vos indispensables, vos interdits, les temps forts de la soirée.</p>
+<div class="ml"><div class="l"><b>Love-list</b><p>Ouverture de bal, morceaux souvenirs, chansons pour les grands-parents.</p></div><div class="x"><b>Black-list</b><p>Ce que vous ne voulez surtout pas entendre de la soirée.</p></div></div></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap two">
+<div><span class="tag">Salles et lieux</span><h2>Une fois la date bloquée, tout est calé</h2>
+<p style="color:var(--mut)">Rappels automatiques à J-30 et J-7, échange avec vos témoins ou organisateurs, horaires de montage confirmés : plus de messages à relancer.</p>
+<a class="btn" href="#dates" style="margin-top:14px">Vérifier ma date</a></div>
+<img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=75" alt="Salle de réception dressée pour un mariage" loading="lazy">
+</div></section>
+
+<section id="avis" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+<div class="head"><span class="tag">Avis</span><h2>Ils ont dansé jusqu'au bout</h2><p>Exemples fictifs, à remplacer par vos vrais avis.</p></div>
+<div class="revs">
+<div class="rv"><div class="s">★★★★★</div><p>« Le calendrier nous a permis de réserver notre samedi en cinq minutes. Ambiance parfaite. »</p><small>Camille et Antoine, Hyères</small></div>
+<div class="rv"><div class="s">★★★★★</div><p>« La liste de morceaux remplie en ligne : tout y était. Soirée d'entreprise réussie. »</p><small>Nadia L., Toulon</small></div>
+<div class="rv"><div class="s">★★★★☆</div><p>« Devis clair, prix connu d'avance, aucune mauvaise surprise le jour J. »</p><small>Frédéric P., Bandol</small></div></div></div></section>
+
+<section><div class="wrap" style="max-width:760px"><div class="head"><h2>Questions fréquentes</h2></div>
+<details><summary>Jusqu'à quelle heure animez-vous ?</summary><p>Il n'y a pas de limite stricte : l'heure de fin se définit ensemble, et peut être prolongée si la piste est encore pleine.</p></details>
+<details><summary>Les frais de déplacement sont-ils inclus ?</summary><p>Oui, ils sont intégrés au devis initial. Le simulateur les calcule selon le lieu.</p></details>
+<details><summary>Proposez-vous des animations au micro ?</summary><p>Oui, avec un style élégant et discret, sans être intrusif.</p></details></div></section>
+
+<section class="contact" id="contact" style="padding-block:60px"><div class="wrap">
+<div><span class="tag">Contact</span><h2>Eric Deejay</h2><p style="margin-top:14px">Animateur de soirées et de mariages<br>Toulon, Var, PACA</p><p>Téléphone : <a href="tel:0618886476">06 18 88 64 76</a></p></div>
+<div><a class="btn" href="#dates">Vérifier ma date</a></div></div></section>
+<footer>Eric Deejay · Toulon · Maquette Keteris, données fictives</footer>
+
+<script>
+(function(){
+var T=[["Mariage",890],["Anniversaire",450],["Baptême",450],["Soirée d'entreprise",620]];
+var O=[["Micro HF et animation",60],["Éclairage de la salle",90],["Photobooth",180],["Heure supplémentaire",70]];
+var M=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+var st={t:null,d:null,o:{}},$=function(i){return document.getElementById(i)};
+var now=new Date();now.setHours(0,0,0,0);var view=new Date(now.getFullYear(),now.getMonth(),1);
+function chips(){$("types").innerHTML=T.map(function(x,i){return '<button type="button" class="chip" data-i="'+i+'" aria-pressed="'+(st.t===i)+'">'+x[0]+'</button>'}).join("");
+ [].forEach.call(document.querySelectorAll(".chip"),function(b){b.onclick=function(){st.t=+b.dataset.i;chips();rec()}})}
+function opts(){$("opts").innerHTML=O.map(function(x,i){return '<label class="opt" style="color:var(--ink);font-weight:500;margin:0"><span><input type="checkbox" data-i="'+i+'"'+(st.o[i]?" checked":"")+'>'+x[0]+'</span><span>+'+x[1]+' €</span></label>'}).join("");
+ [].forEach.call(document.querySelectorAll("#opts input"),function(c){c.onchange=function(){st.o[c.dataset.i]=c.checked;rec()}})}
+function busy(d){var w=d.getDay();return (d.getDate()*5+d.getMonth()*2)%7<2||(w===6&&(d.getDate()%3===0))}
+function cal(){$("mois").textContent=M[view.getMonth()]+" "+view.getFullYear();
+ $("dows").innerHTML=["L","M","M","J","V","S","D"].map(function(x){return '<div class="dow">'+x+'</div>'}).join("");
+ var f=(view.getDay()+6)%7,n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate(),h="";
+ for(var i=0;i<f;i++)h+="<div></div>";
+ for(var d=1;d<=n;d++){var dt=new Date(view.getFullYear(),view.getMonth(),d),off=dt<=now||busy(dt);var s=st.d&&st.d.getTime()===dt.getTime();
+  h+='<button type="button" class="day" data-d="'+d+'" '+(off?"disabled":"")+' aria-pressed="'+!!s+'">'+d+'</button>'}
+ $("days").innerHTML=h;[].forEach.call(document.querySelectorAll(".day"),function(b){b.onclick=function(){st.d=new Date(view.getFullYear(),view.getMonth(),+b.dataset.d);cal();rec()}})}
+function fmt(d){return d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear()}
+function total(){if(st.t===null)return null;var s=T[st.t][1],extra=Math.max(0,($("inv").value-80))*1.5,o=0;for(var k in st.o)if(st.o[k])o+=O[k][1];return Math.round(s+extra+o)}
+function rec(){$("invv").textContent=$("inv").value;var t=total();
+ $("r1").textContent=st.t===null?"À choisir":T[st.t][0];$("r2").textContent=st.d?fmt(st.d):"À choisir";
+ $("r3").textContent=st.t===null?"—":T[st.t][1]+" € de base";
+ var on=O.filter(function(x,i){return st.o[i]}).map(function(x){return x[0]});$("r4").textContent=on.length?on.length+" choisie(s)":"—";
+ $("tot").textContent=t===null?"—":t+" €";$("acc").textContent=t===null?"—":Math.round(t*.3)+" €"}
+$("inv").oninput=rec;
+$("prev").onclick=function(){var p=new Date(view.getFullYear(),view.getMonth()-1,1);if(p>=new Date(now.getFullYear(),now.getMonth(),1)){view=p;cal()}};
+$("next").onclick=function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);cal()};
+$("go").onclick=function(){var m=[];if(st.t===null)m.push("l'événement");if(!st.d)m.push("la date");if(!$("nom").value.trim())m.push("votre nom");if(!$("tel").value.trim())m.push("votre téléphone");
+ var e=$("err");if(m.length){e.style.display="block";e.textContent="Il manque : "+m.join(", ")+".";return}
+ e.style.display="none";$("recap").style.display="none";$("ok").classList.add("on");
+ $("okt").textContent=T[st.t][0]+" le "+fmt(st.d)+". Acompte de "+Math.round(total()*.3)+" € réglé en ligne."};
+$("again").onclick=function(){st={t:null,d:null,o:{}};$("ok").classList.remove("on");$("recap").style.display="block";chips();opts();cal();rec()};
+chips();opts();cal();rec();
+})();
+</script>
+</body>
+</html>
