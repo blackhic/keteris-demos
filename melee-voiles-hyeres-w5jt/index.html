@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mêlée Voiles · Location de bateaux à Hyères</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+:root{--navy:#0a2a43;--sea:#0e6e8c;--sky:#e8f3f6;--sun:#f2a33a;--sun-d:#d98a1f;--ink:#12242f;--muted:#5a6e78;--line:#d3e1e6;--white:#fff;
+--serif:"Fraunces",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sky);color:var(--ink);font:16px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);margin:0;line-height:1.1;text-wrap:balance}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--navy)}
+.eyebrow{font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--sea);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:700 16px var(--sans);padding:14px 26px;border-radius:10px;text-decoration:none;background:var(--sun);color:#2a1a02;transition:background .15s,transform .15s}
+.btn:hover{background:var(--sun-d);transform:translateY(-1px)}
+.btn:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.demo-bar{background:#06182a;color:#d4e6ee;font:500 13px/1.45 var(--sans);text-align:center;padding:9px 16px}
+.demo-bar b{color:#fff}
+nav{position:sticky;top:0;z-index:20;background:rgba(10,42,67,.95);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.logo{font:800 20px var(--serif);color:#fff;text-decoration:none}
+.logo span{color:var(--sun)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+nav ul a{color:#cfe3ec;text-decoration:none;font-weight:500;font-size:15px}
+nav ul a:hover{color:#fff}
+nav .btn{padding:10px 18px;font-size:15px}
+@media(max-width:820px){nav ul{display:none}}
+.hero{position:relative;color:#fff;background:var(--navy) url("https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=2000&q=80") center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,42,67,.93),rgba(10,42,67,.55) 60%,rgba(10,42,67,.15))}
+.hero .wrap{position:relative;padding-block:88px 104px;display:grid;gap:24px}
+.hero h1{font-size:clamp(38px,6.4vw,74px);font-weight:800;letter-spacing:-.02em;max-width:14ch}
+.hero p{max-width:52ch;font-size:18px;color:#e1eef3;margin:0}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{background:var(--navy);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-block:28px}
+.stats b{display:block;font:800 34px var(--serif);color:var(--sun)}
+.stats span{font-size:14px;color:#bcd3de}
+@media(max-width:700px){.stats .wrap{grid-template-columns:repeat(2,1fr)}}
+section{padding-block:72px}
+.head{max-width:680px;margin-bottom:34px}
+.head p{color:var(--muted);margin:12px 0 0}
+.fleet{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.card .tag{align-self:flex-start;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;background:var(--sky);color:var(--sea);padding:4px 10px;border-radius:99px}
+.card h3{font-size:22px;color:var(--navy)}
+.card .meta{color:var(--muted);font-size:14px}
+.card .price{font:800 24px var(--serif);color:var(--navy);margin-top:auto}
+.card .price small{font:500 13px var(--sans);color:var(--muted)}
+.card .btn{padding:10px 16px;font-size:15px;margin-top:6px}
+.book{background:var(--navy);color:#fff}
+.book h2{color:#fff}
+.book .eyebrow{color:var(--sun)}
+.book .head p{color:#bcd3de}
+.panel{background:#fff;color:var(--ink);border-radius:16px;padding:24px;display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
+@media(max-width:860px){.panel{grid-template-columns:1fr;padding:18px}}
+.panel h3{font-size:20px;color:var(--navy);margin-bottom:10px}
+.step{margin-bottom:20px}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+select,input[type=text],input[type=email],input[type=tel]{width:100%;font:16px var(--sans);padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cal-top b{font:800 18px var(--serif);color:var(--navy);text-transform:capitalize}
+.cal-top button{background:var(--sky);border:0;border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:18px;color:var(--navy)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .dow{font:700 11px var(--sans);text-align:center;color:var(--muted);padding:4px 0}
+.cal button{aspect-ratio:1;border:1px solid var(--line);background:#fff;border-radius:8px;font:600 14px var(--sans);cursor:pointer;color:var(--ink);padding:0}
+.cal button:hover:not(:disabled){border-color:var(--sea)}
+.cal button.sel{background:var(--sea);color:#fff;border-color:var(--sea)}
+.cal button:disabled{background:#eef2f4;color:#aab8bf;text-decoration:line-through;cursor:not-allowed}
+.cal i{visibility:hidden}
+.legend{font-size:13px;color:var(--muted);margin-top:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:15px}
+.opt input{width:20px;height:20px;margin-top:3px;flex:none}
+.sum{background:var(--sky);border-radius:12px;padding:18px}
+.sum dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.sum dt{color:var(--muted)}
+.sum dd{margin:0;text-align:right;font-weight:600}
+.sum .total{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}
+.sum .total dd{font:800 22px var(--serif);color:var(--navy)}
+.note{font-size:13px;color:var(--muted);margin:10px 0}
+.ok{display:none;background:#e5f5ea;border:1px solid #9bd3ad;color:#14532d;border-radius:12px;padding:16px;margin-top:14px;font-weight:500}
+.ok.on{display:block}
+.save{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+@media(max-width:760px){.save{grid-template-columns:1fr}}
+.save .card b{font:800 30px var(--serif);color:var(--sea)}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:210px;gap:12px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.gallery img:first-child{grid-row:span 2}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gallery img:first-child{grid-column:span 2;grid-row:span 1}}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.reviews{grid-template-columns:1fr}}
+.reviews blockquote{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.reviews .stars{color:var(--sun-d);letter-spacing:2px}
+.reviews cite{display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:14px;color:var(--navy)}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--navy)}
+details p{margin:10px 0 0;color:var(--muted)}
+.contact{background:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media(max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+.contact p{margin:6px 0}
+footer{background:#06182a;color:#9fb8c4;text-align:center;font-size:13px;padding:22px 16px}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Maquette proposée par Keteris à Mêlée Voiles.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap"><a class="logo" href="#top">Mêlée <span>Voiles</span></a>
+<ul><li><a href="#flotte">La flotte</a></li><li><a href="#reserver">Réservation</a></li><li><a href="#avis">Avis</a></li><li><a href="#faq">Questions</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn" href="#reserver">Réserver</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div class="eyebrow" style="color:var(--sun)">Port d'Hyères · Var</div>
+<h1>Votre bateau pour la journée, réservé en trois minutes.</h1>
+<p>Location de bateaux à moteur avec ou sans permis, face aux îles d'Or. Choisissez le bateau, la date, payez l'acompte en ligne : votre créneau est bloqué, sans appel ni formulaire.</p>
+<div class="cta"><a class="btn" href="#reserver">Réserver</a><a class="btn ghost" href="#flotte">Voir la flotte et les tarifs</a></div>
+</div></header>
+
+<div class="stats"><div class="wrap">
+<div><b>20 ans</b><span>d'expérience sur le port d'Hyères</span></div>
+<div><b>14</b><span>bateaux à louer, avec ou sans permis</span></div>
+<div><b>8 h à 20 h</b><span>ouvert tous les jours</span></div>
+<div><b>15 min</b><span>de traversée jusqu'à Porquerolles</span></div>
+</div></div>
+
+<section id="flotte"><div class="wrap">
+<div class="head"><div class="eyebrow">La flotte</div><h2>Des tarifs lisibles, sans télécharger de PDF</h2><p>Prix à la journée, hors saison / juillet / août. Caution indiquée sur chaque bateau.</p></div>
+<div class="fleet" id="fleet"></div>
+</div></section>
+
+<section class="book" id="reserver"><div class="wrap">
+<div class="head"><div class="eyebrow">Réservation en ligne</div><h2>Choisissez, payez l'acompte, c'est confirmé</h2><p>Les dates déjà prises disparaissent toutes seules du calendrier : plus de double réservation, plus de rappel pour savoir si c'est libre.</p></div>
+<div class="panel">
+<div>
+<div class="step"><h3>1. Le bateau</h3><label for="boat">Modèle</label><select id="boat"></select></div>
+<div class="step"><h3>2. La date</h3>
+<div class="cal-top"><button id="prev" aria-label="Mois précédent">‹</button><b id="monthLabel"></b><button id="next" aria-label="Mois suivant">›</button></div>
+<div class="cal" id="cal"></div>
+<div class="legend">Dates barrées : bateau déjà réservé.</div></div>
+<div class="step"><h3>3. Les options</h3>
+<label class="opt"><input type="checkbox" id="pack"> Package nautique (bouée tractée, skis, wakeboard ou paddle) : 50 €</label></div>
+</div>
+<div>
+<h3>Votre réservation</h3>
+<div class="sum"><dl>
+<dt>Bateau</dt><dd id="sBoat">-</dd>
+<dt>Date</dt><dd id="sDate">à choisir</dd>
+<dt>Tarif de la journée</dt><dd id="sPrice">-</dd>
+<dt>Package nautique</dt><dd id="sPack">-</dd>
+</dl>
+<dl class="total"><dt>Total</dt><dd id="sTotal">-</dd><dt>Acompte à payer maintenant (30 %)</dt><dd id="sDep">-</dd><dt>Reste à payer sur place</dt><dd id="sRest">-</dd></dl></div>
+<p class="note" id="caution">Caution à présenter le jour du départ.</p>
+<div class="step"><label for="nm">Nom</label><input type="text" id="nm" placeholder="Votre nom"></div>
+<div class="step"><label for="ml">E-mail</label><input type="email" id="ml" placeholder="vous@exemple.fr"></div>
+<div class="step"><label for="tl">Téléphone</label><input type="tel" id="tl" placeholder="06 00 00 00 00"></div>
+<button class="btn" id="pay" disabled style="width:100%">Payer l'acompte et confirmer</button>
+<div class="ok" id="ok"></div>
+</div></div>
+</div></section>
+
+<section><div class="wrap">
+<div class="head"><div class="eyebrow">Ce que ça change</div><h2>Moins de téléphone, plus de locations</h2></div>
+<div class="save">
+<div class="card"><b>24 h / 24</b><p>On peut réserver à 23 h, quand on prépare la sortie en famille, sans attendre l'ouverture du quai.</p></div>
+<div class="card"><b>Acompte</b><p>Un acompte à la réservation limite les défections de dernière minute et sécurise le planning de la flotte.</p></div>
+<div class="card"><b>Caution cadrée</b><p>Le montant de la caution est annoncé avant la réservation, bateau par bateau : pas de surprise au départ.</p></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="head"><div class="eyebrow">Galerie</div><h2>Hyères, Porquerolles, Port-Cros</h2></div>
+<div class="gallery">
+<img loading="lazy" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80" alt="Bateau à moteur au mouillage">
+<img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Plage au lever du soleil">
+<img loading="lazy" src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=80" alt="Voilier en mer">
+<img loading="lazy" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=80" alt="Plage et palmier">
+<img loading="lazy" src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=900&q=80" alt="Bateau à moteur à vive allure">
+</div></div></section>
+
+<section id="avis" style="padding-top:0"><div class="wrap">
+<div class="head"><div class="eyebrow">Avis (fictifs)</div><h2>Ils sont partis de Hyères</h2></div>
+<div class="reviews">
+<blockquote><div class="stars">★★★★★</div><p>« Réservé depuis le canapé, acompte payé, confirmation immédiate. Le jour J, il n'y avait plus qu'à embarquer. »</p><cite>Camille, Lyon</cite></blockquote>
+<blockquote><div class="stars">★★★★★</div><p>« On a vu tout de suite le prix et la caution du bateau. Pas de mauvaise surprise, journée parfaite jusqu'à Porquerolles. »</p><cite>Nicolas, famille de 5</cite></blockquote>
+<blockquote><div class="stars">★★★★★</div><p>« EVJF sans permis : on a choisi la date sur le calendrier, tout le groupe a reçu le récapitulatif. Simple. »</p><cite>Léa, Toulon</cite></blockquote>
+</div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+<div class="head"><div class="eyebrow">Questions fréquentes</div><h2>Avant de partir</h2></div>
+<details><summary>Faut-il un permis ?</summary><p>Non pour les bateaux marqués « sans permis » (Capelli 430 S, Tiger Marine 440, Grand S 470). Oui pour les autres.</p></details>
+<details><summary>Le carburant est-il compris ?</summary><p>Il est compris pour les bateaux sans permis en location à la journée. Pour les autres modèles, il se règle au retour.</p></details>
+<details><summary>Que se passe-t-il si la météo est mauvaise ?</summary><p>Vous êtes prévenu la veille par SMS et pouvez reporter votre date sans perdre l'acompte (règle à confirmer avec Mêlée Voiles).</p></details>
+<details><summary>Comment fonctionne la caution ?</summary><p>Elle est indiquée sur chaque bateau, de 1 000 € à 5 000 €, et se présente au départ par carte bancaire.</p></details>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<div><div class="eyebrow">Contact</div><h2>Sur le port d'Hyères</h2></div>
+<div><p><b>Mêlée Voiles</b><br>83 Quai Florence Arthaud, CCN BT A<br>83400 Hyères</p>
+<p>04 94 12 20 20 · 06 07 23 61 31<br>info@meleevoiles.com</p><p>Ouvert tous les jours de 8 h à 20 h.</p></div>
+</div></section>
+<footer>Maquette Keteris pour Mêlée Voiles · contenu fictif à remplacer</footer>
+
+<script>
+(function(){
+var BOATS=[
+["Nuova Jolly King 600","Semi-rigide",6.0,"7 à 8 pers.",false,240,310,370,2000],
+["Capelli 630","Semi-rigide",6.3,"8 pers.",false,310,390,430,2000],
+["Capelli 430 S","Sans permis",4.3,"4 à 5 pers.",true,180,220,240,1000],
+["Tiger Marine 440","Sans permis",4.4,"4 à 5 pers.",true,180,220,240,1000],
+["Cap Camarat 6.5 CC","Rigide",6.5,"7 pers.",false,440,480,480,2000],
+["Pacific Craft 7.50 Open","Rigide",7.5,"12 pers.",false,430,510,570,2000],
+["Clubman 23","Semi-rigide",7.0,"10 pers.",false,390,440,470,2000],
+["Zodiac NZO 760","Semi-rigide",8.0,"14 pers.",false,460,560,590,3000]
+];
+function eur(n){return n.toLocaleString("fr-FR")+" €"}
+var fleet=document.getElementById("fleet"),sel=document.getElementById("boat");
+BOATS.forEach(function(b,i){
+ var c=document.createElement("div");c.className="card";
+ c.innerHTML='<span class="tag">'+b[1]+'</span><h3>'+b[0]+'</h3><div class="meta">'+b[2].toFixed(2).replace(".",",")+' m · '+b[3]+' · caution '+eur(b[8])+'</div><div class="price">dès '+eur(b[5])+' <small>/ jour · '+eur(b[6])+' en juillet · '+eur(b[7])+' en août</small></div><button class="btn" data-i="'+i+'">Réserver ce bateau</button>';
+ fleet.appendChild(c);
+ var o=document.createElement("option");o.value=i;o.textContent=b[0]+" ("+b[1].toLowerCase()+")";sel.appendChild(o);
+});
+fleet.addEventListener("click",function(e){var t=e.target.closest("button[data-i]");if(!t)return;sel.value=t.dataset.i;state.day=null;render();document.getElementById("reserver").scrollIntoView({behavior:"smooth"})});
+var state={y:2027,m:5,day:null};
+var MONTHS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+function taken(i,y,m,d){return ((d*7+m*3+i*5+y)%5)===0}
+function price(i,m){var b=BOATS[i];return m===6?b[6]:(m===7?b[7]:b[5])}
+function render(){
+ var i=+sel.value,y=state.y,m=state.m;
+ document.getElementById("monthLabel").textContent=MONTHS[m]+" "+y;
+ var cal=document.getElementById("cal");cal.innerHTML="";
+ ["L","M","M","J","V","S","D"].forEach(function(x){var e=document.createElement("div");e.className="dow";e.textContent=x;cal.appendChild(e)});
+ var first=(new Date(y,m,1).getDay()+6)%7,n=new Date(y,m+1,0).getDate();
+ for(var k=0;k<first;k++){cal.appendChild(document.createElement("i"))}
+ for(var d=1;d<=n;d++){var b=document.createElement("button");b.type="button";b.textContent=d;
+  if(taken(i,y,m,d))b.disabled=true;
+  if(state.day===d)b.className="sel";
+  (function(d){b.onclick=function(){state.day=d;render()}})(d);cal.appendChild(b)}
+ var B=BOATS[i];
+ document.getElementById("sBoat").textContent=B[0];
+ document.getElementById("caution").textContent="Caution de "+eur(B[8])+" à présenter par carte bancaire le jour du départ."+(B[4]?" Carburant compris.":"");
+ var ready=state.day&&!taken(i,y,m,state.day);
+ if(!ready){state.day=null}
+ var pk=document.getElementById("pack").checked?50:0;
+ if(state.day){
+  var p=price(i,m),tot=p+pk,dep=Math.round(tot*0.3);
+  document.getElementById("sDate").textContent=state.day+" "+MONTHS[m]+" "+y;
+  document.getElementById("sPrice").textContent=eur(p);
+  document.getElementById("sPack").textContent=pk?eur(pk):"non";
+  document.getElementById("sTotal").textContent=eur(tot);
+  document.getElementById("sDep").textContent=eur(dep);
+  document.getElementById("sRest").textContent=eur(tot-dep);
+ }else{["sDate","sPrice","sPack","sTotal","sDep","sRest"].forEach(function(id){document.getElementById(id).textContent=id==="sDate"?"à choisir":"-"})}
+ document.getElementById("pay").disabled=!state.day;
+}
+document.getElementById("prev").onclick=function(){state.m--;if(state.m<0){state.m=11;state.y--}state.day=null;render()};
+document.getElementById("next").onclick=function(){state.m++;if(state.m>11){state.m=0;state.y++}state.day=null;render()};
+sel.onchange=function(){render()};
+document.getElementById("pack").onchange=render;
+document.getElementById("pay").onclick=function(){
+ var nm=document.getElementById("nm").value.trim()||"vous";
+ var ok=document.getElementById("ok");
+ ok.textContent="Réservation confirmée pour "+nm+" : "+BOATS[+sel.value][0]+", le "+document.getElementById("sDate").textContent+". Un e-mail de confirmation avec le récapitulatif et l'adresse du quai vient de vous être envoyé (simulation).";
+ ok.className="ok on";
+};
+render();
+})();
+</script>
+</body>
+</html>
