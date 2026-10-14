@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Assistant ADV Comlight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f3f5f9;--panel:#fff;--ink:#14213d;--muted:#667089;--line:#e2e6ee;--brand:#1d4ed8;--soft:#e8eefc;--ok:#188a5a;--warn:#b7791f;--late:#c43d2e;
+--d:"Space Grotesk",system-ui,sans-serif;--b:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--b)}
+button,input,select{font:inherit}
+.bar{background:var(--ink);color:#d9e0f0;text-align:center;font-size:13px;padding:8px 16px}.bar b{color:#fff}
+.app{display:grid;grid-template-columns:220px minmax(0,1fr)}
+aside{background:var(--brand);color:#dbe6ff;padding:22px 14px;display:flex;flex-direction:column;gap:20px}
+.logo{font:700 19px var(--d);color:#fff}.logo small{display:block;font:500 12px var(--b);color:#b9ccff}
+nav{display:grid;gap:4px}
+nav button{background:none;border:0;color:#dbe6ff;text-align:left;padding:10px 12px;border-radius:9px;cursor:pointer;display:flex;justify-content:space-between}
+nav button[aria-selected=true]{background:rgba(255,255,255,.17);color:#fff;font-weight:600}
+nav button:hover{background:rgba(255,255,255,.1)}
+.nb{background:#fff;color:var(--brand);font-size:11px;font-weight:600;border-radius:99px;padding:1px 7px}
+main{padding:24px clamp(14px,3vw,30px);min-width:0;display:grid;gap:18px;align-content:start}
+h1{font:700 25px var(--d);margin:0}.sub{color:var(--muted);margin:2px 0 0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:9px;padding:10px 16px;font-weight:600;background:var(--brand);color:#fff;cursor:pointer}
+.btn.g{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi,.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.kpi span{color:var(--muted);font-size:13px}.kpi b{display:block;font:700 27px var(--d);margin-top:2px}.kpi em{font-style:normal;font-size:12px;font-weight:600;color:var(--ok)}
+.g2{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;align-items:start}
+.card h2{font:700 16px var(--d);margin:0 0 12px}
+.row{display:grid;grid-template-columns:110px 1fr 40px;gap:10px;align-items:center;margin:9px 0;font-size:13px}
+.trk{height:12px;background:#edf0f6;border-radius:6px;overflow:hidden}.fil{height:100%;background:var(--brand);border-radius:6px}
+.feed{display:grid;gap:12px;font-size:13px}.feed div{display:grid;grid-template-columns:10px 1fr;gap:10px}.feed i{width:8px;height:8px;border-radius:50%;background:var(--ok);margin-top:6px}.feed small{display:block;color:var(--muted)}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.fl input,.fl select{border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:#fff;min-width:0}.fl input{flex:1 1 200px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;cursor:pointer}.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font:600 11px var(--b);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 10px;border-bottom:1px solid var(--line)}
+tbody tr{cursor:pointer}tbody tr:hover{background:#f7f9fd}tbody tr.sel{background:var(--soft)}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.ok{background:#dff3ea;color:var(--ok)}.wa{background:#faedd2;color:var(--warn)}.la{background:#fbe1dc;color:var(--late)}.in{background:var(--soft);color:var(--brand)}
+.cl b{display:block}.cl small{color:var(--muted)}
+.det{display:grid;gap:12px;align-content:start}
+.tl{border-left:2px solid var(--line);margin-left:6px}.st{position:relative;padding:0 0 14px 16px}.st:before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--c,#c5ccdb);border:2px solid #fff}.st small{display:block;color:var(--muted)}
+.mail{background:#f6f8fc;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;white-space:pre-line}
+.rule{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.rule:last-child{border:0}.rule small{color:var(--muted);display:block}
+.sw{position:relative;width:44px;height:26px;flex:none}.sw input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.sw span{position:absolute;inset:0;background:#c9d0df;border-radius:99px;transition:.15s;pointer-events:none}.sw span:after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.15s}
+.sw input:checked+span{background:var(--ok)}.sw input:checked+span:after{left:21px}.sw input:focus-visible+span{outline:2px solid var(--brand);outline-offset:2px}
+.cards{display:none}
+.hide{display:none!important}
+@media(min-width:901px){#gd{grid-template-columns:1.6fr 1fr}}
+@media(min-width:701px){.ob{display:none}}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;opacity:0;transition:.2s;pointer-events:none;z-index:9;max-width:90vw}.toast.on{opacity:1}
+.tabs{display:none}
+@media(max-width:900px){
+ .app{grid-template-columns:1fr}
+ aside{padding:12px;flex-direction:row;align-items:center;overflow-x:auto}.logo small{display:none}nav{display:flex}nav button{white-space:nowrap}
+ .kpis{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+ table.big thead{display:none}table.big,table.big tbody,table.big tr,table.big td{display:block}
+ table.big tr{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:#fff}
+ table.big td{border:0;padding:3px 0;display:flex;justify-content:space-between;gap:10px}
+ table.big td:before{content:attr(data-l);color:var(--muted);font-size:12px}
+ h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="bar">Maquette proposée par Keteris à <b>Comlight</b>. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<div class="app">
+<aside>
+ <div class="logo">Comlight<small>Assistant administration des ventes</small></div>
+ <nav role="tablist" id="nav">
+  <button role="tab" aria-selected="true" data-t="dash">Tableau de bord</button>
+  <button role="tab" aria-selected="false" data-t="devis">Devis et commandes <span class="nb" id="nbd">0</span></button>
+  <button role="tab" aria-selected="false" data-t="liv">Livraisons</button>
+  <button role="tab" aria-selected="false" data-t="cli">Fiches clients</button>
+  <button role="tab" aria-selected="false" data-t="reg">Règles automatiques</button>
+ </nav>
+</aside>
+<main>
+<section id="dash">
+ <div class="top"><div><h1>Tableau de bord ADV</h1><p class="sub">Ce que l'assistant a fait à votre place cette semaine.</p></div><button class="btn" id="run">Lancer les relances du jour</button></div>
+ <div class="kpis" style="margin-top:16px">
+  <div class="kpi"><span>Devis en attente</span><b id="k1">0</b><em>relancés automatiquement</em></div>
+  <div class="kpi"><span>Commandes à confirmer</span><b id="k2">0</b><em>confirmation prête</em></div>
+  <div class="kpi"><span>Livraisons en retard</span><b id="k3">0</b><em>client prévenu</em></div>
+  <div class="kpi"><span>Temps gagné</span><b>11 h 20</b><em>cette semaine</em></div>
+ </div>
+ <div class="g2" style="margin-top:12px">
+  <div class="card"><h2>Pipeline de vente</h2>
+   <div class="row"><span>Devis envoyés</span><div class="trk"><div class="fil" style="width:100%"></div></div><b>42</b></div>
+   <div class="row"><span>Relancés</span><div class="trk"><div class="fil" style="width:71%"></div></div><b>30</b></div>
+   <div class="row"><span>Acceptés</span><div class="trk"><div class="fil" style="width:45%;background:var(--ok)"></div></div><b>19</b></div>
+   <div class="row"><span>Livrés</span><div class="trk"><div class="fil" style="width:33%;background:var(--ok)"></div></div><b>14</b></div>
+  </div>
+  <div class="card"><h2>Activité récente</h2><div class="feed" id="feed"></div></div>
+ </div>
+</section>
+
+<section id="devis" class="hide">
+ <div class="top"><div><h1>Devis et commandes</h1><p class="sub">Propositions commerciales, confirmations et relances au même endroit.</p></div></div>
+ <div class="g2" id="gd" style="margin-top:16px">
+  <div class="card">
+   <div class="fl"><input id="q" type="search" placeholder="Rechercher un client ou une référence" aria-label="Rechercher">
+    <div class="fl" style="margin:0" id="chips"><button class="chip" aria-pressed="true" data-f="all">Tous</button><button class="chip" aria-pressed="false" data-f="Devis envoyé">Devis envoyé</button><button class="chip" aria-pressed="false" data-f="Sans réponse">Sans réponse</button><button class="chip" aria-pressed="false" data-f="À confirmer">À confirmer</button></div></div>
+   <table class="big"><thead><tr><th>Référence</th><th>Client</th><th class="ob">Objet</th><th class="n">Montant</th><th>Statut</th><th>Prochaine action</th></tr></thead><tbody id="tb"></tbody></table>
+  </div>
+  <div class="card det" id="det"></div>
+ </div>
+</section>
+
+<section id="liv" class="hide">
+ <div class="top"><div><h1>Suivi des livraisons</h1><p class="sub">Le client est prévenu sans que personne ne décroche le téléphone.</p></div></div>
+ <div class="card" style="margin-top:16px"><table class="big"><thead><tr><th>Commande</th><th>Client</th><th>Matériel</th><th>Date prévue</th><th>Transporteur</th><th>Statut</th></tr></thead><tbody id="tl"></tbody></table></div>
+</section>
+
+<section id="cli" class="hide">
+ <div class="top"><div><h1>Fiches clients</h1><p class="sub">Dossiers à jour sans ressaisie : chaque échange alimente la fiche.</p></div></div>
+ <div class="card" style="margin-top:16px"><table class="big"><thead><tr><th>Client</th><th>Contact</th><th>Ville</th><th class="n">CA 12 mois</th><th>Dernier échange</th><th>Fiche</th></tr></thead><tbody id="tc"></tbody></table></div>
+</section>
+
+<section id="reg" class="hide">
+ <div class="top"><div><h1>Règles automatiques</h1><p class="sub">Vous décidez ce que l'assistant fait seul.</p></div></div>
+ <div class="g2" style="margin-top:16px">
+  <div class="card" id="rules"></div>
+  <div class="card"><h2>Aperçu du message</h2><label for="ton" style="font-weight:600">Ton : <span id="tonv">3</span> sur 5</label><br><input id="ton" type="range" min="1" max="5" value="3" style="width:100%;margin:8px 0"><div class="mail" id="prev"></div></div>
+ </div>
+</section>
+</main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s);
+const D=[
+{r:"DV-2418",c:"Mairie de Salernes",o:"Pare-feu et sauvegarde externalisée",m:8450,s:"Sans réponse",j:9,a:"Relance 2 prévue demain",ct:"Mme Albert",e:"s.albert@salernes.example"},
+{r:"DV-2421",c:"Clinique Saint-Joseph",o:"Câblage réseau et 6 bornes Wi-Fi",m:14200,s:"Devis envoyé",j:3,a:"Relance 1 dans 4 jours",ct:"M. Bertrand",e:"d.bertrand@stjoseph.example"},
+{r:"DV-2423",c:"Cabinet Morel Avocats",o:"Migration messagerie, 12 postes",m:5980,s:"À confirmer",j:1,a:"Confirmation de commande prête",ct:"Me Morel",e:"contact@morel.example"},
+{r:"DV-2415",c:"Transports Faure",o:"Supervision réseau 3 sites",m:11600,s:"Sans réponse",j:14,a:"Relance 2 envoyée ce matin",ct:"M. Faure",e:"direction@faure.example"},
+{r:"DV-2426",c:"Résidence Les Oliviers",o:"Contrôle d'accès et vidéo",m:7320,s:"Devis envoyé",j:2,a:"Relance 1 dans 5 jours",ct:"Mme Gil",e:"gestion@oliviers.example"},
+{r:"DV-2427",c:"Domaine de la Verrerie",o:"Wi-Fi invités et caisse",m:4150,s:"À confirmer",j:0,a:"Confirmation de commande prête",ct:"M. Rey",e:"rey@verrerie.example"},
+{r:"DV-2410",c:"SARL Pons Matériaux",o:"Serveur et sauvegarde",m:9800,s:"Sans réponse",j:18,a:"Appel conseillé (3e relance)",ct:"M. Pons",e:"pons@matx.example"}];
+const L=[["CM-0932","Cabinet Morel Avocats","12 postes et switch","16/10","Chronopost Fret","En transit","in"],["CM-0929","Clinique Saint-Joseph","Bornes Wi-Fi x6","15/10","Livraison directe","Prévue demain","ok"],["CM-0921","Transports Faure","Sondes de supervision","09/10","DB Schenker","Retard de 4 jours","la"],["CM-0925","Mairie de Salernes","Baie de brassage","13/10","Livraison directe","Retard d'un jour","wa"],["CM-0917","Résidence Les Oliviers","Caméras IP x8","08/10","Livraison directe","Livré","ok"]];
+const C=[["Mairie de Salernes","Mme Albert","Salernes",38200,"Relance devis, 05/10"],["Clinique Saint-Joseph","M. Bertrand","Draguignan",61400,"Devis envoyé, 11/10"],["Cabinet Morel Avocats","Me Morel","Draguignan",12900,"Accord oral, 13/10"],["Transports Faure","M. Faure","Le Luc",27650,"Relance, 14/10"],["Résidence Les Oliviers","Mme Gil","Fréjus",15400,"Livraison, 08/10"],["Domaine de la Verrerie","M. Rey","Les Arcs",4150,"Devis envoyé, 14/10"]];
+const R=[["Relance automatique des devis sans réponse","Relance 1 à 5 jours, relance 2 à 12 jours, appel conseillé à 18 jours.",1],["Confirmation de commande dès l'accord du client","Récapitulatif, délais et référence envoyés sans ressaisie.",1],["Prévenir le client en cas de retard de livraison","Message envoyé dès que le transporteur annonce un décalage.",1],["Mettre à jour la fiche client après chaque échange","Dossier et base clients tenus à jour automatiquement.",1],["Me prévenir avant toute relance d'un devis de plus de 10 000 €","Validation manuelle en un clic.",0]];
+const eur=n=>n.toLocaleString("fr-FR")+" €";
+const pc=s=>({"Sans réponse":"la","Devis envoyé":"in","À confirmer":"wa"}[s]);
+let f="all",sel=D[0].r,act=[["Relance 2 envoyée à Transports Faure","DV-2415 · 08:02"],["Confirmation de commande prête pour Cabinet Morel","DV-2423 · hier"],["Fiche mise à jour : Clinique Saint-Joseph","Nouveau contact achats · hier"],["Retard annoncé, client prévenu : Mairie de Salernes","CM-0925 · hier"]];
+function feed(){$("#feed").innerHTML=act.map(a=>`<div><i></i><span>${a[0]}<small>${a[1]}</small></span></div>`).join("")}
+function tab(t){document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hide",s.id!==t));document.querySelectorAll("#nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.t===t))}
+function list(){const q=$("#q").value.toLowerCase();const x=D.filter(d=>(f==="all"||d.s===f)&&(d.c+d.r+d.o).toLowerCase().includes(q));
+$("#tb").innerHTML=x.map(d=>`<tr data-r="${d.r}" class="${d.r===sel?"sel":""}" tabindex="0"><td data-l="Référence"><b>${d.r}</b></td><td data-l="Client">${d.c}</td><td data-l="Objet" class="ob">${d.o}</td><td data-l="Montant" class="n">${eur(d.m)}</td><td data-l="Statut"><span class="pill ${pc(d.s)}">${d.s}</span></td><td data-l="Prochaine action">${d.a}</td></tr>`).join("")||`<tr><td>Aucun résultat</td></tr>`;
+$("#nbd").textContent=D.filter(d=>d.s!=="À confirmer").length;
+$("#k1").textContent=D.filter(d=>d.s!=="À confirmer").length;$("#k2").textContent=D.filter(d=>d.s==="À confirmer").length;$("#k3").textContent=L.filter(l=>l[6]!=="ok"&&l[6]!=="in").length;detail()}
+function detail(){const d=D.find(x=>x.r===sel);if(!d)return;$("#det").innerHTML=`<h2>${d.r} · ${d.c}</h2><div class="cl"><b>${d.ct}</b><small>${d.e}</small></div><div><span class="pill ${pc(d.s)}">${d.s}</span> <b>${eur(d.m)}</b></div>
+<div class="tl"><div class="st" style="--c:var(--ok)"><b>Devis envoyé</b><small>il y a ${d.j+0} jour(s)</small></div>${d.j>=5?`<div class="st" style="--c:var(--ok)"><b>Relance 1 envoyée</b><small>automatique, ton ${$("#ton").value} sur 5</small></div>`:""}${d.j>=12?`<div class="st" style="--c:var(--warn)"><b>Relance 2 envoyée</b><small>automatique</small></div>`:""}<div class="st"><b>${d.a}</b><small>prévu par les règles</small></div></div>
+<div class="mail">Bonjour ${d.ct.split(" ").slice(1).join(" ")},\nJe me permets de revenir vers vous au sujet de notre proposition ${d.r} (${d.o.toLowerCase()}), d'un montant de ${eur(d.m)}.\nAvez-vous pu la consulter ? Je reste disponible pour l'ajuster.</div>
+<button class="btn" id="snd">Envoyer la relance maintenant</button>`;
+$("#snd").onclick=()=>{act.unshift([`Relance envoyée à ${d.c}`,`${d.r} · à l'instant`]);feed();toast("Relance envoyée à "+d.ct)}}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),2400)}
+$("#tl").innerHTML=L.map(l=>`<tr><td data-l="Commande"><b>${l[0]}</b></td><td data-l="Client">${l[1]}</td><td data-l="Matériel">${l[2]}</td><td data-l="Date prévue">${l[3]}</td><td data-l="Transporteur">${l[4]}</td><td data-l="Statut"><span class="pill ${l[6]}">${l[5]}</span></td></tr>`).join("");
+$("#tc").innerHTML=C.map(c=>`<tr><td data-l="Client"><b>${c[0]}</b></td><td data-l="Contact">${c[1]}</td><td data-l="Ville">${c[2]}</td><td data-l="CA 12 mois" class="n">${eur(c[3])}</td><td data-l="Dernier échange">${c[4]}</td><td data-l="Fiche"><span class="pill ok">À jour</span></td></tr>`).join("");
+$("#rules").innerHTML=R.map((r,i)=>`<div class="rule"><div><b>${r[0]}</b><small>${r[1]}</small></div><label class="sw"><input type="checkbox" ${r[2]?"checked":""} aria-label="${r[0]}" data-i="${i}"><span></span></label></div>`).join("");
+$("#rules").onchange=e=>toast(e.target.checked?"Règle activée":"Règle désactivée");
+const TX=["Bonjour,\nSans retour de votre part, je clôture la proposition DV-2421.","Bonjour,\nJe reviens vers vous au sujet de la proposition DV-2421. Souhaitez-vous la maintenir ?","Bonjour,\nJe me permets de revenir vers vous au sujet de la proposition DV-2421. Avez-vous pu la consulter ?","Bonjour,\nJe voulais m'assurer que la proposition DV-2421 vous est bien parvenue. Je peux l'ajuster si besoin.","Bonjour,\nJe me tiens à votre disposition pour toute question sur la proposition DV-2421, sans aucune urgence de votre côté."];
+function pv(){$("#tonv").textContent=$("#ton").value;$("#prev").textContent=TX[$("#ton").value-1]}
+$("#ton").oninput=pv;pv();
+$("#nav").onclick=e=>{const b=e.target.closest("button");if(b)tab(b.dataset.t)};
+$("#chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;f=b.dataset.f;document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));list()};
+$("#q").oninput=list;
+$("#tb").onclick=e=>{const r=e.target.closest("tr");if(r&&r.dataset.r){sel=r.dataset.r;list()}};
+$("#tb").onkeydown=e=>{if(e.key==="Enter"){const r=e.target.closest("tr");if(r&&r.dataset.r){sel=r.dataset.r;list()}}};
+$("#run").onclick=()=>{act.unshift(["3 relances de devis envoyées","à l'instant"]);feed();toast("3 relances envoyées")};
+feed();list();
+</script>
+</body>
+</html>
