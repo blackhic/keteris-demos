@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Accueil et tournées SOVAVID</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f2f5f6;--panel:#fff;--ink:#14232b;--muted:#5d6e76;--line:#dde4e7;--brand:#0f5f7a;--soft:#e1f0f5;--ok:#1f8a5b;--warn:#c98a12;--late:#c2412d;--d:"Barlow Condensed",system-ui,sans-serif;--b:"Barlow",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--b)}
+button,input,select{font:inherit}
+.bar{background:#14232b;color:#e6eef1;text-align:center;font-size:13px;padding:8px 16px}
+.app{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:calc(100vh - 36px)}
+aside{background:var(--brand);color:#d9eef5;padding:22px 16px;display:flex;flex-direction:column;gap:20px}
+.logo{font:700 24px var(--d);color:#fff;line-height:1.1;letter-spacing:.02em}
+.logo small{display:block;font:500 12px var(--b);color:#a5d2e0;margin-top:4px;letter-spacing:0}
+.menu{display:grid;gap:4px}
+.menu button{background:none;border:0;color:#d9eef5;text-align:left;padding:10px 12px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.menu button[aria-selected=true]{background:rgba(255,255,255,.16);color:#fff;font-weight:600}
+.badge{background:#fff;color:var(--brand);font:600 12px var(--b);border-radius:999px;padding:0 8px}
+.foot{margin-top:auto;font-size:12px;color:#a5d2e0}
+main{padding:24px clamp(16px,3vw,32px);min-width:0}
+h1{font:700 32px var(--d);margin:0;letter-spacing:.01em}
+.sub{color:var(--muted);margin:2px 0 18px}
+.btn{border:0;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:600;background:var(--brand);color:#fff}
+.btn.g{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,.menu button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #3a8fb0;outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.kpi,.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+.kpi span{color:var(--muted);font-size:13px}
+.kpi b{display:block;font:700 30px var(--d);margin-top:2px}
+.kpi em{font-style:normal;font-size:12px;font-weight:600;color:var(--ok)}
+.g2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:14px;align-items:start}
+.card h2{font:700 20px var(--d);margin:0 0 12px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr{cursor:pointer}tbody tr:hover{background:#f6fafb}tbody tr.sel{background:var(--soft)}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.p-ok{background:#e1f3ea;color:var(--ok)}.p-w{background:#fbefd5;color:#93640a}.p-l{background:#fbe3de;color:var(--late)}.p-i{background:#e2ecf5;color:#2f6794}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mail{background:#f6f9fa;border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px;white-space:pre-line}
+.det{display:grid;gap:12px;align-content:start}
+.det h3{font:700 22px var(--d);margin:0}
+.det small{color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.hint{font-size:12px;color:var(--muted);margin:10px 0 0}
+.days{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.slot{border:1px solid var(--line);border-radius:8px;padding:9px 10px;background:#fff;text-align:left;cursor:pointer;font-size:13px}
+.slot b{display:block;font-size:14px}
+.slot.taken{background:#eef2f4;color:#8a989f;cursor:default}
+.slot.mine{background:var(--soft);border-color:var(--brand)}
+.trucks{display:grid;gap:14px}
+.truck{border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px}
+.truck header{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.truck h3{font:700 20px var(--d);margin:0}
+.stops{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.stops li{position:relative;padding:0 0 12px 18px}
+.stops li::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--brand);border:2px solid #fff}
+.stops li small{color:var(--muted);display:block}
+.load{height:8px;background:#e8eef0;border-radius:6px;overflow:hidden;margin-top:8px;max-width:260px}
+.load i{display:block;height:100%;background:var(--brand)}
+.rule{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.rule b{font:700 19px var(--d)}.rule p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.sw{position:relative;width:44px;height:24px;border-radius:999px;border:0;background:#c9d3d7;cursor:pointer}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.sw[aria-checked=true]{background:var(--ok)}.sw[aria-checked=true]::after{left:23px}
+[hidden]{display:none!important}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}
+@media(max-width:760px){
+ .app{grid-template-columns:1fr}
+ aside{padding:14px 16px}.menu{display:flex;flex-wrap:wrap}.foot{display:none}
+ h1{font-size:28px}
+ .tbl thead{display:none}
+ table,tbody,tr,td{display:block;width:100%}
+ #rows tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;padding:12px 2px;border-bottom:1px solid var(--line)}
+ #rows td{border:0;padding:0}
+ #rows td:first-child{grid-column:1/-1}
+ #rows td::before{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+ #rows td:nth-child(2)::before{content:"Demande"}#rows td:nth-child(3)::before{content:"Reçue"}#rows td:nth-child(4)::before{content:"Suite donnée"}
+}
+@media(max-width:420px){.kpis{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bar"><b>Maquette proposée par Keteris à SOVAVID Assainissement Vidange.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<div class="app">
+<aside>
+ <div class="logo">SOVAVID<small>Accueil, rendez-vous et tournées</small></div>
+ <nav class="menu" role="tablist" aria-label="Sections">
+  <button role="tab" aria-selected="true" data-v="dash">Tableau de bord</button>
+  <button role="tab" aria-selected="false" data-v="req">Demandes entrantes <span class="badge" id="nreq">0</span></button>
+  <button role="tab" aria-selected="false" data-v="rdv">Agenda des rendez-vous</button>
+  <button role="tab" aria-selected="false" data-v="tour">Tournées des camions</button>
+  <button role="tab" aria-selected="false" data-v="rules">Règles automatiques</button>
+ </nav>
+ <div class="foot">Brignoles · Saint-Maximin<br>Standard synchronisé il y a 2 min</div>
+</aside>
+<main>
+<section data-p="dash">
+ <h1>Bonjour</h1><p class="sub">Mercredi 14 octobre 2026. Ce que le standard a traité sans qu'on décroche.</p>
+ <div class="kpis">
+  <div class="kpi"><span>Demandes reçues aujourd'hui</span><b>14</b><em>9 traitées automatiquement</em></div>
+  <div class="kpi"><span>Rendez-vous posés</span><b>7</b><em>sans appel de retour</em></div>
+  <div class="kpi"><span>Devis envoyés avant 1 h</span><b>5</b><em>délai moyen 18 min</em></div>
+  <div class="kpi"><span>Km évités cette semaine</span><b>112</b><em>tournées regroupées par secteur</em></div>
+ </div>
+ <div class="g2">
+  <div class="card"><h2>Ce qui attend l'accueil</h2>
+   <div class="tbl"><table><tbody>
+    <tr><td><b>Fosse débordée, Tourves</b></td><td><span class="pill p-l">Urgence</span></td><td>Camion 2 proposé à 14 h 30</td></tr>
+    <tr><td><b>Curage canalisation, Brignoles</b></td><td><span class="pill p-w">À valider</span></td><td>Devis prêt, à confirmer</td></tr>
+    <tr><td><b>Dégorgement, Saint-Maximin</b></td><td><span class="pill p-i">Nouveau</span></td><td>Créneau jeudi 9 h proposé</td></tr>
+   </tbody></table></div>
+   <button class="btn" style="margin-top:14px" data-go="req">Voir les demandes</button>
+  </div>
+  <div class="card"><h2>Dernières actions automatiques</h2>
+   <p style="margin:0 0 10px"><b>8 h 02</b> · Appel manqué rappelé par SMS à M. Brun, vidange fosse.</p>
+   <p style="margin:0 0 10px"><b>8 h 40</b> · Rendez-vous confirmé avec la SCI Les Oliviers pour jeudi.</p>
+   <p style="margin:0"><b>9 h 05</b> · Tournée du camion 3 recalculée après une annulation.</p>
+  </div>
+ </div>
+</section>
+
+<section data-p="req" hidden>
+ <h1>Demandes entrantes</h1><p class="sub">Téléphone, formulaire du site et e-mails arrivent au même endroit. Cliquez sur une ligne.</p>
+ <div class="g2">
+  <div class="card">
+   <div class="chips" id="chips"></div>
+   <div class="tbl"><table><thead><tr><th>Client</th><th>Demande</th><th>Reçue</th><th>Suite donnée</th></tr></thead><tbody id="rows"></tbody></table></div>
+   <p class="hint" id="cnt"></p>
+  </div>
+  <div class="card det" id="det"></div>
+ </div>
+</section>
+
+<section data-p="rdv" hidden>
+ <h1>Agenda des rendez-vous</h1><p class="sub">Les créneaux libres tiennent compte des 4 camions et des durées d'intervention.</p>
+ <div class="card">
+  <div class="row" style="margin-bottom:12px">
+   <select id="svc" aria-label="Type d'intervention"><option value="90">Vidange fosse septique (1 h 30)</option><option value="60">Curage canalisation (1 h)</option><option value="45">Dégorgement (45 min)</option><option value="120">Inspection caméra (2 h)</option></select>
+  </div>
+  <div class="days" id="days"></div>
+  <div class="slots" id="slots"></div>
+  <p class="hint" id="rdvmsg">Choisissez un créneau : le client reçoit une confirmation par SMS et le rendez-vous apparaît dans la tournée du camion.</p>
+ </div>
+</section>
+
+<section data-p="tour" hidden>
+ <h1>Tournées des camions</h1><p class="sub">Jeudi 15 octobre. Les arrêts sont ordonnés pour limiter les kilomètres.</p>
+ <div class="row" style="margin-bottom:14px"><button class="btn" id="opt">Recalculer les tournées</button><span class="hint" id="optmsg" style="align-self:center;margin:0"></span></div>
+ <div class="trucks" id="trucks"></div>
+</section>
+
+<section data-p="rules" hidden>
+ <h1>Règles automatiques</h1><p class="sub">Vous décidez une fois, le standard applique à chaque demande.</p>
+ <div id="rl"></div>
+ <p class="hint">Les messages partent depuis votre numéro et votre adresse. Les urgences sont toujours signalées à l'accueil.</p>
+</section>
+</main>
+</div>
+<script>
+(function(){
+ var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+ var R=[
+  ["M. Brun","Tourves","Vidange fosse septique","8 h 02","u","Rappel SMS envoyé, créneau proposé vendredi 8 h 30","Bonjour M. Brun, nous avons manqué votre appel. Nous pouvons passer vendredi à 8 h 30 pour la vidange de votre fosse. Répondez OUI pour confirmer."],
+  ["SCI Les Oliviers","Saint-Maximin","Curage canalisation","8 h 40","c","Rendez-vous confirmé jeudi 10 h","Bonjour, votre rendez-vous de curage est confirmé jeudi à 10 h avec le camion 1. Un SMS vous préviendra 30 minutes avant l'arrivée."],
+  ["Mme Aubert","Brignoles","Dégorgement","9 h 05","d","Devis prêt, à valider","Bonjour Mme Aubert, voici votre devis pour le dégorgement. Dès votre accord, nous bloquons un créneau cette semaine."],
+  ["Camping Les Pins","Carcès","Contrat vidange annuel","9 h 20","n","Nouveau, à qualifier","Demande de contrat annuel reçue par le formulaire du site. Le standard attend 2 informations : volume de la cuve et fréquence souhaitée."],
+  ["Boulangerie Marin","Brignoles","Bac à graisses","9 h 31","d","Devis prêt, à valider","Bonjour, voici votre devis pour le curage du bac à graisses. Rendez-vous possible mardi prochain à 7 h."],
+  ["Mairie du Val","Le Val","Inspection caméra","9 h 48","c","Rendez-vous confirmé lundi 14 h","Votre inspection caméra est confirmée lundi à 14 h. Le technicien aura besoin de l'accès au regard principal."],
+  ["Mme Girard","Tourves","Fosse débordée","10 h 12","u","Camion 2 proposé aujourd'hui 14 h 30","Bonjour Mme Girard, nous pouvons intervenir aujourd'hui à 14 h 30. Merci de confirmer par OUI. Nous vous rappelons si besoin."]
+ ];
+ var ST={u:["Urgence","p-l"],c:["Confirmé","p-ok"],d:["À valider","p-w"],n:["Nouveau","p-i"]};
+ var f="all",sel=0;
+ $("#nreq").textContent=R.length;
+ function chips(){
+  var h=[["all","Toutes"],["u","Urgences"],["d","À valider"],["n","Nouvelles"],["c","Confirmées"]].map(function(c){return '<button class="chip" data-f="'+c[0]+'" aria-pressed="'+(f===c[0])+'">'+c[1]+'</button>'}).join("");
+  $("#chips").innerHTML=h;
+  $$(".chip").forEach(function(b){b.onclick=function(){f=b.dataset.f;sel=0;draw()}});
+ }
+ function list(){return R.filter(function(r){return f==="all"||r[4]===f})}
+ function draw(){
+  chips();var L=list();
+  $("#rows").innerHTML=L.map(function(r,i){return '<tr data-i="'+i+'"'+(i===sel?' class="sel"':'')+'><td><b>'+r[0]+'</b><br><small style="color:#5d6e76">'+r[1]+'</small></td><td>'+r[2]+'</td><td>'+r[3]+'</td><td><span class="pill '+ST[r[4]][1]+'">'+ST[r[4]][0]+'</span> '+r[5]+'</td></tr>'}).join("");
+  $("#cnt").textContent=L.length+" demande(s) affichée(s) sur "+R.length;
+  $$("#rows tr").forEach(function(t){t.onclick=function(){sel=+t.dataset.i;draw()}});
+  var r=L[sel];
+  $("#det").innerHTML=r?'<h3>'+r[0]+'</h3><small>'+r[1]+' · '+r[2]+' · reçue à '+r[3]+'</small><div><b>Message envoyé automatiquement</b></div><div class="mail">'+r[6]+'</div><div class="row"><button class="btn" id="ok">Valider et envoyer</button><button class="btn g">Appeler</button></div><p class="hint" id="okm"></p>':'<p>Aucune demande.</p>';
+  if(r&&$("#ok"))$("#ok").onclick=function(){$("#okm").textContent="Envoyé à "+r[0]+". Le rendez-vous est ajouté à l'agenda."};
+ }
+ draw();
+ var days=["Jeu 15","Ven 16","Lun 19","Mar 20","Mer 21"],day=0,mine=null;
+ var busy={0:["08:00","10:30","14:00"],1:["09:00","11:00"],2:["08:30","13:30","15:30"],3:["10:00"],4:["09:30","14:30"]};
+ var times=["08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","13:30","14:00","14:30","15:00","15:30","16:00"];
+ function ag(){
+  $("#days").innerHTML=days.map(function(d,i){return '<button class="chip" data-d="'+i+'" aria-pressed="'+(i===day)+'">'+d+'</button>'}).join("");
+  $$("#days .chip").forEach(function(b){b.onclick=function(){day=+b.dataset.d;mine=null;ag()}});
+  var dur=+$("#svc").value;
+  $("#slots").innerHTML=times.map(function(t){var tk=busy[day].indexOf(t)>-1,m=mine===t;return '<button class="slot'+(tk?' taken':'')+(m?' mine':'')+'" data-t="'+t+'"'+(tk?' disabled':'')+'><b>'+t.replace(":"," h ")+'</b>'+(tk?'Déjà pris':(m?'Votre choix':'Camion '+(1+times.indexOf(t)%4)+' · '+dur+' min'))+'</button>'}).join("");
+  $$(".slot:not(.taken)").forEach(function(b){b.onclick=function(){mine=b.dataset.t;ag();$("#rdvmsg").textContent="Rendez-vous retenu le "+days[day]+" à "+mine.replace(":"," h ")+". SMS de confirmation envoyé au client, arrêt ajouté à la tournée."}});
+ }
+ $("#svc").onchange=function(){mine=null;ag()};ag();
+ var T=[
+  ["Camion 1","Secteur Brignoles",["8 h 00 · SCI Les Oliviers, Saint-Maximin|Curage canalisation","10 h 15 · Boulangerie Marin, Brignoles|Bac à graisses","13 h 30 · Mme Aubert, Brignoles|Dégorgement"],68],
+  ["Camion 2","Secteur Tourves et Le Val",["8 h 30 · M. Brun, Tourves|Vidange fosse septique","11 h 00 · Mairie du Val, Le Val|Inspection caméra","14 h 30 · Mme Girard, Tourves|Fosse débordée, urgence"],82],
+  ["Camion 3","Secteur Carcès",["9 h 00 · Camping Les Pins, Carcès|Contrat annuel, visite","11 h 30 · Ferme Rey, Cabasse|Vidange fosse septique"],45],
+  ["Camion 4","Secteur Saint-Maximin",["8 h 00 · Résidence Cézanne|Curage collectif","10 h 30 · M. Fabre|Dégorgement","14 h 00 · Garage du Pont|Séparateur à hydrocarbures"],74]
+ ];
+ function tr(){
+  $("#trucks").innerHTML=T.map(function(t){return '<div class="truck"><header><h3>'+t[0]+'</h3><span style="color:#5d6e76">'+t[1]+'</span></header><div class="load"><i style="width:'+t[3]+'%"></i></div><small style="color:#5d6e76">Journée remplie à '+t[3]+' %</small><ul class="stops">'+t[2].map(function(s){var p=s.split("|");return '<li><b>'+p[0]+'</b><small>'+p[1]+'</small></li>'}).join("")+'</ul></div>'}).join("");
+ }
+ tr();
+ $("#opt").onclick=function(){T[2][3]=71;T[0][3]=76;tr();$("#optmsg").textContent="Tournées recalculées : 23 km économisés sur la journée."};
+ var RL=[["Rappel automatique d'un appel manqué","SMS envoyé dans les 2 minutes avec un créneau libre proposé.",1],["Devis envoyé automatiquement","Pour vidange et curage standard, le devis part sans validation si le tarif est fixe.",1],["Urgence signalée à l'accueil","Mots clés : débordement, refoulement, odeur. Appel interne immédiat.",1],["Rappel la veille du rendez-vous","SMS au client avec l'heure d'arrivée estimée du camion.",1],["Relance d'un devis non signé","Message à J+3 puis J+10, arrêt dès réponse du client.",0]];
+ $("#rl").innerHTML=RL.map(function(r){return '<div class="rule"><div><b>'+r[0]+'</b><p>'+r[1]+'</p></div><button class="sw" role="switch" aria-label="'+r[0]+'" aria-checked="'+(!!r[2])+'"></button></div>'}).join("");
+ $$(".sw").forEach(function(b){b.onclick=function(){b.setAttribute("aria-checked",b.getAttribute("aria-checked")!=="true")}});
+ function go(v){$$("[data-p]").forEach(function(p){p.hidden=p.dataset.p!==v});$$(".menu button").forEach(function(b){b.setAttribute("aria-selected",b.dataset.v===v)})}
+ $$(".menu button").forEach(function(b){b.onclick=function(){go(b.dataset.v)}});
+ $$("[data-go]").forEach(function(b){b.onclick=function(){go(b.dataset.go)}});
+})();
+</script>
+</body>
+</html>
