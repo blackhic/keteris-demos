@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Portail commandes Prefal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f3f5f9;--panel:#fff;--ink:#14213d;--muted:#667089;--line:#e2e6ee;--brand:#1d4ed8;--soft:#e8eefc;--ok:#188a5a;--warn:#b7791f;--late:#c43d2e;
+--d:"Space Grotesk",system-ui,sans-serif;--b:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--b)}
+button,input,select{font:inherit}
+.bar{background:var(--ink);color:#d9e0f0;text-align:center;font-size:13px;padding:8px 16px}.bar b{color:#fff}
+.app{display:grid;grid-template-columns:220px minmax(0,1fr)}
+aside{background:var(--brand);color:#dbe6ff;padding:22px 14px;display:flex;flex-direction:column;gap:20px}
+.logo{font:700 19px var(--d);color:#fff}.logo small{display:block;font:500 12px var(--b);color:#b9ccff}
+nav{display:grid;gap:4px}
+nav button{background:none;border:0;color:#dbe6ff;text-align:left;padding:10px 12px;border-radius:9px;cursor:pointer;display:flex;justify-content:space-between}
+nav button[aria-selected=true]{background:rgba(255,255,255,.17);color:#fff;font-weight:600}
+nav button:hover{background:rgba(255,255,255,.1)}
+.nb{background:#fff;color:var(--brand);font-size:11px;font-weight:600;border-radius:99px;padding:1px 7px}
+main{padding:24px clamp(14px,3vw,30px);min-width:0;display:grid;gap:18px;align-content:start}
+h1{font:700 25px var(--d);margin:0}.sub{color:var(--muted);margin:2px 0 0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:9px;padding:10px 16px;font-weight:600;background:var(--brand);color:#fff;cursor:pointer}
+.btn.g{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi,.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.kpi span{color:var(--muted);font-size:13px}.kpi b{display:block;font:700 27px var(--d);margin-top:2px}.kpi em{font-style:normal;font-size:12px;font-weight:600;color:var(--ok)}
+.g2{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;align-items:start}
+.card h2{font:700 16px var(--d);margin:0 0 12px}
+.row{display:grid;grid-template-columns:110px 1fr 40px;gap:10px;align-items:center;margin:9px 0;font-size:13px}
+.trk{height:12px;background:#edf0f6;border-radius:6px;overflow:hidden}.fil{height:100%;background:var(--brand);border-radius:6px}
+.feed{display:grid;gap:12px;font-size:13px}.feed div{display:grid;grid-template-columns:10px 1fr;gap:10px}.feed i{width:8px;height:8px;border-radius:50%;background:var(--ok);margin-top:6px}.feed small{display:block;color:var(--muted)}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.fl input,.fl select{border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:#fff;min-width:0}.fl input{flex:1 1 200px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;cursor:pointer}.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font:600 11px var(--b);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 10px;border-bottom:1px solid var(--line)}
+tbody tr{cursor:pointer}tbody tr:hover{background:#f7f9fd}tbody tr.sel{background:var(--soft)}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.ok{background:#dff3ea;color:var(--ok)}.wa{background:#faedd2;color:var(--warn)}.la{background:#fbe1dc;color:var(--late)}.in{background:var(--soft);color:var(--brand)}
+.cl b{display:block}.cl small{color:var(--muted)}
+.det{display:grid;gap:12px;align-content:start}
+.tl{border-left:2px solid var(--line);margin-left:6px}.st{position:relative;padding:0 0 14px 16px}.st:before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--c,#c5ccdb);border:2px solid #fff}.st small{display:block;color:var(--muted)}
+.mail{background:#f6f8fc;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;white-space:pre-line}
+.rule{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.rule:last-child{border:0}.rule small{color:var(--muted);display:block}
+.sw{position:relative;width:44px;height:26px;flex:none}.sw input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.sw span{position:absolute;inset:0;background:#c9d0df;border-radius:99px;transition:.15s;pointer-events:none}.sw span:after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.15s}
+.sw input:checked+span{background:var(--ok)}.sw input:checked+span:after{left:21px}.sw input:focus-visible+span{outline:2px solid var(--brand);outline-offset:2px}
+.cards{display:none}
+.hide{display:none!important}
+@media(min-width:901px){#gd{grid-template-columns:1.6fr 1fr}}
+@media(min-width:701px){.ob{display:none}}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;opacity:0;transition:.2s;pointer-events:none;z-index:9;max-width:90vw}.toast.on{opacity:1}
+.tabs{display:none}
+@media(max-width:900px){
+ .app{grid-template-columns:1fr}
+ aside{padding:12px;flex-direction:row;align-items:center;overflow-x:auto}.logo small{display:none}nav{display:flex}nav button{white-space:nowrap}
+ .kpis{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+ table.big thead{display:none}table.big,table.big tbody,table.big tr,table.big td{display:block}
+ table.big tr{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:#fff}
+ table.big td{border:0;padding:3px 0;display:flex;justify-content:space-between;gap:10px}
+ table.big td:before{content:attr(data-l);color:var(--muted);font-size:12px}
+ h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="bar">Maquette proposée par Keteris à <b>Prefal</b>. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<div class="app">
+<aside>
+ <div class="logo">Prefal<small>Portail menuisiers et ADV</small></div>
+ <nav role="tablist" id="nav">
+  <button role="tab" aria-selected="true" data-t="dash">Tableau de bord</button>
+  <button role="tab" aria-selected="false" data-t="devis">Commandes <span class="nb" id="nbd">0</span></button>
+  <button role="tab" aria-selected="false" data-t="liv">Livraisons</button>
+  <button role="tab" aria-selected="false" data-t="cli">Menuisiers partenaires</button>
+  <button role="tab" aria-selected="false" data-t="reg">Règles automatiques</button>
+ </nav>
+</aside>
+<main>
+<section id="dash">
+ <div class="top"><div><h1>Tableau de bord ADV</h1><p class="sub">Ce que le portail a traité à votre place cette semaine : questions de suivi, relances de factures, confirmations.</p></div><button class="btn" id="run">Lancer les relances de factures du jour</button></div>
+ <div class="kpis" style="margin-top:16px">
+  <div class="kpi"><span>Factures à relancer</span><b id="k1">0</b><em>relances automatiques</em></div>
+  <div class="kpi"><span>Commandes à confirmer</span><b id="k2">0</b><em>confirmation prête</em></div>
+  <div class="kpi"><span>Livraisons en retard</span><b id="k3">0</b><em>client prévenu</em></div>
+  <div class="kpi"><span>Temps gagné</span><b>11 h 20</b><em>cette semaine</em></div>
+ </div>
+ <div class="g2" style="margin-top:12px">
+  <div class="card"><h2>Du devis à la livraison</h2>
+   <div class="row"><span>Devis envoyés</span><div class="trk"><div class="fil" style="width:100%"></div></div><b>42</b></div>
+   <div class="row"><span>Factures relancées</span><div class="trk"><div class="fil" style="width:71%"></div></div><b>30</b></div>
+   <div class="row"><span>Commandes</span><div class="trk"><div class="fil" style="width:45%;background:var(--ok)"></div></div><b>19</b></div>
+   <div class="row"><span>Livrés</span><div class="trk"><div class="fil" style="width:33%;background:var(--ok)"></div></div><b>14</b></div>
+  </div>
+  <div class="card"><h2>Activité récente</h2><div class="feed" id="feed"></div></div>
+ </div>
+</section>
+
+<section id="devis" class="hide">
+ <div class="top"><div><h1>Commandes et factures</h1><p class="sub">Commandes des menuisiers, confirmations et relances d'impayés au même endroit.</p></div></div>
+ <div class="g2" id="gd" style="margin-top:16px">
+  <div class="card">
+   <div class="fl"><input id="q" type="search" placeholder="Rechercher un menuisier ou une référence" aria-label="Rechercher">
+    <div class="fl" style="margin:0" id="chips"><button class="chip" aria-pressed="true" data-f="all">Tous</button><button class="chip" aria-pressed="false" data-f="Facture envoyée">Facture envoyée</button><button class="chip" aria-pressed="false" data-f="En retard">En retard</button><button class="chip" aria-pressed="false" data-f="À confirmer">À confirmer</button></div></div>
+   <table class="big"><thead><tr><th>Référence</th><th>Menuisier</th><th class="ob">Objet</th><th class="n">Montant</th><th>Statut</th><th>Prochaine action</th></tr></thead><tbody id="tb"></tbody></table>
+  </div>
+  <div class="card det" id="det"></div>
+ </div>
+</section>
+
+<section id="liv" class="hide">
+ <div class="top"><div><h1>Suivi des livraisons</h1><p class="sub">Le menuisier suit sa commande lui-même et est prévenu d'un retard sans appeler le service ADV.</p></div></div>
+ <div class="card" style="margin-top:16px"><table class="big"><thead><tr><th>Commande</th><th>Menuisier</th><th>Produit</th><th>Date prévue</th><th>Transporteur</th><th>Statut</th></tr></thead><tbody id="tl"></tbody></table></div>
+</section>
+
+<section id="cli" class="hide">
+ <div class="top"><div><h1>Menuisiers partenaires</h1><p class="sub">Tarifs, conditions et historique à jour sans ressaisie.</p></div></div>
+ <div class="card" style="margin-top:16px"><table class="big"><thead><tr><th>Menuisier</th><th>Contact</th><th>Ville</th><th class="n">CA 12 mois</th><th>Dernier échange</th><th>Fiche</th></tr></thead><tbody id="tc"></tbody></table></div>
+</section>
+
+<section id="reg" class="hide">
+ <div class="top"><div><h1>Règles automatiques</h1><p class="sub">Vous décidez ce que le portail fait seul.</p></div></div>
+ <div class="g2" style="margin-top:16px">
+  <div class="card" id="rules"></div>
+  <div class="card"><h2>Aperçu du message</h2><label for="ton" style="font-weight:600">Ton : <span id="tonv">3</span> sur 5</label><br><input id="ton" type="range" min="1" max="5" value="3" style="width:100%;margin:8px 0"><div class="mail" id="prev"></div></div>
+ </div>
+</section>
+</main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s);
+const D=[
+{r:"FA-2418",c:"Menuiserie Aubert",o:"Coulissants alu, chantier Grasse",m:8450,s:"En retard",j:9,a:"Relance 2 prévue demain",ct:"M. Aubert",e:"contact@aubert.example"},
+{r:"FA-2421",c:"Alpes Fermetures",o:"Fenêtres alu, 14 unités",m:14200,s:"Facture envoyée",j:3,a:"Relance 1 dans 4 jours",ct:"M. Bertrand",e:"compta@alpesfermetures.example"},
+{r:"CO-2423",c:"Cannes Baies Vitrées",o:"Baies à galandage, villa Mougins",m:5980,s:"À confirmer",j:1,a:"Confirmation de commande prête",ct:"Mme Morel",e:"commande@cbv.example"},
+{r:"FA-2415",c:"Menuiserie Faure",o:"Portes d'entrée alu",m:11600,s:"En retard",j:14,a:"Relance 2 envoyée ce matin",ct:"M. Faure",e:"faure@menuiserie.example"},
+{r:"FA-2426",c:"Azur Habitat",o:"Volets roulants, résidence Antibes",m:7320,s:"Facture envoyée",j:2,a:"Relance 1 dans 5 jours",ct:"Mme Gil",e:"gestion@azurhabitat.example"},
+{r:"CO-2427",c:"Menuiserie Rey",o:"Fenêtres PVC, 9 unités",m:4150,s:"À confirmer",j:0,a:"Confirmation de commande prête",ct:"M. Rey",e:"rey@menuiserie.example"},
+{r:"FA-2410",c:"Pons Fermetures",o:"Garde-corps et verrières",m:9800,s:"En retard",j:18,a:"Appel conseillé (3e relance)",ct:"M. Pons",e:"pons@fermetures.example"}];
+const L=[["CO-0932","Cannes Baies Vitrées","Baies à galandage x3","16/10","Camion Prefal","En transit","in"],["CO-0929","Alpes Fermetures","Fenêtres alu x14","15/10","Livraison directe","Prévue demain","ok"],["CO-0921","Menuiserie Faure","Portes d'entrée x4","09/10","Transporteur","Retard de 4 jours","la"],["CO-0925","Menuiserie Aubert","Coulissants alu x6","13/10","Camion Prefal","Retard d'un jour","wa"],["CO-0917","Azur Habitat","Volets roulants x8","08/10","Livraison directe","Livré","ok"]];
+const C=[["Menuiserie Aubert","M. Aubert","Grasse",38200,"Relance facture, 05/10"],["Alpes Fermetures","M. Bertrand","Nice",61400,"Commande passée, 11/10"],["Cannes Baies Vitrées","Mme Morel","Cannes",12900,"Devis accepté, 13/10"],["Menuiserie Faure","M. Faure","Vence",27650,"Relance, 14/10"],["Azur Habitat","Mme Gil","Antibes",15400,"Livraison, 08/10"],["Menuiserie Rey","M. Rey","Mougins",4150,"Devis envoyé, 14/10"]];
+const R=[["Relance automatique des factures en retard","Relance 1 à 5 jours, relance 2 à 12 jours, appel conseillé à 18 jours.",1],["Confirmation de commande dès l'accord du menuisier","Récapitulatif, délais et référence envoyés sans ressaisie.",1],["Prévenir le menuisier en cas de retard de livraison","Message envoyé dès qu'un décalage est annoncé.",1],["Répondre seul aux questions de suivi de commande","Le menuisier consulte statut et date de livraison sur le portail.",1],["Me prévenir avant toute relance d'une facture de plus de 10 000 €","Validation manuelle en un clic.",0]];
+const eur=n=>n.toLocaleString("fr-FR")+" €";
+const pc=s=>({"En retard":"la","Facture envoyée":"in","À confirmer":"wa"}[s]);
+let f="all",sel=D[0].r,act=[["Relance 2 envoyée à Menuiserie Faure","FA-2415 · 08:02"],["Confirmation de commande prête pour Cannes Baies Vitrées","CO-2423 · hier"],["Statut de livraison consulté sur le portail : Alpes Fermetures","CO-0929 · hier"],["Retard annoncé, menuisier prévenu : Menuiserie Aubert","CO-0925 · hier"]];
+function feed(){$("#feed").innerHTML=act.map(a=>`<div><i></i><span>${a[0]}<small>${a[1]}</small></span></div>`).join("")}
+function tab(t){document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hide",s.id!==t));document.querySelectorAll("#nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.t===t))}
+function list(){const q=$("#q").value.toLowerCase();const x=D.filter(d=>(f==="all"||d.s===f)&&(d.c+d.r+d.o).toLowerCase().includes(q));
+$("#tb").innerHTML=x.map(d=>`<tr data-r="${d.r}" class="${d.r===sel?"sel":""}" tabindex="0"><td data-l="Référence"><b>${d.r}</b></td><td data-l="Client">${d.c}</td><td data-l="Objet" class="ob">${d.o}</td><td data-l="Montant" class="n">${eur(d.m)}</td><td data-l="Statut"><span class="pill ${pc(d.s)}">${d.s}</span></td><td data-l="Prochaine action">${d.a}</td></tr>`).join("")||`<tr><td>Aucun résultat</td></tr>`;
+$("#nbd").textContent=D.filter(d=>d.s!=="À confirmer").length;
+$("#k1").textContent=D.filter(d=>d.s!=="À confirmer").length;$("#k2").textContent=D.filter(d=>d.s==="À confirmer").length;$("#k3").textContent=L.filter(l=>l[6]!=="ok"&&l[6]!=="in").length;detail()}
+function detail(){const d=D.find(x=>x.r===sel);if(!d)return;$("#det").innerHTML=`<h2>${d.r} · ${d.c}</h2><div class="cl"><b>${d.ct}</b><small>${d.e}</small></div><div><span class="pill ${pc(d.s)}">${d.s}</span> <b>${eur(d.m)}</b></div>
+<div class="tl"><div class="st" style="--c:var(--ok)"><b>Facture envoyée</b><small>il y a ${d.j+0} jour(s)</small></div>${d.j>=5?`<div class="st" style="--c:var(--ok)"><b>Relance 1 envoyée</b><small>automatique, ton ${$("#ton").value} sur 5</small></div>`:""}${d.j>=12?`<div class="st" style="--c:var(--warn)"><b>Relance 2 envoyée</b><small>automatique</small></div>`:""}<div class="st"><b>${d.a}</b><small>prévu par les règles</small></div></div>
+<div class="mail">Bonjour ${d.ct.split(" ").slice(1).join(" ")},\nJe me permets de revenir vers vous au sujet de la référence ${d.r} (${d.o.toLowerCase()}), d'un montant de ${eur(d.m)}.\nAvez-vous pu la consulter ? Je reste disponible pour toute question.</div>
+<button class="btn" id="snd">Envoyer la relance maintenant</button>`;
+$("#snd").onclick=()=>{act.unshift([`Relance envoyée à ${d.c}`,`${d.r} · à l'instant`]);feed();toast("Relance envoyée à "+d.ct)}}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),2400)}
+$("#tl").innerHTML=L.map(l=>`<tr><td data-l="Commande"><b>${l[0]}</b></td><td data-l="Client">${l[1]}</td><td data-l="Matériel">${l[2]}</td><td data-l="Date prévue">${l[3]}</td><td data-l="Transporteur">${l[4]}</td><td data-l="Statut"><span class="pill ${l[6]}">${l[5]}</span></td></tr>`).join("");
+$("#tc").innerHTML=C.map(c=>`<tr><td data-l="Client"><b>${c[0]}</b></td><td data-l="Contact">${c[1]}</td><td data-l="Ville">${c[2]}</td><td data-l="CA 12 mois" class="n">${eur(c[3])}</td><td data-l="Dernier échange">${c[4]}</td><td data-l="Fiche"><span class="pill ok">À jour</span></td></tr>`).join("");
+$("#rules").innerHTML=R.map((r,i)=>`<div class="rule"><div><b>${r[0]}</b><small>${r[1]}</small></div><label class="sw"><input type="checkbox" ${r[2]?"checked":""} aria-label="${r[0]}" data-i="${i}"><span></span></label></div>`).join("");
+$("#rules").onchange=e=>toast(e.target.checked?"Règle activée":"Règle désactivée");
+const TX=["Bonjour,\nSans retour de votre part, nous passerons à l'étape suivante pour la facture FA-2421.","Bonjour,\nJe reviens vers vous au sujet de la facture FA-2421. Un règlement est-il prévu prochainement ?","Bonjour,\nJe me permets de revenir vers vous au sujet de la facture FA-2421. Avez-vous pu la consulter ?","Bonjour,\nJe voulais m'assurer que la facture FA-2421 vous est bien parvenue. Je reste disponible si besoin.","Bonjour,\nJe me tiens à votre disposition pour toute question sur la facture FA-2421, sans aucune urgence de votre côté."];
+function pv(){$("#tonv").textContent=$("#ton").value;$("#prev").textContent=TX[$("#ton").value-1]}
+$("#ton").oninput=pv;pv();
+$("#nav").onclick=e=>{const b=e.target.closest("button");if(b)tab(b.dataset.t)};
+$("#chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;f=b.dataset.f;document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));list()};
+$("#q").oninput=list;
+$("#tb").onclick=e=>{const r=e.target.closest("tr");if(r&&r.dataset.r){sel=r.dataset.r;list()}};
+$("#tb").onkeydown=e=>{if(e.key==="Enter"){const r=e.target.closest("tr");if(r&&r.dataset.r){sel=r.dataset.r;list()}}};
+$("#run").onclick=()=>{act.unshift(["3 relances de factures envoyées","à l'instant"]);feed();toast("3 relances envoyées")};
+feed();list();
+</script>
+</body>
+</html>
