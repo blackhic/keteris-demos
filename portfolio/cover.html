@@ -1,0 +1,30 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Cover</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+*{box-sizing:border-box;margin:0}html,body{height:100%;overflow:hidden}
+body{font-family:Inter,system-ui,sans-serif;color:#fff;display:flex;align-items:center;background:var(--bg)}
+.l{flex:1;padding:0 0 0 7vw}.k{color:var(--ac);font-weight:500;font-size:2.1vw;letter-spacing:.04em;text-transform:uppercase}
+h1{font-size:5.2vw;line-height:1.08;font-weight:800;margin:2.2vw 0 2.4vw}ul{list-style:none;font-size:2vw;line-height:1.75;color:#e3e8ee}
+li:before{content:"";display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--ac);margin-right:.7em;vertical-align:.12em}
+.s{position:absolute;left:7vw;bottom:5vh;font-size:1.5vw;color:#aab4be;font-weight:500}
+.r{width:50vw;height:100vh;position:relative}
+.p{position:absolute;width:20.5vw;height:44.3vw;max-height:88vh;border-radius:2.6vw;background:#111;padding:.7vw;box-shadow:0 2vw 4vw rgba(0,0,0,.45)}
+.p .w{width:100%;height:100%;border-radius:2vw;overflow:hidden;position:relative;background:#fff}
+.p iframe{width:390px;height:844px;border:0;transform-origin:0 0;position:absolute;top:0;left:0}
+.p1{left:4vw;top:6vh}.p2{left:25.5vw;top:12vh}
+</style>
+<div class="l"><div class="k" id="k"></div><h1 id="t"></h1><ul id="b"></ul></div>
+<div class="s">Hicham Saadi · Keteris</div>
+<div class="r"><div class="p p1"><div class="w"><iframe id="f1"></iframe></div></div><div class="p p2"><div class="w"><iframe id="f2"></iframe></div></div></div>
+<script>
+const C={
+site:{bg:'#12243a',ac:'#ff8c64',k:'Site vitrine mobile',t:'Un site qui fait<br>sonner le téléphone',b:['Rapide et parfait sur mobile','Appel, itinéraire et devis en un clic','Maquette à votre nom avant de commencer'],f:[['../_modeles/plongee-bleue-esterel.html',0],['../test-bastide-des-cigales-9m3x/',0]]},
+relances:{bg:'#16342c',ac:'#7ad6aa',k:'Relances de factures automatiques',t:'Payé plus vite,<br>sans relancer',b:['Relances au bon moment, au bon ton','Tableau de bord des encours et retards','Vous gardez la main sur les cas sensibles'],f:[['../_modeles/cabinet-valmont-relances.html',0],['../_modeles/cabinet-valmont-relances.html',820]]},
+rdv:{bg:'#34202c',ac:'#f096b4',k:'Réservation et rendez-vous en ligne',t:'Vos clients réservent<br>seuls, 24 h/24',b:['Créneaux en direct, rappels automatiques','Acompte en ligne contre les absences','Moins d\'appels manqués'],f:[['../test-institut-eclat-de-mer-5t8n/',0],['../test-institut-eclat-de-mer-5t8n/',900]]},
+audit:{bg:'#181e28',ac:'#ffbe50',k:'Audit de site + plan d\'action',t:'Ce qui vous fait<br>perdre des clients',b:['Vitesse, mobile, sécurité, Google','Note sur 100 et 3 corrections prioritaires','Rapport clair, sans jargon'],f:[['../audit/interconnectmarketnet-vr31/',0],['../audit/interconnectmarketnet-vr31/',900]]},
+auto:{bg:'#281e3c',ac:'#b4a0ff',k:'Automatisation sur mesure',t:'Les tâches répétitives<br>se font seules',b:['Devis, e-mails, suivi clients, rapports','Vos outils reliés entre eux','Documentation incluse, sur vos comptes'],f:[['../_modeles/cabinet-valmont-relances.html',1600],['../test-cles-d-azur-conciergerie-8r5j/',0]]},
+};
+const c=C[location.hash.slice(1)||'site'];document.body.style.setProperty('--bg',c.bg);document.body.style.setProperty('--ac',c.ac);
+k.textContent=c.k;t.innerHTML=c.t;b.innerHTML=c.b.map(x=>'<li>'+x+'</li>').join('');
+[f1,f2].forEach((f,i)=>{const [u,y]=c.f[i];f.src=u;const sc=()=>{f.style.transform='scale('+(f.parentNode.clientWidth/390)+')'};sc();addEventListener('resize',sc);f.onload=()=>{try{f.contentWindow.scrollTo(0,y)}catch(e){}}});
+</script></html>
