@@ -1,0 +1,77 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Maquette Var Events</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--n:#1b2a41;--g:#e8743b;--bg:#fbf8f4;--t:#25232b;--m:#6b6775;--l:#e8e0d4;--ok:#1f8a4c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,sans-serif;color:var(--t);background:var(--bg);line-height:1.55;overflow-x:hidden}
+.ban{background:#fff3cd;color:#5c4400;font-size:13px;padding:8px 16px;text-align:center}
+h1,h2,h3{font-family:Fraunces,serif;margin:0 0 .4em;color:var(--n)}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{background:var(--n);color:#fff}nav .w{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px}nav b{font-family:Fraunces;font-size:19px}
+.btn{background:var(--g);color:#fff;border:0;padding:12px 20px;border-radius:8px;font-weight:700;text-decoration:none;cursor:pointer;font-size:15px;display:inline-block;font-family:inherit}
+.hero{background:linear-gradient(rgba(14,22,38,.7),rgba(14,22,38,.8)),url(https://images.unsplash.com/photo-1511578314322-379afb476865?w=1400) center/cover;color:#fff;padding:68px 0}
+.hero h1{color:#fff;font-size:clamp(28px,5vw,46px);max-width:720px}.hero p{max-width:620px;font-size:17px}
+section{padding:44px 0}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:#fff;border:1px solid var(--l);border-radius:12px;padding:18px}
+.kp b{font-family:Fraunces;font-size:28px;color:var(--n);display:block}.kp span{color:var(--m);font-size:14px}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.offers .card h3{font-size:20px}.price{font-weight:700;color:var(--n);font-size:18px}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.cal-h button{border:1px solid var(--l);background:#fff;border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:18px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}.cal i{font-style:normal;font-size:12px;color:var(--m)}
+.cal button{border:1px solid var(--l);background:#fff;border-radius:8px;padding:9px 0;font:inherit;font-size:14px;cursor:pointer}
+.cal button.ok{border-color:#bfe3cd;background:#eaf7ef}.cal button.no{background:#f0edf3;color:#b9b3c0;text-decoration:line-through;cursor:not-allowed}.cal button.sel{background:var(--n);color:#fff;border-color:var(--n)}
+.leg{font-size:13px;color:var(--m);margin-top:10px}.leg span{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 4px 0 10px}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}input,select{width:100%;padding:10px;border:1px solid var(--l);border-radius:8px;font:inherit;background:#fff}
+.opts{display:flex;flex-wrap:wrap;gap:8px}.opts label{display:flex;align-items:center;gap:6px;margin:0;font-weight:500;background:#fff;border:1px solid var(--l);border-radius:20px;padding:6px 12px}.opts input{width:auto}
+.tot{background:var(--n);color:#fff;border-radius:12px;padding:16px;margin:16px 0}.tot div{display:flex;justify-content:space-between;padding:3px 0}.tot .big{font-size:20px;font-weight:700;color:#ffb48a;border-top:1px solid #3b4a62;margin-top:6px;padding-top:8px}
+.ok-msg{display:none;background:#eaf7ef;border:1px solid #bfe3cd;border-radius:12px;padding:16px;margin-top:14px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gal img{width:100%;height:190px;object-fit:cover;border-radius:12px}
+.faq details{background:#fff;border:1px solid var(--l);border-radius:10px;padding:12px 16px;margin-bottom:8px}.faq summary{cursor:pointer;font-weight:600}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.rev p{margin:0 0 8px}.rev small{color:var(--m)}
+footer{background:var(--n);color:#d8d3e0;padding:28px 0;font-size:14px}
+@media(max-width:760px){.kp{grid-template-columns:1fr 1fr}.offers,.rev,.book,.gal{grid-template-columns:1fr}.hero{padding:44px 0}nav b{font-size:16px}}
+</style></head><body>
+<div class="ban">Maquette proposée par Keteris à Var Events. Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="w"><b>Var Events · Toulon</b><a class="btn" href="#reservation">Vérifier ma date</a></div></nav>
+<header class="hero"><div class="w"><h1>Votre date est-elle libre ? Réponse immédiate, sans attendre 24 h.</h1><p>Disponibilités en direct, devis chiffré tout de suite pour la location et les prestations, acompte réglé en ligne. Votre événement est bloqué dès aujourd'hui.</p><p><a class="btn" href="#reservation">Vérifier ma date et chiffrer</a></p></div></header>
+<section><div class="w"><div class="kp">
+<div class="card"><b>24 h/24</b><span>Dates consultables, même le soir</span></div>
+<div class="card"><b>2 min</b><span>Pour obtenir un devis chiffré</span></div>
+<div class="card"><b>CB</b><span>Acompte sécurisé en ligne</span></div>
+<div class="card"><b>0 appel</b><span>pour savoir si la date est prise</span></div></div></div></section>
+<section style="padding-top:0"><div class="w"><h2>Nos prestations</h2><div class="offers">
+<div class="card"><h3>DJ &amp; ambiance</h3><p>Sonorisation, lumières et animation pour mariages, anniversaires et soirées d'entreprise.</p><div class="price">dès 690 €</div></div>
+<div class="card"><h3>Traiteur &amp; barman</h3><p>Buffets, paellas, cocktails dînatoires et bar à cocktails avec service.</p><div class="price">dès 28 € / personne</div></div>
+<div class="card"><h3>Location de matériel</h3><p>Tables, chaises, vaisselle, barnums, photobooth, tireuse à bière, livraison et installation.</p><div class="price">dès 120 €</div></div></div></div></section>
+<section id="reservation" style="background:#fff"><div class="w"><h2>Vérifier ma date et obtenir un devis</h2><p style="color:var(--m)">Choisissez votre date : les jours libres sont en vert, les jours déjà réservés sont barrés.</p>
+<div class="book"><div><div class="cal-h"><button id="pv" aria-label="Mois précédent">‹</button><b id="mt"></b><button id="nx" aria-label="Mois suivant">›</button></div><div class="cal" id="cal"></div>
+<div class="leg"><span style="background:#bfe3cd"></span>Libre<span style="background:#d9d4df"></span>Déjà réservé<span style="background:var(--n)"></span>Votre date</div></div>
+<div><label>Type d'événement</label><select id="ty"><option>Mariage</option><option>Anniversaire</option><option>Événement d'entreprise</option></select>
+<label>Nombre d'invités</label><select id="inv"><option value="30">Jusqu'à 30</option><option value="60" selected>30 à 60</option><option value="100">60 à 100</option><option value="150">100 à 150</option></select>
+<label>Prestations</label><div class="opts"><label><input type="checkbox" value="690" data-p="1"> DJ &amp; sono 690</label><label><input type="checkbox" value="28" data-pp="1"> Traiteur 28 €/pers.</label><label><input type="checkbox" value="14" data-pp="1"> Barman 14 €/pers.</label><label><input type="checkbox" value="350"> Photobooth 350</label><label><input type="checkbox" value="120"> Tireuse à bière 120</label><label><input type="checkbox" value="220"> Tables &amp; chaises 220</label></div>
+<label>Votre e-mail</label><input id="em" type="email" placeholder="prenom@exemple.fr">
+<div class="tot"><div><span>Date</span><span id="td">à choisir</span></div><div><span>Total estimé</span><span id="tt">0 €</span></div><div class="big"><span>Acompte à régler (30 %)</span><span id="ta">0 €</span></div></div>
+<button class="btn" id="go" style="width:100%">Bloquer ma date et payer l'acompte</button>
+<div class="ok-msg" id="ok"><b>Date bloquée à titre provisoire.</b><br>Le devis détaillé et le contrat sont envoyés par e-mail ; l'acompte se règle par carte bancaire. La date est confirmée dès réception.</div></div></div></div></section>
+<section><div class="w"><h2>Des événements réussis</h2><div class="gal"><img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=700" alt="Soirée" loading="lazy"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=700" alt="Réception" loading="lazy"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=700" alt="DJ" loading="lazy"></div></div></section>
+<section style="padding-top:0"><div class="w"><h2>Ils nous ont fait confiance</h2><div class="rev">
+<div class="card"><p>« On a su en une minute que notre date était libre, le devis était clair. »</p><small>Sophie &amp; Marc, Toulon (avis fictif)</small></div>
+<div class="card"><p>« Livraison et installation ponctuelles, un seul interlocuteur. »</p><small>Laura, La Garde (avis fictif)</small></div>
+<div class="card"><p>« Séminaire d'entreprise organisé sans stress. »</p><small>Julien, Hyères (avis fictif)</small></div></div></div></section>
+<section class="faq" style="padding-top:0"><div class="w"><h2>Questions fréquentes</h2>
+<details><summary>Ma date est prise, que se passe-t-il ?</summary><p>Vous laissez votre e-mail : vous êtes prévenu si elle se libère.</p></details>
+<details><summary>Comment fonctionne l'acompte ?</summary><p>30 % à la signature du devis, le solde le jour de l'événement. Paiement par carte bancaire.</p></details>
+<details><summary>Livrez-vous le matériel ?</summary><p>Oui, livraison et installation à Toulon et dans toute la région PACA.</p></details></div></section>
+<footer><div class="w">Var Events · Toulon · 07 59 66 48 76 · Lundi au samedi, 9 h à 18 h sur rendez-vous</div></footer>
+<script>
+const M=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];let d=new Date(2026,9,1),sel=null;
+const busy=k=>{const x=(k.y*13+k.m*7+k.d*5)%9;return x<3};
+function draw(){const y=d.getFullYear(),m=d.getMonth();mt.textContent=M[m]+' '+y;let h='';['L','M','M','J','V','S','D'].forEach(c=>h+='<i>'+c+'</i>');
+const f=(new Date(y,m,1).getDay()+6)%7,n=new Date(y,m+1,0).getDate();for(let i=0;i<f;i++)h+='<span></span>';
+for(let i=1;i<=n;i++){const b=busy({y,m,d:i}),s=sel&&sel.y==y&&sel.m==m&&sel.d==i;h+=`<button class="${s?'sel':b?'no':'ok'}" ${b?'disabled':''} data-d="${i}">${i}</button>`}cal.innerHTML=h;
+cal.querySelectorAll('button.ok,button.sel').forEach(b=>b.onclick=()=>{sel={y,m,d:+b.dataset.d};td.textContent=sel.d+' '+M[m].toLowerCase()+' '+y;draw();calc()})}
+function calc(){let t=0;const inv=+document.getElementById('inv').value;document.querySelectorAll('.opts input:checked').forEach(c=>{t+=c.dataset.pp?(+c.value)*inv:+c.value});tt.textContent=t.toLocaleString('fr-FR')+' €';ta.textContent=Math.round(t*.3).toLocaleString('fr-FR')+' €'}
+pv.onclick=()=>{d=new Date(d.getFullYear(),d.getMonth()-1,1);draw()};nx.onclick=()=>{d=new Date(d.getFullYear(),d.getMonth()+1,1);draw()};
+document.querySelectorAll('.opts input,#inv').forEach(e=>e.onchange=calc);
+go.onclick=()=>{if(!sel){alert('Choisissez d\'abord une date libre.');return}ok.style.display='block'};
+draw();calc();
+</script></body></html>
