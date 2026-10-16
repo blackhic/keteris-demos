@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Mita Music · devis et réservation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#0e0b1a;--pan:#181330;--pan2:#211a42;--ink:#f4f1ff;--mut:#a9a2c8;--line:#2f2757;--ac:#ff4fa3;--ac2:#7c5cff;--ok:#3ddc97}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'DM Sans',system-ui,sans-serif}
+.demo{background:#ffe9a8;color:#3a2f00;text-align:center;font-size:13px;padding:8px 16px}
+.hero{position:relative;min-height:440px;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(14,11,26,.25),var(--bg)),url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=70') center/cover}
+.w{max-width:1080px;margin:0 auto;padding:0 18px}.hero .w{padding-bottom:36px}
+h1,h2,h3{font-family:Unbounded,sans-serif;margin:0}h1{font-size:clamp(28px,5vw,46px);line-height:1.15}h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:8px}
+.lead{color:#d6d0f3;max-width:620px;margin:12px 0 20px}
+.btn{display:inline-block;border:0;border-radius:12px;padding:13px 22px;background:linear-gradient(90deg,var(--ac),var(--ac2));color:#fff;font:700 15px 'DM Sans';cursor:pointer;text-decoration:none}
+.btn.g{background:transparent;border:1px solid var(--line)}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-10px 0 0}.kp div{background:var(--pan);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}.kp b{display:block;font:700 24px Unbounded}.kp span{color:var(--mut);font-size:13px}
+section{padding:44px 0}.sub{color:var(--mut);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--pan);border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0}.card h3{font-size:16px;margin-bottom:6px}.card p{margin:0;color:var(--mut);font-size:14px}.price{color:var(--ac);font-weight:700;margin-top:10px;display:block}
+.pk{cursor:pointer;transition:.15s}.pk[aria-pressed=true]{border-color:var(--ac);background:var(--pan2)}
+.res{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px}
+.cal{background:var(--pan);border:1px solid var(--line);border-radius:16px;padding:16px}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.ch b{font-family:Unbounded;font-size:15px}.ch button{background:var(--pan2);color:var(--ink);border:1px solid var(--line);border-radius:8px;width:34px;height:34px;cursor:pointer}
+.gd{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.gd i{font-style:normal;text-align:center;color:var(--mut);font-size:12px}
+.gd button{aspect-ratio:1;border:1px solid var(--line);background:var(--pan2);color:var(--ink);border-radius:9px;cursor:pointer;font:inherit}.gd button:disabled{opacity:.3;cursor:not-allowed;text-decoration:line-through}.gd button[aria-pressed=true]{background:var(--ac);border-color:var(--ac)}
+.leg{color:var(--mut);font-size:12px;margin-top:10px}
+.form{display:grid;gap:10px}.form label{display:grid;gap:4px;font-size:13px;color:var(--mut)}.form input,.form select{font:inherit;padding:11px;border:1px solid var(--line);border-radius:10px;background:var(--pan2);color:var(--ink)}
+.ex{margin:6px 0;display:flex;gap:8px;align-items:center;color:var(--ink);font-size:14px}.ex input{width:auto}
+.tot{background:var(--pan);border:1px solid var(--ac);border-radius:14px;padding:14px}.tot div{display:flex;justify-content:space-between;gap:10px}.tot .t{font:700 18px Unbounded;margin-top:6px;border-top:1px solid var(--line);padding-top:8px}
+.ok{display:none;background:#0f2e22;border:1px solid var(--ok);border-radius:14px;padding:16px;margin-top:12px}.ok.on{display:block}
+details{background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px}summary{cursor:pointer;font-weight:700}details p{color:var(--mut);margin:8px 0 0}
+.rv q{display:block;margin-bottom:8px}.rv small{color:var(--mut)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mut);font-size:14px}
+@media(max-width:760px){.kp{grid-template-columns:1fr 1fr}.grid,.res{grid-template-columns:1fr}.hero{min-height:380px}}
+</style></head><body>
+<div class="demo"><b>Maquette proposée par Keteris à Mita Music.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<header class="hero"><div class="w"><h1>Sono, lumière et DJ<br>pour vos soirées à Nice</h1><p class="lead">Mariages, soirées d'entreprise, anniversaires. Choisissez votre date, composez votre pack et recevez votre devis et votre contrat à signer en ligne.</p><a class="btn" href="#reservation">Réserver ma date</a></div></header>
+<div class="w"><div class="kp"><div><b>15 ans</b><span>d'expérience</span></div><div><b>500+</b><span>événements</span></div><div><b>Nice · Cannes · Monaco</b><span>zone d'intervention</span></div><div><b>Sous 24 h</b><span>devis détaillé</span></div></div></div>
+<section><div class="w"><h2>Nos packs</h2><p class="sub">Cliquez sur un pack : il se retrouve dans votre devis (tarifs fictifs).</p>
+<div class="grid" id="packs"></div></div></section>
+<section id="reservation" style="background:var(--pan);padding:44px 0"><div class="w"><h2>Réservez votre date</h2><p class="sub">Les dates barrées sont déjà prises. Acompte de 30 % en ligne, contrat signé par e-mail.</p>
+<div class="res"><div class="cal"><div class="ch"><button id="pv" aria-label="Mois précédent">‹</button><b id="mo"></b><button id="nx" aria-label="Mois suivant">›</button></div><div class="gd" id="gd"></div><p class="leg">Barré = indisponible · rose = votre date</p></div>
+<div><form class="form" id="fm"><label>Type d'événement<select id="ty"><option>Mariage</option><option>Soirée d'entreprise</option><option>Anniversaire</option><option>Concert / festival</option></select></label>
+<label>Nombre d'invités<select id="gu"><option>moins de 80</option><option>80 à 150</option><option>150 à 300</option><option>plus de 300</option></select></label>
+<div><div class="ex"><input type="checkbox" id="e1"><label for="e1" style="display:inline">Éclairage scénique (+ 250 €)</label></div><div class="ex"><input type="checkbox" id="e2"><label for="e2" style="display:inline">Technicien sur place (+ 180 €)</label></div></div>
+<label>Nom<input required placeholder="Votre nom" id="nm"></label><label>E-mail<input required type="email" placeholder="vous@exemple.fr"></label>
+<div class="tot"><div><span>Pack</span><b id="tp">Pack Soirée</b></div><div><span>Date</span><b id="td">à choisir</b></div><div><span>Options</span><b id="to">0 €</b></div><div class="t"><span>Total</span><span id="tt">0 €</span></div><div style="margin-top:6px"><span>Acompte 30 %</span><b id="ta">0 €</b></div></div>
+<button class="btn" type="submit">Demander mon devis et payer l'acompte</button></form>
+<div class="ok" id="ok"></div></div></div></div></section>
+<section><div class="w"><h2>Ils nous ont fait confiance</h2><p class="sub">Avis fictifs, à remplacer par vos vrais avis.</p>
+<div class="grid rv"><div class="card"><q>Soirée parfaite, le son était nickel jusqu'au bout.</q><small>Camille, mariage à Cannes</small></div><div class="card"><q>Devis reçu le lendemain, contrat signé sur le téléphone.</q><small>Laurent, soirée d'entreprise</small></div><div class="card"><q>Le DJ a su lire la salle. Tout le monde a dansé.</q><small>Sonia, anniversaire à Nice</small></div></div></div></section>
+<section style="padding-top:0"><div class="w"><h2>Questions fréquentes</h2><p class="sub"></p>
+<details><summary>Comment bloquer ma date ?</summary><p>Vous choisissez la date dans le calendrier, vous réglez 30 % d'acompte en ligne et le contrat vous est envoyé à signer.</p></details>
+<details><summary>Que se passe-t-il en cas d'annulation ?</summary><p>Les conditions figurent dans le contrat, affichées avant paiement (exemple fictif à adapter).</p></details>
+<details><summary>Intervenez-vous à Monaco et Cannes ?</summary><p>Oui, le déplacement est calculé automatiquement dans le devis selon la ville.</p></details></div></section>
+<footer><div class="w">Mita Music · Nice · +33 4 93 81 24 40 · Maquette à titre d'illustration</div></footer>
+<script>
+const P=[["Pack Soirée","DJ, sono 2 enceintes, micro","890 €",890],["Pack Mariage","DJ, sono, lumière d'ambiance, cérémonie","1 450 €",1450],["Pack Concert","Sono de façade, retours, console","2 300 €",2300]];
+const $=s=>document.querySelector(s);let pk=0,sel=null,M=new Date(2026,10,1);
+const fmt=n=>n.toLocaleString("fr-FR")+" €";
+function packs(){$("#packs").innerHTML=P.map((p,i)=>`<div class="card pk" data-i="${i}" aria-pressed="${i==pk}" tabindex="0"><h3>${p[0]}</h3><p>${p[1]}</p><span class="price">à partir de ${p[2]}</span></div>`).join("")}
+$("#packs").onclick=e=>{const c=e.target.closest(".pk");if(c){pk=+c.dataset.i;packs();tot();location.hash="reservation"}};
+const taken=d=>[3,7,10,14,15,21,22,28].includes(d);
+function cal(){const y=M.getFullYear(),m=M.getMonth(),f=(new Date(y,m,1).getDay()+6)%7,n=new Date(y,m+1,0).getDate();
+$("#mo").textContent=M.toLocaleDateString("fr-FR",{month:"long",year:"numeric"});
+let h="LMMJVSD".split("").map(x=>"<i>"+x+"</i>").join("")+"<span></span>".repeat(f);
+for(let d=1;d<=n;d++){const k=y+"-"+m+"-"+d;h+=`<button type="button" data-k="${k}" data-d="${d}" ${taken(d)?"disabled":""} aria-pressed="${sel==k}">${d}</button>`}
+$("#gd").innerHTML=h}
+$("#gd").onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;sel=b.dataset.k;$("#td").textContent=b.dataset.d+" "+$("#mo").textContent;cal()};
+$("#pv").onclick=()=>{M=new Date(M.getFullYear(),M.getMonth()-1,1);cal()};$("#nx").onclick=()=>{M=new Date(M.getFullYear(),M.getMonth()+1,1);cal()};
+function tot(){const o=($("#e1").checked?250:0)+($("#e2").checked?180:0),t=P[pk][3]+o;$("#tp").textContent=P[pk][0];$("#to").textContent=fmt(o);$("#tt").textContent=fmt(t);$("#ta").textContent=fmt(Math.round(t*.3))}
+["#e1","#e2"].forEach(s=>$(s).onchange=tot);
+$("#fm").onsubmit=e=>{e.preventDefault();if(!sel){$("#ok").className="ok on";$("#ok").textContent="Choisissez d'abord une date dans le calendrier.";return}
+$("#ok").className="ok on";$("#ok").innerHTML="<b>Demande reçue.</b> Votre devis détaillé et le contrat à signer arrivent par e-mail sous 24 h. Date retenue : "+$("#td").textContent+" ("+$("#tt").textContent+", acompte "+$("#ta").textContent+")."};
+packs();cal();tot();
+</script></body></html>
