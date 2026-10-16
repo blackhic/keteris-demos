@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Espace relances MsFid Conseils × Keteris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f6f4ef;--panel:#fff;--ink:#1c2a39;--muted:#69737d;--line:#e4e1d9;--brand:#1b2f5b;--accent:#2f9e8f;--ok:#1f8a5b;--warn:#b9770e;--late:#c2412d;--d:"Fraunces",Georgia,serif;--b:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--b)}
+button{font:inherit}
+.demo{background:var(--ink);color:#e6ebef;text-align:center;font-size:13px;padding:8px 16px}.demo b{color:#fff}
+header{background:var(--brand);color:#fff;padding:18px clamp(16px,3vw,32px);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+header h1{font:700 22px var(--d);margin:0}header small{color:#b5c7d4;display:block;font:400 13px var(--b)}
+.x{color:var(--accent)}
+main{padding:22px clamp(16px,3vw,32px);display:grid;gap:18px;max-width:1240px;margin:auto}
+.hero{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:14px;padding:20px;display:grid;grid-template-columns:1.2fr 2fr;gap:20px;align-items:center}
+.hero span{color:var(--muted);font-size:13px}.hero b{display:block;font:700 40px var(--d);color:var(--brand);font-variant-numeric:tabular-nums}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kpi{background:#faf8f3;border:1px solid var(--line);border-radius:12px;padding:12px}.kpi span{color:var(--muted);font-size:12px}.kpi b{display:block;font:700 22px var(--d);font-size:22px;color:var(--ink)}
+.grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:16px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0}
+.card h2{font:700 17px var(--d);margin:0 0 12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px}.chip[aria-pressed=true]{background:var(--brand);color:#fff;border-color:var(--brand)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font:600 11px var(--b);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr{cursor:pointer}tbody tr:hover{background:#faf8f3}tbody tr.sel{background:#fbf1de}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+td b{display:block}td small{color:var(--muted)}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.p-ok{background:#e1f3ea;color:var(--ok)}.p-warn{background:#fbefd5;color:var(--warn)}.p-late{background:#fbe3de;color:var(--late)}
+.tl{border-left:2px solid var(--line);margin:6px 0 0 6px}.st{position:relative;padding:0 0 14px 18px}
+.st::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--c,#ccc);border:2px solid #fff}
+.st b{display:block}.st small{color:var(--muted)}
+.mail{background:#f7f5ef;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;white-space:pre-line;margin-top:10px}
+.rules{display:grid;gap:10px}.rule{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:12px}
+.rule p{margin:0;color:var(--muted);font-size:13px}
+.sw{position:relative;flex:none;width:44px;height:24px;border-radius:999px;border:0;background:#c9cdd1;cursor:pointer}.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}.sw[aria-checked=true]{background:var(--ok)}.sw[aria-checked=true]::after{left:23px}
+.btn{border:0;border-radius:10px;padding:10px 16px;cursor:pointer;font-weight:600;background:var(--accent);color:#fff}
+.hint{color:var(--muted);font-size:12px;margin:8px 0 0}
+@media(max-width:900px){.hero,.grid{grid-template-columns:1fr}}
+@media(max-width:640px){.kpis{grid-template-columns:1fr}
+ thead{display:none}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;padding:12px 4px;border-bottom:1px solid var(--line)}
+ td{border:0;padding:2px 6px}td:first-child{grid-column:1/-1}.n{text-align:left}td[data-l]::before{content:attr(data-l)": ";color:var(--muted);font-size:12px}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Maquette proposée par Keteris à MsFid Conseils.</b> Ce n'est pas votre site officiel : les chiffres, clients et factures sont fictifs, à remplacer par les vôtres.</div>
+<header><div><h1>Espace relances <span class="x">·</span> MsFid Conseils × Keteris</h1><small>Romanel-sur-Morges · suivi des factures de vos clients commerçants, artisans et PME de La Côte</small></div><button class="btn" id="run">Lancer les relances du jour</button></header>
+<main>
+<section class="hero"><div><span>Trésorerie récupérée pour vos clients ce mois-ci</span><b id="tot">0 €</b><span id="tot2"></span></div>
+<div class="kpis"><div class="kpi"><span>Factures en retard</span><b id="k1"></b></div><div class="kpi"><span>Relances envoyées</span><b id="k2"></b></div><div class="kpi"><span>Délai moyen de paiement</span><b>44 j <small style="font:500 12px var(--b);color:var(--ok)">avant : 61 j</small></b></div></div></section>
+<div class="grid">
+<section class="card"><h2>Vos clients</h2>
+<div class="chips" id="chips"></div>
+<table><thead><tr><th>Client</th><th class="n">En retard</th><th class="n">Relances</th><th class="n">Récupéré</th><th>Statut</th></tr></thead><tbody id="rows"></tbody></table>
+<p class="hint">Cliquez sur un client pour voir l'historique de ses relances.</p></section>
+<aside style="display:grid;gap:16px"><section class="card" id="det"></section>
+<section class="card"><h2>Règles automatiques</h2><div class="rules" id="rules"></div></section></aside>
+</div>
+</main>
+<script>
+const C=[
+{n:"Menuiserie Duvoisin",m:"Menuisier, Morges",s:"art",late:4,amt:14800,r:7,rec:6200,st:"late",inv:"F-2031",d:"59 jours",who:"M. Duvoisin"},
+{n:"Boulangerie du Château",m:"Boulangerie, Morges",s:"com",late:2,amt:3100,r:4,rec:2400,st:"cours",inv:"F-1187",d:"26 jours",who:"Mme Curchod"},
+{n:"Café-restaurant Le Léman",m:"Restauration, Rolle",s:"com",late:3,amt:5900,r:6,rec:3500,st:"cours",inv:"F-1244",d:"39 jours",who:"M. Bovet"},
+{n:"Peinture Cuendet Sàrl",m:"Peintre en bâtiment, Aubonne",s:"art",late:3,amt:9400,r:5,rec:4300,st:"cours",inv:"F-1302",d:"44 jours",who:"M. Cuendet"},
+{n:"Studio Pilates La Côte",m:"Indépendante, Nyon",s:"ind",late:1,amt:1800,r:2,rec:1800,st:"ok",inv:"F-0876",d:"10 jours",who:"Mme Favre"},
+{n:"Chauffage Rochat SA",m:"Installateur, Cossonay",s:"art",late:4,amt:11200,r:8,rec:4900,st:"late",inv:"F-1360",d:"68 jours",who:"M. Rochat"},
+{n:"Start-up Alpha Lab SA",m:"Start-up, Lausanne",s:"ind",late:2,amt:6500,r:3,rec:3200,st:"cours",inv:"F-0933",d:"31 jours",who:"Mme Perrin"},
+{n:"Boutique Mode Riviera",m:"Commerce, Morges",s:"com",late:1,amt:2200,r:2,rec:2200,st:"ok",inv:"F-1019",d:"7 jours",who:"Mme Jaccard"}];
+const L={"art": "Artisans", "com": "Commerces", "ind": "Indépendants et start-ups"};
+const ST={ok:["p-ok","À jour"],cours:["p-warn","Relance en cours"],late:["p-late","À surveiller"]};
+const eur=v=>v.toLocaleString("fr-FR")+" CHF";
+let f="all",sel=0;
+const tot=C.reduce((a,c)=>a+c.rec,0);
+document.getElementById("tot").textContent=eur(tot);
+document.getElementById("tot2").textContent="sur "+C.length+" clients suivis, sans une minute de votre équipe";
+document.getElementById("k1").textContent=C.reduce((a,c)=>a+c.late,0)+" · "+eur(C.reduce((a,c)=>a+c.amt,0));
+document.getElementById("k2").textContent=C.reduce((a,c)=>a+c.r,0);
+function chips(){const b=document.getElementById("chips");b.innerHTML="";[["all","Tous"],...Object.entries(L)].forEach(([k,v])=>{const e=document.createElement("button");e.className="chip";e.textContent=v;e.setAttribute("aria-pressed",f==k);e.onclick=()=>{f=k;chips();rows()};b.appendChild(e)})}
+function rows(){const t=document.getElementById("rows");t.innerHTML="";C.forEach((c,i)=>{if(f!="all"&&c.s!=f)return;const r=document.createElement("tr");if(i==sel)r.className="sel";const[p,l]=ST[c.st];
+r.innerHTML=`<td><b>${c.n}</b><small>${c.m}</small></td><td class="n" data-l="En retard">${c.late} · ${eur(c.amt)}</td><td class="n" data-l="Relances">${c.r}</td><td class="n" data-l="Récupéré">${eur(c.rec)}</td><td><span class="pill ${p}">${l}</span></td>`;
+r.onclick=()=>{sel=i;rows();det()};t.appendChild(r)})}
+function det(){const c=C[sel];document.getElementById("det").innerHTML=`<h2>${c.n}</h2><small style="color:var(--muted)">Facture ${c.inv} · retard de ${c.d}</small>
+<div class="tl"><div class="st" style="--c:#1b2f5b"><b>Facture émise</b><small>échéance dépassée</small></div>
+<div class="st" style="--c:#2f9e8f"><b>Rappel courtois envoyé</b><small>J+3 · ouvert</small></div>
+<div class="st" style="--c:#2f9e8f"><b>Relance ferme envoyée</b><small>J+15 · ton adapté à ${c.who}</small></div>
+<div class="st" style="--c:${c.st=="late"?"#c2412d":"#1f8a5b"}"><b>${c.st=="late"?"Mise en demeure à valider par le cabinet":"Paiement reçu / promesse de virement"}</b><small>${c.st=="late"?"vous gardez la main":"notifié à votre client"}</small></div></div>
+<div class="mail">Bonjour ${c.who},\nSauf erreur de notre part, la facture ${c.inv} reste en attente de règlement. Pourriez-vous nous confirmer la date de virement ?\nMerci d'avance, bien cordialement.</div>`}
+const R=[["Rappel courtois à J+3","Ton aimable, pour tous les clients",1],["Relance ferme à J+15","Ton adapté à chaque client",1],["Alerte cabinet à J+45","Vous validez avant toute mise en demeure",1],["Pause pour clients sensibles","Aucune relance automatique",0]];
+const rb=document.getElementById("rules");R.forEach(([a,b,o])=>{const d=document.createElement("div");d.className="rule";d.innerHTML=`<div><b>${a}</b><p>${b}</p></div>`;const s=document.createElement("button");s.className="sw";s.setAttribute("role","switch");s.setAttribute("aria-label",a);s.setAttribute("aria-checked",!!o);s.onclick=()=>s.setAttribute("aria-checked",s.getAttribute("aria-checked")!="true");d.appendChild(s);rb.appendChild(d)});
+document.getElementById("run").onclick=function(){this.textContent="11 relances envoyées aujourd'hui";this.disabled=true};
+chips();rows();det();
+</script>
+</body></html>
