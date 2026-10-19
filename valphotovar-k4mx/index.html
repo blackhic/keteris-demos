@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Valphotovar, photographe de mariage dans le Var</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+:root{--ivory:#faf6f0;--ink:#2a2420;--clay:#a8643f;--sage:#6f7d63;--line:#e4d9cb;--muted:#7a6e63;--card:#fff;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font:16px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;margin:0}
+h2{font-size:clamp(32px,5vw,50px)}
+.eyebrow{font:600 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--clay)}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 16px var(--sans);padding:14px 26px;border-radius:2px;text-decoration:none;background:var(--clay);color:#fff}
+.btn:hover{background:#8f5231}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;border:1px solid #fff}
+.bar{background:var(--ink);color:#eadfd2;font-size:13px;text-align:center;padding:9px 16px}
+nav{position:sticky;top:0;z-index:5;background:rgba(250,246,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:12px;gap:12px}
+.logo{font:600 26px var(--serif);text-decoration:none}.logo span{color:var(--clay)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}nav ul a{text-decoration:none;font-size:15px}
+nav .btn{padding:10px 18px;font-size:14px}
+@media(max-width:760px){nav ul{display:none}}
+.hero{position:relative;color:#fff;background:#3a3029 url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=75") center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,22,16,.78),rgba(30,22,16,.25))}
+.hero .wrap{position:relative;padding-block:110px 120px;display:grid;gap:22px}
+.hero h1{font-size:clamp(44px,8vw,88px);max-width:12ch}.hero h1 em{color:#f0c9a8}
+.hero p{max-width:46ch;font-size:19px;margin:0;color:#f3e9de}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{background:#fff;border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:24px 14px;border-left:1px solid var(--line)}.fact:first-child{border-left:0}
+.fact b{display:block;font:600 34px var(--serif);color:var(--clay)}.fact span{font-size:14px;color:var(--muted)}
+@media(max-width:720px){.facts .wrap{grid-template-columns:1fr 1fr}.fact:nth-child(3){border-left:0}.fact{border-top:1px solid var(--line)}}
+section{padding-block:84px}
+.head{display:grid;gap:10px;margin-bottom:36px;max-width:620px}.head p{margin:0;color:var(--muted);font-size:17px}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.offer{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.offer img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.offer .in{padding:22px;display:grid;gap:10px;flex:1}.offer h3{font-size:28px}.offer p{margin:0;color:var(--muted);font-size:15px}
+.offer ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
+.offer .meta{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
+.price{font:600 34px var(--serif);color:var(--clay)}
+@media(max-width:860px){.offers{grid-template-columns:1fr}}
+.book{background:#f1e9de}
+.bk{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+@media(max-width:860px){.bk{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);padding:22px}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cal-h b{font:600 26px var(--serif);text-transform:capitalize}
+.cal-h button{border:1px solid var(--line);background:#fff;width:38px;height:38px;cursor:pointer;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.grid .dow{font-size:12px;color:var(--muted);padding:4px 0}
+.day{border:1px solid transparent;background:#faf6f0;padding:10px 0;font:500 15px var(--sans);cursor:pointer}
+.day.free{background:#e8efe3;color:#3d4a33}.day.free:hover{border-color:var(--sage)}
+.day.busy{background:#efe4dc;color:#b79a88;text-decoration:line-through;cursor:not-allowed}
+.day.past{opacity:.35;cursor:not-allowed}.day.sel{background:var(--clay);color:#fff}
+.day.empty{background:none;cursor:default}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--muted);margin-top:14px;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+label{display:grid;gap:5px;font-size:14px;font-weight:500;margin-bottom:12px}
+input,select,textarea{font:16px var(--sans);padding:11px 12px;border:1px solid var(--line);background:#fff;width:100%}
+.radios{display:grid;gap:8px;margin-bottom:14px}
+.radios label{display:flex;gap:10px;align-items:center;border:1px solid var(--line);padding:10px 12px;margin:0;cursor:pointer;font-weight:500}
+.radios input{width:auto}
+.sum{background:#faf6f0;border:1px dashed var(--line);padding:14px;margin:6px 0 16px;display:grid;gap:4px;font-size:15px}
+.sum div{display:flex;justify-content:space-between}.sum .tot{font-weight:600;border-top:1px solid var(--line);padding-top:6px;margin-top:4px}
+.ok{display:none;background:#e8efe3;border:1px solid var(--sage);padding:18px;margin-top:14px}.ok.show{display:block}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gal img{aspect-ratio:1;object-fit:cover;width:100%}
+@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev blockquote{margin:0;background:#fff;border:1px solid var(--line);padding:22px;font:italic 500 21px/1.35 var(--serif)}
+.rev cite{display:block;font:500 13px var(--sans);font-style:normal;color:var(--muted);margin-top:12px}
+@media(max-width:860px){.rev{grid-template-columns:1fr}}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font:600 20px var(--serif)}details p{margin:8px 0 0;color:var(--muted)}
+footer{background:var(--ink);color:#d9cdbf;padding-block:48px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer a{color:#f0c9a8}
+</style>
+</head>
+<body>
+<div class="bar"><b>Maquette proposée par Keteris à Valphotovar.</b> Ce n'est pas votre site officiel : les chiffres, avis et photos sont fictifs, à remplacer par les vôtres.</div>
+<nav><div class="wrap"><a class="logo" href="#top">Val<span>photo</span>var</a>
+<ul><li><a href="#formules">Formules</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#avis">Avis</a></li><li><a href="#faq">Questions</a></li></ul>
+<a class="btn" href="#reservation">Réserver ma date</a></div></nav>
+<header class="hero" id="top"><div class="wrap">
+<span class="eyebrow" style="color:#f0c9a8">Photographe de mariage · Belgentier, Var</span>
+<h1>Votre mariage, <em>tel que vous le vivez</em></h1>
+<p>Toulon, Hyères, Brignoles et toute la Provence verte. Vérifiez ma disponibilité à votre date, recevez le devis et bloquez-la en ligne.</p>
+<div class="cta"><a class="btn" href="#reservation">Voir les dates libres</a><a class="btn ghost" href="#formules">Découvrir les formules</a></div></div></header>
+<div class="facts"><div class="wrap">
+<div class="fact"><b>12 ans</b><span>de mariages en Provence</span></div>
+<div class="fact"><b>180+</b><span>couples accompagnés</span></div>
+<div class="fact"><b>30 %</b><span>d'acompte pour bloquer la date</span></div>
+<div class="fact"><b>6 semaines</b><span>pour recevoir la galerie</span></div></div></div>
+
+<section id="formules"><div class="wrap">
+<div class="head"><span class="eyebrow">Formules</span><h2>Choisissez votre couverture</h2><p>Prix indicatifs, devis détaillé généré à l'étape suivante.</p></div>
+<div class="offers">
+<article class="offer"><img loading="lazy" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=70" alt="Cérémonie de mariage"><div class="in"><h3>Cérémonie</h3><p>Mairie ou cérémonie laïque, cocktail inclus.</p><ul><li>4 heures de couverture</li><li>300 photos retouchées</li><li>Galerie privée en ligne</li></ul><div class="meta"><span class="price">890 €</span><a class="btn" href="#reservation" data-f="0">Réserver</a></div></div></article>
+<article class="offer"><img loading="lazy" src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=800&q=70" alt="Couple de mariés"><div class="in"><h3>Journée</h3><p>Des préparatifs à l'ouverture de bal.</p><ul><li>10 heures de couverture</li><li>700 photos retouchées</li><li>Séance couple offerte</li></ul><div class="meta"><span class="price">1 690 €</span><a class="btn" href="#reservation" data-f="1">Réserver</a></div></div></article>
+<article class="offer"><img loading="lazy" src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=70" alt="Mariage en extérieur"><div class="in"><h3>Week-end</h3><p>Veille, mariage et brunch du lendemain.</p><ul><li>Deux jours de couverture</li><li>Album 30 x 30 cm</li><li>Galerie et clé USB</li></ul><div class="meta"><span class="price">2 490 €</span><a class="btn" href="#reservation" data-f="2">Réserver</a></div></div></article>
+</div></div></section>
+
+<section class="book" id="reservation"><div class="wrap">
+<div class="head"><span class="eyebrow">Réservation</span><h2>Ma date est-elle libre ?</h2><p>Choisissez le jour, la formule, puis signez le contrat et réglez l'acompte de 30 % : la date est bloquée pour vous.</p></div>
+<div class="bk">
+<div class="panel"><div class="cal-h"><button id="prev" aria-label="Mois précédent">‹</button><b id="mois"></b><button id="next" aria-label="Mois suivant">›</button></div>
+<div class="grid" id="cal"></div>
+<div class="legend"><span><i style="background:#e8efe3"></i>Libre</span><span><i style="background:#efe4dc"></i>Déjà réservé</span><span><i style="background:var(--clay)"></i>Votre date</span></div></div>
+<form class="panel" id="form">
+<div class="radios" id="formules-r">
+<label><input type="radio" name="f" value="0"> Cérémonie · 890 €</label>
+<label><input type="radio" name="f" value="1" checked> Journée · 1 690 €</label>
+<label><input type="radio" name="f" value="2"> Week-end · 2 490 €</label></div>
+<label>Date choisie<input id="dateout" readonly placeholder="Sélectionnez un jour libre"></label>
+<label>Vos prénoms<input required placeholder="Camille et Julien"></label>
+<label>E-mail<input type="email" required placeholder="vous@exemple.fr"></label>
+<label>Lieu de la réception<input placeholder="Domaine, commune"></label>
+<div class="sum"><div><span>Formule</span><span id="s1">1 690 €</span></div><div><span>Acompte à la signature (30 %)</span><span id="s2">507 €</span></div><div class="tot"><span>Solde le jour du mariage</span><span id="s3">1 183 €</span></div></div>
+<button class="btn" id="go" disabled>Signer le contrat et payer l'acompte</button>
+<div class="ok" id="ok"><b>Date bloquée.</b><br><span id="okt"></span></div>
+</form></div></div></section>
+
+<section id="galerie"><div class="wrap"><div class="head"><span class="eyebrow">Galerie</span><h2>Quelques instants</h2></div>
+<div class="gal">
+<img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=70" alt="Mariés">
+<img loading="lazy" src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=600&q=70" alt="Détails de mariage">
+<img loading="lazy" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=600&q=70" alt="Mariage en plein air">
+<img loading="lazy" src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=70" alt="Bouquet">
+<img loading="lazy" src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=600&q=70" alt="Couple">
+<img loading="lazy" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=70" alt="Cérémonie"></div></div></section>
+
+<section id="avis" style="background:#f1e9de"><div class="wrap"><div class="head"><span class="eyebrow">Avis</span><h2>Ils nous ont fait confiance</h2></div>
+<div class="rev">
+<blockquote>« On a su en deux minutes que notre date était libre. Contrat signé le soir même. »<cite>Camille et Julien, mariés à Brignoles (avis fictif)</cite></blockquote>
+<blockquote>« Discrète, à l'écoute, et des photos qui nous ressemblent vraiment. »<cite>Sarah et Thomas, mariés à Hyères (avis fictif)</cite></blockquote>
+<blockquote>« Le suivi était clair du devis jusqu'à la galerie. Rien à relancer. »<cite>Élodie et Marc, mariés à Belgentier (avis fictif)</cite></blockquote></div></div></section>
+
+<section id="faq"><div class="wrap" style="max-width:760px"><div class="head"><span class="eyebrow">Questions</span><h2>Avant de réserver</h2></div>
+<details><summary>Combien de temps à l'avance faut-il réserver ?</summary><p>Les meilleures dates partent environ un an à l'avance. Le calendrier ci-dessus est mis à jour en direct.</p></details>
+<details><summary>Que se passe-t-il après l'acompte ?</summary><p>Vous recevez le contrat signé et la confirmation par e-mail, et la date disparaît du calendrier.</p></details>
+<details><summary>Intervenez-vous en dehors du Var ?</summary><p>Oui, sur devis, avec des frais de déplacement indiqués dans le contrat.</p></details>
+<details><summary>Que devient mon acompte si ma date change ?</summary><p>Il est reporté sur une nouvelle date disponible, selon les conditions du contrat.</p></details></div></section>
+
+<footer><div class="wrap"><div><b style="font:600 24px var(--serif)">Valphotovar</b><br>Photographe de mariage · Belgentier (83)</div><div>06 01 80 48 56<br><a href="#reservation">Réserver ma date</a></div></div></footer>
+
+<script>
+(function(){
+var P=[890,1690,2490],M=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+var now=new Date(2026,9,19),cur=new Date(2027,5,1),sel=null,f=1;
+function busy(d){return d.getDay()==6&&((d.getDate()*7+d.getMonth()*3)%5<3)||((d.getDate()+d.getMonth())%11==0)}
+function eur(n){return n.toLocaleString("fr-FR").replace(/ | /g," ")+" €"}
+function sum(){var p=P[f],a=Math.round(p*.3);document.getElementById("s1").textContent=eur(p);document.getElementById("s2").textContent=eur(a);document.getElementById("s3").textContent=eur(p-a)}
+function render(){var c=document.getElementById("cal");c.innerHTML="";
+document.getElementById("mois").textContent=M[cur.getMonth()]+" "+cur.getFullYear();
+["L","M","M","J","V","S","D"].forEach(function(x){var e=document.createElement("div");e.className="dow";e.textContent=x;c.appendChild(e)});
+var first=new Date(cur.getFullYear(),cur.getMonth(),1),off=(first.getDay()+6)%7,n=new Date(cur.getFullYear(),cur.getMonth()+1,0).getDate();
+for(var i=0;i<off;i++){var e=document.createElement("div");e.className="day empty";c.appendChild(e)}
+for(var d=1;d<=n;d++){(function(d){var dt=new Date(cur.getFullYear(),cur.getMonth(),d),b=document.createElement("button");b.type="button";b.textContent=d;
+var cls="day";if(dt<now)cls+=" past";else if(busy(dt))cls+=" busy";else cls+=" free";
+if(sel&&sel.getTime()==dt.getTime())cls+=" sel";b.className=cls;
+if(cls.indexOf("free")>-1)b.onclick=function(){sel=dt;document.getElementById("dateout").value=dt.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});document.getElementById("go").disabled=false;render()};
+c.appendChild(b)})(d)}}
+document.getElementById("prev").onclick=function(){cur.setMonth(cur.getMonth()-1);render()};
+document.getElementById("next").onclick=function(){cur.setMonth(cur.getMonth()+1);render()};
+document.querySelectorAll("input[name=f]").forEach(function(r){r.onchange=function(){f=+r.value;sum()}});
+document.querySelectorAll("[data-f]").forEach(function(a){a.addEventListener("click",function(){f=+a.dataset.f;document.querySelector("input[name=f][value='"+f+"']").checked=true;sum()})});
+document.getElementById("form").onsubmit=function(e){e.preventDefault();if(!sel)return;var o=document.getElementById("ok");document.getElementById("okt").textContent="Contrat signé et acompte de "+document.getElementById("s2").textContent+" reçu. La date du "+document.getElementById("dateout").value+" est réservée pour vous (simulation).";o.classList.add("show")};
+sum();render();
+})();
+</script>
+</body>
+</html>
