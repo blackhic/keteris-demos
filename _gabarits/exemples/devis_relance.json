@@ -1,0 +1,143 @@
+{
+ "entreprise": "Tôlerie Bressane",
+ "ville": "Bourg-en-Bresse",
+ "couleur": "#3d5a1e",
+ "segment": "devis_relance",
+ "outil": "Agent devis",
+ "erp": "Excel + Outlook",
+ "titre": "Pipeline des devis",
+ "sous_titre": "Relances automatiques J+3 et J+10",
+ "menu": [
+  "Devis",
+  "Affaires chaudes",
+  "Relances",
+  "Statistiques"
+ ],
+ "kpis": [
+  {
+   "label": "Devis ouverts",
+   "valeur": "74"
+  },
+  {
+   "label": "Montant en jeu",
+   "valeur": "612 k€"
+  },
+  {
+   "label": "Taux de transformation",
+   "valeur": "31 %",
+   "tendance": "+8 pts",
+   "sens": "up"
+  },
+  {
+   "label": "Devis jamais relancés",
+   "valeur": "0",
+   "tendance": "contre 41 avant",
+   "sens": "up"
+  }
+ ],
+ "vue": "pipeline",
+ "vue_titre": "Devis en cours",
+ "colonnes": [
+  {
+   "titre": "Envoyé",
+   "total": 22,
+   "cartes": [
+    {
+     "ref": "DV-1488",
+     "client": "Carrier Culoz",
+     "texte": "Capots inox, 400 pièces",
+     "montant": "18 600 €"
+    }
+   ]
+  },
+  {
+   "titre": "Relancé J+3",
+   "total": 19,
+   "cartes": [
+    {
+     "ref": "DV-1471",
+     "client": "Renault Trucks",
+     "texte": "Supports découpe laser",
+     "montant": "42 300 €",
+     "alerte": {
+      "texte": "A ouvert le devis 3 fois",
+      "niveau": "ok"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "Relancé J+10",
+   "total": 15,
+   "cartes": [
+    {
+     "ref": "DV-1440",
+     "client": "Alstom Tarbes",
+     "texte": "Armoires pliées",
+     "montant": "27 900 €",
+     "alerte": {
+      "texte": "Pas de réponse",
+      "niveau": "warn"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "Affaire chaude",
+   "total": 7,
+   "cartes": [
+    {
+     "ref": "DV-1452",
+     "client": "Bontaz",
+     "texte": "Demande de délai",
+     "montant": "64 000 €",
+     "alerte": "Appeler aujourd'hui"
+    }
+   ]
+  },
+  {
+   "titre": "Signé",
+   "total": 11,
+   "cartes": [
+    {
+     "ref": "DV-1419",
+     "client": "Smurfit Kappa",
+     "texte": "Commande reçue",
+     "montant": "9 800 €",
+     "alerte": {
+      "texte": "Signé",
+      "niveau": "ok"
+     }
+    }
+   ]
+  }
+ ],
+ "agent": [
+  "17 relances envoyées au bon interlocuteur",
+  "4 affaires chaudes signalées aux commerciaux",
+  "2 demandes de modification résumées",
+  "Taux de transformation mis à jour"
+ ],
+ "a_valider": [
+  "Bontaz : délai demandé plus court que le standard",
+  "Alstom Tarbes : sans réponse après J+10, appel proposé"
+ ],
+ "benefices": [
+  {
+   "valeur": "+8 pts",
+   "label": "de transformation visés"
+  },
+  {
+   "valeur": "0",
+   "label": "devis oublié"
+  },
+  {
+   "valeur": "6 h",
+   "label": "par semaine rendues aux commerciaux"
+  },
+  {
+   "valeur": "Priorités",
+   "label": "claires chaque matin"
+  }
+ ]
+}

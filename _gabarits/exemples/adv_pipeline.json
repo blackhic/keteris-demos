@@ -1,0 +1,158 @@
+{
+ "entreprise": "Méca Alpes Industrie",
+ "ville": "Grenoble",
+ "couleur": "#8a3b12",
+ "segment": "adv_pipeline",
+ "outil": "Agent ADV",
+ "erp": "Divalto",
+ "titre": "Pipeline des commandes",
+ "sous_titre": "Mis à jour en continu · 9 h 12",
+ "menu": [
+  "Pipeline",
+  "Commandes reçues",
+  "Écarts",
+  "Clients",
+  "Règles"
+ ],
+ "kpis": [
+  {
+   "label": "Commandes reçues aujourd'hui",
+   "valeur": "46"
+  },
+  {
+   "label": "Saisies automatiquement",
+   "valeur": "43",
+   "tendance": "93 %",
+   "sens": "up"
+  },
+  {
+   "label": "Confirmées le jour même",
+   "valeur": "100 %"
+  },
+  {
+   "label": "Retards détectés",
+   "valeur": "3",
+   "tendance": "avant appel client",
+   "sens": "up"
+  }
+ ],
+ "vue": "pipeline",
+ "vue_titre": "Cycle des commandes",
+ "colonnes": [
+  {
+   "titre": "Reçue",
+   "total": 6,
+   "cartes": [
+    {
+     "ref": "BC 88412",
+     "client": "Schneider Isère",
+     "texte": "240 × axes inox Ø20",
+     "montant": "6 480 €"
+    },
+    {
+     "ref": "PDF reçu 9 h 04",
+     "client": "Atelier Brun",
+     "texte": "Lecture en cours",
+     "montant": "—"
+    }
+   ]
+  },
+  {
+   "titre": "Saisie ERP",
+   "total": 9,
+   "cartes": [
+    {
+     "ref": "CMD-26-5521",
+     "client": "Valeo Rumilly",
+     "texte": "1 200 × bagues bronze",
+     "montant": "14 400 €",
+     "alerte": {
+      "texte": "Prix 0,40 € sous le tarif",
+      "niveau": "warn"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "Confirmée",
+   "total": 18,
+   "cartes": [
+    {
+     "ref": "CMD-26-5517",
+     "client": "Somfy Cluses",
+     "texte": "Confirmation envoyée 8 h 51",
+     "montant": "3 920 €",
+     "alerte": {
+      "texte": "Confirmée",
+      "niveau": "ok"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "En production",
+   "total": 24,
+   "cartes": [
+    {
+     "ref": "CMD-26-5470",
+     "client": "Tefal Rumilly",
+     "texte": "Livraison prévue 28/10",
+     "montant": "22 100 €",
+     "alerte": "Retard matière : 2 jours"
+    }
+   ]
+  },
+  {
+   "titre": "Expédiée",
+   "total": 11,
+   "cartes": [
+    {
+     "ref": "CMD-26-5431",
+     "client": "SEB Selongey",
+     "texte": "BL 77120",
+     "montant": "8 750 €"
+    }
+   ]
+  },
+  {
+   "titre": "Facturée",
+   "total": 31,
+   "cartes": [
+    {
+     "ref": "FA-26-3310",
+     "client": "NTN-SNR",
+     "texte": "Envoyée dans Divalto",
+     "montant": "5 230 €"
+    }
+   ]
+  }
+ ],
+ "agent": [
+  "43 bons de commande lus (e-mail et PDF) et saisis dans Divalto",
+  "43 confirmations envoyées aux clients",
+  "1 écart de prix et 1 rupture de stock signalés",
+  "3 retards prévenus avant que le client appelle"
+ ],
+ "a_valider": [
+  "Valeo Rumilly : prix inférieur au tarif en vigueur",
+  "Atelier Brun : référence inconnue sur le bon de commande"
+ ],
+ "benefices": [
+  {
+   "valeur": "15 h",
+   "label": "de saisie en moins par semaine"
+  },
+  {
+   "valeur": "0",
+   "label": "erreur de ressaisie"
+  },
+  {
+   "valeur": "Jour même",
+   "label": "pour chaque confirmation"
+  },
+  {
+   "valeur": "+30 %",
+   "label": "de volume sans embauche"
+  }
+ ]
+}

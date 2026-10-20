@@ -1,0 +1,124 @@
+{
+ "entreprise": "Groupe Verdier Emballages",
+ "ville": "Saint-Étienne",
+ "couleur": "#5b2a86",
+ "segment": "tableau_direction",
+ "outil": "Agent reporting",
+ "erp": "Cegid + HubSpot",
+ "titre": "Tableau de bord de direction",
+ "sous_titre": "Données de la nuit · lundi 7 h",
+ "menu": [
+  "Synthèse",
+  "Ventes",
+  "Marges",
+  "Carnet de commandes",
+  "Clients"
+ ],
+ "kpis": [
+  {
+   "label": "CA du mois",
+   "valeur": "2,31 M€",
+   "tendance": "+6 % vs N−1",
+   "sens": "up"
+  },
+  {
+   "label": "Marge brute",
+   "valeur": "28,4 %",
+   "tendance": "−1,2 pt",
+   "sens": "down"
+  },
+  {
+   "label": "Carnet de commandes",
+   "valeur": "5,7 M€"
+  },
+  {
+   "label": "Clients en baisse",
+   "valeur": "9",
+   "tendance": "à surveiller",
+   "sens": "down"
+  }
+ ],
+ "vue": "dashboard",
+ "graph": {
+  "courbe": {
+   "titre": "Chiffre d'affaires mensuel (k€) vs objectif",
+   "labels": [
+    "Mai",
+    "Juin",
+    "Juil.",
+    "Août",
+    "Sept.",
+    "Oct."
+   ],
+   "valeurs": [
+    1980,
+    2140,
+    2050,
+    1720,
+    2260,
+    2310
+   ],
+   "objectif": [
+    2000,
+    2050,
+    2100,
+    1800,
+    2200,
+    2250
+   ]
+  },
+  "barres": {
+   "titre": "Marge par famille",
+   "labels": [
+    "Carton ondulé",
+    "Étuis",
+    "Calage",
+    "Palettes",
+    "Sur-mesure"
+   ],
+   "valeurs": [
+    34,
+    29,
+    26,
+    19,
+    31
+   ],
+   "affichage": [
+    "34 %",
+    "29 %",
+    "26 %",
+    "19 %",
+    "31 %"
+   ]
+  }
+ },
+ "commentaire": "La marge baisse de 1,2 point, surtout sur les palettes (hausse du bois non répercutée chez 3 clients). Le CA dépasse l'objectif grâce aux étuis. 9 clients commandent 20 % de moins qu'il y a 3 mois, dont Casino Logistique.",
+ "agent": [
+  "Données Cegid et HubSpot collectées à 6 h",
+  "Tableau mis à jour sans export Excel",
+  "Écarts commentés et envoyés à la direction",
+  "Alerte : 9 clients en baisse"
+ ],
+ "a_valider": [
+  "Palettes : revoir le tarif de 3 clients",
+  "Casino Logistique : rendez-vous commercial à planifier"
+ ],
+ "benefices": [
+  {
+   "valeur": "1 jour",
+   "label": "de consolidation Excel en moins par mois"
+  },
+  {
+   "valeur": "Chaque semaine",
+   "label": "au lieu de chaque mois"
+  },
+  {
+   "valeur": "1 seule",
+   "label": "version des chiffres"
+  },
+  {
+   "valeur": "Tôt",
+   "label": "dérives de marge repérées"
+  }
+ ]
+}

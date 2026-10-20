@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Maquette Keteris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<!--
+GABARIT KETERIS — NE PAS MODIFIER LE CODE. Copier ce fichier dans <slug>/index.html
+et remplacer UNIQUEMENT le contenu du bloc <script id="data"> (JSON valide).
+Champs : voir _gabarits/README.md et les exemples _gabarits/exemples/*.json
+-->
+<script id="data" type="application/json">
+{"entreprise":"Exemple SA","ville":"Lyon","couleur":"#1f5c4a","segment":"adv_pipeline","outil":"Agent ADV","erp":"Sage 100","titre":"Pipeline des commandes","sous_titre":"Mis à jour ce matin à 7 h 30","menu":["Pipeline","Commandes","Clients","Règles"],"kpis":[{"label":"Commandes reçues","valeur":"42"}],"vue":"pipeline","colonnes":[{"titre":"Reçue","cartes":[{"ref":"CMD-1","client":"Client","texte":"Détail","montant":"1 000 €","alerte":""}]}],"agent":["Exemple d'action"],"a_valider":["Exemple d'exception"],"benefices":[{"valeur":"8 h","label":"gagnées par semaine"}]}
+</script>
+<style>
+:root{--brand:#1f5c4a;--bg:#f4f5f2;--panel:#fff;--ink:#1b2420;--muted:#66716c;--line:#e3e6e1;--ok:#1f8a5b;--warn:#b7790c;--late:#c2412d;--info:#3a6ea5;
+--display:"Manrope",ui-sans-serif,system-ui,sans-serif;--body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+*{box-sizing:border-box}html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--body)}
+.demo-bar{background:var(--ink);color:#d7dfdb;text-align:center;font-size:12.5px;padding:7px 16px}.demo-bar b{color:#fff}
+.app{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 34px)}
+aside{background:var(--brand);color:rgba(255,255,255,.82);padding:20px 14px;display:flex;flex-direction:column;gap:20px}
+.brand{font:800 17px/1.2 var(--display);color:#fff}.brand small{display:block;font:500 12px var(--body);color:rgba(255,255,255,.7);margin-top:4px}
+.menu{display:grid;gap:3px}.menu span{padding:9px 12px;border-radius:9px}.menu span:first-child{background:rgba(255,255,255,.15);color:#fff;font-weight:600}
+.side-foot{margin-top:auto;font-size:12px;color:rgba(255,255,255,.7)}
+.agent-on{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border-radius:9px;padding:8px 10px;color:#fff;font-size:12.5px}
+.dot{width:8px;height:8px;border-radius:50%;background:#5fe0a0;box-shadow:0 0 0 3px rgba(95,224,160,.25)}
+main{padding:22px clamp(14px,2.6vw,30px);display:grid;gap:18px;align-content:start;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+h1{font:800 24px/1.2 var(--display);margin:0}.sub{color:var(--muted);margin:2px 0 0}
+.pill{font:500 12px var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi b{display:block;font:800 22px var(--display)}.kpi span{color:var(--muted);font-size:12.5px}.kpi i{font-style:normal;font-size:12px;font-weight:600}
+.up{color:var(--ok)}.down{color:var(--late)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.card h2{font:700 15px var(--display);margin:0 0 10px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(170px,1fr);gap:10px;overflow-x:auto;padding-bottom:4px}
+.col{background:#eef0ec;border-radius:10px;padding:8px;min-width:0}
+.col h3{font:700 12.5px var(--display);margin:2px 4px 8px;display:flex;justify-content:space-between}
+.col h3 em{font:500 11px var(--mono);font-style:normal;color:var(--muted)}
+.c{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:8px 10px;margin-bottom:7px;font-size:12.5px}
+.c .r{font:500 11px var(--mono);color:var(--muted);display:flex;justify-content:space-between}
+.c b{display:block;font-size:13px}.c .m{font-weight:600}
+.flag{display:inline-block;margin-top:5px;font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;background:#fdecea;color:var(--late)}
+.flag.warn{background:#fdf3e1;color:var(--warn)}.flag.ok{background:#e6f4ec;color:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;border-bottom:1px solid var(--line);padding:7px 8px}
+td{border-bottom:1px solid var(--line);padding:8px}
+.tag{font-size:11.5px;font-weight:600;border-radius:6px;padding:2px 7px;white-space:nowrap}
+.t-late{background:#fdecea;color:var(--late)}.t-warn{background:#fdf3e1;color:var(--warn)}.t-ok{background:#e6f4ec;color:var(--ok)}.t-info{background:#e8eff8;color:var(--info)}
+ul.feed{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13px}
+ul.feed li{display:flex;gap:8px}ul.feed li::before{content:"✓";color:var(--ok);font-weight:700}
+ul.todo li::before{content:"!";color:var(--warn)}
+.ben{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.ben div{border-radius:10px;padding:10px 12px;background:color-mix(in srgb,var(--brand) 9%,#fff)}
+.ben b{display:block;font:800 20px var(--display);color:var(--brand)}.ben span{font-size:12.5px}
+.est{font-size:11.5px;color:var(--muted);margin:8px 0 0}
+.msg{background:#f7f8f6;border:1px dashed var(--line);border-radius:10px;padding:10px 12px;font-size:13px;margin-top:10px;white-space:pre-line}
+svg text{font:11px var(--body);fill:var(--muted)}
+.note{background:color-mix(in srgb,var(--brand) 7%,#fff);border-left:3px solid var(--brand);padding:10px 12px;border-radius:8px;font-size:13.5px}
+@media (max-width:900px){.app{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap;align-items:center;padding:12px 14px}.menu,.side-foot{display:none}.grid2{grid-template-columns:1fr}}
+@media (max-width:560px){table thead{display:none}table,tbody,tr,td{display:block;width:100%}tr{border:1px solid var(--line);border-radius:10px;margin-bottom:8px;padding:4px 0}td{border:0;padding:4px 10px}td::before{content:attr(data-l)" : ";color:var(--muted);font-size:12px}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="bar"></div>
+<div class="app">
+<aside><div class="brand" id="brand"></div><div class="agent-on"><span class="dot"></span><span id="agentname"></span></div><nav class="menu" id="menu"></nav><div class="side-foot" id="foot"></div></aside>
+<main>
+<div class="top"><div><h1 id="titre"></h1><p class="sub" id="sous"></p></div><span class="pill" id="erp"></span></div>
+<section class="kpis" id="kpis"></section>
+<section class="card" id="vue"></section>
+<section class="grid2"><div class="card"><h2>Ce que l'agent a fait ce matin</h2><ul class="feed" id="agent"></ul></div><div class="card"><h2>À valider par votre équipe</h2><ul class="feed todo" id="todo"></ul></div></section>
+<section class="card"><h2>Bénéfices attendus</h2><div class="ben" id="ben"></div><p class="est">Estimation pour une entreprise de votre taille, à confirmer sur vos chiffres réels.</p></section>
+</main></div>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.documentElement.style.setProperty('--brand',D.couleur||'#1f5c4a');
+document.title=(D.titre||'Maquette')+' · '+D.entreprise;
+$('bar').innerHTML='Maquette proposée par Keteris à <b>'+esc(D.entreprise)+'</b>. Les données sont fictives et illustrent le fonctionnement.';
+$('brand').innerHTML=esc(D.entreprise)+'<small>'+esc(D.ville||'')+'</small>';
+$('agentname').textContent=(D.outil||'Agent IA')+' actif';
+$('menu').innerHTML=(D.menu||[]).map(m=>'<span>'+esc(m)+'</span>').join('');
+$('foot').textContent='Connecté à '+(D.erp||'vos outils actuels');
+$('titre').textContent=D.titre||'';$('sous').textContent=D.sous_titre||'';
+$('erp').textContent=D.erp?('Données : '+D.erp):'Vos outils actuels';
+$('kpis').innerHTML=(D.kpis||[]).map(k=>'<div class="kpi"><span>'+esc(k.label)+'</span><b>'+esc(k.valeur)+'</b>'+(k.tendance?'<i class="'+(k.sens==='down'?'down':'up')+'">'+esc(k.tendance)+'</i>':'')+'</div>').join('');
+const fl=a=>a?'<span class="flag '+(a.niveau||'')+'">'+esc(a.texte||a)+'</span>':'';
+function pipeline(){return '<h2>'+esc(D.vue_titre||D.titre)+'</h2><div class="board">'+(D.colonnes||[]).map(c=>'<div class="col"><h3>'+esc(c.titre)+'<em>'+(c.total??(c.cartes||[]).length)+'</em></h3>'+(c.cartes||[]).map(x=>'<div class="c"><div class="r"><span>'+esc(x.ref)+'</span><span class="m">'+esc(x.montant)+'</span></div><b>'+esc(x.client)+'</b>'+esc(x.texte)+(x.alerte?'<br>'+fl(typeof x.alerte==='string'?{texte:x.alerte}:x.alerte):'')+'</div>').join('')+'</div>').join('')+'</div>';}
+function table(){const cols=D.table.colonnes;return '<h2>'+esc(D.vue_titre||D.titre)+'</h2><table><thead><tr>'+cols.map(c=>'<th>'+esc(c)+'</th>').join('')+'</tr></thead><tbody>'+D.table.lignes.map(l=>'<tr>'+l.map((v,i)=>'<td data-l="'+esc(cols[i])+'">'+(v&&typeof v==='object'?'<span class="tag t-'+(v.t||'info')+'">'+esc(v.v)+'</span>':esc(v))+'</td>').join('')+'</tr>').join('')+'</tbody></table>'+(D.message?'<div class="msg"><b>Message préparé par l\'agent</b>\n'+esc(D.message)+'</div>':'');}
+function line(s){const W=560,H=170,P=28,v=s.valeurs,all=[...v,...(s.objectif||[])],mx=Math.max(...all)*1.05,mn=Math.min(...all)*0.9,x=i=>P+i*(W-2*P)/(v.length-1),y=n=>H-P-(n-mn)/(mx-mn)*(H-2*P);const path=a=>a.map((n,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(n).toFixed(1)).join(' ');
+return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="'+esc(s.titre)+'">'+[0,.5,1].map(f=>'<line x1="'+P+'" x2="'+(W-P)+'" y1="'+y(mn+(mx-mn)*f)+'" y2="'+y(mn+(mx-mn)*f)+'" stroke="#e3e6e1"/>').join('')+(s.objectif?'<path d="'+path(s.objectif)+'" fill="none" stroke="#b9c0bb" stroke-dasharray="4 4" stroke-width="1.5"/>':'')+'<path d="'+path(v)+'" fill="none" stroke="var(--brand)" stroke-width="2.5"/>'+v.map((n,i)=>'<circle cx="'+x(i)+'" cy="'+y(n)+'" r="3" fill="var(--brand)"/>').join('')+s.labels.map((l,i)=>'<text x="'+x(i)+'" y="'+(H-8)+'" text-anchor="middle">'+esc(l)+'</text>').join('')+'</svg>';}
+function bars(b){const mx=Math.max(...b.valeurs);return b.labels.map((l,i)=>'<div style="display:grid;grid-template-columns:110px 1fr 70px;gap:8px;align-items:center;font-size:12.5px;margin:5px 0"><span>'+esc(l)+'</span><span style="height:12px;border-radius:4px;background:var(--brand);opacity:'+(1-i*0.12)+';width:'+(b.valeurs[i]/mx*100)+'%"></span><span style="text-align:right;font-family:var(--mono)">'+esc(b.affichage?b.affichage[i]:b.valeurs[i])+'</span></div>').join('');}
+function dashboard(){const g=D.graph;return '<div class="grid2"><div><h2>'+esc(g.courbe.titre)+'</h2>'+line(g.courbe)+'</div><div><h2>'+esc(g.barres.titre)+'</h2>'+bars(g.barres)+'</div></div>'+(D.commentaire?'<div class="note" style="margin-top:12px"><b>Commentaire de l\'agent :</b> '+esc(D.commentaire)+'</div>':'');}
+$('vue').innerHTML=({pipeline,table,dashboard}[D.vue]||pipeline)();
+$('agent').innerHTML=(D.agent||[]).map(a=>'<li>'+esc(a)+'</li>').join('');
+$('todo').innerHTML=(D.a_valider||[]).map(a=>'<li>'+esc(a)+'</li>').join('');
+$('ben').innerHTML=(D.benefices||[]).map(b=>'<div><b>'+esc(b.valeur)+'</b><span>'+esc(b.label)+'</span></div>').join('');
+</script>
+</body>
+</html>

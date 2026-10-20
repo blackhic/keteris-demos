@@ -1,0 +1,120 @@
+{
+ "entreprise": "Distrib Pro Sud",
+ "ville": "Toulouse",
+ "couleur": "#1d4e89",
+ "segment": "encaissement",
+ "outil": "Agent encaissement",
+ "erp": "Sage 100",
+ "titre": "Encaissement clients",
+ "sous_titre": "Trésorerie mise à jour ce matin à 7 h",
+ "menu": [
+  "Tableau de bord",
+  "Balance âgée",
+  "Relances",
+  "Promesses",
+  "Règles"
+ ],
+ "kpis": [
+  {
+   "label": "Encours clients",
+   "valeur": "1,84 M€"
+  },
+  {
+   "label": "Échu",
+   "valeur": "412 k€",
+   "tendance": "−64 k€ en 30 jours",
+   "sens": "up"
+  },
+  {
+   "label": "DSO",
+   "valeur": "58 j",
+   "tendance": "−7 j",
+   "sens": "up"
+  },
+  {
+   "label": "Promesses à tenir cette semaine",
+   "valeur": "96 k€"
+  }
+ ],
+ "vue": "table",
+ "vue_titre": "Relances du jour",
+ "table": {
+  "colonnes": [
+   "Client",
+   "Échu",
+   "Retard",
+   "Étape",
+   "Action de l'agent"
+  ],
+  "lignes": [
+   [
+    "Bricomarché Albi",
+    "38 200 €",
+    {
+     "v": "62 j",
+     "t": "late"
+    },
+    "Mise en demeure",
+    "À valider"
+   ],
+   [
+    "Négoce Lauragais",
+    "12 900 €",
+    {
+     "v": "34 j",
+     "t": "warn"
+    },
+    "Relance 2",
+    "E-mail + appel planifié"
+   ],
+   [
+    "Plâtres Occitans",
+    "7 450 €",
+    {
+     "v": "18 j",
+     "t": "warn"
+    },
+    "Relance 1",
+    "E-mail envoyé"
+   ],
+   [
+    "SAS Carrère BTP",
+    "21 000 €",
+    {
+     "v": "Promesse 25/10",
+     "t": "ok"
+    },
+    "Suivi",
+    "Rappel auto le 26/10"
+   ]
+  ]
+ },
+ "agent": [
+  "58 relances graduées envoyées depuis Sage 100",
+  "23 paiements rapprochés automatiquement",
+  "5 promesses de paiement enregistrées",
+  "Prévision de trésorerie à 4 semaines recalculée"
+ ],
+ "a_valider": [
+  "Bricomarché Albi : passage en mise en demeure",
+  "Négoce Lauragais : demande d'échéancier sur 3 mois"
+ ],
+ "benefices": [
+  {
+   "valeur": "−10 j",
+   "label": "de DSO visé"
+  },
+  {
+   "valeur": "≈ 180 k€",
+   "label": "de trésorerie libérée"
+  },
+  {
+   "valeur": "Fiable",
+   "label": "prévision à 4 semaines"
+  },
+  {
+   "valeur": "0",
+   "label": "nouveau logiciel"
+  }
+ ]
+}

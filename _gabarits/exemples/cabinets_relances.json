@@ -1,0 +1,139 @@
+{
+ "entreprise": "Cabinet Morel & Associés",
+ "ville": "Annecy",
+ "couleur": "#24506b",
+ "segment": "cabinets_relances",
+ "outil": "Agent relances",
+ "erp": "Cegid Expert + Outlook",
+ "titre": "Relances honoraires et pièces",
+ "sous_titre": "Mis à jour ce matin à 7 h 30 · 312 dossiers suivis",
+ "menu": [
+  "Relances",
+  "Pièces manquantes",
+  "Clients",
+  "Ton des messages",
+  "Règles"
+ ],
+ "kpis": [
+  {
+   "label": "Honoraires en retard",
+   "valeur": "48 600 €",
+   "tendance": "−18 % en 30 jours",
+   "sens": "up"
+  },
+  {
+   "label": "Dossiers à relancer",
+   "valeur": "37"
+  },
+  {
+   "label": "Pièces manquantes",
+   "valeur": "112",
+   "tendance": "−41 cette semaine",
+   "sens": "up"
+  },
+  {
+   "label": "Délai moyen de paiement",
+   "valeur": "52 j",
+   "tendance": "−9 j",
+   "sens": "up"
+  }
+ ],
+ "vue": "table",
+ "vue_titre": "Relances du jour",
+ "table": {
+  "colonnes": [
+   "Client",
+   "Montant",
+   "Retard",
+   "Étape",
+   "Ton",
+   "Prochaine action"
+  ],
+  "lignes": [
+   [
+    "SARL Duret Menuiserie",
+    "2 340 €",
+    {
+     "v": "45 j",
+     "t": "late"
+    },
+    "Relance 3",
+    "Ferme",
+    "Appel de l'associé proposé"
+   ],
+   [
+    "Boulangerie Cattin",
+    "860 €",
+    {
+     "v": "21 j",
+     "t": "warn"
+    },
+    "Relance 2",
+    "Cordial",
+    "E-mail envoyé ce matin"
+   ],
+   [
+    "SCI Les Aravis",
+    "1 520 €",
+    {
+     "v": "12 j",
+     "t": "warn"
+    },
+    "Relance 1",
+    "Cordial",
+    "E-mail envoyé ce matin"
+   ],
+   [
+    "Garage Vuillet",
+    "3 100 €",
+    {
+     "v": "60 j",
+     "t": "late"
+    },
+    "Escalade",
+    "Formel",
+    "À valider par l'associé"
+   ],
+   [
+    "Dr Perrin (SELARL)",
+    "1 180 €",
+    {
+     "v": "Promesse 05/11",
+     "t": "ok"
+    },
+    "Suivi",
+    "Neutre",
+    "Rappel auto le 06/11"
+   ]
+  ]
+ },
+ "message": "Bonjour Monsieur Duret,\nsauf erreur de notre part, la facture d'honoraires n° 2026-0412 de 2 340 € reste en attente depuis 45 jours. Pouvez-vous nous indiquer la date de règlement prévue ? Un échéancier est possible si besoin.",
+ "agent": [
+  "29 relances envoyées, chacune au ton fixé pour le client",
+  "64 pièces demandées pour les bilans de décembre",
+  "11 paiements rapprochés et relances arrêtées",
+  "2 promesses de paiement enregistrées"
+ ],
+ "a_valider": [
+  "Garage Vuillet : escalade au-delà de 60 jours",
+  "SCI Les Aravis conteste un montant : réponse à préparer"
+ ],
+ "benefices": [
+  {
+   "valeur": "10 h",
+   "label": "de relances en moins par semaine"
+  },
+  {
+   "valeur": "−15 j",
+   "label": "de délai d'encaissement"
+  },
+  {
+   "valeur": "0",
+   "label": "appel tendu pour les collaborateurs"
+  },
+  {
+   "valeur": "100 %",
+   "label": "des relances tracées par dossier"
+  }
+ ]
+}
