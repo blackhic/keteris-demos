@@ -1,0 +1,121 @@
+{
+ "lang": "en",
+ "entreprise": "Midland Trade Supplies",
+ "ville": "Birmingham",
+ "couleur": "#1d4e89",
+ "segment": "encaissement",
+ "outil": "Credit control agent",
+ "erp": "Sage 50",
+ "titre": "Customer collections",
+ "sous_titre": "Cash position updated this morning at 7:00",
+ "menu": [
+  "Dashboard",
+  "Aged debt",
+  "Chasers",
+  "Promises",
+  "Rules"
+ ],
+ "kpis": [
+  {
+   "label": "Debtors ledger",
+   "valeur": "£1.59m"
+  },
+  {
+   "label": "Overdue",
+   "valeur": "£356k",
+   "tendance": "−£55k in 30 days",
+   "sens": "up"
+  },
+  {
+   "label": "Debtor days",
+   "valeur": "58",
+   "tendance": "−7 days",
+   "sens": "up"
+  },
+  {
+   "label": "Promises due this week",
+   "valeur": "£83k"
+  }
+ ],
+ "vue": "table",
+ "vue_titre": "Today's chasers",
+ "table": {
+  "colonnes": [
+   "Customer",
+   "Overdue",
+   "Days late",
+   "Stage",
+   "Agent action"
+  ],
+  "lignes": [
+   [
+    "Brindley Builders Merchants",
+    "£33,000",
+    {
+     "v": "62 days",
+     "t": "late"
+    },
+    "Final notice",
+    "For approval"
+   ],
+   [
+    "Severn Timber Ltd",
+    "£11,150",
+    {
+     "v": "34 days",
+     "t": "warn"
+    },
+    "Chaser 2",
+    "Email + call booked"
+   ],
+   [
+    "Arden Plastering Ltd",
+    "£6,440",
+    {
+     "v": "18 days",
+     "t": "warn"
+    },
+    "Chaser 1",
+    "Email sent"
+   ],
+   [
+    "Cotswold Build Ltd",
+    "£18,150",
+    {
+     "v": "Promise 25 Oct",
+     "t": "ok"
+    },
+    "Follow-up",
+    "Auto reminder on 26 Oct"
+   ]
+  ]
+ },
+ "agent": [
+  "58 staged chasers sent from Sage 50",
+  "23 payments matched automatically",
+  "5 payment promises logged",
+  "4-week cash forecast recalculated"
+ ],
+ "a_valider": [
+  "Brindley Builders Merchants: move to final notice",
+  "Severn Timber: asks for a 3-month payment plan"
+ ],
+ "benefices": [
+  {
+   "valeur": "−10 days",
+   "label": "debtor days targeted"
+  },
+  {
+   "valeur": "≈ £155k",
+   "label": "cash released"
+  },
+  {
+   "valeur": "Reliable",
+   "label": "4-week forecast"
+  },
+  {
+   "valeur": "0",
+   "label": "new software"
+  }
+ ]
+}

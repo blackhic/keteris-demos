@@ -1,0 +1,125 @@
+{
+ "lang": "en",
+ "entreprise": "Ashford Packaging Group",
+ "ville": "Kent",
+ "couleur": "#5b2a86",
+ "segment": "tableau_direction",
+ "outil": "Reporting agent",
+ "erp": "Sage 200 + HubSpot",
+ "titre": "Board dashboard",
+ "sous_titre": "Overnight data · Monday 7:00",
+ "menu": [
+  "Summary",
+  "Sales",
+  "Margins",
+  "Order book",
+  "Customers"
+ ],
+ "kpis": [
+  {
+   "label": "Sales this month",
+   "valeur": "£1.99m",
+   "tendance": "+6% vs last year",
+   "sens": "up"
+  },
+  {
+   "label": "Gross margin",
+   "valeur": "28.4%",
+   "tendance": "−1.2 pts",
+   "sens": "down"
+  },
+  {
+   "label": "Order book",
+   "valeur": "£4.9m"
+  },
+  {
+   "label": "Customers buying less",
+   "valeur": "9",
+   "tendance": "to watch",
+   "sens": "down"
+  }
+ ],
+ "vue": "dashboard",
+ "graph": {
+  "courbe": {
+   "titre": "Monthly sales (£k) vs target",
+   "labels": [
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct"
+   ],
+   "valeurs": [
+    1700,
+    1840,
+    1760,
+    1480,
+    1950,
+    1990
+   ],
+   "objectif": [
+    1720,
+    1760,
+    1810,
+    1550,
+    1890,
+    1940
+   ]
+  },
+  "barres": {
+   "titre": "Margin by product line",
+   "labels": [
+    "Corrugated",
+    "Cartons",
+    "Protective",
+    "Pallets",
+    "Bespoke"
+   ],
+   "valeurs": [
+    34,
+    29,
+    26,
+    19,
+    31
+   ],
+   "affichage": [
+    "34%",
+    "29%",
+    "26%",
+    "19%",
+    "31%"
+   ]
+  }
+ },
+ "commentaire": "Margin is down 1.2 points, mainly on pallets (timber increase not passed on to 3 customers). Sales are above target thanks to cartons. 9 customers are ordering 20% less than three months ago.",
+ "agent": [
+  "Sage 200 and HubSpot data collected at 6:00",
+  "Dashboard refreshed with no Excel export",
+  "Variances explained and sent to the board",
+  "Alert: 9 customers buying less"
+ ],
+ "a_valider": [
+  "Pallets: review pricing for 3 customers",
+  "Book a sales meeting with the largest declining customer"
+ ],
+ "benefices": [
+  {
+   "valeur": "1 day",
+   "label": "less Excel consolidation each month"
+  },
+  {
+   "valeur": "Weekly",
+   "label": "instead of monthly"
+  },
+  {
+   "valeur": "One",
+   "label": "version of the numbers"
+  },
+  {
+   "valeur": "Early",
+   "label": "margin drift spotted"
+  }
+ ]
+}

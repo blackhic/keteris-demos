@@ -1,0 +1,140 @@
+{
+ "lang": "en",
+ "entreprise": "Hartley & Moss Chartered Accountants",
+ "ville": "Leeds",
+ "couleur": "#24506b",
+ "segment": "cabinets_relances",
+ "outil": "Credit control agent",
+ "erp": "IRIS + Outlook",
+ "titre": "Fee chasing and missing records",
+ "sous_titre": "Updated this morning at 7:30 · 312 clients tracked",
+ "menu": [
+  "Chasers",
+  "Missing records",
+  "Clients",
+  "Message tone",
+  "Rules"
+ ],
+ "kpis": [
+  {
+   "label": "Overdue fees",
+   "valeur": "£41,800",
+   "tendance": "−18% in 30 days",
+   "sens": "up"
+  },
+  {
+   "label": "Clients to chase",
+   "valeur": "37"
+  },
+  {
+   "label": "Missing records",
+   "valeur": "112",
+   "tendance": "−41 this week",
+   "sens": "up"
+  },
+  {
+   "label": "Average days to pay",
+   "valeur": "52 days",
+   "tendance": "−9 days",
+   "sens": "up"
+  }
+ ],
+ "vue": "table",
+ "vue_titre": "Today's chasers",
+ "table": {
+  "colonnes": [
+   "Client",
+   "Amount",
+   "Overdue",
+   "Stage",
+   "Tone",
+   "Next action"
+  ],
+  "lignes": [
+   [
+    "Dunmore Joinery Ltd",
+    "£2,040",
+    {
+     "v": "45 days",
+     "t": "late"
+    },
+    "Chaser 3",
+    "Firm",
+    "Partner call suggested"
+   ],
+   [
+    "Calder Bakery Ltd",
+    "£740",
+    {
+     "v": "21 days",
+     "t": "warn"
+    },
+    "Chaser 2",
+    "Friendly",
+    "Email sent this morning"
+   ],
+   [
+    "Aire Valley Lettings Ltd",
+    "£1,320",
+    {
+     "v": "12 days",
+     "t": "warn"
+    },
+    "Chaser 1",
+    "Friendly",
+    "Email sent this morning"
+   ],
+   [
+    "Wharfedale Motors Ltd",
+    "£2,700",
+    {
+     "v": "60 days",
+     "t": "late"
+    },
+    "Escalation",
+    "Formal",
+    "For partner approval"
+   ],
+   [
+    "Kirkgate Dental Ltd",
+    "£1,020",
+    {
+     "v": "Promise 5 Nov",
+     "t": "ok"
+    },
+    "Follow-up",
+    "Neutral",
+    "Auto reminder on 6 Nov"
+   ]
+  ]
+ },
+ "message": "Dear Mr Dunmore,\naccording to our records, invoice 2026-0412 for £2,040 has been outstanding for 45 days. Could you let us know when payment is planned? We are happy to agree instalments if that helps.",
+ "agent": [
+  "29 chasers sent, each in the tone set for the client",
+  "64 records requested for December year-ends",
+  "11 payments matched and chasers stopped",
+  "2 payment promises logged"
+ ],
+ "a_valider": [
+  "Wharfedale Motors: escalation beyond 60 days",
+  "Aire Valley Lettings disputes an amount: reply to prepare"
+ ],
+ "benefices": [
+  {
+   "valeur": "10 hrs",
+   "label": "less chasing each week"
+  },
+  {
+   "valeur": "−15 days",
+   "label": "to get paid"
+  },
+  {
+   "valeur": "0",
+   "label": "awkward calls for your team"
+  },
+  {
+   "valeur": "100%",
+   "label": "of chasers logged per client"
+  }
+ ]
+}

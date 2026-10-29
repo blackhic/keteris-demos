@@ -1,0 +1,144 @@
+{
+ "lang": "en",
+ "entreprise": "Trent Sheet Metal",
+ "ville": "Nottingham",
+ "couleur": "#3d5a1e",
+ "segment": "devis_relance",
+ "outil": "Quote follow-up agent",
+ "erp": "Excel + Outlook",
+ "titre": "Quote pipeline",
+ "sous_titre": "Automatic follow-ups at day 3 and day 10",
+ "menu": [
+  "Quotes",
+  "Hot deals",
+  "Follow-ups",
+  "Statistics"
+ ],
+ "kpis": [
+  {
+   "label": "Open quotes",
+   "valeur": "74"
+  },
+  {
+   "label": "Value at stake",
+   "valeur": "£528k"
+  },
+  {
+   "label": "Win rate",
+   "valeur": "31%",
+   "tendance": "+8 pts",
+   "sens": "up"
+  },
+  {
+   "label": "Quotes never chased",
+   "valeur": "0",
+   "tendance": "vs 41 before",
+   "sens": "up"
+  }
+ ],
+ "vue": "pipeline",
+ "vue_titre": "Live quotes",
+ "colonnes": [
+  {
+   "titre": "Sent",
+   "total": 22,
+   "cartes": [
+    {
+     "ref": "Q-1488",
+     "client": "Sherwood HVAC",
+     "texte": "Stainless covers, 400 off",
+     "montant": "£16,050"
+    }
+   ]
+  },
+  {
+   "titre": "Chased day 3",
+   "total": 19,
+   "cartes": [
+    {
+     "ref": "Q-1471",
+     "client": "Erewash Trailers",
+     "texte": "Laser-cut brackets",
+     "montant": "£36,500",
+     "alerte": {
+      "texte": "Opened the quote 3 times",
+      "niveau": "ok"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "Chased day 10",
+   "total": 15,
+   "cartes": [
+    {
+     "ref": "Q-1440",
+     "client": "Derwent Rail",
+     "texte": "Folded cabinets",
+     "montant": "£24,100",
+     "alerte": {
+      "texte": "No reply",
+      "niveau": "warn"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "Hot deal",
+   "total": 7,
+   "cartes": [
+    {
+     "ref": "Q-1452",
+     "client": "Bassetlaw Motors",
+     "texte": "Asked about lead time",
+     "montant": "£55,200",
+     "alerte": "Call today"
+    }
+   ]
+  },
+  {
+   "titre": "Won",
+   "total": 11,
+   "cartes": [
+    {
+     "ref": "Q-1419",
+     "client": "Trentside Packaging",
+     "texte": "Order received",
+     "montant": "£8,450",
+     "alerte": {
+      "texte": "Won",
+      "niveau": "ok"
+     }
+    }
+   ]
+  }
+ ],
+ "agent": [
+  "17 follow-ups sent to the right contact",
+  "4 hot deals flagged to sales",
+  "2 change requests summarised",
+  "Win rate updated"
+ ],
+ "a_valider": [
+  "Bassetlaw Motors: lead time shorter than standard",
+  "Derwent Rail: no reply after day 10, call suggested"
+ ],
+ "benefices": [
+  {
+   "valeur": "+8 pts",
+   "label": "win rate targeted"
+  },
+  {
+   "valeur": "0",
+   "label": "forgotten quotes"
+  },
+  {
+   "valeur": "6 hrs",
+   "label": "a week back to sales"
+  },
+  {
+   "valeur": "Clear",
+   "label": "priorities every morning"
+  }
+ ]
+}

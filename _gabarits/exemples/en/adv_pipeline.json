@@ -1,0 +1,159 @@
+{
+ "lang": "en",
+ "entreprise": "Pennine Precision Engineering",
+ "ville": "Huddersfield",
+ "couleur": "#8a3b12",
+ "segment": "adv_pipeline",
+ "outil": "Sales order agent",
+ "erp": "Sage 200",
+ "titre": "Sales order pipeline",
+ "sous_titre": "Live · 9:12",
+ "menu": [
+  "Pipeline",
+  "Orders received",
+  "Exceptions",
+  "Customers",
+  "Rules"
+ ],
+ "kpis": [
+  {
+   "label": "Orders received today",
+   "valeur": "46"
+  },
+  {
+   "label": "Entered automatically",
+   "valeur": "43",
+   "tendance": "93%",
+   "sens": "up"
+  },
+  {
+   "label": "Acknowledged same day",
+   "valeur": "100%"
+  },
+  {
+   "label": "Delays spotted",
+   "valeur": "3",
+   "tendance": "before the customer calls",
+   "sens": "up"
+  }
+ ],
+ "vue": "pipeline",
+ "vue_titre": "Order cycle",
+ "colonnes": [
+  {
+   "titre": "Received",
+   "total": 6,
+   "cartes": [
+    {
+     "ref": "PO 88412",
+     "client": "Hepworth Controls",
+     "texte": "240 × stainless shafts Ø20",
+     "montant": "£5,620"
+    },
+    {
+     "ref": "PDF in 9:04",
+     "client": "Brook Fabrications",
+     "texte": "Reading now",
+     "montant": "—"
+    }
+   ]
+  },
+  {
+   "titre": "Entered in Sage",
+   "total": 9,
+   "cartes": [
+    {
+     "ref": "SO-26-5521",
+     "client": "Calder Hydraulics",
+     "texte": "1,200 × bronze bushes",
+     "montant": "£12,480",
+     "alerte": {
+      "texte": "Price £0.35 below list",
+      "niveau": "warn"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "Acknowledged",
+   "total": 18,
+   "cartes": [
+    {
+     "ref": "SO-26-5517",
+     "client": "Holmfirth Pumps",
+     "texte": "Acknowledgement sent 8:51",
+     "montant": "£3,390",
+     "alerte": {
+      "texte": "Acknowledged",
+      "niveau": "ok"
+     }
+    }
+   ]
+  },
+  {
+   "titre": "In production",
+   "total": 24,
+   "cartes": [
+    {
+     "ref": "SO-26-5470",
+     "client": "Yorkshire Valves",
+     "texte": "Due 28 Oct",
+     "montant": "£19,100",
+     "alerte": "Material delay: 2 days"
+    }
+   ]
+  },
+  {
+   "titre": "Dispatched",
+   "total": 11,
+   "cartes": [
+    {
+     "ref": "SO-26-5431",
+     "client": "Kirklees Gears",
+     "texte": "Delivery note 77120",
+     "montant": "£7,570"
+    }
+   ]
+  },
+  {
+   "titre": "Invoiced",
+   "total": 31,
+   "cartes": [
+    {
+     "ref": "INV-26-3310",
+     "client": "Northern Bearings",
+     "texte": "Posted in Sage 200",
+     "montant": "£4,530"
+    }
+   ]
+  }
+ ],
+ "agent": [
+  "43 purchase orders read (email and PDF) and entered in Sage 200",
+  "43 acknowledgements sent to customers",
+  "1 price exception and 1 stock-out flagged",
+  "3 delays flagged before the customer called"
+ ],
+ "a_valider": [
+  "Calder Hydraulics: price below current list",
+  "Brook Fabrications: unknown part number on the PO"
+ ],
+ "benefices": [
+  {
+   "valeur": "15 hrs",
+   "label": "less order entry each week"
+  },
+  {
+   "valeur": "0",
+   "label": "re-keying errors"
+  },
+  {
+   "valeur": "Same day",
+   "label": "for every acknowledgement"
+  },
+  {
+   "valeur": "+30%",
+   "label": "volume without hiring"
+  }
+ ]
+}
